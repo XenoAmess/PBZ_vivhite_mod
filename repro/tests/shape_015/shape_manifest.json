@@ -1,0 +1,1100 @@
+{
+  "schema_version": 1,
+  "shape_suite_version": "1.1.0",
+  "candidate": "build/qa_pre_inputs_015/Delta_adult.blend",
+  "input_hashes": {
+    "model": "6064c03c6c95e83e6135989a345d27c1c7be5635804877d9679fa763f58e3977",
+    "suite": "4fa242470530c652960c605bf0f0448904cd74253628dbd044c7c2b36e015362",
+    "runner": "d1571761ab0ec768f5b5a4949951272fad12fa96c38c22dd1ce9e581f647cb4a"
+  },
+  "images": [
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "full_body/clay/000.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "full_body/clay/045.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "full_body/clay/090.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 135,
+      "path": "full_body/clay/135.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "full_body/clay/180.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 225,
+      "path": "full_body/clay/225.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "full_body/clay/270.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "full_body/clay/315.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "head/clay/000.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "head/clay/045.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "head/clay/090.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "head/clay/180.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "head/clay/270.png"
+    },
+    {
+      "section": "head",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "head/clay/315.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "neck_shoulders/clay/000.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "neck_shoulders/clay/045.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "neck_shoulders/clay/090.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "neck_shoulders/clay/180.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "neck_shoulders/clay/270.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "neck_shoulders/clay/315.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "torso/clay/000.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "torso/clay/045.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "torso/clay/090.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "torso/clay/180.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "torso/clay/270.png"
+    },
+    {
+      "section": "torso",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "torso/clay/315.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "upper_arm_left/clay/000.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "upper_arm_left/clay/045.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "upper_arm_left/clay/090.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "upper_arm_left/clay/180.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "upper_arm_left/clay/270.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "upper_arm_left/clay/315.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "upper_arm_right/clay/000.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "upper_arm_right/clay/045.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "upper_arm_right/clay/090.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "upper_arm_right/clay/180.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "upper_arm_right/clay/270.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "upper_arm_right/clay/315.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "elbow_left/clay/000.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "elbow_left/clay/045.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "elbow_left/clay/090.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "elbow_left/clay/180.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "elbow_left/clay/270.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "elbow_left/clay/315.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "elbow_right/clay/000.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "elbow_right/clay/045.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "elbow_right/clay/090.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "elbow_right/clay/180.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "elbow_right/clay/270.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "elbow_right/clay/315.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "hand_left/clay/000.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "hand_left/clay/045.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "hand_left/clay/090.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "hand_left/clay/180.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "hand_left/clay/270.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "hand_left/clay/315.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "hand_right/clay/000.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "hand_right/clay/045.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "hand_right/clay/090.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "hand_right/clay/180.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "hand_right/clay/270.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "hand_right/clay/315.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "pelvis/clay/000.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "pelvis/clay/045.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "pelvis/clay/090.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "pelvis/clay/180.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "pelvis/clay/270.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "pelvis/clay/315.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "legs/clay/000.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "legs/clay/045.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "legs/clay/090.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "legs/clay/180.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "legs/clay/270.png"
+    },
+    {
+      "section": "legs",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "legs/clay/315.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "knees/clay/000.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "knees/clay/045.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "knees/clay/090.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "knees/clay/180.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "knees/clay/270.png"
+    },
+    {
+      "section": "knees",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "knees/clay/315.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 0,
+      "path": "feet/clay/000.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 45,
+      "path": "feet/clay/045.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 90,
+      "path": "feet/clay/090.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 180,
+      "path": "feet/clay/180.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 270,
+      "path": "feet/clay/270.png"
+    },
+    {
+      "section": "feet",
+      "pass": "clay",
+      "angle_deg": 315,
+      "path": "feet/clay/315.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "full_body/textured/000.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "full_body/textured/045.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "full_body/textured/090.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 135,
+      "path": "full_body/textured/135.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "full_body/textured/180.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 225,
+      "path": "full_body/textured/225.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "full_body/textured/270.png"
+    },
+    {
+      "section": "full_body",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "full_body/textured/315.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "head/textured/000.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "head/textured/045.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "head/textured/090.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "head/textured/180.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "head/textured/270.png"
+    },
+    {
+      "section": "head",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "head/textured/315.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "neck_shoulders/textured/000.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "neck_shoulders/textured/045.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "neck_shoulders/textured/090.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "neck_shoulders/textured/180.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "neck_shoulders/textured/270.png"
+    },
+    {
+      "section": "neck_shoulders",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "neck_shoulders/textured/315.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "torso/textured/000.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "torso/textured/045.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "torso/textured/090.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "torso/textured/180.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "torso/textured/270.png"
+    },
+    {
+      "section": "torso",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "torso/textured/315.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "upper_arm_left/textured/000.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "upper_arm_left/textured/045.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "upper_arm_left/textured/090.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "upper_arm_left/textured/180.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "upper_arm_left/textured/270.png"
+    },
+    {
+      "section": "upper_arm_left",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "upper_arm_left/textured/315.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "upper_arm_right/textured/000.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "upper_arm_right/textured/045.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "upper_arm_right/textured/090.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "upper_arm_right/textured/180.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "upper_arm_right/textured/270.png"
+    },
+    {
+      "section": "upper_arm_right",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "upper_arm_right/textured/315.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "elbow_left/textured/000.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "elbow_left/textured/045.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "elbow_left/textured/090.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "elbow_left/textured/180.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "elbow_left/textured/270.png"
+    },
+    {
+      "section": "elbow_left",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "elbow_left/textured/315.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "elbow_right/textured/000.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "elbow_right/textured/045.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "elbow_right/textured/090.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "elbow_right/textured/180.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "elbow_right/textured/270.png"
+    },
+    {
+      "section": "elbow_right",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "elbow_right/textured/315.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "hand_left/textured/000.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "hand_left/textured/045.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "hand_left/textured/090.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "hand_left/textured/180.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "hand_left/textured/270.png"
+    },
+    {
+      "section": "hand_left",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "hand_left/textured/315.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "hand_right/textured/000.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "hand_right/textured/045.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "hand_right/textured/090.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "hand_right/textured/180.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "hand_right/textured/270.png"
+    },
+    {
+      "section": "hand_right",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "hand_right/textured/315.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "pelvis/textured/000.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "pelvis/textured/045.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "pelvis/textured/090.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "pelvis/textured/180.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "pelvis/textured/270.png"
+    },
+    {
+      "section": "pelvis",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "pelvis/textured/315.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "legs/textured/000.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "legs/textured/045.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "legs/textured/090.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "legs/textured/180.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "legs/textured/270.png"
+    },
+    {
+      "section": "legs",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "legs/textured/315.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "knees/textured/000.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "knees/textured/045.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "knees/textured/090.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "knees/textured/180.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "knees/textured/270.png"
+    },
+    {
+      "section": "knees",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "knees/textured/315.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 0,
+      "path": "feet/textured/000.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 45,
+      "path": "feet/textured/045.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 90,
+      "path": "feet/textured/090.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 180,
+      "path": "feet/textured/180.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 270,
+      "path": "feet/textured/270.png"
+    },
+    {
+      "section": "feet",
+      "pass": "textured",
+      "angle_deg": 315,
+      "path": "feet/textured/315.png"
+    }
+  ],
+  "expected_images": 172,
+  "sections": [
+    "head",
+    "neck_shoulders",
+    "torso",
+    "upper_arm_left",
+    "upper_arm_right",
+    "elbow_left",
+    "elbow_right",
+    "hand_left",
+    "hand_right",
+    "pelvis",
+    "legs",
+    "knees",
+    "feet"
+  ],
+  "bounds_cm": {
+    "min": [
+      -60.891597747802734,
+      -18.953754425048828,
+      -9.370461463928223
+    ],
+    "max": [
+      60.891563415527344,
+      19.97300910949707,
+      195.3714599609375
+    ]
+  },
+  "head_with_hair_bounds_cm": {
+    "min": [
+      -22.578062057495117,
+      -8.75055980682373,
+      160.22219848632812
+    ],
+    "max": [
+      22.977807998657227,
+      18.02873992919922,
+      195.3714599609375
+    ]
+  },
+  "native_bone_lengths_cm": {
+    "upper_arm_l": 28.45664495390529,
+    "forearm_l": 25.396446448026936,
+    "thigh_l": 49.64370964823791,
+    "calf_l": 50.1420971828747,
+    "palm_l": 10.063057262082976,
+    "upper_arm_r": 28.456638167473773,
+    "forearm_r": 25.396480244342317,
+    "thigh_r": 49.643692417728516,
+    "calf_r": 50.14227297919654,
+    "palm_r": 10.063058778400286
+  },
+  "measurement_limit": "Native bone lengths describe the rig, not the visible limb contours. Head bounds include hair and ornaments.",
+  "status": "pending_visual_review",
+  "game_runtime_allowed": false,
+  "coverage_complete": true
+}

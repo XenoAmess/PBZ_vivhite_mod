@@ -1,0 +1,23 @@
+{
+  "version": "1.1.0",
+  "units": "centimeters",
+  "sections": [
+    {"id":"head","target":[0,4,178],"scale":52,"checks":["cranial dome","occiput volume","facial profile","jaw contour","hair silhouette"]},
+    {"id":"neck_shoulders","target":[0,2,155],"scale":80,"checks":["head-neck attachment","neck length and thickness","clavicle slope","deltoid volume"]},
+    {"id":"torso","target":[0,0,132],"scale":90,"checks":["rib cage","waist","chest and back contour","garment continuity"]},
+    {"id":"upper_arm_left","target":[30,3,140],"scale":55,"checks":["upper-arm length","sleeve volume","shoulder and elbow position"]},
+    {"id":"upper_arm_right","target":[-30,3,140],"scale":55,"checks":["upper-arm length","sleeve volume","shoulder and elbow position"]},
+    {"id":"elbow_left","target":[40,4,131],"scale":40,"checks":["joint position","elbow thickness","sleeve bend"]},
+    {"id":"elbow_right","target":[-40,4,131],"scale":40,"checks":["joint position","elbow thickness","sleeve bend"]},
+    {"id":"hand_left","target":[56,-8,107],"scale":42,"checks":["wrist continuity","palm proportions","five separated fingers","thumb opposition","finger joint alignment"]},
+    {"id":"hand_right","target":[-56,-8,107],"scale":42,"checks":["wrist continuity","palm proportions","five separated fingers","thumb opposition","finger joint alignment"]},
+    {"id":"pelvis","target":[0,0,101],"scale":75,"checks":["pelvic width","hip attachment","groin and skirt geometry"]},
+    {"id":"legs","target":[0,0,64],"scale":136,"checks":["thigh-calf proportion","leg contour","left-right consistency"]},
+    {"id":"knees","target":[0,0,59],"scale":68,"checks":["kneecap position","joint thickness","continuity"]},
+    {"id":"feet","target":[0,-3,13],"scale":56,"checks":["ankle attachment","heel","instep","toe volume","ground contact"]}
+  ],
+  "full_body": {"target":[0,0,101],"scale":230,"angles_deg":[0,45,90,135,180,225,270,315]},
+  "detail_views_deg":[0,45,90,180,270,315],
+  "passes":["clay","textured"],
+  "acceptance":"Every section must be visually reviewed against the Delta Live2D reference. Bone lengths alone cannot establish correct anatomy."
+}

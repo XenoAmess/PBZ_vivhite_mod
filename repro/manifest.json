@@ -107,6 +107,141 @@
       "sha256": "6c9483b8af73e2b5adf353ed14e0e64b61e635ce9ce9bd9e9c5a67c13fcff377"
     },
     {
+      "path": "repro/models/repair_015/Delta_live2d.blend",
+      "bytes": 6788291,
+      "sha256": "af7a36ebc8ad4f945862fcc2203e4d34e7015ce3d8ac773e78020294fe0d67b1"
+    },
+    {
+      "path": "repro/models/repair_015/head_rebuild.json",
+      "bytes": 234,
+      "sha256": "1e9e4454237130c5b80da06bcd03e1822b045a8663a677fd2bdff3913ee33a97"
+    },
+    {
+      "path": "repro/native_inputs/repair_015/Delta_adult.blend",
+      "bytes": 6805023,
+      "sha256": "6064c03c6c95e83e6135989a345d27c1c7be5635804877d9679fa763f58e3977"
+    },
+    {
+      "path": "repro/tests/shape_015/Delta_ShapeAudit.blend",
+      "bytes": 6801516,
+      "sha256": "f64e28cd177545b034512ddb405af5cb483379dca7184a6a1c8c12b80149c4da"
+    },
+    {
+      "path": "repro/tests/shape_015/shape_manifest.json",
+      "bytes": 24178,
+      "sha256": "437146fca0b7e74f2b662405bf672106a95ddbf022db9b74efc4f6421f38a382"
+    },
+    {
+      "path": "repro/tests/shape_015/shape_review.json",
+      "bytes": 3498,
+      "sha256": "14513666c2c97fc5e9812d8e85d6382455330b8dee1d87ab49ab5b148acb5892"
+    },
+    {
+      "path": "repro/models/anatomy_foundation_002/Delta_adult.blend",
+      "bytes": 9024444,
+      "sha256": "53675ad4ad7e0e7bd3fb4d979a15e4715a586e377e24930ba7df635be4b5e854"
+    },
+    {
+      "path": "repro/models/anatomy_foundation_002/foundation_report.json",
+      "bytes": 2084,
+      "sha256": "ec274711835c295b50b56323cd400413706b4bb80a0dd57accd0253142c30456"
+    },
+    {
+      "path": "repro/tests/anatomy_foundation_002/Delta_SelfTest.blend",
+      "bytes": 1559482,
+      "sha256": "24e1f158269e4224bc76af1e46537e437cd3d47589c0d9ec446f473c7e0648e5"
+    },
+    {
+      "path": "repro/tests/anatomy_foundation_002/sampling_report.json",
+      "bytes": 156436,
+      "sha256": "5f504c907e35d2bfa3829f75d50bdeea12246e0017058700b9a4f21200105737"
+    },
+    {
+      "path": "repro/third_party/VRoid_base_female.zip",
+      "bytes": 13149860,
+      "sha256": "bf2717cff70b40a278df56e137dbb699c6499551096fa4c005e9aeca1de68eb3"
+    },
+    {
+      "path": "repro/third_party/Blender_Human_Base_Meshes_v1.4.1.zip",
+      "bytes": 50643039,
+      "sha256": "811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515"
+    },
+    {
+      "path": "repro/game_reference/adult_ground_reference.json",
+      "bytes": 389,
+      "sha256": "52b5be6009da1998480d67e4f88d927f06fa9197c7851232b2774e0730fa0e5f"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr_Body.uemodel",
+      "bytes": 3512792,
+      "sha256": "cf6cd1d285f8cf1148152b60ad3421043d264f5f37954da5195aeb9fdeded0d7"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr_Head.uemodel",
+      "bytes": 14920580,
+      "sha256": "59889291682f4f8d6cfb6a7f44cf1607d91ed45926f5c522185926ffb49a7157"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr/YuEr_Reference.blend",
+      "bytes": 6156088,
+      "sha256": "b4485e5c39c82454368439fa88b59cc7bc8ba3ce1e8d9d9dabd4ec5330204d3b"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr/reference_report.json",
+      "bytes": 3120,
+      "sha256": "f4445be3ff333db90c3bbd13a2933e1d91a68bd641dab092c9bc50c86d7dc96a"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr/body_front.png",
+      "bytes": 638590,
+      "sha256": "223f444a95de6dfff41ad8d4d5a6ce11ade4c2b1ae15b91bcd8f797a5e827a3f"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr/body_side.png",
+      "bytes": 595621,
+      "sha256": "626034454326e51a3829cd2eb52feec38d3ae77ae6e55a4ca640d0cc107271e4"
+    },
+    {
+      "path": "repro/game_reference/female/YuEr/head_oblique.png",
+      "bytes": 713033,
+      "sha256": "7bdf9abb0f37406eac63a75351bc06aaf00ff821642c321b2aaeaf7ac3caf9c4"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui_Body.uemodel",
+      "bytes": 5782493,
+      "sha256": "f49c3679024552245e064d1ca7f3bb241f3cf1836bb670dfe1f01a069ee8a87d"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui_Head.uemodel",
+      "bytes": 16301172,
+      "sha256": "e42433a3f1a08e1707a2870dfdaf7492dcc1390d581bb5393f398cd815b027f3"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui/MuXiaoKui_Reference.blend",
+      "bytes": 7714451,
+      "sha256": "70dbbc6f1cdc00d6d4acd4b8f1296016e4b3f7a99eabc4122c4d94d62ad39cda"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui/reference_report.json",
+      "bytes": 3228,
+      "sha256": "902dc093fa8de68467b58eacd87cc44f547376a17307b4fd27859bcf93d8e76d"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui/body_front.png",
+      "bytes": 674769,
+      "sha256": "89a26b6fac819f4f92206c3940950e3da75a16702c997d7c8ee584e84e3a8514"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui/body_side.png",
+      "bytes": 612578,
+      "sha256": "79712985522803775b09e73946fc7dd6a659ed5cdd40b6a85939dec8ddf0087b"
+    },
+    {
+      "path": "repro/game_reference/female/MuXiaoKui/head_oblique.png",
+      "bytes": 725452,
+      "sha256": "a09b9dedd4473f97297ca0c9a0c12e0ecad068981e81572f17c7afb7b80e9c9f"
+    },
+    {
       "path": "resources/Delta.zip",
       "bytes": 40675064,
       "sha256": "443a84d3fa1b52f166e9034dfe5f0d285a17d72fa80dd5cd8d7cd56bfd7c3b86"

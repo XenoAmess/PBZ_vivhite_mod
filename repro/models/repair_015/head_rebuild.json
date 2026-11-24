@@ -1,0 +1,7 @@
+{
+  "source": "output/live2d_delta/qa_geometry_010/Delta_live2d.blend",
+  "method": "single front/back depth envelope with stitched silhouette",
+  "sampling_step_m": 0.002,
+  "head_open_edges": 0,
+  "status": "pending_render_review"
+}

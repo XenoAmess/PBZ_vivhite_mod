@@ -1,0 +1,159 @@
+{
+  "input_hashes": {
+    "model": "6064c03c6c95e83e6135989a345d27c1c7be5635804877d9679fa763f58e3977",
+    "suite": "4fa242470530c652960c605bf0f0448904cd74253628dbd044c7c2b36e015362",
+    "runner": "d1571761ab0ec768f5b5a4949951272fad12fa96c38c22dd1ce9e581f647cb4a"
+  },
+  "status": "failed",
+  "sections": [
+    {
+      "id": "head",
+      "status": "fail",
+      "notes": [
+        "Flat cranial dome, box-shaped occiput, angular face and jaw shelf"
+      ],
+      "evidence": [
+        "head.jpg"
+      ]
+    },
+    {
+      "id": "neck_shoulders",
+      "status": "fail",
+      "notes": [
+        "Columnar neck and peaked shoulders, unnatural garment connection"
+      ],
+      "evidence": [
+        "neck_shoulders.jpg"
+      ]
+    },
+    {
+      "id": "torso",
+      "status": "fail",
+      "notes": [
+        "Plate-like rib cage, abrupt waist transition and texture boundary"
+      ],
+      "evidence": [
+        "torso.jpg"
+      ]
+    },
+    {
+      "id": "upper_arm_left",
+      "status": "fail",
+      "notes": [
+        "Uniform sleeve tube and rigid deltoid contour"
+      ],
+      "evidence": [
+        "upper_arm_left.jpg"
+      ]
+    },
+    {
+      "id": "upper_arm_right",
+      "status": "fail",
+      "notes": [
+        "Uniform sleeve tube, rigid contour and torn ribbon detail"
+      ],
+      "evidence": [
+        "upper_arm_right.jpg"
+      ]
+    },
+    {
+      "id": "elbow_left",
+      "status": "fail",
+      "notes": [
+        "Sharp neutral bend; dynamic validation still required"
+      ],
+      "evidence": [
+        "elbow_left.jpg"
+      ]
+    },
+    {
+      "id": "elbow_right",
+      "status": "fail",
+      "notes": [
+        "Sharp neutral bend; dynamic validation still required"
+      ],
+      "evidence": [
+        "elbow_right.jpg"
+      ]
+    },
+    {
+      "id": "hand_left",
+      "status": "fail",
+      "notes": [
+        "Block palm, detached cylindrical fingers, wrist seam and floating fragment"
+      ],
+      "evidence": [
+        "hand_left.jpg"
+      ]
+    },
+    {
+      "id": "hand_right",
+      "status": "fail",
+      "notes": [
+        "Block palm, detached cylindrical fingers, wrist seam and floating fragment"
+      ],
+      "evidence": [
+        "hand_right.jpg"
+      ]
+    },
+    {
+      "id": "pelvis",
+      "status": "fail",
+      "notes": [
+        "Skirt folds collapse; covered pelvic anatomy requires isolated foundation review"
+      ],
+      "evidence": [
+        "pelvis.jpg"
+      ]
+    },
+    {
+      "id": "legs",
+      "status": "fail",
+      "notes": [
+        "Faceted thigh/calf silhouette; verify lengths against character reference"
+      ],
+      "evidence": [
+        "legs.jpg"
+      ]
+    },
+    {
+      "id": "knees",
+      "status": "fail",
+      "notes": [
+        "Abrupt angular thigh-to-calf contour"
+      ],
+      "evidence": [
+        "knees.jpg"
+      ]
+    },
+    {
+      "id": "feet",
+      "status": "fail",
+      "notes": [
+        "Distorted shoe shape and stretched UV; ground contact needs native reference comparison"
+      ],
+      "evidence": [
+        "feet.jpg"
+      ]
+    }
+  ],
+  "open_defects": [
+    "head",
+    "neck_shoulders",
+    "torso",
+    "upper_arm_left",
+    "upper_arm_right",
+    "elbow_left",
+    "elbow_right",
+    "hand_left",
+    "hand_right",
+    "pelvis",
+    "legs",
+    "knees",
+    "feet"
+  ],
+  "limitations": [
+    "Neutral anatomy audit only; this is not ROM or runtime acceptance",
+    "Rig bone lengths do not prove visible limb proportions are correct"
+  ]
+}

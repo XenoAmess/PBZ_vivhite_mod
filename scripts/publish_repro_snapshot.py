@@ -32,6 +32,26 @@ for run in ['repair_001']:
     for name in ['Delta_SelfTest.blend','sampling_report.json']:
         src=f'output/live2d_delta/qa_runs/{run}/{name}'
         if (ROOT/src).is_file():items[src]=f'tests/{run}/{name}'
+items.update({
+ 'output/live2d_delta/qa_geometry_015/Delta_live2d.blend':'models/repair_015/Delta_live2d.blend',
+ 'output/live2d_delta/qa_geometry_015/head_rebuild.json':'models/repair_015/head_rebuild.json',
+ 'build/qa_pre_inputs_015/Delta_adult.blend':'native_inputs/repair_015/Delta_adult.blend',
+ 'output/live2d_delta/shape_audits/repair_015_v11/Delta_ShapeAudit.blend':'tests/shape_015/Delta_ShapeAudit.blend',
+ 'output/live2d_delta/shape_audits/repair_015_v11/shape_manifest.json':'tests/shape_015/shape_manifest.json',
+ 'output/live2d_delta/shape_audits/repair_015_v11/shape_review.json':'tests/shape_015/shape_review.json',
+ 'output/live2d_delta/anatomy_foundation_002/Delta_adult.blend':'models/anatomy_foundation_002/Delta_adult.blend',
+ 'output/live2d_delta/anatomy_foundation_002/foundation_report.json':'models/anatomy_foundation_002/foundation_report.json',
+ 'output/live2d_delta/qa_runs/anatomy_foundation_002/Delta_SelfTest.blend':'tests/anatomy_foundation_002/Delta_SelfTest.blend',
+ 'output/live2d_delta/qa_runs/anatomy_foundation_002/sampling_report.json':'tests/anatomy_foundation_002/sampling_report.json',
+ 'resources/third_party/VRoid_base_female.zip':'third_party/VRoid_base_female.zip',
+ 'resources/third_party/Blender_Human_Base_Meshes_v1.4.1.zip':'third_party/Blender_Human_Base_Meshes_v1.4.1.zip',
+ 'artifacts/native_reference_bounds.json':'game_reference/adult_ground_reference.json'})
+for character in ['YuEr','MuXiaoKui']:
+    for part in ['Body','Head']:
+        path=next((ROOT/'artifacts/extracted/female_reference').rglob(character+'_'+part+'.uemodel'))
+        items[path.relative_to(ROOT).as_posix()]=f'game_reference/female/{character}_{part}.uemodel'
+    for name in [character+'_Reference.blend','reference_report.json','body_front.png','body_side.png','head_oblique.png']:
+        items[f'artifacts/female_references/{character}/{name}']=f'game_reference/female/{character}/{name}'
 denied=re.compile(r'(^|/)(_private|credentials?|secrets?)(/|$)|(^|/)(aes\.txt|\.env|id_rsa|id_ed25519)$',re.I)
 token=re.compile(rb'gh[op]_[A-Za-z0-9]{30,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----')
 records=[]

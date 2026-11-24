@@ -1,0 +1,17 @@
+{
+  "source": "artifacts/extracted/original/HuaShira/Characters/Hero/Hero_Hun/SkinParts/Hun_Body_Simple.uemodel",
+  "units": "cm",
+  "bounds": {
+    "min": [
+      -61.33586502075195,
+      -19.838895797729492,
+      -0.0518340989947319
+    ],
+    "max": [
+      61.33584213256836,
+      26.36710548400879,
+      171.05609130859375
+    ]
+  },
+  "foot_vertices_z_min": -0.0518340989947319
+}

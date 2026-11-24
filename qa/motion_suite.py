@@ -20,4 +20,11 @@ def acceptance(manifest,review):
     actual={r['id']:r.get('status') for r in review.get('cases',[])}
     if not expected or set(actual)!=expected or any(v!='pass' for v in actual.values()):reasons.append('case review incomplete or failed')
     if review.get('open_defects'):reasons.append('unresolved defects')
+    shape=review.get('shape_check',{})
+    required={s['id'] for s in json.loads((Path(__file__).parent/'shape_audit_v1.json').read_text(encoding='utf-8'))['sections']}
+    sections={s['id']:s.get('status') for s in shape.get('sections',[])}
+    if not shape.get('coverage_complete'):reasons.append('whole-body shape coverage missing')
+    if shape.get('model_sha256')!=manifest.get('input_hashes',{}).get('model'):reasons.append('shape review belongs to a different model')
+    if set(sections)!=required or any(v!='pass' for v in sections.values()):reasons.append('whole-body shape review incomplete or failed')
+    if shape.get('open_defects'):reasons.append('unresolved shape defects')
     return {'status':'failed' if reasons else 'offline_accepted','game_runtime_allowed':not reasons,'reasons':reasons}

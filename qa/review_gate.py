@@ -2,7 +2,7 @@
 import argparse,json
 from pathlib import Path
 from qa.motion_suite import acceptance
-parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--review')
+parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--review');parser.add_argument('--shape-run')
 args=parser.parse_args();run=Path(args.run).resolve()
 manifest=json.loads((run/'sampling_report.json').read_text(encoding='utf-8'))
 review_path=Path(args.review) if args.review else run/'visual_review.json'
@@ -12,6 +12,14 @@ else:
         'cases':[{'id':id,'status':'pending','notes':[]} for id in manifest['case_ids']],
         'open_defects':['Visual review has not been completed']}
     review_path.write_text(json.dumps(review,ensure_ascii=False,indent=2),encoding='utf-8')
+if args.shape_run:
+    shape_dir=Path(args.shape_run).resolve()
+    shape_manifest=json.loads((shape_dir/'shape_manifest.json').read_text(encoding='utf-8'))
+    shape_review=json.loads((shape_dir/'shape_review.json').read_text(encoding='utf-8'))
+    assert shape_review['input_hashes']==shape_manifest['input_hashes'],'Shape review input mismatch'
+    review['shape_check']={'coverage_complete':shape_manifest['coverage_complete'],
+        'model_sha256':shape_manifest['input_hashes']['model'],'sections':shape_review['sections'],
+        'open_defects':shape_review['open_defects']}
 result=acceptance(manifest,review);result['input_hashes']=manifest['input_hashes']
 (run/'offline_gate.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(result,ensure_ascii=True))

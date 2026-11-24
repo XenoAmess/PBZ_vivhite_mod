@@ -1,0 +1,82 @@
+{
+  "source": "VRoid Project Base_Female (CC0), anatomy foundation only",
+  "license_source": "https://vroid.pixiv.help/hc/en-us/articles/4402614652569",
+  "native_rig_unchanged": true,
+  "mapped_source_bones": 52,
+  "vertices": 6235,
+  "status": "foundation_only_pending_whole_body_review",
+  "target_geometry_anchors_cm": {
+    "spine_01": [
+      0,
+      5.1,
+      115
+    ],
+    "spine_03": [
+      0,
+      4.8,
+      130
+    ],
+    "spine_05": [
+      0,
+      4.0,
+      143
+    ],
+    "neck_01": [
+      0,
+      4.8,
+      159
+    ],
+    "head": [
+      0,
+      5.4,
+      169
+    ]
+  },
+  "source_surfaces": [
+    {
+      "object": "Face",
+      "materials": [
+        "F00_000_00_FaceMouth_00_FACE",
+        "F00_000_00_EyeWhite_00_EYE",
+        "F00_000_00_FaceEyeline_00_FACE",
+        "F00_000_00_FaceEyelash_00_FACE",
+        "F00_000_00_FaceBrow_00_FACE",
+        "F00_000_00_EyeIris_00_EYE",
+        "F00_000_00_EyeHighlight_00_EYE",
+        "F00_000_00_Face_00_SKIN",
+        "F00_000_00_EyeExtra_01_EYE"
+      ],
+      "polygon_counts": {
+        "F00_000_00_FaceMouth_00_FACE": 496,
+        "F00_000_00_EyeWhite_00_EYE": 96,
+        "F00_000_00_FaceEyeline_00_FACE": 384,
+        "F00_000_00_FaceEyelash_00_FACE": 224,
+        "F00_000_00_FaceBrow_00_FACE": 160,
+        "F00_000_00_EyeIris_00_EYE": 192,
+        "F00_000_00_EyeHighlight_00_EYE": 192,
+        "F00_000_00_Face_00_SKIN": 1350,
+        "F00_000_00_EyeExtra_01_EYE": 64
+      }
+    },
+    {
+      "object": "Body",
+      "materials": [
+        "F00_001_01_Body_00_SKIN",
+        "F00_001_01_Tops_01_CLOTH",
+        "F00_001_01_Accessory_Tie_01_CLOTH",
+        "F00_001_01_Bottoms_01_CLOTH",
+        "F00_001_01_Shoes_01_CLOTH",
+        "F00_000_HairBack_00_HAIR"
+      ],
+      "polygon_counts": {
+        "F00_001_01_Body_00_SKIN": 7732,
+        "F00_001_01_Tops_01_CLOTH": 2066,
+        "F00_001_01_Accessory_Tie_01_CLOTH": 214,
+        "F00_001_01_Bottoms_01_CLOTH": 700,
+        "F00_001_01_Shoes_01_CLOTH": 540,
+        "F00_000_HairBack_00_HAIR": 394
+      }
+    }
+  ],
+  "skin_only": true
+}

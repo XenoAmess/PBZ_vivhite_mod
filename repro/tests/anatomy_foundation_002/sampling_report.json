@@ -1,0 +1,5265 @@
+{
+  "model": "output\\live2d_delta\\anatomy_foundation_002\\Delta_adult.blend",
+  "input_hashes": {
+    "model": "53675ad4ad7e0e7bd3fb4d979a15e4715a586e377e24930ba7df635be4b5e854",
+    "suite": "43ca377f108d98c6b4650ad6a6cbbe947ece514124260340aee02cdc91c1ef72",
+    "runner": "2d39de3f66f738bf2a11f4af79534c4ff8bf2de663ee9129ab3b4ecb6c7e4c56",
+    "contract": "7cf8ed8642bc0e6b2950fc5ad35487e827ae8f468199804a03de61a7ed54ee15"
+  },
+  "suite_version": "1.0.0",
+  "native_input": "output\\live2d_delta\\anatomy_foundation_002\\Delta_adult.blend",
+  "bones": 264,
+  "case_ids": [
+    "neck_pitch",
+    "neck_yaw",
+    "neck_roll",
+    "head_pivot",
+    "neck_combinations_37",
+    "arms_abduction",
+    "arm_left",
+    "arm_right",
+    "arms_forward",
+    "elbows",
+    "arm_twist",
+    "shrug",
+    "wrists_pitch",
+    "wrists_roll",
+    "fingers",
+    "guard",
+    "reach_shoulder",
+    "reach_head",
+    "spine_pitch",
+    "spine_roll",
+    "spine_yaw",
+    "torso_turn",
+    "hips_forward",
+    "hips_side",
+    "hips_twist",
+    "knees",
+    "ankles_pitch",
+    "ankles_roll",
+    "toes",
+    "squat"
+  ],
+  "purpose": "controlled offline diagnosis; no game process launched",
+  "axis_convention": "native Z up; -Y front; character left is +X; neck pitch positive means up",
+  "angle_note": "arm abduction is rotation from the native A pose, not from arms-down; these are chosen diagnostic ranges, not anatomical limits",
+  "neck_distribution": {
+    "neck_01": 0.25,
+    "neck_02": 0.35,
+    "head": 0.4
+  },
+  "metrics_note": "edge length changes flag frames for visual inspection; they do not establish good anatomy or visual acceptance",
+  "clips": [
+    {
+      "id": "neck_pitch",
+      "title": "颈部：低头与抬头",
+      "group": "neck",
+      "action": "DeltaTest_neck_pitch",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -25,
+          "label": "-25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0049912275547275,
+              "stretch_max": 1.0551712835100995,
+              "compression_p05": 0.8681792887214267
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.002489907060475,
+              "stretch_max": 1.0336473619770428,
+              "compression_p05": 0.9985233915976569
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -10,
+          "label": "-10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0014556005127553,
+              "stretch_max": 1.0128075406347499,
+              "compression_p05": 0.9270150599942226
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0009560516484728,
+              "stretch_max": 1.0127739375458022,
+              "compression_p05": 0.9993333724189847
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1986133507934638,
+              "stretch_max": 2.0068144923407636,
+              "compression_p05": 0.9976765322391917
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0016018131273665,
+              "stretch_max": 1.014870993237426,
+              "compression_p05": 0.9982618681742326
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 35,
+          "label": "35 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.355325641782775,
+              "stretch_max": 2.7787053584480486,
+              "compression_p05": 0.9974068543218695
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.002863112879928,
+              "stretch_max": 1.0270208685315825,
+              "compression_p05": 0.9971141758253718
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "neck_yaw",
+      "title": "颈部：左右转头",
+      "group": "neck",
+      "action": "DeltaTest_neck_yaw",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -60,
+          "label": "-60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.149130207192594,
+              "stretch_max": 2.0939581811848624,
+              "compression_p05": 0.8932242807103882
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163178093887497,
+              "stretch_max": 1.1355065066807555,
+              "compression_p05": 0.992356572086967
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -30,
+          "label": "-30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0569709668481078,
+              "stretch_max": 1.37167637984311,
+              "compression_p05": 0.9494686113573569
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.006438788603811,
+              "stretch_max": 1.0638817639710885,
+              "compression_p05": 0.9952448938828719
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0593022296919,
+              "stretch_max": 1.3716885725944525,
+              "compression_p05": 0.954217185400416
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0064391873944067,
+              "stretch_max": 1.0638878130145715,
+              "compression_p05": 0.9952441606391864
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1491301870212596,
+              "stretch_max": 2.093966320050118,
+              "compression_p05": 0.8932330835168907
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163176442888504,
+              "stretch_max": 1.135512915763496,
+              "compression_p05": 0.992357160426623
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "neck_roll",
+      "title": "颈部：左右侧倾",
+      "group": "neck",
+      "action": "DeltaTest_neck_roll",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -25,
+          "label": "-25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1171299077425576,
+              "stretch_max": 1.4336796946100436,
+              "compression_p05": 0.9572627433048034
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.006024641024401,
+              "stretch_max": 1.0379853790633233,
+              "compression_p05": 0.9963767338880086
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -12,
+          "label": "-12 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.041614802174678,
+              "stretch_max": 1.115648244552384,
+              "compression_p05": 0.9773796929811195
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.002599678598564,
+              "stretch_max": 1.0177977457280714,
+              "compression_p05": 0.9978045094758327
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 12,
+          "label": "12 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0416173587209987,
+              "stretch_max": 1.115668362303442,
+              "compression_p05": 0.9774196990910339
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0026013336293682,
+              "stretch_max": 1.017798712025997,
+              "compression_p05": 0.9978034467638537
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 25,
+          "label": "25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.117130071397437,
+              "stretch_max": 1.433696747341747,
+              "compression_p05": 0.957357214198463
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0060238309117135,
+              "stretch_max": 1.0379831601167324,
+              "compression_p05": 0.996377310260525
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "head_pivot",
+      "title": "头骨隔离：俯仰",
+      "group": "neck",
+      "action": "DeltaTest_head_pivot",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -25,
+          "label": "-25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0811131325943704,
+              "stretch_max": 1.307675639050733,
+              "compression_p05": 0.870296889892754
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -10,
+          "label": "-10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0041865526330431,
+              "stretch_max": 1.0508107003371165,
+              "compression_p05": 0.9242485747556102
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.297841553626364,
+              "stretch_max": 2.539605740399456,
+              "compression_p05": 0.9906067793753817
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 35,
+          "label": "35 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5477655348406676,
+              "stretch_max": 3.696837168145283,
+              "compression_p05": 0.9753272407344565
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "neck_combinations_37",
+      "title": "颈部：37个项目组合与隔离姿态",
+      "group": "neck",
+      "action": "DeltaTest_neck_combinations_37",
+      "frame_range": [
+        1,
+        605
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=-60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.033412283681334,
+              "stretch_max": 1.1841047712875885,
+              "compression_p05": 0.8686673338770238
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0188484997436262,
+              "stretch_max": 1.1551112848943221,
+              "compression_p05": 0.9927755021050542
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=-60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0531847435593436,
+              "stretch_max": 1.6248987765164569,
+              "compression_p05": 0.8678150305482194
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0170420176567794,
+              "stretch_max": 1.1749864477681653,
+              "compression_p05": 0.9936855780233744
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=-60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.2368975163451177,
+              "stretch_max": 2.6433470318584864,
+              "compression_p05": 0.8425914041549446
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0155927225938248,
+              "stretch_max": 1.2034120943111453,
+              "compression_p05": 0.9913268924981438
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=0, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.030038288403546,
+              "stretch_max": 1.2026229176756513,
+              "compression_p05": 0.8813117093702052
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0078540538733642,
+              "stretch_max": 1.0528558786595048,
+              "compression_p05": 0.9969588211595302
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=0, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0049912275547275,
+              "stretch_max": 1.0551712835100995,
+              "compression_p05": 0.8681792887214267
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.002489907060475,
+              "stretch_max": 1.0336473619770428,
+              "compression_p05": 0.9985233915976569
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 93,
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=0, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0300387491627618,
+              "stretch_max": 1.2026293165796287,
+              "compression_p05": 0.8815131795734107
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0078543403479074,
+              "stretch_max": 1.052859106944741,
+              "compression_p05": 0.996957942487084
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 109,
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.2368926385744985,
+              "stretch_max": 2.6433419691685884,
+              "compression_p05": 0.8425919678369637
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.015591488242899,
+              "stretch_max": 1.2034103884936151,
+              "compression_p05": 0.9913264802457862
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 125,
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.06152697581036,
+              "stretch_max": 1.6248943088013181,
+              "compression_p05": 0.8678138296879936
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.017037447901234,
+              "stretch_max": 1.1749915859411348,
+              "compression_p05": 0.993684274826286
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 141,
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0334178488095291,
+              "stretch_max": 1.1841018431181083,
+              "compression_p05": 0.8686680127428422
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.01886019309223,
+              "stretch_max": 1.1551146399705594,
+              "compression_p05": 0.9927752930915023
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 157,
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=-60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0929489453415002,
+              "stretch_max": 1.561052189343909,
+              "compression_p05": 0.9279929746311218
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0192439963526332,
+              "stretch_max": 1.1255494033700209,
+              "compression_p05": 0.9928531778475705
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 173,
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=-60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.149130207192594,
+              "stretch_max": 2.0939581811848624,
+              "compression_p05": 0.8932242807103882
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163178093887497,
+              "stretch_max": 1.1355065066807555,
+              "compression_p05": 0.992356572086967
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 189,
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=-60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.2771086889474552,
+              "stretch_max": 2.8852236696501947,
+              "compression_p05": 0.8798584440430197
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163616583060444,
+              "stretch_max": 1.1659296816829148,
+              "compression_p05": 0.9906456458441562
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 205,
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=0, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1171299077425576,
+              "stretch_max": 1.4336796946100436,
+              "compression_p05": 0.9572627433048034
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.006024641024401,
+              "stretch_max": 1.0379853790633233,
+              "compression_p05": 0.9963767338880086
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 221,
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=0, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 237,
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=0, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.117130071397437,
+              "stretch_max": 1.433696747341747,
+              "compression_p05": 0.957357214198463
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0060238309117135,
+              "stretch_max": 1.0379831601167324,
+              "compression_p05": 0.996377310260525
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 253,
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.2771144203624751,
+              "stretch_max": 2.8852232845072665,
+              "compression_p05": 0.8801753614471415
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163612124445047,
+              "stretch_max": 1.165928373842327,
+              "compression_p05": 0.9906501897390788
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 269,
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1491301870212596,
+              "stretch_max": 2.093966320050118,
+              "compression_p05": 0.8932330835168907
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0163176442888504,
+              "stretch_max": 1.135512915763496,
+              "compression_p05": 0.992357160426623
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 285,
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0937034013140567,
+              "stretch_max": 1.5610410673397845,
+              "compression_p05": 0.9301578744359206
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0192523662176942,
+              "stretch_max": 1.1255468181195538,
+              "compression_p05": 0.9928525924173165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 301,
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=-60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.481463938086945,
+              "stretch_max": 3.2543332736435353,
+              "compression_p05": 0.9440415136542557
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0153818342844048,
+              "stretch_max": 1.1525383566929523,
+              "compression_p05": 0.9941289032232286
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 317,
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=-60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5087050521167076,
+              "stretch_max": 3.463040338726999,
+              "compression_p05": 0.9498917085327764
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0162769507389247,
+              "stretch_max": 1.114137182376609,
+              "compression_p05": 0.9925452654640295
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 333,
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=-60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5395283489139204,
+              "stretch_max": 3.8730509790993093,
+              "compression_p05": 0.9384398185245437
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0202448636214707,
+              "stretch_max": 1.1234713355554409,
+              "compression_p05": 0.9924955882724479
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 349,
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=0, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.4205454404802416,
+              "stretch_max": 2.927766541780434,
+              "compression_p05": 0.9874756025699675
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0050089836361682,
+              "stretch_max": 1.064057503033156,
+              "compression_p05": 0.9964701931219546
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 365,
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=0, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.355325641782775,
+              "stretch_max": 2.7787053584480486,
+              "compression_p05": 0.9974068543218695
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.002863112879928,
+              "stretch_max": 1.0270208685315825,
+              "compression_p05": 0.9971141758253718
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 381,
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=0, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.4205453578301426,
+              "stretch_max": 2.9277675123338764,
+              "compression_p05": 0.9874778455837343
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0050114716933984,
+              "stretch_max": 1.0640646946968697,
+              "compression_p05": 0.9964718663751635
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 397,
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=60, roll=-25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5395327470464664,
+              "stretch_max": 3.873056282985473,
+              "compression_p05": 0.9384394769194694
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0202447483931203,
+              "stretch_max": 1.1234704550809367,
+              "compression_p05": 0.9924959276485784
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 413,
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=60, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5087092805185534,
+              "stretch_max": 3.463078298392834,
+              "compression_p05": 0.948528449239469
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.016279355962415,
+              "stretch_max": 1.1141408226602398,
+              "compression_p05": 0.9925428484045873
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 429,
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=60, roll=25",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.4814636450918262,
+              "stretch_max": 3.2543505093533813,
+              "compression_p05": 0.9439346452956807
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0153833115295046,
+              "stretch_max": 1.1525437604949076,
+              "compression_p05": 0.9941271398897741
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 445,
+          "value": {
+            "pitch": -12.5,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=-12.5, yaw=0, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0019336814207458,
+              "stretch_max": 1.0180446038806406,
+              "compression_p05": 0.9108422050598838
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0012035829309651,
+              "stretch_max": 1.0161102512177076,
+              "compression_p05": 0.9991828083166231
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 461,
+          "value": {
+            "pitch": 17.5,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=17.5, yaw=0, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.170789464264865,
+              "stretch_max": 1.8787268822399472,
+              "compression_p05": 0.9978634272269407
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0013741525249586,
+              "stretch_max": 1.0129284792839615,
+              "compression_p05": 0.9984663019139228
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 477,
+          "value": {
+            "pitch": 0,
+            "yaw": -30,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=-30, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0569709668481078,
+              "stretch_max": 1.37167637984311,
+              "compression_p05": 0.9494686113573569
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.006438788603811,
+              "stretch_max": 1.0638817639710885,
+              "compression_p05": 0.9952448938828719
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 493,
+          "value": {
+            "pitch": 0,
+            "yaw": 30,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=30, roll=0",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0593022296919,
+              "stretch_max": 1.3716885725944525,
+              "compression_p05": 0.954217185400416
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0064391873944067,
+              "stretch_max": 1.0638878130145715,
+              "compression_p05": 0.9952441606391864
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 509,
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": -12.5
+          },
+          "label": "pitch=0, yaw=0, roll=-12.5",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0438950646672522,
+              "stretch_max": 1.1249119969212542,
+              "compression_p05": 0.9763768577033319
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0027239528898768,
+              "stretch_max": 1.018559692747342,
+              "compression_p05": 0.9977121543057906
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 525,
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 12.5
+          },
+          "label": "pitch=0, yaw=0, roll=12.5",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0438951126506129,
+              "stretch_max": 1.1249324201585376,
+              "compression_p05": 0.9764176419287892
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0027244783958844,
+              "stretch_max": 1.0185606863177354,
+              "compression_p05": 0.9977120923088897
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 541,
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=-25, yaw=0, roll=0, mode=head_only",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0811131325943704,
+              "stretch_max": 1.307675639050733,
+              "compression_p05": 0.870296889892754
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 557,
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=35, yaw=0, roll=0, mode=head_only",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.5477655348406676,
+              "stretch_max": 3.696837168145283,
+              "compression_p05": 0.9753272407344565
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 573,
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=0, yaw=-60, roll=0, mode=head_only",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1616394597143234,
+              "stretch_max": 2.28700556922256,
+              "compression_p05": 0.8853924277747718
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 589,
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=0, yaw=60, roll=0, mode=head_only",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.1616394019855656,
+              "stretch_max": 2.2870039057585867,
+              "compression_p05": 0.8853922665828694
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arms_abduction",
+      "title": "双臂：侧平举与高举",
+      "group": "arms",
+      "action": "DeltaTest_arms_abduction",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -35,
+          "label": "-35 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.087807074790086,
+              "stretch_max": 1.1490296208891182,
+              "compression_p05": 0.7764896323236123
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000079329753575,
+              "stretch_max": 1.0147477538993779,
+              "compression_p05": 0.9999870467117056
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 45,
+          "label": "45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0018299519309546,
+              "stretch_max": 1.0080716985037232,
+              "compression_p05": 0.9986410691415802
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2150046048343774,
+              "stretch_max": 1.4337012945644783,
+              "compression_p05": 0.8367348297926134
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000110445889447,
+              "stretch_max": 1.099605667373521,
+              "compression_p05": 0.9999902415291106
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 85,
+          "label": "85 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0167754838034233,
+              "stretch_max": 1.0737223066488735,
+              "compression_p05": 0.9883271796453582
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.3569932595819612,
+              "stretch_max": 1.8279128478571265,
+              "compression_p05": 0.6647781130444903
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000111350714518,
+              "stretch_max": 1.1668095528176579,
+              "compression_p05": 0.9999881309003894
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 125,
+          "label": "125 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.032037243918467,
+              "stretch_max": 1.1404381527476533,
+              "compression_p05": 0.9791252448940378
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.458605383220706,
+              "stretch_max": 2.113044189189664,
+              "compression_p05": 0.48822821914886
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000108396247687,
+              "stretch_max": 1.1751265621704043,
+              "compression_p05": 0.9999854280558114
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arm_left",
+      "title": "左臂：抬臂",
+      "group": "arms",
+      "action": "DeltaTest_arm_left",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1107008456937466,
+              "stretch_max": 1.2925007336449046,
+              "compression_p05": 0.917592807965038
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.000003492111866,
+              "stretch_max": 1.0671124341112757,
+              "compression_p05": 0.9999941270106816
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 45,
+          "label": "45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0016024704437803,
+              "stretch_max": 1.0042174437990428,
+              "compression_p05": 0.9994311815367031
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1591399426592783,
+              "stretch_max": 1.4336516952491276,
+              "compression_p05": 0.868989098512384
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000058941499963,
+              "stretch_max": 1.099605667373521,
+              "compression_p05": 0.9999914663611476
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 85,
+          "label": "85 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0151197242852954,
+              "stretch_max": 1.0385741425158894,
+              "compression_p05": 0.9952025375214492
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2392510561845187,
+              "stretch_max": 1.8278233283343794,
+              "compression_p05": 0.7681238136559407
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000056855884534,
+              "stretch_max": 1.1668095528176579,
+              "compression_p05": 0.9999939830582447
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 125,
+          "label": "125 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.028684980786153,
+              "stretch_max": 1.073562316014386,
+              "compression_p05": 0.9910947262286084
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2237527226671863,
+              "stretch_max": 2.11291593379197,
+              "compression_p05": 0.6788474571881121
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000043165453316,
+              "stretch_max": 1.1751265621704043,
+              "compression_p05": 0.999991354322465
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arm_right",
+      "title": "右臂：抬臂",
+      "group": "arms",
+      "action": "DeltaTest_arm_right",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.110700267424832,
+              "stretch_max": 1.2925335213290252,
+              "compression_p05": 0.9175931080004891
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000085700249712,
+              "stretch_max": 1.0671004190980202,
+              "compression_p05": 0.9999931966762159
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 45,
+          "label": "45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.001587613473437,
+              "stretch_max": 1.0038537083803842,
+              "compression_p05": 0.9995744402390541
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.159139421044396,
+              "stretch_max": 1.4337012945644783,
+              "compression_p05": 0.8689846488790754
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000097187083155,
+              "stretch_max": 1.0995910638149349,
+              "compression_p05": 0.9999916904880864
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 85,
+          "label": "85 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0153112642484659,
+              "stretch_max": 1.0350572104939026,
+              "compression_p05": 0.996731136397241
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2392396484962793,
+              "stretch_max": 1.8279128478571265,
+              "compression_p05": 0.7681231427070734
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000107348601945,
+              "stretch_max": 1.1667968324616578,
+              "compression_p05": 0.9999886492015078
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 125,
+          "label": "125 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.028682379448383,
+              "stretch_max": 1.0665289728610836,
+              "compression_p05": 0.9940913973161052
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.223754827146034,
+              "stretch_max": 2.113044189189664,
+              "compression_p05": 0.6788448570638462
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000081760355688,
+              "stretch_max": 1.175120258173362,
+              "compression_p05": 0.9999856587153332
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arms_forward",
+      "title": "双臂：前伸",
+      "group": "arms",
+      "action": "DeltaTest_arms_forward",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -20,
+          "label": "-20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1061489166111675,
+              "stretch_max": 1.2025956852757471,
+              "compression_p05": 0.9068143577780973
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000067729770916,
+              "stretch_max": 1.0154148709953177,
+              "compression_p05": 0.9999923555676112
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1068285179151944,
+              "stretch_max": 1.222799203159378,
+              "compression_p05": 0.8288309230139324
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000077047381335,
+              "stretch_max": 1.0234705274849951,
+              "compression_p05": 0.9999911381504613
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1774949315825212,
+              "stretch_max": 1.3740482597307015,
+              "compression_p05": 0.6592548897260453
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00001117450063,
+              "stretch_max": 1.053040829904347,
+              "compression_p05": 0.9999885651571724
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 85,
+          "label": "85 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.206044492084689,
+              "stretch_max": 1.4351259645355445,
+              "compression_p05": 0.5558975887734388
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000134022354372,
+              "stretch_max": 1.076490035043999,
+              "compression_p05": 0.9999840009105823
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "elbows",
+      "title": "双肘：屈曲",
+      "group": "arms",
+      "action": "DeltaTest_elbows",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.2349832230374012,
+              "stretch_max": 1.41126548889096,
+              "compression_p05": 0.8309130609417503
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.4194187282665323,
+              "stretch_max": 1.7393891392615766,
+              "compression_p05": 0.6293174906007194
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 90,
+          "label": "90 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5288931155557262,
+              "stretch_max": 1.9556193978894114,
+              "compression_p05": 0.7800619608768745
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 120,
+          "label": "120 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.652955490154626,
+              "stretch_max": 2.0431520614970737,
+              "compression_p05": 0.7283012950028199
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "arm_twist",
+      "title": "上臂：轴向旋转",
+      "group": "arms",
+      "action": "DeltaTest_arm_twist",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -60,
+          "label": "-60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2478995110027424,
+              "stretch_max": 1.7029008926533793,
+              "compression_p05": 0.7710319276542731
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000078558320344,
+              "stretch_max": 1.0020006001781192,
+              "compression_p05": 0.9999897717168384
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -30,
+          "label": "-30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1207147510529272,
+              "stretch_max": 1.3753778332771338,
+              "compression_p05": 0.8919539023037576
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000064729559024,
+              "stretch_max": 1.0015849643304644,
+              "compression_p05": 0.9999892367066161
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0924791228947255,
+              "stretch_max": 1.176525422988868,
+              "compression_p05": 0.8699388262795033
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.000006942782218,
+              "stretch_max": 1.0098020630936966,
+              "compression_p05": 0.9999941882812556
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.193876163625777,
+              "stretch_max": 1.3631793258436722,
+              "compression_p05": 0.7177833168310691
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000092160683571,
+              "stretch_max": 1.0160909394169884,
+              "compression_p05": 0.9999915948584612
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "shrug",
+      "title": "锁骨：耸肩",
+      "group": "arms",
+      "action": "DeltaTest_shrug",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 4,
+          "label": "4 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0082074396468677,
+              "stretch_max": 1.0361344259069514,
+              "compression_p05": 0.9940754454709603
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0590491645594098,
+              "stretch_max": 1.0893483241535633,
+              "compression_p05": 0.9959310253080806
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000069531204794,
+              "stretch_max": 1.0130490921999342,
+              "compression_p05": 0.9999913960786169
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 8,
+          "label": "8 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.016566326415964,
+              "stretch_max": 1.0728011313128027,
+              "compression_p05": 0.9884629195835649
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1173930322253225,
+              "stretch_max": 1.1796218467864308,
+              "compression_p05": 0.9918786174781679
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000061817470651,
+              "stretch_max": 1.0264585302173395,
+              "compression_p05": 0.9999919663037572
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 12,
+          "label": "12 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0250195286829107,
+              "stretch_max": 1.109799304404758,
+              "compression_p05": 0.983193857023247
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1756243228418846,
+              "stretch_max": 1.2702319426859912,
+              "compression_p05": 0.9878503897495572
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000067933901953,
+              "stretch_max": 1.0401619889888922,
+              "compression_p05": 0.999993119096666
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 16,
+          "label": "16 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.033525853140384,
+              "stretch_max": 1.1469346677536942,
+              "compression_p05": 0.9782967643166921
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.2337611738889844,
+              "stretch_max": 1.3607107122828677,
+              "compression_p05": 0.9838968949510971
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.000005774674484,
+              "stretch_max": 1.0540761167963126,
+              "compression_p05": 0.999991149767079
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "wrists_pitch",
+      "title": "双腕：屈伸",
+      "group": "arms",
+      "action": "DeltaTest_wrists_pitch",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -45,
+          "label": "-45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -20,
+          "label": "-20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 45,
+          "label": "45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "wrists_roll",
+      "title": "双腕：侧偏",
+      "group": "arms",
+      "action": "DeltaTest_wrists_roll",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -25,
+          "label": "-25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -12,
+          "label": "-12 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 12,
+          "label": "12 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 25,
+          "label": "25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "fingers",
+      "title": "双手：张开至握拳",
+      "group": "arms",
+      "action": "DeltaTest_fingers",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0.25,
+          "label": "0.25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0.5,
+          "label": "0.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 0.75,
+          "label": "0.75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 1,
+          "label": "1 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "guard",
+      "title": "组合：前伸屈肘防御",
+      "group": "arms",
+      "action": "DeltaTest_guard",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0.25,
+          "label": "0.25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.02529776381815,
+              "stretch_max": 1.1474083427637394,
+              "compression_p05": 0.994516008177756
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0685075630020546,
+              "stretch_max": 1.137532513128488,
+              "compression_p05": 0.9036727158665706
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.1890826983900695,
+              "stretch_max": 1.3312048662054197,
+              "compression_p05": 0.8702669103297405
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0.5,
+          "label": "0.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0545770461960198,
+              "stretch_max": 1.3364165274343236,
+              "compression_p05": 0.9901738443499263
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.120682080114118,
+              "stretch_max": 1.2534688339192903,
+              "compression_p05": 0.7981434273873595
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.3506112174043527,
+              "stretch_max": 1.6149328271703878,
+              "compression_p05": 0.711906552426965
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 0.75,
+          "label": "0.75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0877494304074327,
+              "stretch_max": 1.553779145502572,
+              "compression_p05": 0.9841570227488322
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1632381183465186,
+              "stretch_max": 1.3438549903845574,
+              "compression_p05": 0.6947416266404219
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.470119798378481,
+              "stretch_max": 1.8347177451471293,
+              "compression_p05": 0.7312963598349979
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 1,
+          "label": "1 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.124488188350912,
+              "stretch_max": 1.7901983160926258,
+              "compression_p05": 0.9783728524352063
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.191395556464335,
+              "stretch_max": 1.4059086689026639,
+              "compression_p05": 0.6053410528645572
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5388609072718016,
+              "stretch_max": 1.9794385640607355,
+              "compression_p05": 0.8154960520396426
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "reach_shoulder",
+      "title": "组合：交叉触肩",
+      "group": "arms",
+      "action": "DeltaTest_reach_shoulder",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0.25,
+          "label": "0.25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.121273866106633,
+              "stretch_max": 1.2063736207895486,
+              "compression_p05": 0.9358911597504794
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.4283617181314143,
+              "stretch_max": 1.6959059519321387,
+              "compression_p05": 0.7467312228108453
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0.5,
+          "label": "0.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1145294162766581,
+              "stretch_max": 1.193925186650944,
+              "compression_p05": 0.9016544114264196
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5867111922363373,
+              "stretch_max": 1.815817043522415,
+              "compression_p05": 0.676580996071693
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 0.75,
+          "label": "0.75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1496248289492694,
+              "stretch_max": 1.302282825286422,
+              "compression_p05": 0.6350911145336315
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5792868331163448,
+              "stretch_max": 1.7813339034120794,
+              "compression_p05": 0.6987296629828663
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 1,
+          "label": "1 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1860465721784508,
+              "stretch_max": 1.3692790195745188,
+              "compression_p05": 0.49295542290213074
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.3453365352240314,
+              "stretch_max": 1.5171087417060696,
+              "compression_p05": 0.8032728125987272
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "reach_head",
+      "title": "组合：双手触头",
+      "group": "arms",
+      "action": "DeltaTest_reach_head",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0.25,
+          "label": "0.25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1138415896444664,
+              "stretch_max": 1.2154967651859658,
+              "compression_p05": 0.8788595644594324
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5012984353484562,
+              "stretch_max": 1.8953388809259968,
+              "compression_p05": 0.7365729206940274
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0.5,
+          "label": "0.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0534422226543976,
+              "stretch_max": 1.0921965079423774,
+              "compression_p05": 0.8820713770117392
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.6265948672553106,
+              "stretch_max": 2.0798730854460286,
+              "compression_p05": 0.682152864784063
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 0.75,
+          "label": "0.75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.1776808869295687,
+              "stretch_max": 1.328038611749995,
+              "compression_p05": 0.7589585487569717
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.6402215181155064,
+              "stretch_max": 2.069658153427008,
+              "compression_p05": 0.6978085849324891
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 1,
+          "label": "1 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.27996673358907,
+              "stretch_max": 1.5452752759688257,
+              "compression_p05": 0.6050294198099785
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.5294113676673367,
+              "stretch_max": 1.879563199348366,
+              "compression_p05": 0.7143064651147354
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "spine_pitch",
+      "title": "脊柱：前屈后仰",
+      "group": "body",
+      "action": "DeltaTest_spine_pitch",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -15,
+          "label": "-15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000029571787505,
+              "stretch_max": 1.0000055093558775,
+              "compression_p05": 0.999993825725597
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000051133906398,
+              "stretch_max": 1.0009099242364106,
+              "compression_p05": 0.9999946803373169
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000056286537666,
+              "stretch_max": 1.0000110548764467,
+              "compression_p05": 0.9999935955717827
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001548118282,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000046253327386,
+              "stretch_max": 1.000010445110081,
+              "compression_p05": 0.9999948252646702
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000002249964142,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999943664394876
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 10,
+          "label": "10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000040630686071,
+              "stretch_max": 1.00000595513106,
+              "compression_p05": 0.9999939541451156
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004842046033,
+              "stretch_max": 1.0030116491317151,
+              "compression_p05": 0.9999934873664562
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000067532579804,
+              "stretch_max": 1.0000138815174957,
+              "compression_p05": 0.9999933703940578
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.000005265678026,
+              "stretch_max": 1.00000696257824,
+              "compression_p05": 0.9999942653377669
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000061059500138,
+              "stretch_max": 1.0067902959098198,
+              "compression_p05": 0.9999954308377121
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000043600771527,
+              "stretch_max": 1.0000270484388734,
+              "compression_p05": 0.9999905613311698
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000024261021427,
+              "stretch_max": 1.0000068860515399,
+              "compression_p05": 0.9999962223323241
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000066516930748,
+              "stretch_max": 1.0112492317216693,
+              "compression_p05": 0.9999938223748407
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.000005328775931,
+              "stretch_max": 1.0000224462322864,
+              "compression_p05": 0.9999917752276264
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "spine_roll",
+      "title": "脊柱：侧屈",
+      "group": "body",
+      "action": "DeltaTest_spine_roll",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -20,
+          "label": "-20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000038142430603,
+              "stretch_max": 1.0000090827428059,
+              "compression_p05": 0.9999942262652151
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000048725478103,
+              "stretch_max": 1.0185592318637449,
+              "compression_p05": 0.999994765945292
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000046357473402,
+              "stretch_max": 1.000018726802727,
+              "compression_p05": 0.9999926836106529
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -10,
+          "label": "-10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000056045694334,
+              "stretch_max": 1.0000087391627832,
+              "compression_p05": 0.9999951644221619
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000054602506694,
+              "stretch_max": 1.0091168710741842,
+              "compression_p05": 0.9999948331218013
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000071138460378,
+              "stretch_max": 1.0000224272148759,
+              "compression_p05": 0.9999926946863629
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001548118282,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000046253327386,
+              "stretch_max": 1.000010445110081,
+              "compression_p05": 0.9999948252646702
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000002249964142,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999943664394876
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 10,
+          "label": "10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000057366822142,
+              "stretch_max": 1.0000083619406923,
+              "compression_p05": 0.9999951954417421
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000005948686913,
+              "stretch_max": 1.0091274260864957,
+              "compression_p05": 0.9999950772595804
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000070062044568,
+              "stretch_max": 1.0000195566653207,
+              "compression_p05": 0.9999905696741066
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000048078082002,
+              "stretch_max": 1.0000101544194557,
+              "compression_p05": 0.9999946471706536
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000005174420445,
+              "stretch_max": 1.018554049016622,
+              "compression_p05": 0.9999934282772978
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000047407461985,
+              "stretch_max": 1.0000090899302887,
+              "compression_p05": 0.9999933647187383
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "spine_yaw",
+      "title": "脊柱：扭转",
+      "group": "body",
+      "action": "DeltaTest_spine_yaw",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -40,
+          "label": "-40 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000003128503765,
+              "stretch_max": 1.000000599455322,
+              "compression_p05": 0.9999949071141169
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000058853649476,
+              "stretch_max": 1.0617295488733638,
+              "compression_p05": 0.9999934518464383
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000047032875872,
+              "stretch_max": 1.0000160256445694,
+              "compression_p05": 0.9999958282875194
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -20,
+          "label": "-20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000002169339473,
+              "stretch_max": 1.000017648764219,
+              "compression_p05": 0.9999943773403472
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000002036275327,
+              "stretch_max": 1.0310041300397468,
+              "compression_p05": 0.9999943995964852
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000020792088051,
+              "stretch_max": 1.0000178680592346,
+              "compression_p05": 0.9999937471918445
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001548118282,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000046253327386,
+              "stretch_max": 1.000010445110081,
+              "compression_p05": 0.9999948252646702
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000002249964142,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999943664394876
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.000000289783138,
+              "stretch_max": 1.0000016633249944,
+              "compression_p05": 0.9999996276571912
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000052931029295,
+              "stretch_max": 1.0310035334019048,
+              "compression_p05": 0.9999934587767637
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000042568282048,
+              "stretch_max": 1.0000185089873634,
+              "compression_p05": 0.9999939935133949
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 40,
+          "label": "40 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.00000037700462,
+              "stretch_max": 1.0000005261193745,
+              "compression_p05": 0.9999937774220736
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000050579824058,
+              "stretch_max": 1.061727560220873,
+              "compression_p05": 0.9999943549445398
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000036099268146,
+              "stretch_max": 1.000016564521402,
+              "compression_p05": 0.9999912187017034
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "torso_turn",
+      "title": "组合：躯干和头反向转动",
+      "group": "body",
+      "action": "DeltaTest_torso_turn",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -30,
+          "label": "-30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0293355369901787,
+              "stretch_max": 1.1057403562177515,
+              "compression_p05": 0.9773020593881121
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0064948562273117,
+              "stretch_max": 1.046534392593435,
+              "compression_p05": 0.9951254399119459
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000037126949088,
+              "stretch_max": 1.0000131960403817,
+              "compression_p05": 0.9999950396468796
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -15,
+          "label": "-15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0145198041975918,
+              "stretch_max": 1.038356368776627,
+              "compression_p05": 0.9889930652536515
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0032407871440645,
+              "stretch_max": 1.0231945796481172,
+              "compression_p05": 0.9971903472384908
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000026416294878,
+              "stretch_max": 1.000015549566674,
+              "compression_p05": 0.9999925231378602
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001548118282,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000046253327386,
+              "stretch_max": 1.000010445110081,
+              "compression_p05": 0.9999948252646702
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000002249964142,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999943664394876
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 15,
+          "label": "15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.013657444904398,
+              "stretch_max": 1.0383562466943907,
+              "compression_p05": 0.9878037328212488
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0032409785963192,
+              "stretch_max": 1.0231940766101608,
+              "compression_p05": 0.9971913900540159
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.000002222012042,
+              "stretch_max": 1.000014933992509,
+              "compression_p05": 0.9999915303328079
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0277225079425378,
+              "stretch_max": 1.105724684553347,
+              "compression_p05": 0.9750610989705408
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.006494761455235,
+              "stretch_max": 1.0465336176295255,
+              "compression_p05": 0.9951270082465414
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000048035390858,
+              "stretch_max": 1.0000122830930935,
+              "compression_p05": 0.9999937804252118
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "hips_forward",
+      "title": "髋：抬腿",
+      "group": "body",
+      "action": "DeltaTest_hips_forward",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 25,
+          "label": "25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 50,
+          "label": "50 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 75,
+          "label": "75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 100,
+          "label": "100 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "hips_side",
+      "title": "髋：侧抬腿",
+      "group": "body",
+      "action": "DeltaTest_hips_side",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 15,
+          "label": "15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 45,
+          "label": "45 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "hips_twist",
+      "title": "髋：轴向旋转",
+      "group": "body",
+      "action": "DeltaTest_hips_twist",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -30,
+          "label": "-30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -15,
+          "label": "-15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 15,
+          "label": "15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "knees",
+      "title": "双膝：屈曲",
+      "group": "body",
+      "action": "DeltaTest_knees",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 60,
+          "label": "60 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 90,
+          "label": "90 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 120,
+          "label": "120 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "ankles_pitch",
+      "title": "双踝：屈伸",
+      "group": "body",
+      "action": "DeltaTest_ankles_pitch",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -30,
+          "label": "-30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -15,
+          "label": "-15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 15,
+          "label": "15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "ankles_roll",
+      "title": "双踝：内外翻",
+      "group": "body",
+      "action": "DeltaTest_ankles_roll",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": -15,
+          "label": "-15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": -7.5,
+          "label": "-7.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 7.5,
+          "label": "7.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 15,
+          "label": "15 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "toes",
+      "title": "前脚掌：弯曲",
+      "group": "body",
+      "action": "DeltaTest_toes",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 10,
+          "label": "10 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 20,
+          "label": "20 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 30,
+          "label": "30 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 40,
+          "label": "40 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "squat",
+      "title": "组合：逐级下蹲",
+      "group": "body",
+      "action": "DeltaTest_squat",
+      "frame_range": [
+        1,
+        93
+      ],
+      "samples": [
+        {
+          "frame": 13,
+          "value": 0,
+          "label": "0 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001537080114,
+              "stretch_max": 1.00000032586676,
+              "compression_p05": 0.999995036179848
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.000004583064891,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999947522294165
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.00000027303761,
+              "stretch_max": 1.00001518979778,
+              "compression_p05": 0.9999940295005638
+            }
+          }
+        },
+        {
+          "frame": 29,
+          "value": 0.25,
+          "label": "0.25 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001511661536,
+              "stretch_max": 1.0000003840346148,
+              "compression_p05": 0.9999950413929273
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000044257405125,
+              "stretch_max": 1.0000068625723497,
+              "compression_p05": 0.9999951176783143
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000012205024724,
+              "stretch_max": 1.0000110720725959,
+              "compression_p05": 0.9999940182879026
+            }
+          }
+        },
+        {
+          "frame": 45,
+          "value": 0.5,
+          "label": "0.5 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001951007025,
+              "stretch_max": 1.0000014588867978,
+              "compression_p05": 0.9999951031164941
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.00000432564984,
+              "stretch_max": 1.0000104455003778,
+              "compression_p05": 0.9999949299545611
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000002086014637,
+              "stretch_max": 1.0000055360287703,
+              "compression_p05": 0.9999949118429372
+            }
+          }
+        },
+        {
+          "frame": 61,
+          "value": 0.75,
+          "label": "0.75 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001510619239,
+              "stretch_max": 1.0000029513921664,
+              "compression_p05": 0.9999950341305833
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000026855526387,
+              "stretch_max": 1.000006269367033,
+              "compression_p05": 0.9999972292536853
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000003099788213,
+              "stretch_max": 1.000003417121508,
+              "compression_p05": 0.9999946780915159
+            }
+          }
+        },
+        {
+          "frame": 77,
+          "value": 1,
+          "label": "1 deg",
+          "metrics": {
+            "neck": {
+              "edges": 130,
+              "stretch_p95": 1.0000001419598197,
+              "stretch_max": 1.0000013962553551,
+              "compression_p05": 0.9999969032421594
+            },
+            "shoulder": {
+              "edges": 552,
+              "stretch_p95": 1.0000022073143489,
+              "stretch_max": 1.0000068625723497,
+              "compression_p05": 0.999997092732212
+            },
+            "elbow": {
+              "edges": 364,
+              "stretch_p95": 1.0000012726444008,
+              "stretch_max": 1.0000034793857036,
+              "compression_p05": 0.9999956206455513
+            }
+          }
+        }
+      ],
+      "images": []
+    }
+  ],
+  "user_visual_acceptance": false,
+  "coverage_complete": false,
+  "numerical_checks_passed": false,
+  "failures": [
+    {
+      "case": "head_pivot",
+      "frame": 77,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5477655348406676,
+      "limit": 1.5
+    },
+    {
+      "case": "head_pivot",
+      "frame": 77,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.696837168145283,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 301,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.2543332736435353,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 317,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5087050521167076,
+      "limit": 1.5
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 317,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.463040338726999,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 333,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5395283489139204,
+      "limit": 1.5
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 333,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.8730509790993093,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 397,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5395327470464664,
+      "limit": 1.5
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 397,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.873056282985473,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 413,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5087092805185534,
+      "limit": 1.5
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 413,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.463078298392834,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 429,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.2543505093533813,
+      "limit": 3.0
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 557,
+      "region": "neck",
+      "metric": "stretch_p95",
+      "value": 1.5477655348406676,
+      "limit": 1.5
+    },
+    {
+      "case": "neck_combinations_37",
+      "frame": 557,
+      "region": "neck",
+      "metric": "stretch_max",
+      "value": 3.696837168145283,
+      "limit": 3.0
+    }
+  ],
+  "status": "failed"
+}
