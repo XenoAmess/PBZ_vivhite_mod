@@ -39,7 +39,7 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names, mask_materials, support_skirt):
+def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -53,6 +53,12 @@ def export_mesh(obj, native, names, mask_materials, support_skirt):
     duplicate.modifiers.clear()
     if obj.name == 'Body':
         isolate_skin(duplicate)
+    if separate_coat and obj.name == 'BaiQi open coat body':
+        slot = duplicate.data.materials.find('BaiQi charcoal coat back')
+        assert slot >= 0
+        material = duplicate.data.materials[slot].copy()
+        material.name = 'BaiQi removable coat back'
+        duplicate.data.materials[slot] = material
     game_uv(duplicate.data)
     if len(duplicate.data.materials) == 1:
         material = duplicate.data.materials[0]
@@ -273,6 +279,8 @@ def main():
     parser.add_argument('--reserve-native-slots', action='store_true')
     parser.add_argument('--bake-alpha-geometry', action='store_true')
     parser.add_argument('--support-skirt', action='store_true')
+    parser.add_argument('--separate-coat-material', action='store_true',
+                        help='Give the removable coat its own slot, independent of the wrist bands.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     candidate = ROOT / args.candidate
     output = ROOT / args.out
@@ -304,7 +312,8 @@ def main():
                  'BaiQi black gold headdress appearance', 'BaiQi black and gold bow artwork'}
         if not args.bake_alpha_geometry:
             masks.clear()
-        assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt) for obj in meshes]
+        assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt, args.separate_coat_material)
+                     for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)
         assembled.append(driver)

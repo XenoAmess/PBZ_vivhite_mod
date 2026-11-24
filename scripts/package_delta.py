@@ -63,7 +63,8 @@ with (temporary/'container.log').open('wb') as stream:
     result=subprocess.run(command,stdout=stream,stderr=subprocess.STDOUT)
 assert result.returncode==0,('IoStore build failed',result.returncode)
 note=temporary/'DeltaLive2D.txt'
-note.write_text('Delta Live2D adult Soul model replacement candidate. No young assets.\n',encoding='utf-8')
+scope = ('Standalone BaiQi adult appearance' if allow.get('outfit_id') else 'Adult Soul replacement assets')
+note.write_text(scope + '\n',encoding='utf-8')
 companion=temporary/'pak_response.txt'
 companion.write_text(f'"{note}" "../../../ProjectPBZ/Content/Mods/DeltaLive2D/DeltaLive2D.txt"\n',encoding='utf-8')
 companion_output=temporary/(name+'.pak')
@@ -78,11 +79,12 @@ files=[]
 for extension in ['.pak','.utoc','.ucas']:
     path=out/(name+extension);assert path.is_file() and path.stat().st_size>0
     files.append({'name':path.name,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-report={'status':'container_built_pending_readback','scope':'Adult Soul replacement assets',
+report={'status':'container_built_pending_readback','scope':scope,
         'steam_build':'26367565','replacement_packages':allow['replacement_packages'],
         'excluded_placeholders':allow['excluded_placeholders'],'files':files,
         'runtime_tested':False,'installed':False}
-for key in ('form','source_sha256','source_models','body_sha256','combined_bones','wardrobe'):
+for key in ('form','source_sha256','source_models','body_sha256','combined_bones','wardrobe',
+            'outfit_id','framework_slot','coat_slots','default_coat_visible'):
     if key in allow:
         report[key]=allow[key]
 (out/'manifest.json').write_text(json.dumps(report,indent=2),encoding='utf-8')

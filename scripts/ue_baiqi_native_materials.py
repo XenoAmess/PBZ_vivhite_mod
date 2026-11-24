@@ -86,9 +86,7 @@ def instance(name, kind, parents, neutral):
     return material
 
 
-def main():
-    form = os.environ['PBZ_BAIQI_FORM']
-    assert form in {'coat_on', 'coat_off'}
+def build_native_palette():
     registry = unreal.AssetRegistryHelpers.get_asset_registry()
     registry.search_all_assets(True)
     cloth = unreal.load_asset(CLOTH)
@@ -103,7 +101,13 @@ def main():
                'black': texture('T_BaiQiNative_NeutralBlack', linear=True)}
     model = json.loads((INPUT / 'engine_materials.json').read_text(encoding='utf-8'))
     parents = {'cloth': cloth, 'hair': parent}
-    palette = {slug(name): instance(name, row['type'], parents, neutral) for name, row in model.items()}
+    return {slug(name): instance(name, row['type'], parents, neutral) for name, row in model.items()}
+
+
+def main():
+    form = os.environ['PBZ_BAIQI_FORM']
+    assert form in {'coat_on', 'coat_off'}
+    palette = build_native_palette()
     for path in BODY_PACKAGES:
         mesh = unreal.load_asset(path)
         assign_materials(mesh, palette)
