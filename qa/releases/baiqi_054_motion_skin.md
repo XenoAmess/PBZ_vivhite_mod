@@ -1,5 +1,17 @@
 # 白绮 054 离线检查
 
+## 整合版
+
+`BaiQi_054_Wardrobe.zip` 在同一份 Mod 中保留了游戏原有的外观切换。成年魂基础皮肤和 Climax 使用穿外套版，传承（MoTian）使用脱外套版。游戏内可通过「角色 → 外观」切换。
+
+安装时，退出游戏后把包内的 `z_BaiQi054Wardrobe_P.pak`、`.utoc` 和 `.ucas` 一起放入 `ProjectPBZ/Content/Paks/~mods`，并将旧版的三个同名容器移出加载目录。
+
+整合包回读核对了三个身体资源的外套材质区段、骨骼、动画蓝图和布料引用，三份网格的区段与对应的 054 单形态包一致。传承已在 Steam build 26367565 的存档中读档和移动验证，基础和 Climax 已完成包内核验。
+
+构建整合包时保留穿外套版的基础和 Climax 编辑器网格，以及脱外套版的 `Hun_MoTian_Body_Simple`。将后者放在其成年传承路径，用 `scripts/merge_baiqi_wardrobe_allowlists.py` 合并清单。随后使用 `scripts/run_unreal.py cook`、`scripts/package_delta.py` 和 `scripts/readback_baiqi_adult_form.py` 烘焙、打包和检查。
+
+## 054 两种形态
+
 穿外套和脱外套形态共用同一份头部肤色修正。以 CC0 基模上臂的肤色为基准，只在白绮头部皮肤和颈部接缝的着色层调色。两种形态均保留 039 的脸型、眼部绘制和闭嘴口型。原 CC0 身体网格、权重、UV 和源材质校验通过，原脸贴图和可见面部的 9,516 个三角面通过一致性校验。
 
 | 同灯光正面取样 | 修正前 RGB | 修正后 RGB |

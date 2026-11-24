@@ -57,7 +57,9 @@ def main():
     package = args.package.resolve()
     allow = json.loads(args.allowlist.read_text(encoding='utf-8'))
     manifest = json.loads((package / 'manifest.json').read_text(encoding='utf-8'))
-    assert manifest['source_sha256'] == allow['source_sha256'] and manifest['form'] == allow['form']
+    assert manifest['form'] == allow['form']
+    for key in ('source_sha256', 'source_models', 'wardrobe'):
+        assert manifest.get(key) == allow.get(key), key
     destination = ROOT / 'artifacts/extracted' / ('baiqi_054_' + allow['form'])
     destination.mkdir(parents=True, exist_ok=True)
     listed = export(package, destination, 'list', ['.'])
@@ -89,6 +91,10 @@ def main():
         material_root = 'BaiQi054/Shared/Native/Materials/' if allow.get('material_strategy') else 'BaiQi054/Shared/Materials/'
         assert all(material_root in row['mat'] for row in materials), materials
         by_slot = {row['slot']: index for index, row in enumerate(materials)}
+        form = stage.get('form', allow['form'])
+        coat_slots = {'BaiQi gold-trimmed lapels', 'BaiQi white sleeve cuffs', 'BaiQi gold cuff edging'}
+        expected_coat_slots = coat_slots if form == 'coat_on' else set()
+        assert coat_slots.intersection(by_slot) == expected_coat_slots, (body, form)
         skin_slots = [by_slot[name] for name in ('F00_001_01_Body_00_SKIN', 'BaiQi neck junction shading',
                                                 'BaiQi original face appearance')]
         lod = data['lods'][0]
@@ -105,7 +111,10 @@ def main():
                 shade_packages.add(cooked_path(reference_path))
         payload = (destination / (body + '.json')).read_text(encoding='utf-8')
         assert 'ABP_AdultBaiQi' in payload and 'PH_BaiQiClothThighs' in payload, body
-        matrix.append({'mesh': stage['path'], 'bones': len(data['bones']), 'original_bone_error_cm': error,
+        if 'outfit' in stage:
+            assert allow['wardrobe'][stage['outfit']] == form, body
+            assert stage['post_process'] in payload and stage['collider'] in payload, body
+        matrix.append({'mesh': stage['path'], 'form': form, 'bones': len(data['bones']), 'original_bone_error_cm': error,
                        'material_slots': len(materials), 'skin_sections': [materials[index] for index in skin_slots],
                        'accessory_triangles': accessories,
                        'lods': data['lods'], 'replacement_post_process': True, 'cloth': True})
@@ -121,8 +130,9 @@ def main():
             textures = material['Properties']['TextureParameterValues']
             assert {row['ParameterInfo']['Name'] for row in textures} == {'Albedo', 'Normal', 'Mix'}
     report = {'status': 'readback_verified_pending_game', 'runtime_tested': False,
-              'source_sha256': allow['source_sha256'], 'form': allow['form'], 'members': sorted(members),
+              'form': allow['form'], 'members': sorted(members),
               'container_files': manifest['files'], 'body_checks': matrix}
+    report.update({key: allow[key] for key in ('source_sha256', 'source_models', 'wardrobe') if key in allow})
     (package / 'readback.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     manifest.update(status=report['status'], readback_file='readback.json')
     (package / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')

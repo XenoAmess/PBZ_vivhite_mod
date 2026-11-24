@@ -82,7 +82,7 @@ report={'status':'container_built_pending_readback','scope':'Adult Soul replacem
         'steam_build':'26367565','replacement_packages':allow['replacement_packages'],
         'excluded_placeholders':allow['excluded_placeholders'],'files':files,
         'runtime_tested':False,'installed':False}
-for key in ('form','source_sha256','body_sha256','combined_bones'):
+for key in ('form','source_sha256','source_models','body_sha256','combined_bones','wardrobe'):
     if key in allow:
         report[key]=allow[key]
 (out/'manifest.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
