@@ -1,0 +1,11 @@
+{
+  "reviewed_on": "2026-11-24",
+  "sources": [
+    {"title": "Autodesk Maya: bakeDeformer", "url": "https://help.autodesk.com/cloudhelp/ENU/MayaCRE-Tech-Docs/Commands/bakeDeformer.html", "use": "ROM samples and explicit rest pose; custom motion ranges. We use our own character-specific ranges."},
+    {"title": "Autodesk Maya: Create pose space deformations", "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Maya-CharacterAnimation/files/GUID-00699C13-8CA1-450C-937D-57C7B3DFD8C6.htm", "use": "Inspect articulation points and extreme poses, add in-between corrective checks."},
+    {"title": "Epic: Updating Neck RBF Poses", "url": "https://dev.epicgames.com/documentation/metahuman/updating-neck-rbf-poses-in-pose-editor?lang=en-US", "use": "Separate and combined neck_01, neck_02 and head motion. MetaHuman's 37 poses and corrective system are not copied or assumed available in PBZ."},
+    {"title": "Blender 5.3: Armature Modifier", "url": "https://docs.blender.org/manual/en/5.3/modeling/modifiers/deform/armature.html", "use": "Record skinning method; keep linear skinning when checking a linear-skinning export. Do not hide problems using viewport-only preserve volume."},
+    {"title": "Naughty Dog: Uncharted 2 Character Pipeline, GDC 2010", "url": "https://media.gdcvault.com/gdc10/slides/simantov_judd_uncharted2_character_pipeline.pdf", "use": "ROM first pass followed by game-specific motion validation; offline results are not runtime acceptance."},
+    {"title": "zebraed/defQA", "url": "https://github.com/zebraed/defQA", "use": "Example of independently generated neutral/positive/negative controller sweeps and preset maintenance. No implementation is copied."}
+  ]
+}

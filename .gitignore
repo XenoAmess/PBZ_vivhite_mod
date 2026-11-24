@@ -1,0 +1,25 @@
+# Local runtimes, downloaded tools and private inputs are never published.
+/.venv*/
+/vendor/
+/tools/
+/resources/
+/source/
+/artifacts/
+/build/
+/output/
+__pycache__/
+*.py[cod]
+*.msi
+*.blend
+*.blend1
+*.fbx
+*.glb
+*.uemodel
+*.ueanim
+*.pak
+*.utoc
+*.ucas
+*.zip
+.env
+.env.*
+*.log
