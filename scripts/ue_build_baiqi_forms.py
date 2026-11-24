@@ -106,7 +106,7 @@ def assign_materials(mesh, materials):
     return names
 
 
-def skirt_collision(mesh, skeleton, folder):
+def skirt_collision(mesh, skeleton, folder, supported=False):
     bones = {row['name']: row for row in skeleton}
     bodies = []
     for side in ('L', 'R'):
@@ -114,7 +114,8 @@ def skirt_collision(mesh, skeleton, folder):
         direction = bones[f'BaiQi_J_Bip_{side}_LowerLeg']['t']
         length = math.sqrt(sum(value * value for value in direction))
         orientation = unreal.MathLibrary.make_rot_from_z(unreal.Vector(*direction))
-        for position, radius, proportion in [(0.21, 6.7, .29), (.60, 5.6, .27)]:
+        capsules = [(0.26, 6.1, .27), (.60, 5.1, .25)] if supported else [(0.21, 6.7, .29), (.60, 5.6, .27)]
+        for position, radius, proportion in capsules:
             bodies.append({'bone': thigh, 'type': 'capsule', 'radius': radius, 'length': length * proportion,
                            'center': [value * position for value in direction],
                            'rotation': [orientation.pitch, orientation.yaw, orientation.roll], 'kinematic': True})
@@ -127,7 +128,8 @@ def skirt_collision(mesh, skeleton, folder):
     skirt = next(str(slot.get_editor_property('material_slot_name')) for slot in slots
                  if 'pleatedskirtartwork' in slug(str(slot.get_editor_property('material_slot_name'))))
     mask = {'type': 'plane', 'anchors': [[0, 0, 100]], 'dir': [0, 0, -1], 'd0': 1.9, 'd1': 19.0}
-    result = tool.create_cloth_from_slot(mesh, skirt, 'BaiQiSkirt', collider, 32., json.dumps(mask), '{}')
+    travel = 9.5 if supported else 32.
+    result = tool.create_cloth_from_slot(mesh, skirt, 'BaiQiSkirt', collider, travel, json.dumps(mask), '{}')
     assert result.startswith('ok'), result
     assert tool.set_cloth_solver(mesh, 10, 3) >= 1
     return result

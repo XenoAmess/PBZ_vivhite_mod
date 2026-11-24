@@ -59,7 +59,7 @@ def main():
             graph = attach_bridge(mesh, bridge_steps(reference, calibration, follow_grip=True), graph_name, own)
         else:
             tool.set_post_process_anim_blueprint(mesh, unreal.load_asset(graph).generated_class())
-        cloth = skirt_collision(mesh, reference, own + '/Cloth_' + str(index))
+        cloth = skirt_collision(mesh, reference, own + '/Cloth_' + str(index), prepared.get('skirt_leg_support', False))
         asset_library.save_loaded_asset(mesh)
         staged.append({'path': path, 'slot_count': len(names), 'cloth': cloth})
     owners = [own, os.environ['PBZ_BAIQI_CONTENT_ROOT'], '/HuaShira/Mods/DeltaLive2D']

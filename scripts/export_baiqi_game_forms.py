@@ -17,7 +17,7 @@ sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tools/blender_libs'),
                 str(ROOT / 'vendor/UEFormat/plugins/blender')]
 
 from baiqi_mesh_clip import clip_mesh
-from fit_baiqi_cc0_wardrobe import rest_signature
+from fit_baiqi_cc0_wardrobe import rest_signature, smoothstep
 from io_scene_ueformat.importer.import_context import UEFormatImport
 from io_scene_ueformat.options import UEModelOptions
 from lock_baiqi_cc0_body import mesh_fingerprint
@@ -39,7 +39,7 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names, mask_materials):
+def export_mesh(obj, native, names, mask_materials, support_skirt):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -60,6 +60,9 @@ def export_mesh(obj, native, names, mask_materials):
             trim_texture_mask(duplicate, first_texture(material).image)
     if obj.name == 'BaiQi pleated skirt':
         merge_skirt_material(duplicate.data)
+        if support_skirt:
+            source_rig = next(mod.object for mod in obj.modifiers if mod.type == 'ARMATURE')
+            add_skirt_leg_support(duplicate, source_rig)
     if obj.name == 'BaiQi restored authored head and face':
         junction_color(duplicate.data)
     duplicate.data.transform(Matrix.Rotation(math.pi, 4, 'Z') @ Matrix.Scale(100., 4), shape_keys=True)
@@ -71,6 +74,24 @@ def export_mesh(obj, native, names, mask_materials):
     skinning = duplicate.modifiers.new('Original CC0 skin weights on deform branch', 'ARMATURE')
     skinning.object = native
     return duplicate
+
+
+def add_skirt_leg_support(obj, rig):
+    hips = obj.vertex_groups['J_Bip_C_Hips']
+    thighs = [rig.data.bones[f'J_Bip_{side}_UpperLeg'] for side in ('L', 'R')]
+    thigh_positions = sorted([(rig.matrix_world @ bone.head_local).x, bone.name] for bone in thighs)
+    (low, low_name), (high, high_name) = thigh_positions
+    groups = (obj.vertex_groups.new(name=low_name), obj.vertex_groups.new(name=high_name))
+    hem = obj.data.attributes['BaiQi skirt hem lift weight'].data
+    for vertex in obj.data.vertices:
+        strength = .30 * hem[vertex.index].value
+        if strength <= 1e-6:
+            continue
+        high_weight = smoothstep((vertex.co.x - low) / (high - low))
+        hips.add([vertex.index], 1. - strength, 'REPLACE')
+        for group, ratio in zip(groups, (1. - high_weight, high_weight)):
+            if ratio * strength > 1e-6:
+                group.add([vertex.index], ratio * strength, 'REPLACE')
 
 
 def trim_texture_mask(obj, image):
@@ -251,6 +272,7 @@ def main():
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--reserve-native-slots', action='store_true')
     parser.add_argument('--bake-alpha-geometry', action='store_true')
+    parser.add_argument('--support-skirt', action='store_true')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     candidate = ROOT / args.candidate
     output = ROOT / args.out
@@ -282,7 +304,7 @@ def main():
                  'BaiQi black gold headdress appearance', 'BaiQi black and gold bow artwork'}
         if not args.bake_alpha_geometry:
             masks.clear()
-        assembled = [export_mesh(obj, native, aliases, masks) for obj in meshes]
+        assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt) for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)
         assembled.append(driver)
@@ -309,6 +331,7 @@ def main():
         rows[form] = {'fbx': str(path), 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                       'body_sha256': original, 'native_bones': len(native_rest), 'cc0_bones': len(aliases),
                       'reserved_native_slots': reserved,
+                      'skirt_leg_support': args.support_skirt,
                       'visible_meshes': [obj.name for obj in meshes], 'materials': packed_materials(assembled, output, masks)}
     (output / 'form_inputs.json').write_text(json.dumps(rows, indent=2) + '\n', encoding='utf-8')
     print('BAIQI_ADULT_FORM_MESH_INPUTS_READY')
