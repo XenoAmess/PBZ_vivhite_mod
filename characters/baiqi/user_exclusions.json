@@ -4,9 +4,16 @@
   "decision_status": "explicit_user_exclusions_remaining_accessories_pending_user_choice",
   "user_instructions": [
     "几个可选的嘴型组件都不要上，我要求保留原模型嘴部。",
-    "ArtMesh53 的全身变暗、眼睛保亮的乘色效果也不要上，给我删除。"
+    "ArtMesh53 的全身变暗、眼睛保亮的乘色效果也不要上，给我删除。",
+    "17-46全部不使用。",
+    "44要做。要做穿脱外套双形态。",
+    "正式验收交付带外套和不带外套两种形态。",
+    "女性身体本体使用原始 CC0 基模，禁止修改本体。白绮服饰、道具和装饰在外部添加。",
+    "脸和头部恢复之前的白绮版本，不使用 CC0 基模头脸。"
   ],
-  "preserve_mouth": "Restore the pre-edit female-foundation mouth geometry and retain the default character mouth appearance.",
+  "preserve_mouth": "Retain the approved BaiQi head's neutral mouth. Do not add alternate mouth shapes.",
+  "body_contract": "Keep the selected CC0 Base_Female Body vertex data, topology, UVs, shape keys, materials and original skin weights. Fit the external wardrobe to the body. Display the previously authored BaiQi head and face, with the CC0 Face hidden as source reference.",
+  "delivery_forms": ["coat_on", "coat_off"],
   "excluded_components": ["Part25", "M10", "M11", "M13"],
   "excluded_drawables": ["M12", "M14", "M", "ArtMesh53"],
   "excluded_variants": [
@@ -15,5 +22,7 @@
     "E-Mouth-Smile.exp3",
     "E-Face-AllBlack.exp3"
   ],
-  "remaining_accessories": "Awaiting the user's numbered image-catalog decisions before further additions."
+  "excluded_catalog_ids": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46],
+  "approved_catalog_ids": [44],
+  "remaining_accessories": "Items 1–15 may retain their established role. The ponytail preview (16) is outside the two formal forms."
 }
