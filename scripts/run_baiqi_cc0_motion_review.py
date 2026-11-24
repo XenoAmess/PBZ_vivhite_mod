@@ -135,19 +135,32 @@ def render_kind(studio, camera, scene, row, target, out, kind, views, label, siz
         row['images'].append(relative.as_posix())
 
 
-def prepare_studio(meshes, body):
+def prepare_studio(meshes, body, *, face_closeup=False):
     review = MaterialReview(meshes)
     body_mask = next(node for modifier in body.modifiers if modifier.type == 'NODES'
                      for node in modifier.node_group.nodes if node.type == 'SET_MATERIAL')
     mask_slot = body_mask.inputs['Material']
     actual = mask_slot.default_value
     gray = actual.copy()
+    lit_skin = [review.clay[name] for name in ('BaiQi original face appearance',
+                                               'BaiQi neck junction shading')] if face_closeup else []
     for material in [gray, *review.clay.values()]:
-        for node in material.node_tree.nodes:
+        for node in list(material.node_tree.nodes):
+            if material in lit_skin and node.type == 'BSDF_DIFFUSE':
+                for link in list(node.inputs['Color'].links):
+                    material.node_tree.links.remove(link)
+                node.inputs['Color'].default_value = (.38, .42, .45, 1)
+                node.inputs['Roughness'].default_value = .55
             if node.type == 'EMISSION':
                 for link in list(node.inputs['Color'].links):
                     material.node_tree.links.remove(link)
                 node.inputs['Color'].default_value = (.38, .42, .45, 1)
+                if material in lit_skin:
+                    matte = material.node_tree.nodes.new('ShaderNodeBsdfDiffuse')
+                    matte.inputs['Color'].default_value = (.38, .42, .45, 1)
+                    matte.inputs['Roughness'].default_value = .55
+                    for link in list(node.outputs[0].links):
+                        material.node_tree.links.new(matte.outputs[0], link.to_socket)
 
     def apply(kind):
         review.apply(kind)
@@ -168,6 +181,7 @@ def main():
     parser.add_argument('--forearm-roll-share', type=float, default=1.)
     parser.add_argument('--neck-head-share', type=float, default=0.)
     parser.add_argument('--native-neck-closeup', action='store_true')
+    parser.add_argument('--face-closeup', action='store_true', help='Frame the face and throat for head finish review.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -206,7 +220,7 @@ def main():
     lights = {obj.name: obj.location.copy() for obj in scene.objects if obj.type == 'LIGHT'}
     scene.render.resolution_x = scene.render.resolution_y = 512
     scene.eevee.taa_render_samples = 24
-    studio = prepare_studio(meshes, body)
+    studio = prepare_studio(meshes, body, face_closeup=args.face_closeup)
     rows = []
 
     def assess(case_id, group, action, samples, source_hash=None):
@@ -236,6 +250,11 @@ def main():
             target = root + Vector((0, 0, camera_height))
             if source_hash and args.native_neck_closeup:
                 target = cc0.pose.bones['J_Bip_C_Head'].head + Vector((0, 0, .040))
+            if args.face_closeup:
+                head_pose = cc0.pose.bones['J_Bip_C_Head']
+                target = head_pose.head + (head_pose.matrix.to_quaternion() @
+                                           head_pose.bone.matrix_local.to_quaternion().inverted()) @ Vector((0, 0, .075))
+                size = .30
             for name, studio_location in lights.items():
                 scene.objects[name].location = studio_location + root
             for kind in spec['passes']:
@@ -289,6 +308,7 @@ def main():
               'mapped_bones': len(transfer.links), 'render_profile': args.render,
               'forearm_roll_share': args.forearm_roll_share, 'neck_head_share': args.neck_head_share,
               'native_neck_closeup': args.native_neck_closeup,
+              'face_closeup': args.face_closeup,
               'full_render_coverage': coverage, 'flags': flags, 'inherited_cc0_flags': inherited_flags,
               'original_cc0_sha256': file_hash(control_path), 'clips': rows,
               'limits': ['Adult Soul motion samples exclude runtime AnimBP, IK and physics.',
