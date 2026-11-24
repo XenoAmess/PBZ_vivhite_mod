@@ -1,0 +1,17 @@
+{
+  "source": "output\\live2d_delta\\shoulder_rebuild\\Delta_live2d.blend",
+  "source_sha256": "50359f26cd99a5dc0ae36c8d43f8d74284dc7f627b6d3b5f39ba40ef4a81519f",
+  "method": "edge-weighted Jacobi diffusion of skin weights with spatial boundary constraints",
+  "iterations": 160,
+  "changed_vertices": 30184,
+  "geometry_unchanged": true,
+  "adjacent_weight_L1_before_p95_max": [
+    0.0956274513155222,
+    1.956859301775694
+  ],
+  "adjacent_weight_L1_after_p95_max": [
+    0.08457434607476108,
+    0.2909151881964529
+  ],
+  "status": "requires_identical_ROM_rerender_and_visual_review"
+}

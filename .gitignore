@@ -2,7 +2,9 @@
 /.venv*/
 /vendor/
 /tools/
-/resources/
+/resources/*
+!/resources/Delta.zip
+!/resources/full.jpg
 /source/
 /artifacts/
 /build/
@@ -10,16 +12,7 @@
 __pycache__/
 *.py[cod]
 *.msi
-*.blend
 *.blend1
-*.fbx
-*.glb
-*.uemodel
-*.ueanim
-*.pak
-*.utoc
-*.ucas
-*.zip
 .env
 .env.*
 *.log

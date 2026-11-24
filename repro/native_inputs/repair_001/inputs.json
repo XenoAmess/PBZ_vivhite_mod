@@ -1,0 +1,2487 @@
+{
+  "adult": {
+    "source": "Delta.zip",
+    "native_skeleton_source": "artifacts\\extracted\\original\\HuaShira\\Characters\\Hero\\Hero_Hun\\SkinParts\\Hun_Body_Simple.uemodel",
+    "candidate_directory": "output\\live2d_delta\\qa_repair_001",
+    "bones": 264,
+    "native_vs_preview_head_position_error_m": 8.055790766461572e-05,
+    "initial_native_export_scale_discrepancy_m": 8.055790766461572e-05,
+    "centimeter_units": true,
+    "reserved_material_sections": 10,
+    "materials": {
+      "Delta_Live2D_Front": {
+        "color": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "front_texture": true
+      },
+      "Delta_Inferred_Hair_Back": {
+        "color": [
+          0.7300000190734863,
+          0.8100000023841858,
+          0.8600000143051147,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_Coat_Back": {
+        "color": [
+          0.07500000298023224,
+          0.06800000369548798,
+          0.10499999672174454,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_Skirt_Back": {
+        "color": [
+          0.7799999713897705,
+          0.800000011920929,
+          0.8600000143051147,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_Stocking_Back": {
+        "color": [
+          0.02199999988079071,
+          0.023000000044703484,
+          0.027000000700354576,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_Boot_Back": {
+        "color": [
+          0.017999999225139618,
+          0.03500000014901161,
+          0.10999999940395355,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_Skin": {
+        "color": [
+          0.9300000071525574,
+          0.8399999737739563,
+          0.7799999713897705,
+          1.0
+        ],
+        "front_texture": false
+      },
+      "Delta_Inferred_White": {
+        "color": [
+          0.800000011920929,
+          0.8299999833106995,
+          0.8600000143051147,
+          1.0
+        ],
+        "front_texture": false
+      }
+    },
+    "material_slots": [
+      "Delta_Reserved_00",
+      "Delta_Reserved_01",
+      "Delta_Reserved_02",
+      "Delta_Reserved_03",
+      "Delta_Reserved_04",
+      "Delta_Reserved_05",
+      "Delta_Reserved_06",
+      "Delta_Reserved_07",
+      "Delta_Reserved_08",
+      "Delta_Reserved_09",
+      "Delta_Live2D_Front",
+      "Delta_Inferred_Hair_Back",
+      "Delta_Inferred_Coat_Back",
+      "Delta_Inferred_Skirt_Back",
+      "Delta_Inferred_Stocking_Back",
+      "Delta_Inferred_Boot_Back",
+      "Delta_Inferred_Skin",
+      "Delta_Inferred_White"
+    ],
+    "front_texture": "E:\\workspace\\PBZ_vivhite_mod\\artifacts\\live2d\\Delta_projection_padded.png",
+    "reference": [
+      {
+        "name": "root",
+        "parent": null,
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "pelvis",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          5.145398139953613,
+          109.20811462402344
+        ]
+      },
+      {
+        "name": "spine_01",
+        "parent": "pelvis",
+        "component_position_cm": [
+          -2.489232429070398e-07,
+          5.103662014007568,
+          114.90266418457031
+        ]
+      },
+      {
+        "name": "spine_02",
+        "parent": "spine_01",
+        "component_position_cm": [
+          -5.792623483102943e-07,
+          5.138433933258057,
+          122.46006774902344
+        ]
+      },
+      {
+        "name": "spine_03",
+        "parent": "spine_02",
+        "component_position_cm": [
+          -8.751121072236856e-07,
+          5.19415807723999,
+          129.22848510742188
+        ]
+      },
+      {
+        "name": "spine_04",
+        "parent": "spine_03",
+        "component_position_cm": [
+          -1.1720138672899338e-06,
+          5.544837474822998,
+          136.02310180664062
+        ]
+      },
+      {
+        "name": "spine_05",
+        "parent": "spine_04",
+        "component_position_cm": [
+          4.1681887523736805e-06,
+          6.876579284667969,
+          150.08441162109375
+        ]
+      },
+      {
+        "name": "neck_01",
+        "parent": "spine_05",
+        "component_position_cm": [
+          -2.4334469799214276e-06,
+          8.208134651184082,
+          164.1455535888672
+        ]
+      },
+      {
+        "name": "neck_02",
+        "parent": "neck_01",
+        "component_position_cm": [
+          4.021140739496332e-06,
+          6.805344104766846,
+          169.55654907226562
+        ]
+      },
+      {
+        "name": "head",
+        "parent": "neck_02",
+        "component_position_cm": [
+          3.9718879634165205e-06,
+          5.402432441711426,
+          174.9674835205078
+        ]
+      },
+      {
+        "name": "hat",
+        "parent": "head",
+        "component_position_cm": [
+          0.38104256987571716,
+          3.318605661392212,
+          193.5622100830078
+        ]
+      },
+      {
+        "name": "clavicle_l",
+        "parent": "spine_05",
+        "component_position_cm": [
+          7.988296031951904,
+          7.215463638305664,
+          154.91351318359375
+        ]
+      },
+      {
+        "name": "upperarm_l",
+        "parent": "clavicle_l",
+        "component_position_cm": [
+          19.34341812133789,
+          7.030456066131592,
+          150.62857055664062
+        ]
+      },
+      {
+        "name": "lowerarm_l",
+        "parent": "upperarm_l",
+        "component_position_cm": [
+          39.99345397949219,
+          4.5768890380859375,
+          131.2034149169922
+        ]
+      },
+      {
+        "name": "hand_l",
+        "parent": "lowerarm_l",
+        "component_position_cm": [
+          53.32664108276367,
+          -6.653045654296875,
+          112.73468017578125
+        ]
+      },
+      {
+        "name": "pinky_metacarpal_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          55.955936431884766,
+          -6.15700101852417,
+          110.15336608886719
+        ]
+      },
+      {
+        "name": "pinky_01_l",
+        "parent": "pinky_metacarpal_l",
+        "component_position_cm": [
+          58.02729415893555,
+          -6.686377048492432,
+          103.48245239257812
+        ]
+      },
+      {
+        "name": "pinky_02_l",
+        "parent": "pinky_01_l",
+        "component_position_cm": [
+          59.1053352355957,
+          -6.961876392364502,
+          100.01069641113281
+        ]
+      },
+      {
+        "name": "pinky_03_l",
+        "parent": "pinky_02_l",
+        "component_position_cm": [
+          59.67216873168945,
+          -7.147420406341553,
+          97.93496704101562
+        ]
+      },
+      {
+        "name": "ring_metacarpal_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          55.40787124633789,
+          -7.430938720703125,
+          110.37704467773438
+        ]
+      },
+      {
+        "name": "ring_01_l",
+        "parent": "ring_metacarpal_l",
+        "component_position_cm": [
+          57.99420928955078,
+          -9.031652450561523,
+          104.06659698486328
+        ]
+      },
+      {
+        "name": "ring_02_l",
+        "parent": "ring_01_l",
+        "component_position_cm": [
+          59.732452392578125,
+          -10.10744857788086,
+          99.82530975341797
+        ]
+      },
+      {
+        "name": "ring_03_l",
+        "parent": "ring_02_l",
+        "component_position_cm": [
+          60.187042236328125,
+          -10.739255905151367,
+          97.22532653808594
+        ]
+      },
+      {
+        "name": "middle_metacarpal_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          55.24120330810547,
+          -7.964056491851807,
+          110.5808334350586
+        ]
+      },
+      {
+        "name": "middle_01_l",
+        "parent": "middle_metacarpal_l",
+        "component_position_cm": [
+          57.55362319946289,
+          -11.156411170959473,
+          104.79003143310547
+        ]
+      },
+      {
+        "name": "middle_02_l",
+        "parent": "middle_01_l",
+        "component_position_cm": [
+          59.193511962890625,
+          -13.42011833190918,
+          100.68359375
+        ]
+      },
+      {
+        "name": "middle_03_l",
+        "parent": "middle_02_l",
+        "component_position_cm": [
+          59.56208801269531,
+          -14.65994644165039,
+          98.03917694091797
+        ]
+      },
+      {
+        "name": "index_metacarpal_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          54.53032684326172,
+          -9.146130561828613,
+          111.5927963256836
+        ]
+      },
+      {
+        "name": "index_01_l",
+        "parent": "index_metacarpal_l",
+        "component_position_cm": [
+          56.15145492553711,
+          -13.349109649658203,
+          106.22811889648438
+        ]
+      },
+      {
+        "name": "index_02_l",
+        "parent": "index_01_l",
+        "component_position_cm": [
+          57.24149703979492,
+          -16.17496109008789,
+          102.62118530273438
+        ]
+      },
+      {
+        "name": "index_03_l",
+        "parent": "index_02_l",
+        "component_position_cm": [
+          57.5067253112793,
+          -17.738801956176758,
+          100.34193420410156
+        ]
+      },
+      {
+        "name": "thumb_01_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          52.25225830078125,
+          -10.433120727539062,
+          110.56807708740234
+        ]
+      },
+      {
+        "name": "thumb_02_l",
+        "parent": "thumb_01_l",
+        "component_position_cm": [
+          51.522586822509766,
+          -13.566683769226074,
+          108.68701934814453
+        ]
+      },
+      {
+        "name": "thumb_03_l",
+        "parent": "thumb_02_l",
+        "component_position_cm": [
+          51.2688102722168,
+          -16.336244583129883,
+          106.48746490478516
+        ]
+      },
+      {
+        "name": "wrist_inner_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          51.639495849609375,
+          -6.104546070098877,
+          112.41728210449219
+        ]
+      },
+      {
+        "name": "wrist_outer_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          55.18899154663086,
+          -7.041782379150391,
+          113.92098999023438
+        ]
+      },
+      {
+        "name": "weapon_l",
+        "parent": "hand_l",
+        "component_position_cm": [
+          54.12097930908203,
+          -10.985560417175293,
+          104.09446716308594
+        ]
+      },
+      {
+        "name": "weapon_l_child",
+        "parent": "weapon_l",
+        "component_position_cm": [
+          54.12097930908203,
+          -10.985560417175293,
+          104.09446716308594
+        ]
+      },
+      {
+        "name": "weapon_l_Inst",
+        "parent": "hand_l",
+        "component_position_cm": [
+          54.12097930908203,
+          -10.985560417175293,
+          104.09446716308594
+        ]
+      },
+      {
+        "name": "lowerarm_twist_02_l",
+        "parent": "lowerarm_l",
+        "component_position_cm": [
+          44.4378776550293,
+          0.8335500955581665,
+          125.04712677001953
+        ]
+      },
+      {
+        "name": "lowerarm_twist_01_l",
+        "parent": "lowerarm_l",
+        "component_position_cm": [
+          48.88227844238281,
+          -2.9097635746002197,
+          118.89089965820312
+        ]
+      },
+      {
+        "name": "lowerarm_correctiveRoot_l",
+        "parent": "lowerarm_l",
+        "component_position_cm": [
+          39.993473052978516,
+          4.576888084411621,
+          131.2034149169922
+        ]
+      },
+      {
+        "name": "lowerarm_in_l",
+        "parent": "lowerarm_correctiveRoot_l",
+        "component_position_cm": [
+          38.436500549316406,
+          6.50818395614624,
+          127.91883087158203
+        ]
+      },
+      {
+        "name": "lowerarm_out_l",
+        "parent": "lowerarm_correctiveRoot_l",
+        "component_position_cm": [
+          42.268089294433594,
+          3.628718852996826,
+          132.6190643310547
+        ]
+      },
+      {
+        "name": "lowerarm_fwd_l",
+        "parent": "lowerarm_correctiveRoot_l",
+        "component_position_cm": [
+          38.392982482910156,
+          1.1147844791412354,
+          129.82440185546875
+        ]
+      },
+      {
+        "name": "lowerarm_bck_l",
+        "parent": "lowerarm_correctiveRoot_l",
+        "component_position_cm": [
+          42.64468765258789,
+          8.66942024230957,
+          129.71815490722656
+        ]
+      },
+      {
+        "name": "upperarm_twist_01_l",
+        "parent": "upperarm_l",
+        "component_position_cm": [
+          26.226728439331055,
+          6.212591171264648,
+          144.15341186523438
+        ]
+      },
+      {
+        "name": "upperarm_twistCor_01_l",
+        "parent": "upperarm_twist_01_l",
+        "component_position_cm": [
+          26.224946975708008,
+          6.212352275848389,
+          144.1516571044922
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_01_r",
+        "parent": "upperarm_twist_01_l",
+        "component_position_cm": [
+          22.763866424560547,
+          7.836848258972168,
+          136.484619140625
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_02_r",
+        "parent": "bns_sleeves_0_01_r",
+        "component_position_cm": [
+          26.779064178466797,
+          7.853682041168213,
+          129.5402069091797
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_03_r",
+        "parent": "bns_sleeves_0_02_r",
+        "component_position_cm": [
+          29.91634178161621,
+          5.8428473472595215,
+          122.20623016357422
+        ]
+      },
+      {
+        "name": "bns_LeftArmArmor_02",
+        "parent": "upperarm_twist_01_l",
+        "component_position_cm": [
+          26.79656410217285,
+          6.9672932624816895,
+          159.52178955078125
+        ]
+      },
+      {
+        "name": "bns_LeftArmArmor_03",
+        "parent": "bns_LeftArmArmor_02",
+        "component_position_cm": [
+          33.483619689941406,
+          6.756267547607422,
+          152.37997436523438
+        ]
+      },
+      {
+        "name": "bns_LeftArmArmor_04",
+        "parent": "bns_LeftArmArmor_03",
+        "component_position_cm": [
+          39.505062103271484,
+          7.964748382568359,
+          144.6667022705078
+        ]
+      },
+      {
+        "name": "upperarm_twist_02_l",
+        "parent": "upperarm_l",
+        "component_position_cm": [
+          33.110107421875,
+          5.3947367668151855,
+          137.6783905029297
+        ]
+      },
+      {
+        "name": "upperarm_tricep_l",
+        "parent": "upperarm_twist_02_l",
+        "component_position_cm": [
+          34.84602355957031,
+          9.992935180664062,
+          138.0057830810547
+        ]
+      },
+      {
+        "name": "upperarm_bicep_l",
+        "parent": "upperarm_twist_02_l",
+        "component_position_cm": [
+          31.208948135375977,
+          1.7562613487243652,
+          135.1212158203125
+        ]
+      },
+      {
+        "name": "upperarm_twistCor_02_l",
+        "parent": "upperarm_twist_02_l",
+        "component_position_cm": [
+          33.10891342163086,
+          5.394603729248047,
+          137.67721557617188
+        ]
+      },
+      {
+        "name": "upperarm_correctiveRoot_l",
+        "parent": "upperarm_l",
+        "component_position_cm": [
+          19.34341049194336,
+          7.03045129776001,
+          150.6284637451172
+        ]
+      },
+      {
+        "name": "upperarm_bck_l",
+        "parent": "upperarm_correctiveRoot_l",
+        "component_position_cm": [
+          23.28614044189453,
+          13.644204139709473,
+          151.83438110351562
+        ]
+      },
+      {
+        "name": "upperarm_fwd_l",
+        "parent": "upperarm_correctiveRoot_l",
+        "component_position_cm": [
+          18.125768661499023,
+          -0.48629772663116455,
+          145.51519775390625
+        ]
+      },
+      {
+        "name": "upperarm_in_l",
+        "parent": "upperarm_correctiveRoot_l",
+        "component_position_cm": [
+          20.975709915161133,
+          7.990623950958252,
+          142.85206604003906
+        ]
+      },
+      {
+        "name": "upperarm_out_l",
+        "parent": "upperarm_correctiveRoot_l",
+        "component_position_cm": [
+          22.971614837646484,
+          4.614958763122559,
+          154.46786499023438
+        ]
+      },
+      {
+        "name": "clavicle_out_l",
+        "parent": "clavicle_l",
+        "component_position_cm": [
+          21.250818252563477,
+          6.58259391784668,
+          156.62234497070312
+        ]
+      },
+      {
+        "name": "clavicle_scap_l",
+        "parent": "clavicle_l",
+        "component_position_cm": [
+          16.738204956054688,
+          14.643399238586426,
+          149.49295043945312
+        ]
+      },
+      {
+        "name": "bns_LeftArmArmor_01",
+        "parent": "clavicle_l",
+        "component_position_cm": [
+          15.884844779968262,
+          7.208103656768799,
+          158.29458618164062
+        ]
+      },
+      {
+        "name": "bns_cloak_01",
+        "parent": "clavicle_l",
+        "component_position_cm": [
+          18.28191375732422,
+          17.37961196899414,
+          150.03561401367188
+        ]
+      },
+      {
+        "name": "bns_cloak_02",
+        "parent": "bns_cloak_01",
+        "component_position_cm": [
+          20.91510581970215,
+          22.59503173828125,
+          133.72279357910156
+        ]
+      },
+      {
+        "name": "bns_cloak_03",
+        "parent": "bns_cloak_02",
+        "component_position_cm": [
+          24.615909576416016,
+          28.737375259399414,
+          112.1998062133789
+        ]
+      },
+      {
+        "name": "bns_cloak_04",
+        "parent": "bns_cloak_03",
+        "component_position_cm": [
+          28.316715240478516,
+          34.87971496582031,
+          90.67684936523438
+        ]
+      },
+      {
+        "name": "bns_cloak_05",
+        "parent": "bns_cloak_04",
+        "component_position_cm": [
+          32.017520904541016,
+          41.022064208984375,
+          69.15387725830078
+        ]
+      },
+      {
+        "name": "bns_cloak_06",
+        "parent": "bns_cloak_05",
+        "component_position_cm": [
+          35.718299865722656,
+          47.16440963745117,
+          47.630897521972656
+        ]
+      },
+      {
+        "name": "clavicle_r",
+        "parent": "spine_05",
+        "component_position_cm": [
+          -7.988306999206543,
+          7.215463638305664,
+          154.9134979248047
+        ]
+      },
+      {
+        "name": "upperarm_r",
+        "parent": "clavicle_r",
+        "component_position_cm": [
+          -19.34297752380371,
+          7.030459880828857,
+          150.62742614746094
+        ]
+      },
+      {
+        "name": "lowerarm_r",
+        "parent": "upperarm_r",
+        "component_position_cm": [
+          -39.99097442626953,
+          4.576971530914307,
+          131.20010375976562
+        ]
+      },
+      {
+        "name": "hand_r",
+        "parent": "lowerarm_r",
+        "component_position_cm": [
+          -53.32227325439453,
+          -6.6529364585876465,
+          112.72994232177734
+        ]
+      },
+      {
+        "name": "pinky_metacarpal_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -55.951332092285156,
+          -6.156890869140625,
+          110.1484603881836
+        ]
+      },
+      {
+        "name": "pinky_01_r",
+        "parent": "pinky_metacarpal_r",
+        "component_position_cm": [
+          -58.02206039428711,
+          -6.686376094818115,
+          103.47721862792969
+        ]
+      },
+      {
+        "name": "pinky_02_r",
+        "parent": "pinky_01_r",
+        "component_position_cm": [
+          -59.0997428894043,
+          -6.961881160736084,
+          100.00543212890625
+        ]
+      },
+      {
+        "name": "pinky_03_r",
+        "parent": "pinky_02_r",
+        "component_position_cm": [
+          -59.66628646850586,
+          -7.147270202636719,
+          97.9295883178711
+        ]
+      },
+      {
+        "name": "ring_metacarpal_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -55.40330505371094,
+          -7.430819988250732,
+          110.37218475341797
+        ]
+      },
+      {
+        "name": "ring_01_r",
+        "parent": "ring_metacarpal_r",
+        "component_position_cm": [
+          -57.98891067504883,
+          -9.031499862670898,
+          104.06147766113281
+        ]
+      },
+      {
+        "name": "ring_02_r",
+        "parent": "ring_01_r",
+        "component_position_cm": [
+          -59.72675704956055,
+          -10.107309341430664,
+          99.81990051269531
+        ]
+      },
+      {
+        "name": "ring_03_r",
+        "parent": "ring_02_r",
+        "component_position_cm": [
+          -60.18107604980469,
+          -10.739201545715332,
+          97.21988677978516
+        ]
+      },
+      {
+        "name": "middle_metacarpal_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -55.23666000366211,
+          -7.963950157165527,
+          110.57598876953125
+        ]
+      },
+      {
+        "name": "middle_01_r",
+        "parent": "middle_metacarpal_r",
+        "component_position_cm": [
+          -57.54844665527344,
+          -11.156296730041504,
+          104.78485870361328
+        ]
+      },
+      {
+        "name": "middle_02_r",
+        "parent": "middle_01_r",
+        "component_position_cm": [
+          -59.18791580200195,
+          -13.420010566711426,
+          100.67825317382812
+        ]
+      },
+      {
+        "name": "middle_03_r",
+        "parent": "middle_02_r",
+        "component_position_cm": [
+          -59.556209564208984,
+          -14.659838676452637,
+          98.03379821777344
+        ]
+      },
+      {
+        "name": "index_metacarpal_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -54.5258674621582,
+          -9.146018981933594,
+          111.58802795410156
+        ]
+      },
+      {
+        "name": "index_01_r",
+        "parent": "index_metacarpal_r",
+        "component_position_cm": [
+          -56.14645004272461,
+          -13.348928451538086,
+          106.2229995727539
+        ]
+      },
+      {
+        "name": "index_02_r",
+        "parent": "index_01_r",
+        "component_position_cm": [
+          -57.23609924316406,
+          -16.174793243408203,
+          102.61603546142578
+        ]
+      },
+      {
+        "name": "index_03_r",
+        "parent": "index_02_r",
+        "component_position_cm": [
+          -57.5010871887207,
+          -17.738622665405273,
+          100.33671569824219
+        ]
+      },
+      {
+        "name": "thumb_01_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -52.2476921081543,
+          -10.433001518249512,
+          110.56343078613281
+        ]
+      },
+      {
+        "name": "thumb_02_r",
+        "parent": "thumb_01_r",
+        "component_position_cm": [
+          -51.5178337097168,
+          -13.566570281982422,
+          108.68245697021484
+        ]
+      },
+      {
+        "name": "thumb_03_r",
+        "parent": "thumb_02_r",
+        "component_position_cm": [
+          -51.26384353637695,
+          -16.33612632751465,
+          106.48291778564453
+        ]
+      },
+      {
+        "name": "wrist_inner_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -51.635406494140625,
+          -6.104390621185303,
+          112.41262817382812
+        ]
+      },
+      {
+        "name": "wrist_outer_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -55.185096740722656,
+          -7.04170560836792,
+          113.9160385131836
+        ]
+      },
+      {
+        "name": "weapon_r",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -53.58700180053711,
+          -9.290898323059082,
+          103.63114929199219
+        ]
+      },
+      {
+        "name": "weapon_r_child",
+        "parent": "weapon_r",
+        "component_position_cm": [
+          -53.58700180053711,
+          -9.290898323059082,
+          103.63114929199219
+        ]
+      },
+      {
+        "name": "weapon_r_Inst",
+        "parent": "hand_r",
+        "component_position_cm": [
+          -53.58698654174805,
+          -9.290903091430664,
+          103.63114166259766
+        ]
+      },
+      {
+        "name": "lowerarm_twist_02_r",
+        "parent": "lowerarm_r",
+        "component_position_cm": [
+          -44.43476867675781,
+          0.8336449861526489,
+          125.04326629638672
+        ]
+      },
+      {
+        "name": "lowerarm_twist_01_r",
+        "parent": "lowerarm_r",
+        "component_position_cm": [
+          -48.8785514831543,
+          -2.9096665382385254,
+          118.88658142089844
+        ]
+      },
+      {
+        "name": "lowerarm_correctiveRoot_r",
+        "parent": "lowerarm_r",
+        "component_position_cm": [
+          -39.990989685058594,
+          4.576973915100098,
+          131.20010375976562
+        ]
+      },
+      {
+        "name": "lowerarm_out_r",
+        "parent": "lowerarm_correctiveRoot_r",
+        "component_position_cm": [
+          -42.477210998535156,
+          3.5225937366485596,
+          132.6634063720703
+        ]
+      },
+      {
+        "name": "lowerarm_in_r",
+        "parent": "lowerarm_correctiveRoot_r",
+        "component_position_cm": [
+          -38.66440963745117,
+          6.454958915710449,
+          127.92129516601562
+        ]
+      },
+      {
+        "name": "lowerarm_fwd_r",
+        "parent": "lowerarm_correctiveRoot_r",
+        "component_position_cm": [
+          -38.62300491333008,
+          1.0290710926055908,
+          129.87734985351562
+        ]
+      },
+      {
+        "name": "lowerarm_bck_r",
+        "parent": "lowerarm_correctiveRoot_r",
+        "component_position_cm": [
+          -42.85662841796875,
+          8.611721992492676,
+          129.7532958984375
+        ]
+      },
+      {
+        "name": "upperarm_twist_01_r",
+        "parent": "upperarm_r",
+        "component_position_cm": [
+          -26.225608825683594,
+          6.212622165679932,
+          144.15151977539062
+        ]
+      },
+      {
+        "name": "upperarm_twistCor_01_r",
+        "parent": "upperarm_twist_01_r",
+        "component_position_cm": [
+          -26.22381019592285,
+          6.212252140045166,
+          144.14979553222656
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_01_l",
+        "parent": "upperarm_twist_01_r",
+        "component_position_cm": [
+          -22.152873992919922,
+          6.730634689331055,
+          137.72337341308594
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_02_l",
+        "parent": "bns_sleeves_0_01_l",
+        "component_position_cm": [
+          -26.244949340820312,
+          6.7408671379089355,
+          131.88880920410156
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_03_l",
+        "parent": "bns_sleeves_0_02_l",
+        "component_position_cm": [
+          -29.914165496826172,
+          6.690673351287842,
+          125.79993438720703
+        ]
+      },
+      {
+        "name": "bns_sleeves_0_04_l",
+        "parent": "bns_sleeves_0_03_l",
+        "component_position_cm": [
+          -32.86783218383789,
+          4.617705821990967,
+          119.43429565429688
+        ]
+      },
+      {
+        "name": "bns_sleeves_1_01_l",
+        "parent": "upperarm_twist_01_r",
+        "component_position_cm": [
+          -22.49011993408203,
+          -0.28696057200431824,
+          147.61785888671875
+        ]
+      },
+      {
+        "name": "bns_sleeves_1_02_l",
+        "parent": "bns_sleeves_1_01_l",
+        "component_position_cm": [
+          -28.41053009033203,
+          -0.026828423142433167,
+          141.63990783691406
+        ]
+      },
+      {
+        "name": "bns_sleeves_1_03_l",
+        "parent": "bns_sleeves_1_02_l",
+        "component_position_cm": [
+          -33.79071044921875,
+          -1.774707555770874,
+          135.76718139648438
+        ]
+      },
+      {
+        "name": "bns_sleeves_1_04_l",
+        "parent": "bns_sleeves_1_03_l",
+        "component_position_cm": [
+          -39.31831741333008,
+          -5.995668411254883,
+          131.43276977539062
+        ]
+      },
+      {
+        "name": "bns_sleeves_2_01_l",
+        "parent": "upperarm_twist_01_r",
+        "component_position_cm": [
+          -26.695463180541992,
+          9.034541130065918,
+          155.67333984375
+        ]
+      },
+      {
+        "name": "bns_sleeves_2_02_l",
+        "parent": "bns_sleeves_2_01_l",
+        "component_position_cm": [
+          -33.32732391357422,
+          7.420770168304443,
+          148.4956512451172
+        ]
+      },
+      {
+        "name": "bns_sleeves_2_03_l",
+        "parent": "bns_sleeves_2_02_l",
+        "component_position_cm": [
+          -41.34670639038086,
+          5.6990203857421875,
+          141.50746154785156
+        ]
+      },
+      {
+        "name": "bns_sleeves_2_04_l",
+        "parent": "bns_sleeves_2_03_l",
+        "component_position_cm": [
+          -49.45120620727539,
+          5.517572402954102,
+          135.6032257080078
+        ]
+      },
+      {
+        "name": "bns_sleeves_3_01_l",
+        "parent": "upperarm_twist_01_r",
+        "component_position_cm": [
+          -25.225650787353516,
+          16.3365421295166,
+          146.23147583007812
+        ]
+      },
+      {
+        "name": "bns_sleeves_3_02_l",
+        "parent": "bns_sleeves_3_01_l",
+        "component_position_cm": [
+          -30.44524574279785,
+          16.01202964782715,
+          139.97525024414062
+        ]
+      },
+      {
+        "name": "bns_sleeves_3_03_l",
+        "parent": "bns_sleeves_3_02_l",
+        "component_position_cm": [
+          -35.66484069824219,
+          15.687512397766113,
+          133.71897888183594
+        ]
+      },
+      {
+        "name": "bns_sleeves_3_04_l",
+        "parent": "bns_sleeves_3_03_l",
+        "component_position_cm": [
+          -39.76570510864258,
+          14.936688423156738,
+          126.32756805419922
+        ]
+      },
+      {
+        "name": "upperarm_twist_02_r",
+        "parent": "upperarm_r",
+        "component_position_cm": [
+          -33.10830307006836,
+          5.394794464111328,
+          137.67575073242188
+        ]
+      },
+      {
+        "name": "upperarm_tricep_r",
+        "parent": "upperarm_twist_02_r",
+        "component_position_cm": [
+          -35.051021575927734,
+          9.908835411071777,
+          138.06097412109375
+        ]
+      },
+      {
+        "name": "upperarm_bicep_r",
+        "parent": "upperarm_twist_02_r",
+        "component_position_cm": [
+          -31.41462516784668,
+          1.6719268560409546,
+          135.1763916015625
+        ]
+      },
+      {
+        "name": "upperarm_twistCor_02_r",
+        "parent": "upperarm_twist_02_r",
+        "component_position_cm": [
+          -33.10708236694336,
+          5.39454460144043,
+          137.67465209960938
+        ]
+      },
+      {
+        "name": "upperarm_correctiveRoot_r",
+        "parent": "upperarm_r",
+        "component_position_cm": [
+          -19.34297752380371,
+          7.030454635620117,
+          150.62730407714844
+        ]
+      },
+      {
+        "name": "upperarm_bck_r",
+        "parent": "upperarm_correctiveRoot_r",
+        "component_position_cm": [
+          -23.49237823486328,
+          13.546600341796875,
+          151.87158203125
+        ]
+      },
+      {
+        "name": "upperarm_in_r",
+        "parent": "upperarm_correctiveRoot_r",
+        "component_position_cm": [
+          -21.197938919067383,
+          7.890742301940918,
+          142.89434814453125
+        ]
+      },
+      {
+        "name": "upperarm_fwd_r",
+        "parent": "upperarm_correctiveRoot_r",
+        "component_position_cm": [
+          -18.331256866455078,
+          -0.5842748880386353,
+          145.55116271972656
+        ]
+      },
+      {
+        "name": "upperarm_out_r",
+        "parent": "upperarm_correctiveRoot_r",
+        "component_position_cm": [
+          -23.178085327148438,
+          4.516918659210205,
+          154.50343322753906
+        ]
+      },
+      {
+        "name": "clavicle_out_r",
+        "parent": "clavicle_r",
+        "component_position_cm": [
+          -21.476856231689453,
+          6.580631256103516,
+          156.57289123535156
+        ]
+      },
+      {
+        "name": "clavicle_scap_r",
+        "parent": "clavicle_r",
+        "component_position_cm": [
+          -16.964122772216797,
+          14.629434585571289,
+          149.4451446533203
+        ]
+      },
+      {
+        "name": "clavicle_pec_r",
+        "parent": "spine_05",
+        "component_position_cm": [
+          -9.635499954223633,
+          -1.8746377229690552,
+          141.63404846191406
+        ]
+      },
+      {
+        "name": "spine_04_latissimus_l",
+        "parent": "spine_05",
+        "component_position_cm": [
+          15.44349193572998,
+          10.543031692504883,
+          139.7307891845703
+        ]
+      },
+      {
+        "name": "spine_04_latissimus_r",
+        "parent": "spine_05",
+        "component_position_cm": [
+          -15.454670906066895,
+          10.543241500854492,
+          139.72544860839844
+        ]
+      },
+      {
+        "name": "clavicle_pec_l",
+        "parent": "spine_05",
+        "component_position_cm": [
+          9.310211181640625,
+          -1.645416498184204,
+          141.6072540283203
+        ]
+      },
+      {
+        "name": "PT_weaponHandR",
+        "parent": "spine_05",
+        "component_position_cm": [
+          2.3117985620046966e-05,
+          -0.0001125335693359375,
+          2.3245811462402344e-05
+        ]
+      },
+      {
+        "name": "PT_weaponHandL",
+        "parent": "spine_05",
+        "component_position_cm": [
+          2.492625208105892e-05,
+          -0.00011968612670898438,
+          2.390146255493164e-05
+        ]
+      },
+      {
+        "name": "Pt_weapon_back_root",
+        "parent": "spine_05",
+        "component_position_cm": [
+          -10.981256484985352,
+          22.026981353759766,
+          150.873046875
+        ]
+      },
+      {
+        "name": "Pt_LongBladeScabbard_Back",
+        "parent": "Pt_weapon_back_root",
+        "component_position_cm": [
+          1.5971693992614746,
+          22.081323623657227,
+          140.6295623779297
+        ]
+      },
+      {
+        "name": "Pt_LongBlade_Back",
+        "parent": "Pt_LongBladeScabbard_Back",
+        "component_position_cm": [
+          -21.855146408081055,
+          24.613365173339844,
+          170.14114379882812
+        ]
+      },
+      {
+        "name": "Pt_TangBladeScabbard_Back",
+        "parent": "Pt_weapon_back_root",
+        "component_position_cm": [
+          -1.065990924835205,
+          22.27947425842285,
+          139.25172424316406
+        ]
+      },
+      {
+        "name": "Pt_TangBlade_Back",
+        "parent": "Pt_TangBladeScabbard_Back",
+        "component_position_cm": [
+          -24.042531967163086,
+          24.613346099853516,
+          173.48182678222656
+        ]
+      },
+      {
+        "name": "Pt_ChakramScabbard_Back",
+        "parent": "Pt_weapon_back_root",
+        "component_position_cm": [
+          -6.178084373474121,
+          24.10782814025879,
+          136.74755859375
+        ]
+      },
+      {
+        "name": "Pt_Chakram_L_Back",
+        "parent": "Pt_ChakramScabbard_Back",
+        "component_position_cm": [
+          -20.710723876953125,
+          22.535961151123047,
+          153.3780059814453
+        ]
+      },
+      {
+        "name": "Pt_Chakram_R_Back",
+        "parent": "Pt_ChakramScabbard_Back",
+        "component_position_cm": [
+          -14.918149948120117,
+          23.345046997070312,
+          156.0479278564453
+        ]
+      },
+      {
+        "name": "Pt_DoubleBladeScabbard_Back",
+        "parent": "Pt_weapon_back_root",
+        "component_position_cm": [
+          -4.0980658531188965,
+          24.107826232910156,
+          133.8778533935547
+        ]
+      },
+      {
+        "name": "Pt_DoubleBlade_R_Back",
+        "parent": "Pt_DoubleBladeScabbard_Back",
+        "component_position_cm": [
+          -22.378829956054688,
+          18.224693298339844,
+          160.04058837890625
+        ]
+      },
+      {
+        "name": "Pt_DoubleBlade_L_Back",
+        "parent": "Pt_DoubleBladeScabbard_Back",
+        "component_position_cm": [
+          -18.69744873046875,
+          21.593502044677734,
+          160.71580505371094
+        ]
+      },
+      {
+        "name": "Pt_KnifeScabbard_Back",
+        "parent": "spine_01",
+        "component_position_cm": [
+          -8.75243854522705,
+          17.423065185546875,
+          121.1812744140625
+        ]
+      },
+      {
+        "name": "Pt_Knife_Back",
+        "parent": "Pt_KnifeScabbard_Back",
+        "component_position_cm": [
+          -19.801410675048828,
+          16.780439376831055,
+          123.41482543945312
+        ]
+      },
+      {
+        "name": "thigh_r",
+        "parent": "pelvis",
+        "component_position_cm": [
+          -8.463531494140625,
+          5.145416259765625,
+          109.2081069946289
+        ]
+      },
+      {
+        "name": "calf_r",
+        "parent": "thigh_r",
+        "component_position_cm": [
+          -13.59542465209961,
+          4.09170389175415,
+          59.84162521362305
+        ]
+      },
+      {
+        "name": "foot_r",
+        "parent": "calf_r",
+        "component_position_cm": [
+          -17.220256805419922,
+          12.455982208251953,
+          10.534963607788086
+        ]
+      },
+      {
+        "name": "ball_r",
+        "parent": "foot_r",
+        "component_position_cm": [
+          -20.21042251586914,
+          3.0765464305877686,
+          -0.00023995552328415215
+        ]
+      },
+      {
+        "name": "ankle_fwd_r",
+        "parent": "foot_r",
+        "component_position_cm": [
+          -18.392494201660156,
+          7.479523181915283,
+          12.703065872192383
+        ]
+      },
+      {
+        "name": "ankle_bck_r",
+        "parent": "foot_r",
+        "component_position_cm": [
+          -16.877845764160156,
+          16.589061737060547,
+          11.061575889587402
+        ]
+      },
+      {
+        "name": "calf_twist_02_r",
+        "parent": "calf_r",
+        "component_position_cm": [
+          -14.80368423461914,
+          6.879805088043213,
+          43.406070709228516
+        ]
+      },
+      {
+        "name": "calf_twistCor_02_r",
+        "parent": "calf_twist_02_r",
+        "component_position_cm": [
+          -14.803709983825684,
+          6.879786014556885,
+          43.40616989135742
+        ]
+      },
+      {
+        "name": "calf_twist_01_r",
+        "parent": "calf_r",
+        "component_position_cm": [
+          -16.011966705322266,
+          9.667898178100586,
+          26.97051429748535
+        ]
+      },
+      {
+        "name": "calf_correctiveRoot_r",
+        "parent": "calf_r",
+        "component_position_cm": [
+          -13.595425605773926,
+          4.09169864654541,
+          59.84162902832031
+        ]
+      },
+      {
+        "name": "calf_kneeBack_r",
+        "parent": "calf_correctiveRoot_r",
+        "component_position_cm": [
+          -12.203740119934082,
+          9.66114616394043,
+          60.526123046875
+        ]
+      },
+      {
+        "name": "calf_knee_r",
+        "parent": "calf_correctiveRoot_r",
+        "component_position_cm": [
+          -14.50200366973877,
+          -0.9834697842597961,
+          58.854148864746094
+        ]
+      },
+      {
+        "name": "thigh_twist_01_r",
+        "parent": "thigh_r",
+        "component_position_cm": [
+          -10.17415714263916,
+          4.794166088104248,
+          92.75262451171875
+        ]
+      },
+      {
+        "name": "thigh_twistCor_01_r",
+        "parent": "thigh_twist_01_r",
+        "component_position_cm": [
+          -10.174160957336426,
+          4.79418420791626,
+          92.75263214111328
+        ]
+      },
+      {
+        "name": "bns_skirt_0_01_r",
+        "parent": "thigh_twist_01_r",
+        "component_position_cm": [
+          -10.430985450744629,
+          -6.566840648651123,
+          110.02362823486328
+        ]
+      },
+      {
+        "name": "bns_skirt_0_02_r",
+        "parent": "bns_skirt_0_01_r",
+        "component_position_cm": [
+          -12.691545486450195,
+          -8.25716781616211,
+          93.02727508544922
+        ]
+      },
+      {
+        "name": "bns_skirt_0_03_r",
+        "parent": "bns_skirt_0_02_r",
+        "component_position_cm": [
+          -14.95205020904541,
+          -9.947508811950684,
+          76.0309829711914
+        ]
+      },
+      {
+        "name": "bns_skirt_0_04_r",
+        "parent": "bns_skirt_0_03_r",
+        "component_position_cm": [
+          -17.212553024291992,
+          -11.637845993041992,
+          59.034706115722656
+        ]
+      },
+      {
+        "name": "bns_skirt_0_05_r",
+        "parent": "bns_skirt_0_04_r",
+        "component_position_cm": [
+          -17.448144912719727,
+          -13.681629180908203,
+          41.8354377746582
+        ]
+      },
+      {
+        "name": "bns_skirt_1_01_r",
+        "parent": "thigh_twist_01_r",
+        "component_position_cm": [
+          -20.40074920654297,
+          3.1074748039245605,
+          108.98226165771484
+        ]
+      },
+      {
+        "name": "bns_skirt_1_02_r",
+        "parent": "bns_skirt_1_01_r",
+        "component_position_cm": [
+          -24.912094116210938,
+          3.4142658710479736,
+          88.60874938964844
+        ]
+      },
+      {
+        "name": "bns_skirt_1_03_r",
+        "parent": "bns_skirt_1_02_r",
+        "component_position_cm": [
+          -29.423429489135742,
+          3.7210440635681152,
+          68.23519134521484
+        ]
+      },
+      {
+        "name": "bns_skirt_1_04_r",
+        "parent": "bns_skirt_1_03_r",
+        "component_position_cm": [
+          -33.934776306152344,
+          4.027822971343994,
+          47.861637115478516
+        ]
+      },
+      {
+        "name": "bns_skirt_1_05_r",
+        "parent": "bns_skirt_1_04_r",
+        "component_position_cm": [
+          -38.407344818115234,
+          1.8091093301773071,
+          27.53795051574707
+        ]
+      },
+      {
+        "name": "bns_skirt_2_01_r",
+        "parent": "thigh_twist_01_r",
+        "component_position_cm": [
+          -13.942973136901855,
+          15.220538139343262,
+          107.61839294433594
+        ]
+      },
+      {
+        "name": "bns_skirt_2_02_r",
+        "parent": "bns_skirt_2_01_r",
+        "component_position_cm": [
+          -17.700241088867188,
+          19.249698638916016,
+          85.30692291259766
+        ]
+      },
+      {
+        "name": "bns_skirt_2_03_r",
+        "parent": "bns_skirt_2_02_r",
+        "component_position_cm": [
+          -21.45752716064453,
+          23.278818130493164,
+          62.99538803100586
+        ]
+      },
+      {
+        "name": "bns_skirt_2_04_r",
+        "parent": "bns_skirt_2_03_r",
+        "component_position_cm": [
+          -25.214815139770508,
+          27.307931900024414,
+          40.68385696411133
+        ]
+      },
+      {
+        "name": "bns_skirt_2_05_r",
+        "parent": "bns_skirt_2_04_r",
+        "component_position_cm": [
+          -32.192771911621094,
+          29.843795776367188,
+          18.738994598388672
+        ]
+      },
+      {
+        "name": "thigh_twist_02_r",
+        "parent": "thigh_r",
+        "component_position_cm": [
+          -11.88477611541748,
+          4.44292688369751,
+          76.29714965820312
+        ]
+      },
+      {
+        "name": "thigh_twistCor_02_r",
+        "parent": "thigh_twist_02_r",
+        "component_position_cm": [
+          -11.88479232788086,
+          4.442952632904053,
+          76.2971420288086
+        ]
+      },
+      {
+        "name": "thigh_correctiveRoot_r",
+        "parent": "thigh_r",
+        "component_position_cm": [
+          -8.463531494140625,
+          5.145416259765625,
+          109.2081069946289
+        ]
+      },
+      {
+        "name": "thigh_fwd_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -8.324116706848145,
+          -1.5724042654037476,
+          113.60177612304688
+        ]
+      },
+      {
+        "name": "thigh_bck_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -4.903725624084473,
+          14.95018196105957,
+          113.69461822509766
+        ]
+      },
+      {
+        "name": "thigh_out_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -12.79175090789795,
+          6.662386417388916,
+          115.47502899169922
+        ]
+      },
+      {
+        "name": "thigh_in_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -1.2814143896102905,
+          2.813615322113037,
+          97.5214614868164
+        ]
+      },
+      {
+        "name": "thigh_bck_lwr_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -5.899392604827881,
+          15.313220024108887,
+          103.4186782836914
+        ]
+      },
+      {
+        "name": "thigh_fwd_lwr_r",
+        "parent": "thigh_correctiveRoot_r",
+        "component_position_cm": [
+          -8.918231964111328,
+          -1.8027780055999756,
+          108.3698959350586
+        ]
+      },
+      {
+        "name": "thigh_l",
+        "parent": "pelvis",
+        "component_position_cm": [
+          8.463531494140625,
+          5.145416259765625,
+          109.20809936523438
+        ]
+      },
+      {
+        "name": "calf_l",
+        "parent": "thigh_l",
+        "component_position_cm": [
+          13.595792770385742,
+          4.0917582511901855,
+          59.841636657714844
+        ]
+      },
+      {
+        "name": "foot_l",
+        "parent": "calf_l",
+        "component_position_cm": [
+          17.220867156982422,
+          12.456104278564453,
+          10.53518295288086
+        ]
+      },
+      {
+        "name": "ball_l",
+        "parent": "foot_l",
+        "component_position_cm": [
+          20.21112632751465,
+          3.076688289642334,
+          2.569487151049543e-06
+        ]
+      },
+      {
+        "name": "ankle_bck_l",
+        "parent": "foot_l",
+        "component_position_cm": [
+          16.644073486328125,
+          15.88671875,
+          11.14791202545166
+        ]
+      },
+      {
+        "name": "ankle_fwd_l",
+        "parent": "foot_l",
+        "component_position_cm": [
+          18.868614196777344,
+          8.158801078796387,
+          12.314994812011719
+        ]
+      },
+      {
+        "name": "calf_twist_02_l",
+        "parent": "calf_l",
+        "component_position_cm": [
+          14.804139137268066,
+          6.879879474639893,
+          43.40614700317383
+        ]
+      },
+      {
+        "name": "calf_twistCor_02_l",
+        "parent": "calf_twist_02_l",
+        "component_position_cm": [
+          14.804147720336914,
+          6.8798604011535645,
+          43.40620803833008
+        ]
+      },
+      {
+        "name": "calf_twist_01_l",
+        "parent": "calf_l",
+        "component_position_cm": [
+          16.01249885559082,
+          9.66799545288086,
+          26.970664978027344
+        ]
+      },
+      {
+        "name": "calf_correctiveRoot_l",
+        "parent": "calf_l",
+        "component_position_cm": [
+          13.595791816711426,
+          4.0917582511901855,
+          59.84164810180664
+        ]
+      },
+      {
+        "name": "calf_kneeBack_l",
+        "parent": "calf_correctiveRoot_l",
+        "component_position_cm": [
+          12.228381156921387,
+          9.660677909851074,
+          60.52457046508789
+        ]
+      },
+      {
+        "name": "calf_knee_l",
+        "parent": "calf_correctiveRoot_l",
+        "component_position_cm": [
+          14.505887985229492,
+          -0.9858685731887817,
+          58.85110855102539
+        ]
+      },
+      {
+        "name": "thigh_twist_01_l",
+        "parent": "thigh_l",
+        "component_position_cm": [
+          10.174286842346191,
+          4.794182300567627,
+          92.75260925292969
+        ]
+      },
+      {
+        "name": "thigh_twistCor_01_l",
+        "parent": "thigh_twist_01_l",
+        "component_position_cm": [
+          10.174294471740723,
+          4.794197082519531,
+          92.75260162353516
+        ]
+      },
+      {
+        "name": "bns_skirt_0_01_l",
+        "parent": "thigh_twist_01_l",
+        "component_position_cm": [
+          10.430970191955566,
+          -6.566864490509033,
+          110.02351379394531
+        ]
+      },
+      {
+        "name": "bns_skirt_0_02_l",
+        "parent": "bns_skirt_0_01_l",
+        "component_position_cm": [
+          12.691720962524414,
+          -8.25713062286377,
+          93.02728271484375
+        ]
+      },
+      {
+        "name": "bns_skirt_0_03_l",
+        "parent": "bns_skirt_0_02_l",
+        "component_position_cm": [
+          14.952380180358887,
+          -9.947417259216309,
+          76.03099060058594
+        ]
+      },
+      {
+        "name": "bns_skirt_0_04_l",
+        "parent": "bns_skirt_0_03_l",
+        "component_position_cm": [
+          17.21305274963379,
+          -11.637703895568848,
+          59.03472137451172
+        ]
+      },
+      {
+        "name": "bns_skirt_0_05_l",
+        "parent": "bns_skirt_0_04_l",
+        "component_position_cm": [
+          17.448837280273438,
+          -13.6814546585083,
+          41.83552551269531
+        ]
+      },
+      {
+        "name": "bns_skirt_1_01_l",
+        "parent": "thigh_twist_01_l",
+        "component_position_cm": [
+          20.400739669799805,
+          3.107455253601074,
+          108.98223114013672
+        ]
+      },
+      {
+        "name": "bns_skirt_1_02_l",
+        "parent": "bns_skirt_1_01_l",
+        "component_position_cm": [
+          24.912221908569336,
+          3.4142887592315674,
+          88.6087417602539
+        ]
+      },
+      {
+        "name": "bns_skirt_1_03_l",
+        "parent": "bns_skirt_1_02_l",
+        "component_position_cm": [
+          29.42367935180664,
+          3.7211101055145264,
+          68.2352066040039
+        ]
+      },
+      {
+        "name": "bns_skirt_1_04_l",
+        "parent": "bns_skirt_1_03_l",
+        "component_position_cm": [
+          33.93513870239258,
+          4.027935028076172,
+          47.86167907714844
+        ]
+      },
+      {
+        "name": "bns_skirt_1_05_l",
+        "parent": "bns_skirt_1_04_l",
+        "component_position_cm": [
+          38.4078369140625,
+          1.8092186450958252,
+          27.538000106811523
+        ]
+      },
+      {
+        "name": "bns_skirt_2_01_l",
+        "parent": "thigh_twist_01_l",
+        "component_position_cm": [
+          13.942968368530273,
+          15.220520973205566,
+          107.61833190917969
+        ]
+      },
+      {
+        "name": "bns_skirt_2_02_l",
+        "parent": "bns_skirt_2_01_l",
+        "component_position_cm": [
+          17.70037078857422,
+          19.249658584594727,
+          85.30687713623047
+        ]
+      },
+      {
+        "name": "bns_skirt_2_03_l",
+        "parent": "bns_skirt_2_02_l",
+        "component_position_cm": [
+          21.457801818847656,
+          23.278793334960938,
+          62.995361328125
+        ]
+      },
+      {
+        "name": "bns_skirt_2_04_l",
+        "parent": "bns_skirt_2_03_l",
+        "component_position_cm": [
+          25.215229034423828,
+          27.30792236328125,
+          40.68384552001953
+        ]
+      },
+      {
+        "name": "bns_skirt_2_05_l",
+        "parent": "bns_skirt_2_04_l",
+        "component_position_cm": [
+          32.193336486816406,
+          29.843704223632812,
+          18.739023208618164
+        ]
+      },
+      {
+        "name": "thigh_twist_02_l",
+        "parent": "thigh_l",
+        "component_position_cm": [
+          11.885027885437012,
+          4.442962169647217,
+          76.29715728759766
+        ]
+      },
+      {
+        "name": "thigh_twistCor_02_l",
+        "parent": "thigh_twist_02_l",
+        "component_position_cm": [
+          11.885043144226074,
+          4.442977428436279,
+          76.297119140625
+        ]
+      },
+      {
+        "name": "thigh_correctiveRoot_l",
+        "parent": "thigh_l",
+        "component_position_cm": [
+          8.463531494140625,
+          5.145416259765625,
+          109.20809936523438
+        ]
+      },
+      {
+        "name": "thigh_bck_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          4.930642604827881,
+          14.947786331176758,
+          113.69532775878906
+        ]
+      },
+      {
+        "name": "thigh_fwd_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          8.332595825195312,
+          -1.569846272468567,
+          113.59114074707031
+        ]
+      },
+      {
+        "name": "thigh_out_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          12.806463241577148,
+          6.6502685546875,
+          115.47423553466797
+        ]
+      },
+      {
+        "name": "thigh_bck_lwr_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          6.1902923583984375,
+          15.199910163879395,
+          103.42894744873047
+        ]
+      },
+      {
+        "name": "thigh_in_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          1.3070125579833984,
+          2.7584145069122314,
+          97.58512878417969
+        ]
+      },
+      {
+        "name": "thigh_fwd_lwr_l",
+        "parent": "thigh_correctiveRoot_l",
+        "component_position_cm": [
+          9.077457427978516,
+          -2.2749080657958984,
+          108.3030776977539
+        ]
+      },
+      {
+        "name": "bns_frontSkirtMain",
+        "parent": "pelvis",
+        "component_position_cm": [
+          3.3330206861137412e-06,
+          -7.9292521476745605,
+          119.76802062988281
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmor",
+        "parent": "bns_frontSkirtMain",
+        "component_position_cm": [
+          -4.598120710852527e-07,
+          -8.479117393493652,
+          119.62062072753906
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmorRibbon_01",
+        "parent": "bns_frontSkirtArmor",
+        "component_position_cm": [
+          1.5914188224996906e-06,
+          -10.586418151855469,
+          112.87887573242188
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmorRibbon_02",
+        "parent": "bns_frontSkirtArmorRibbon_01",
+        "component_position_cm": [
+          -0.5014728307723999,
+          -12.308594703674316,
+          101.55618286132812
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmorRibbon_03",
+        "parent": "bns_frontSkirtArmorRibbon_02",
+        "component_position_cm": [
+          -0.7137450575828552,
+          -13.020395278930664,
+          90.2334976196289
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmorRibbon_04",
+        "parent": "bns_frontSkirtArmorRibbon_03",
+        "component_position_cm": [
+          -0.7137449979782104,
+          -13.302834510803223,
+          78.91081237792969
+        ]
+      },
+      {
+        "name": "bns_frontSkirtArmorRibbon_05",
+        "parent": "bns_frontSkirtArmorRibbon_04",
+        "component_position_cm": [
+          -0.5014787912368774,
+          -13.655815124511719,
+          67.58815002441406
+        ]
+      },
+      {
+        "name": "bns_ribbon_0_01",
+        "parent": "bns_frontSkirtMain",
+        "component_position_cm": [
+          1.3034390633492876e-07,
+          -7.5398077964782715,
+          109.84249877929688
+        ]
+      },
+      {
+        "name": "bns_ribbon_0_02",
+        "parent": "bns_ribbon_0_01",
+        "component_position_cm": [
+          -1.7030070011969656e-06,
+          -8.080801010131836,
+          93.15108489990234
+        ]
+      },
+      {
+        "name": "bns_ribbon_0_03",
+        "parent": "bns_ribbon_0_02",
+        "component_position_cm": [
+          -2.9255834306241013e-06,
+          -8.328155517578125,
+          76.46256256103516
+        ]
+      },
+      {
+        "name": "bns_ribbon_0_04",
+        "parent": "bns_ribbon_0_03",
+        "component_position_cm": [
+          -6.772557753720321e-06,
+          -8.16372013092041,
+          59.778099060058594
+        ]
+      },
+      {
+        "name": "bns_ribbon_0_05",
+        "parent": "bns_ribbon_0_04",
+        "component_position_cm": [
+          -1.867229730123654e-05,
+          -7.999279975891113,
+          43.09363555908203
+        ]
+      },
+      {
+        "name": "bns_laterSkirtArmor",
+        "parent": "pelvis",
+        "component_position_cm": [
+          -1.6329936158854252e-07,
+          18.03363800048828,
+          113.0385513305664
+        ]
+      },
+      {
+        "name": "bns_skirt_3_01",
+        "parent": "bns_laterSkirtArmor",
+        "component_position_cm": [
+          -7.924509191070683e-07,
+          16.731033325195312,
+          107.43849182128906
+        ]
+      },
+      {
+        "name": "bns_skirt_3_02",
+        "parent": "bns_skirt_3_01",
+        "component_position_cm": [
+          -1.4189639614414773e-06,
+          21.836580276489258,
+          84.73407745361328
+        ]
+      },
+      {
+        "name": "bns_skirt_3_03",
+        "parent": "bns_skirt_3_02",
+        "component_position_cm": [
+          -1.3747657249041367e-05,
+          26.94208335876465,
+          62.02967834472656
+        ]
+      },
+      {
+        "name": "bns_skirt_3_04",
+        "parent": "bns_skirt_3_03",
+        "component_position_cm": [
+          -2.021893669734709e-05,
+          32.047603607177734,
+          39.32526779174805
+        ]
+      },
+      {
+        "name": "bns_skirt_3_05",
+        "parent": "bns_skirt_3_04",
+        "component_position_cm": [
+          -3.807589382631704e-05,
+          37.15311813354492,
+          16.620845794677734
+        ]
+      },
+      {
+        "name": "ik_foot_root",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ik_foot_l",
+        "parent": "ik_foot_root",
+        "component_position_cm": [
+          17.22088050842285,
+          12.456000328063965,
+          10.535152435302734
+        ]
+      },
+      {
+        "name": "ik_foot_r",
+        "parent": "ik_foot_root",
+        "component_position_cm": [
+          -17.220888137817383,
+          12.45598316192627,
+          10.535144805908203
+        ]
+      },
+      {
+        "name": "ik_hand_root",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ik_hand_gun",
+        "parent": "ik_hand_root",
+        "component_position_cm": [
+          -53.326717376708984,
+          -6.653035640716553,
+          112.73466491699219
+        ]
+      },
+      {
+        "name": "ik_hand_l",
+        "parent": "ik_hand_gun",
+        "component_position_cm": [
+          53.32671356201172,
+          -6.653080463409424,
+          112.73455810546875
+        ]
+      },
+      {
+        "name": "ik_hand_r",
+        "parent": "ik_hand_gun",
+        "component_position_cm": [
+          -53.326717376708984,
+          -6.653035640716553,
+          112.73466491699219
+        ]
+      },
+      {
+        "name": "interaction",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "center_of_mass",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Pt_Cam",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ik_weapon_root",
+        "parent": "root",
+        "component_position_cm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ik_weapon_l",
+        "parent": "ik_weapon_root",
+        "component_position_cm": [
+          54.12104034423828,
+          -10.985485076904297,
+          104.0943832397461
+        ]
+      },
+      {
+        "name": "ik_weapon_l_child",
+        "parent": "ik_weapon_l",
+        "component_position_cm": [
+          54.12104034423828,
+          -10.985485076904297,
+          104.0943832397461
+        ]
+      },
+      {
+        "name": "ik_weapon_r",
+        "parent": "ik_weapon_root",
+        "component_position_cm": [
+          -53.59233093261719,
+          -9.29093074798584,
+          103.63584899902344
+        ]
+      },
+      {
+        "name": "ik_weapon_r_child",
+        "parent": "ik_weapon_r",
+        "component_position_cm": [
+          -53.59233093261719,
+          -9.29093074798584,
+          103.63584899902344
+        ]
+      }
+    ],
+    "fbx": "E:\\workspace\\PBZ_vivhite_mod\\build\\qa_inputs_001\\Delta_adult.fbx",
+    "warning": "Editor import and cooked transform comparison still required"
+  }
+}

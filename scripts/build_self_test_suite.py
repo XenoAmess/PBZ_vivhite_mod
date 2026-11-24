@@ -3,20 +3,30 @@
 Rotations are specified in anatomical world axes and converted into each
 native bone's rest axes. These authored motions are NOT copied game animation.
 """
-import json, math, sys, time
+import argparse, json, math, sys, time
 from pathlib import Path
 import bpy, numpy as np
 from mathutils import Vector, Quaternion
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'output/live2d_delta/self_test';OUT.mkdir(exist_ok=True)
-bpy.ops.wm.open_mainfile(filepath=str(ROOT/'build/shoulder_inputs/Delta_adult.blend'))
+sys.path.insert(0,str(ROOT))
+from qa.motion_suite import load,sha
+cli=argparse.ArgumentParser()
+cli.add_argument('--candidate',default='build/shoulder_inputs/Delta_adult.blend')
+cli.add_argument('--output',default='output/live2d_delta/self_test_standard')
+cli.add_argument('--suite',default='qa/suites/humanoid_v1.json')
+cli.add_argument('--metrics-only',action='store_true')
+args=cli.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+candidate=(ROOT/args.candidate).resolve();suite=(ROOT/args.suite).resolve();spec=load(suite)
+OUT=(ROOT/args.output).resolve();assert OUT.is_relative_to(ROOT);OUT.mkdir(parents=True,exist_ok=True)
+hashes={'model':sha(candidate),'suite':sha(suite),'runner':sha(__file__),'contract':sha(ROOT/'qa/motion_suite.py')}
+bpy.ops.wm.open_mainfile(filepath=str(candidate))
 arm=next(o for o in bpy.data.objects if o.type=='ARMATURE')
 mesh=next(o for o in bpy.data.objects if o.type=='MESH')
 assert len(arm.data.bones)==264
 scene=bpy.context.scene;scene.render.engine='BLENDER_EEVEE'
 scene.render.resolution_x=512;scene.render.resolution_y=512;scene.render.resolution_percentage=100
 scene.render.image_settings.file_format='PNG';scene.render.film_transparent=False
-scene.render.fps=24;scene.view_settings.view_transform='AgX'
+scene.render.fps=spec['timeline']['fps'];scene.view_settings.view_transform='AgX'
 scene.world=bpy.data.worlds.new('Self test studio');scene.world.color=(.10,.10,.10)
 for loc,energy,size in [((180,-330,340),2400000,250),((-260,-150,240),1300000,250),((0,260,340),1900000,250)]:
     light=bpy.data.lights.new('SelfTest softbox','AREA');light.energy=energy;light.size=size
@@ -31,6 +41,11 @@ original_materials=list(mesh.data.materials)
 original_indices=[p.material_index for p in mesh.data.polygons]
 controlled=['neck_01','neck_02','head','spine_03','spine_04','spine_05']
 controlled += [n+'_'+s for s in ['l','r'] for n in ['clavicle','upperarm','lowerarm']]
+controlled += ['pelvis']+[n+'_'+s for s in ['l','r'] for n in ['hand','thigh','calf','foot','ball']]
+controlled += [f'{digit}_{joint:02}_{side}' for side in ['l','r'] for digit in ['thumb','index','middle','ring','pinky'] for joint in [1,2,3]]
+assert all(n in arm.data.bones for n in controlled),'Rig mapping is incomplete'
+for mod in mesh.modifiers:
+    if mod.type=='ARMATURE':assert not mod.use_deform_preserve_volume,'Viewport-only dual quaternion skinning is forbidden'
 for n in controlled:arm.pose.bones[n].rotation_mode='QUATERNION'
 def qaxis(axis,degrees):return Quaternion(Vector(axis).normalized(),math.radians(degrees))
 def local(n,world_rotation):
@@ -86,6 +101,77 @@ def torso(v):
     neck(yaw=-v*.5)
 add('torso_turn','组合：转身与反向转头','neck',[-30,-15,0,15,30],torso)
 
+def limb_axis(side,kind):
+    hand=arm.data.bones['hand_'+side].head_local
+    middle=arm.data.bones['middle_01_'+side].head_local
+    lateral=(arm.data.bones['index_01_'+side].head_local-arm.data.bones['pinky_01_'+side].head_local).normalized()
+    normal=lateral.cross((middle-hand).normalized()).normalized()
+    if normal.y>0:normal=-normal
+    return lateral if kind=='pitch' else normal
+def reach(side,amount,target_kind):
+    if amount==0:return
+    sign=1 if side=='l' else -1
+    a,e,w=[arm.data.bones[n+'_'+side].head_local.copy() for n in ['upperarm','lowerarm','hand']]
+    target=Vector((-sign*17,-14,150)) if target_kind=='opposite_shoulder' else Vector((sign*20,-12,182))
+    target=w.lerp(target,amount);delta=target-a;distance=delta.length
+    l1=(e-a).length;l2=(w-e).length;distance=min(l1+l2-.01,max(abs(l1-l2)+.01,distance));direction=delta.normalized()
+    x=(l1*l1-l2*l2+distance*distance)/(2*distance);height=math.sqrt(max(0,l1*l1-x*x))
+    rest_pole=e-a-direction*(e-a).dot(direction)
+    wanted=Vector((sign*.4,-.8,-.25));pole=rest_pole.normalized().lerp(wanted.normalized(),amount)
+    pole=(pole-direction*pole.dot(direction)).normalized()
+    desired_e=a+direction*x+pole*height
+    upper_q=(e-a).normalized().rotation_difference((desired_e-a).normalized())
+    local('upperarm_'+side,upper_q)
+    target_pre_parent=upper_q.inverted()@(target-desired_e).normalized()
+    local('lowerarm_'+side,(w-e).normalized().rotation_difference(target_pre_parent))
+def apply_case(case,value):
+    op=case['operator'];p=case['parameters'];sides=p.get('sides',['l','r'])
+    if op=='neck':
+        if isinstance(value,dict):neck(**value)
+        else:neck(**{p['axis']:value},mode=p.get('mode','distributed'))
+    elif op in ['abduction','forward','elbow','twist']:
+        function={'abduction':abduction,'forward':forward,'elbow':elbow,'twist':twist}[op]
+        for side in sides:function(side,value*(-1 if op=='twist' and side=='r' else 1))
+    elif op=='shrug':shrug(value)
+    elif op=='guard':guard(value)
+    elif op=='torso_turn':torso(value)
+    elif op=='reach':
+        for side in sides:reach(side,value,p['target'])
+    elif op=='wrist':
+        for side in sides:rotate('hand_'+side,limb_axis(side,p['axis']),value)
+    elif op=='fingers':
+        for side in sides:
+            normal=limb_axis(side,'roll')
+            for digit in ['thumb','index','middle','ring','pinky']:
+                for joint,angle in [(1,55),(2,80),(3,55)]:
+                    name=f'{digit}_{joint:02}_{side}';position=arm.data.bones[name].head_local
+                    if joint<3:direction=arm.data.bones[f'{digit}_{joint+1:02}_{side}'].head_local-position
+                    else:direction=position-arm.data.bones[f'{digit}_02_{side}'].head_local
+                    rotate(name,direction.normalized().cross(normal),angle*value)
+    elif op=='spine':
+        axis={'pitch':(1,0,0),'roll':(0,1,0),'yaw':(0,0,1)}[p['axis']]
+        for n,k in [('spine_03',.25),('spine_04',.35),('spine_05',.40)]:rotate(n,axis,value*k)
+    elif op in ['hip','knee','ankle','toes','squat']:
+        for side in sides:
+            sign=1 if side=='l' else -1
+            thigh,calf,foot=[arm.data.bones[n+'_'+side].head_local for n in ['thigh','calf','foot']]
+            if op in ['hip','squat']:
+                axis_name=p.get('axis','forward');direction=(calf-thigh).normalized()
+                axis=direction if axis_name=='twist' else direction.cross(Vector((sign,0,0)) if axis_name=='side' else Vector((0,-1,0)))
+                rotate('thigh_'+side,axis,60*value if op=='squat' else value)
+            if op in ['knee','squat']:rotate('calf_'+side,(foot-calf).normalized().cross(Vector((0,1,0))),110*value if op=='squat' else value)
+            if op in ['ankle','squat']:rotate('foot_'+side,(1,0,0) if p.get('axis','pitch')=='pitch' else (0,1,0),-50*value if op=='squat' else value)
+            if op=='toes':rotate('ball_'+side,(1,0,0),-value)
+        if op=='squat':
+            drop=(calf-thigh).length*(1-math.cos(math.radians(60*value)))+(foot-calf).length*(1-math.cos(math.radians(50*value)))
+            arm.pose.bones['pelvis'].location=arm.data.bones['pelvis'].matrix_local.to_quaternion().inverted()@Vector((0,0,-drop))
+    else:raise ValueError('Unknown ROM operator: '+op)
+clips=[]
+for case in spec['cases']:
+    clips.append({'id':case['id'],'title':case['title'],'group':case['group'],
+        'values':[s['value'] for s in case['samples']],'labels':[s['label'] for s in case['samples']],
+        'apply':lambda value,case=case:apply_case(case,value)})
+
 arm.animation_data_create();arm.animation_data.action=None;reset();bpy.context.view_layer.update()
 rest=np.array([(mesh.matrix_world@v.co)[:] for v in mesh.data.vertices])
 regions={
@@ -97,7 +183,7 @@ region_edges={n:edges[mask[edges[:,0]]&mask[edges[:,1]]&(lengths>.03)] for n,mas
 rest_lengths={n:np.linalg.norm(rest[e[:,0]]-rest[e[:,1]],axis=1) for n,e in region_edges.items()}
 def evaluate():
     bpy.context.view_layer.update();obj=mesh.evaluated_get(bpy.context.evaluated_depsgraph_get());data=obj.to_mesh()
-    coords=np.array([(mesh.matrix_world@v.co)[:] for v in data.vertices]);obj.to_mesh_clear();return coords
+    coords=np.array([(mesh.matrix_world@v.co)[:] for v in data.vertices]);obj.to_mesh_clear();assert np.isfinite(coords).all();return coords
 def metrics(coords):
     result={}
     for n,e in region_edges.items():
@@ -105,8 +191,10 @@ def metrics(coords):
         result[n]={'edges':len(e),'stretch_p95':float(np.percentile(ratio,95)),
                    'stretch_max':float(ratio.max()),'compression_p05':float(np.percentile(ratio,5))}
     return result
-report={'model':'output/live2d_delta/shoulder_rebuild/Delta_live2d.blend',
- 'native_input':'build/shoulder_inputs/Delta_adult.blend','bones':264,
+weight_sums=[sum(g.weight for g in v.groups) for v in mesh.data.vertices]
+assert min(weight_sums)>1-spec['thresholds']['weight_sum_tolerance'] and max(weight_sums)<1+spec['thresholds']['weight_sum_tolerance']
+report={'model':str(candidate.relative_to(ROOT)),'input_hashes':hashes,'suite_version':spec['version'],
+ 'native_input':str(candidate.relative_to(ROOT)),'bones':264,'case_ids':[c['id'] for c in spec['cases']],
  'purpose':'controlled offline diagnosis; no game process launched',
  'axis_convention':'native Z up; -Y front; character left is +X; neck pitch positive means up',
  'angle_note':'arm abduction is rotation from the native A pose, not from arms-down; these are chosen diagnostic ranges, not anatomical limits',
@@ -121,12 +209,15 @@ for clip in clips:
     # Neutral holds bracket each sweep; sample markers correspond to the five
     # authored targets, not interpolated or cherry-picked game frames.
     for index,value in enumerate(clip['values']):
-        frame=13+index*16;scene.frame_set(frame);reset();clip['apply'](value)
+        frame=spec['timeline']['first_sample']+index*spec['timeline']['sample_step'];scene.frame_set(frame);reset();clip['apply'](value)
         for n in controlled:arm.pose.bones[n].keyframe_insert(data_path='rotation_quaternion',frame=frame,group=n)
+        arm.pose.bones['pelvis'].keyframe_insert(data_path='location',frame=frame,group='pelvis')
         frames.append(frame)
-    for frame in [1,93]:
+    end_frame=frames[-1]+spec['timeline']['neutral_hold_frames']
+    for frame in [spec['timeline']['neutral_start'],end_frame]:
         scene.frame_set(frame);reset()
         for n in controlled:arm.pose.bones[n].keyframe_insert(data_path='rotation_quaternion',frame=frame,group=n)
+        arm.pose.bones['pelvis'].keyframe_insert(data_path='location',frame=frame,group='pelvis')
     if action.slots:
         for layer in action.layers:
             for strip in layer.strips:
@@ -134,7 +225,7 @@ for clip in clips:
                 if bag:
                     for fc in bag.fcurves:
                         for key in fc.keyframe_points:key.interpolation='LINEAR'
-    row={'id':clip['id'],'title':clip['title'],'group':clip['group'],'action':action.name,'frame_range':[1,93],
+    row={'id':clip['id'],'title':clip['title'],'group':clip['group'],'action':action.name,'frame_range':[1,end_frame],
          'samples':[],'images':[]}
     for i,(frame,value) in enumerate(zip(frames,clip['values'])):
         scene.frame_set(frame);coords=evaluate()
@@ -151,16 +242,17 @@ def set_pass(kind):
         for m in original_materials:mesh.data.materials.append(m)
         for p,i in zip(mesh.data.polygons,original_indices):p.material_index=i
 def view(group,name):
-    z=168 if group=='neck' else 147
-    data.ortho_scale=68 if group=='neck' else 139
+    z=168 if group=='neck' else 147 if group=='arms' else 110
+    data.ortho_scale=68 if group=='neck' else 185 if group=='arms' else 260
     loc={'front':(0,-500,z+2),'side':(500,0,z+2),'back':(0,500,z+2),'oblique':(330,-420,z+4)}[name]
     cam.location=loc;cam.rotation_euler=(Vector((0,0,z))-cam.location).to_track_quat('-Z','Y').to_euler()
 for clip,row in zip(clips,report['clips']):
+    if args.metrics_only:continue
     arm.animation_data.action=actions[clip['id']]
-    views=['front','side','oblique'] if clip['group']=='neck' else ['front','back','oblique']
+    views=spec['views'][clip['group']]
     # Full clay grids establish shape; textured grids expose material seams
     # for neck tests and representative arm/combined tests.
-    passes=['clay','textured'] if clip['group']=='neck' or clip['id'] in ['arms_abduction','elbows','guard'] else ['clay']
+    passes=spec['passes']
     for kind in passes:
         set_pass(kind)
         for sample_index,sample in enumerate(row['samples']):
@@ -178,7 +270,18 @@ set_pass('textured');arm.animation_data.action=actions['neck_pitch'];scene.frame
 scene.frame_start=1;scene.frame_end=93;view('neck','oblique')
 for marker in list(scene.timeline_markers):scene.timeline_markers.remove(marker)
 for i,frame in enumerate([13,29,45,61,77]):scene.timeline_markers.new(['Down -25','Down -10','Neutral','Up +20','Up +35'][i],frame=frame)
-mesh['self_test_note']='14 independent authored diagnostic actions; no game runtime claim'
+failures=[]
+for clip in report['clips']:
+    for sample in clip['samples']:
+        for region,limits in spec['thresholds'].items():
+            if not isinstance(limits,dict):continue
+            for metric,limit in limits.items():
+                value=sample['metrics'][region][metric]
+                if value>limit:failures.append({'case':clip['id'],'frame':sample['frame'],'region':region,'metric':metric,'value':value,'limit':limit})
+report['coverage_complete']=all(len(c['images'])==len(c['samples'])*len(spec['views'][c['group']])*len(spec['passes']) for c in report['clips'])
+report['numerical_checks_passed']=not failures;report['failures']=failures
+report['status']='failed' if failures else 'pending_review'
+mesh['self_test_note']=f"{len(clips)} independent authored diagnostic actions; no game runtime claim"
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'Delta_SelfTest.blend'))
 (OUT/'sampling_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print('SELFTEST_SUITE_READY',OUT,flush=True)

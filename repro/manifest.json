@@ -1,0 +1,120 @@
+{
+  "status": "failed_QA_reproduction_snapshots_not_a_finished_release",
+  "files": [
+    {
+      "path": "repro/models/baseline_001/Delta_live2d.blend",
+      "bytes": 6404370,
+      "sha256": "50359f26cd99a5dc0ae36c8d43f8d74284dc7f627b6d3b5f39ba40ef4a81519f"
+    },
+    {
+      "path": "repro/native_inputs/baseline_001/Delta_adult.blend",
+      "bytes": 6424484,
+      "sha256": "16e621c8faaba83d6c3e34653d69b144072459602bd1ab29a505aa220b52b8cf"
+    },
+    {
+      "path": "repro/models/rejected_v02/Delta_live2d.blend",
+      "bytes": 2973915,
+      "sha256": "5fdee22cd744835618e0ff3b67db4479bb5fcacc7233ce2fe2139f71174f315e"
+    },
+    {
+      "path": "repro/models/repair_001/Delta_live2d.blend",
+      "bytes": 6727846,
+      "sha256": "b07d13c5e4ab29b7814811dd9bf8d65e0bc0bd9fc4b2127190ec6c11aa138d9d"
+    },
+    {
+      "path": "repro/models/repair_001/repair_report.json",
+      "bytes": 589,
+      "sha256": "d00b3d17b5c54b8f6d158d027940d8efd45945c5da01f764865bc45ff0b83b21"
+    },
+    {
+      "path": "repro/native_inputs/repair_001/Delta_adult.blend",
+      "bytes": 6747963,
+      "sha256": "a32cf6b687be4a1519faf8da590611c8e5f75d0c8f173a421669f2ab749e4b0a"
+    },
+    {
+      "path": "repro/native_inputs/repair_001/Delta_adult.fbx",
+      "bytes": 7820364,
+      "sha256": "03d61b4834fb0517f411a9e6256e6cb5488318da022718a8fdba794b68b83ab0"
+    },
+    {
+      "path": "repro/native_inputs/repair_001/inputs.json",
+      "bytes": 61007,
+      "sha256": "192bb5b5991ce732b0210498b63d8524e5b6641edaf5f4201e2af615fb6c9712"
+    },
+    {
+      "path": "repro/baked/rejected_v02/Delta_Live2D_Adult_v0.2.zip",
+      "bytes": 33897065,
+      "sha256": "55ca0a22064af93f08e3d3e98c0bb3af794622c498f5911e06780a29d62323b8"
+    },
+    {
+      "path": "repro/models/rejected_v02/Delta_Live2D_3D_v0.2.zip",
+      "bytes": 11466073,
+      "sha256": "f96728ada44ce4a20b8268311334a83faea811a3183daba7bd8624a3a4631ee7"
+    },
+    {
+      "path": "repro/tests/baseline_001/Delta_SelfTest.blend",
+      "bytes": 6658305,
+      "sha256": "65dca75e95d2e492e291e48214549aee9592063e687b8f23d65050d9f61fb6a6"
+    },
+    {
+      "path": "repro/tests/baseline_001/sampling_report.json",
+      "bytes": 348677,
+      "sha256": "d33c667eabc94be9757087d821d4366778246945f7f941aea7aee151e95cb3e9"
+    },
+    {
+      "path": "repro/game_reference/Hun_Body_Simple.uemodel",
+      "bytes": 7195190,
+      "sha256": "346ccb0627716cfeb66ae4387d29723a1a579e19b9ee534c44f0596e5a520d96"
+    },
+    {
+      "path": "repro/textures/Delta_front.png",
+      "bytes": 460964,
+      "sha256": "bbb00d0c42988aa28dddb435b9febc9e4f51abad8beebc1b5d13421e5e015d2f"
+    },
+    {
+      "path": "repro/textures/Delta_back_inferred.png",
+      "bytes": 247202,
+      "sha256": "e86937024abda66b0fd5346513f8b285c338564390558ecbaf62c7265df124a6"
+    },
+    {
+      "path": "repro/game_reference/adult_reference.skel.json",
+      "bytes": 96111,
+      "sha256": "4f4d2f0ccb109f7dd49640e5187e154d256214b40acfa28e3e80f3638376718b"
+    },
+    {
+      "path": "repro/game_reference/animations/Hun_Unarmed_Idle_Loop.ueanim",
+      "bytes": 590578,
+      "sha256": "c3158f6cffe4368901feecc5b96fd2327fb9136f296af57e79468dc22b6a46a2"
+    },
+    {
+      "path": "repro/game_reference/animations/Hun_Unarmed_Run_Fwd_Loop.ueanim",
+      "bytes": 263363,
+      "sha256": "2d76147a310b833456edb852dda4daeb7aaa8a58a4d24b488a3e5e067e6fdb5a"
+    },
+    {
+      "path": "repro/game_reference/animations/Hun_BaiShanDual_Attack_A.ueanim",
+      "bytes": 318967,
+      "sha256": "6f649cadd9f1b3fbdbe4dbd1189d74d415544f55c71a5cfe59682db0b8088efb"
+    },
+    {
+      "path": "repro/tests/repair_001/Delta_SelfTest.blend",
+      "bytes": 6981784,
+      "sha256": "cfdbc7a21e2ed58fea636c31382b504a84f0349435802c0c389fe95e0acfa956"
+    },
+    {
+      "path": "repro/tests/repair_001/sampling_report.json",
+      "bytes": 331428,
+      "sha256": "6c9483b8af73e2b5adf353ed14e0e64b61e635ce9ce9bd9e9c5a67c13fcff377"
+    },
+    {
+      "path": "resources/Delta.zip",
+      "bytes": 40675064,
+      "sha256": "443a84d3fa1b52f166e9034dfe5f0d285a17d72fa80dd5cd8d7cd56bfd7c3b86"
+    },
+    {
+      "path": "resources/full.jpg",
+      "bytes": 72858,
+      "sha256": "dedd6d040a55ce504d05aadbc0cd7cf682b24cb4096ce62f9c8eae3281dbbf2a"
+    }
+  ]
+}

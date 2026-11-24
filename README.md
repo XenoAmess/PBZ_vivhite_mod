@@ -4,7 +4,7 @@
 
 **当前模型未通过肩颈验收。离线失败项修复、重渲染并复查通过之前，不进入实机验收。**
 
-本阶段只处理用户提供的 Delta Live2D 角色；另一份全身图属于独立角色，不混用。本仓库不提供游戏文件、用户角色资源、模型压缩包或引擎安装文件。
+本阶段只处理用户提供的 Delta Live2D 角色；另一份全身图属于独立角色，不混用。仓库保存用户提供的模型、烘焙包、完整 Blender 工程，以及复现所需的选定游戏骨架、网格与动作。密钥、登录凭据和其他机密信息排除。
 
 ## 测试与维护
 
@@ -14,7 +14,7 @@
 
 初始诊断工具已覆盖颈部三轴、头骨隔离、肩臂、屈肘及组合动作。正在扩展为参数化的全身验收配置。
 
-本机使用 Blender 5.3 与 Python 3；Blender 负责姿态、蒙皮求值和真实网格渲染，普通 Python/Pillow 负责把采样图整理成对照表。渲染和可播放动作工程保存在本地 `output/`，不会上传私有输入。
+本机使用 Blender 5.3 与 Python 3；Blender 负责姿态、蒙皮求值和真实网格渲染，普通 Python/Pillow 负责把采样图整理成对照表。工作文件在本地 `output/` 生成，完整可复现快照整理后上传。
 
 ```powershell
 .venv\Scripts\python.exe scripts/blender_task.py artifacts/self_test_suite.log scripts/build_self_test_suite.py
