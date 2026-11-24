@@ -24,8 +24,10 @@ def thumbnail(item):
     left,top,right,bottom=bbox;pad=max(4,round(max(right-left,bottom-top)*.05));im=im.crop((max(0,left-pad),max(0,top-pad),min(im.width,right+pad),min(im.height,bottom+pad)))
     path=raw/f"{item['id']:02}.png";im.save(path);item['source_evidence']=source;item['thumbnail']=path.relative_to(out).as_posix();item.setdefault('decision','pending');item['thumbnail_sha256']=hashlib.sha256(path.read_bytes()).hexdigest();return im
 images={x['id']:thumbnail(x) for x in catalog['items']};r.close();boards=[]
-for offset in range(0,len(catalog['items']),9):
-    items=catalog['items'][offset:offset+9];sheet=Image.new('RGB',(1440,1230),(26,30,38));d=ImageDraw.Draw(sheet);d.text((22,12),'白绮组件选择 / 原始 Live2D 素材 / '+str(offset+1)+'–'+str(offset+len(items)),font=font,fill='white')
+starts=list(range(0,len(catalog['items']),9))
+if len(starts)>1 and len(catalog['items'])-starts[-1]==1:starts.pop()
+for page,offset in enumerate(starts):
+    end=starts[page+1] if page+1<len(starts) else len(catalog['items']);items=catalog['items'][offset:end];sheet=Image.new('RGB',(1440,60+math.ceil(len(items)/3)*390),(26,30,38));d=ImageDraw.Draw(sheet);d.text((22,12),'白绮组件选择 / 原始 Live2D 素材 / '+str(offset+1)+'–'+str(offset+len(items)),font=font,fill='white')
     for index,item in enumerate(items):
         x=index%3*480;y=55+index//3*390;card=checkers((456,300));im=images[item['id']].copy();ratio=min(432/im.width,280/im.height);im=im.resize((max(1,round(im.width*ratio)),max(1,round(im.height*ratio))),Image.Resampling.LANCZOS);card.alpha_composite(im,((456-im.width)//2,(300-im.height)//2));sheet.paste(card.convert('RGB'),(x+12,y));d.text((x+18,y+309),f"{item['id']:02}  "+item['name'],font=font,fill='white');d.text((x+18,y+346),item['kind']+' · 等待选择',font=small,fill=(179,195,219))
     name=f'board_{offset//9+1:02}.jpg';sheet.save(out/name,quality=94);boards.append(name)

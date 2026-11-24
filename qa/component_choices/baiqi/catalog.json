@@ -571,6 +571,17 @@
       "thumbnail": "source_crops/45.png",
       "decision": "pending",
       "thumbnail_sha256": "54ea1df15bdb96dadee1389645cecbfd306c46d5299bf58a14714c54e91f67bb"
+    },
+    {
+      "id": 46,
+      "name": "摘发饰切换形态",
+      "description": "收起黑金蝴蝶结发饰的额外外观预设。",
+      "kind": "外观预设",
+      "preset": "E-Hair-HeadDress.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Hair-HeadDress.exp3.png",
+      "thumbnail": "source_crops/46.png",
+      "decision": "pending",
+      "thumbnail_sha256": "12f2ef46bf6eaf452022a4c9fb4e361429c6bd3764b3efc0b61c64b4c8fc148d"
     }
   ],
   "boards": [
