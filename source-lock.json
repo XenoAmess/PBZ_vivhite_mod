@@ -1,0 +1,1006 @@
+{
+  "recorded_at_utc": "2026-11-24T05:50:05.898911+00:00",
+  "active_model": "Delta.zip Live2D version",
+  "active_candidate": "output/live2d_delta/hunyuan21_polished",
+  "replacement_scope": "adult normal, Climax and Inheritance/MoTian; no young assets",
+  "full_jpg": "Separate second model, not used in active reconstruction",
+  "game_path": "Z:\\SteamLibrary\\steamapps\\common\\PBZ",
+  "steam_build": "26367565",
+  "source_commits": {
+    "GameModdingKnowledge": "1bec99e4e1d6a601423de090a9e9a9affca33c25",
+    "Hunyuan3D-2": "f8db63096c8282cb27354314d896feba5ba6ff8a",
+    "Hunyuan3D-2.1": "82920d643c0dc2f7bfd7255f45f62d386edfe60c",
+    "UEFormat": "e618c6891a70a3c335f231cb22dde331ab88036f",
+    "AESDumpster": "aa86d4551349c8e98e8fdc524456b0ae46c9fd1a"
+  },
+  "files": [
+    {
+      "path": "resources/Delta.zip",
+      "bytes": 40675064,
+      "sha256": "443a84d3fa1b52f166e9034dfe5f0d285a17d72fa80dd5cd8d7cd56bfd7c3b86"
+    },
+    {
+      "path": "resources/full.jpg",
+      "bytes": 72858,
+      "sha256": "dedd6d040a55ce504d05aadbc0cd7cf682b24cb4096ce62f9c8eae3281dbbf2a"
+    },
+    {
+      "path": "tools/Mappings.usmap",
+      "bytes": 7361120,
+      "sha256": "77a983a7f9df632a3e133487b1eafc2483185f9f98548303386b69dbc9701d78"
+    },
+    {
+      "path": "tools/oo2core_9_win64.dll",
+      "bytes": 998400,
+      "sha256": "cba19529d0a3b5ec9c630e95652af01e123ae29a34a8a5f7507f5bcf23d9e82b"
+    },
+    {
+      "path": "artifacts/live2d/Delta_front.png",
+      "bytes": 448246,
+      "sha256": "de72a41584dd8fc823e5e621f1dcdb039688951dfe1e011909903338298955e1"
+    },
+    {
+      "path": "artifacts/live2d/Delta_projection_padded.png",
+      "bytes": 460964,
+      "sha256": "bbb00d0c42988aa28dddb435b9febc9e4f51abad8beebc1b5d13421e5e015d2f"
+    },
+    {
+      "path": "artifacts/live2d_reconstruction/input.png",
+      "bytes": 450341,
+      "sha256": "9493918b782ceb655484fe6bae472e57f1d115cd5f224fd1fb73136b04d4691c"
+    },
+    {
+      "path": "artifacts/live2d_reconstruction/Delta_shape.glb",
+      "bytes": 6471080,
+      "sha256": "c13db0adf91557e1e993885f6caeac569603ad4bcb18fa332ab5233a18ef05bc"
+    },
+    {
+      "path": "artifacts/live2d_reconstruction_21/Delta_shape.glb",
+      "bytes": 6409488,
+      "sha256": "07c8641dac7086626b19f92e7da6e4dd2cb3fb455763e7d977b6df03621a4e38"
+    },
+    {
+      "path": "artifacts/live2d_reconstruction_21/shape_report.json",
+      "bytes": 718,
+      "sha256": "64860d5dea1acfdd7b67f57c3fb1942800c687061c90b1e92ebf6d6351ebdda8"
+    },
+    {
+      "path": "scripts/analyze_deformation_hotspots.py",
+      "bytes": 4424,
+      "sha256": "d2d023c501072210bc968fab2c54871fddb999fcace085ab7ed80be182151581"
+    },
+    {
+      "path": "scripts/audit_arms.py",
+      "bytes": 11457,
+      "sha256": "f21660e05f42164c08f4cea74bc0182c21342d2bbfdc1225ce495831e587bfc6"
+    },
+    {
+      "path": "scripts/backup_runtime_state.py",
+      "bytes": 1256,
+      "sha256": "3d890738b605498e35e12ec30d1e9e9ec60cd873e213a7588f6474f117bd60c4"
+    },
+    {
+      "path": "scripts/blender_task.py",
+      "bytes": 667,
+      "sha256": "2ce81322c4540f8ab35c2e50f61da2410fc62c82f338d20fafb4ae4ab199f957"
+    },
+    {
+      "path": "scripts/build_game_inputs.py",
+      "bytes": 8493,
+      "sha256": "6ea31ca0e698ae56fe86cb73b12c3456a5574e1089931e9b58e4c50d9c16a2ee"
+    },
+    {
+      "path": "scripts/build_live2d_candidate.py",
+      "bytes": 22116,
+      "sha256": "ce7663af0b2dcb909f9048094dfe274e59c46b8fa5ee1bf09fdf12138163eadd"
+    },
+    {
+      "path": "scripts/delta_hands.py",
+      "bytes": 5996,
+      "sha256": "f8716abeb407e56248efbee27833143c9f22e427cc9e49ff96edc20cb21cac2f"
+    },
+    {
+      "path": "scripts/delta_surface_normals.py",
+      "bytes": 898,
+      "sha256": "b6ecdc673d04bc382da1eb5b6fa4be56594a4586675216bf05814f83f8810045"
+    },
+    {
+      "path": "scripts/epic_ui.py",
+      "bytes": 1577,
+      "sha256": "6e7389d72506d57d19a390d064154146b07c91f0881a6a775e70bcd14ec1f88b"
+    },
+    {
+      "path": "scripts/export_game.py",
+      "bytes": 921,
+      "sha256": "787891aa772f611c31889f0cb105e0df47dc340af6f2fd2f21bb6c8e5909acee"
+    },
+    {
+      "path": "scripts/finalize_delta.py",
+      "bytes": 2800,
+      "sha256": "e9ee913d5bc104261c67168413e7ec44a3612e8fc5f4dd27ba5f4eba281d9748"
+    },
+    {
+      "path": "scripts/finalize_runtime_release.py",
+      "bytes": 4961,
+      "sha256": "f61df54f44b084f1a03fbb98a31f4139e8f8cad4afd525ed75dc8332ff2caa7e"
+    },
+    {
+      "path": "scripts/game_review_ui.py",
+      "bytes": 5058,
+      "sha256": "da3516773a892e293891a9660468969ad0e32f8d0fb368a8b74067f70ab391d9"
+    },
+    {
+      "path": "scripts/generate_3d.py",
+      "bytes": 1848,
+      "sha256": "1ec64de13c1d22b84543c0af00939714656b029d562b4e767f1934a3db02281d"
+    },
+    {
+      "path": "scripts/inspect_arm_weights.py",
+      "bytes": 1510,
+      "sha256": "b3630dbeb3047471cb87aca402d3356497f58d6bf2926df95cb27356fdce99df"
+    },
+    {
+      "path": "scripts/inspect_game_dump.py",
+      "bytes": 1740,
+      "sha256": "c929513660fc1a3c2fe693a1fbf2b3800c371397fc848cc451ec49b1b23afa0c"
+    },
+    {
+      "path": "scripts/install_delta.py",
+      "bytes": 3367,
+      "sha256": "689faf2d1879ac157636a63a71f018615161e2baf4769ab03c576e929040bd48"
+    },
+    {
+      "path": "scripts/package_delta.py",
+      "bytes": 4526,
+      "sha256": "e929c45166b2b34265dd66a89b1003cb689e5cdae00d356646588f0dd9424c69"
+    },
+    {
+      "path": "scripts/polish_live2d.py",
+      "bytes": 4655,
+      "sha256": "ee93dac759b9954f9d78baea80bcdf24d8d7eca49c54a756b65582ad1d8b9774"
+    },
+    {
+      "path": "scripts/prepare_arm_semantics.py",
+      "bytes": 873,
+      "sha256": "194eee30bd3062628ecb1956db7e49ff12321aa4ad68061ffec862730ae5360a"
+    },
+    {
+      "path": "scripts/prepare_back_projection.py",
+      "bytes": 1864,
+      "sha256": "c87a536644b4800d5d06ecc9885facf8eebcdef8fd12e18d9aa83700f52c762d"
+    },
+    {
+      "path": "scripts/prepare_native_material_inputs.py",
+      "bytes": 1380,
+      "sha256": "58cb6c95cbc55fe48252cfdd04c7c37860d79bd032930b1b9902aaf6ed92b427"
+    },
+    {
+      "path": "scripts/readback_delta.py",
+      "bytes": 7402,
+      "sha256": "d20f66af161be94a2934e77ee979434b0040580c1582b7cd8ade371502db4e1c"
+    },
+    {
+      "path": "scripts/reconstruct_live2d_21.py",
+      "bytes": 3538,
+      "sha256": "a9b1d0b1b84aa6ef1fb9d89df1702a469e32db849695bd1fd336fd3c672c2c50"
+    },
+    {
+      "path": "scripts/reconstruct_live2d_local.py",
+      "bytes": 2969,
+      "sha256": "755d4568291da12e3d89eee2c967d0f3643896aab2241a9d826cd34391a07ef8"
+    },
+    {
+      "path": "scripts/record_sources.py",
+      "bytes": 2587,
+      "sha256": "824a1ccd0c065ea20d236dd222818d70f36ef502d694d1c2c8291902e35d2194"
+    },
+    {
+      "path": "scripts/render_live2d.py",
+      "bytes": 3111,
+      "sha256": "588f3c26f765b965e7eaa16205d2fdff25b58aded0f44faed53e2729d483b830"
+    },
+    {
+      "path": "scripts/render_live2d_parts.py",
+      "bytes": 2043,
+      "sha256": "bc26f8020587c6f01db99d7d21165d74f5ea8f31180510c417d16840e5a4b294"
+    },
+    {
+      "path": "scripts/run_unreal.py",
+      "bytes": 1780,
+      "sha256": "2256c9cd4fc4794d2171a3d686876dd4f11a75e7b981da7697772690f959acbe"
+    },
+    {
+      "path": "scripts/scan_asset_key.py",
+      "bytes": 1922,
+      "sha256": "e66f7b6fc67277b3a715745f9a0f10e585f3eb9c80e1c88dd590f406770f42de"
+    },
+    {
+      "path": "scripts/ue_import_delta.py",
+      "bytes": 9697,
+      "sha256": "e15aabccf955a4cfdebb320483baec906878282df534bab7c4e20c32058e512a"
+    },
+    {
+      "path": "scripts/ue_native_materials.py",
+      "bytes": 6942,
+      "sha256": "c79e167656dbfe680270be17cc4daa5e089f5ec4c14f069929fa5ec979b0ebbb"
+    },
+    {
+      "path": "scripts/validate_asset_key.py",
+      "bytes": 1388,
+      "sha256": "b4fb5c3626196011c383610110283cb16a7a6f4035905a38c7db2413b77db205"
+    },
+    {
+      "path": "scripts/verify_cooked_deformation.py",
+      "bytes": 4172,
+      "sha256": "db5d1b72173036259781864f72694bf3a75ab81f3cb30dc11b5400fc92580316"
+    },
+    {
+      "path": "scripts/verify_cooked_uv.py",
+      "bytes": 3130,
+      "sha256": "2555963bf70de06ff128841092e9b646c8566bec7cfe558febcb509163101f62"
+    },
+    {
+      "path": "scripts/verify_live2d_candidate.py",
+      "bytes": 3000,
+      "sha256": "3799b6aadb196d95ffbaad5cecf12ba14d9cfa9743812edae50dfbb74998e802"
+    },
+    {
+      "path": "scripts/write_arm_diagnosis.py",
+      "bytes": 4305,
+      "sha256": "9822a681da834996e3b3e5ff0f950ddf8df82c3765432d090e55378df2ff5617"
+    },
+    {
+      "path": "output/live2d_delta/prototype/candidate_report.json",
+      "bytes": 7134,
+      "sha256": "6558f0793d5f54117d1f31ffbfaadc89d68909fecd45f3e2c7612907a1c53500"
+    },
+    {
+      "path": "output/live2d_delta/prototype/Delta_live2d.blend",
+      "bytes": 2710807,
+      "sha256": "4c5301aca0388b937c02a55155c1a88e4de57a19732ad4b7be6f72e8cff10acd"
+    },
+    {
+      "path": "output/live2d_delta/prototype/Delta_live2d.fbx",
+      "bytes": 2941788,
+      "sha256": "e3efd277dee248d15b2bbedcc5ff3113e37495fa00c71ce46b59f58b3a6b4233"
+    },
+    {
+      "path": "output/live2d_delta/prototype/Delta_live2d.glb",
+      "bytes": 2403628,
+      "sha256": "5fc68030d34f694df0b1357325d47ac648b0186da18c23cd64375c80cd164571"
+    },
+    {
+      "path": "output/live2d_delta/prototype/offline_verification.json",
+      "bytes": 1038,
+      "sha256": "2f4e003ae962500ef812737010d3e15fc201da0bb45f9ce0366e290631b68fa3"
+    },
+    {
+      "path": "output/live2d_delta/prototype/preview_back.png",
+      "bytes": 692771,
+      "sha256": "9a7de4f68aae5e03dfc6157a774751ad6ab97c6b036149d1c0b2a77d06389c7d"
+    },
+    {
+      "path": "output/live2d_delta/prototype/preview_front.png",
+      "bytes": 734626,
+      "sha256": "8015a115e9e51544cb282261b47dc06a55f9c3caaa8ad64abac8f21c5de93fd3"
+    },
+    {
+      "path": "output/live2d_delta/prototype/preview_side.png",
+      "bytes": 652042,
+      "sha256": "c539dff408b21507e8eb317467aa9750a6eb10696366ff9afb3dcd266aedef08"
+    },
+    {
+      "path": "output/live2d_delta/prototype/preview_three_quarter.png",
+      "bytes": 742362,
+      "sha256": "61f01597c2492cdb54fb7cf589df0af7211346fbee3e9fa08775f8be140b21bd"
+    },
+    {
+      "path": "output/live2d_delta/prototype/README.txt",
+      "bytes": 1352,
+      "sha256": "675dc49c18c93781f008170ac96cda616626886dd46a3aa6ede1dd9d01ad34ba"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/candidate_report.json",
+      "bytes": 8734,
+      "sha256": "2071b378de2f5b39dfeb0a241f51a60e3b3e856725d0b81000da89d5595f0dc2"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/Delta_live2d.blend",
+      "bytes": 2973915,
+      "sha256": "5fdee22cd744835618e0ff3b67db4479bb5fcacc7233ce2fe2139f71174f315e"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/Delta_live2d.fbx",
+      "bytes": 3383548,
+      "sha256": "142377bee566afab4482b63bfc37feb755592480957a6951d87d494458736748"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/Delta_live2d.glb",
+      "bytes": 3989832,
+      "sha256": "9dd0de29f06f52a89790b4862d2a8493ea32900a0eaf08532000668ec4d51238"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/offline_verification.json",
+      "bytes": 1039,
+      "sha256": "0b0619362e9699ce91e194fbbfe4067dc234bfbbc725bdf280be0ed0c762a02e"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/preview_back.png",
+      "bytes": 696142,
+      "sha256": "b80a3a75122a9e71003b151ef6e823f7ceb799bae1065baa3a8adb8326df3ae2"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/preview_front.png",
+      "bytes": 746167,
+      "sha256": "4caa3908007cd167a36186fe0d580526c7f005975325fe1e5df1475f43e6e9ca"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/preview_side.png",
+      "bytes": 656851,
+      "sha256": "9b1735cb2af204caee76265e3448dff7c9b9227c8d5888a75254828cf8cb6ce1"
+    },
+    {
+      "path": "output/live2d_delta/hunyuan21_polished/preview_three_quarter.png",
+      "bytes": 751845,
+      "sha256": "157452b257dcdba46ad37fa1e248e5022cad6b8a6c1da28379cbebf4f184d061"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/audit_report.json",
+      "bytes": 146978,
+      "sha256": "d854bcd04f616409ec6b394262004cdb2a99eba6be0efb52dc9d8e110602beea"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f000.png",
+      "bytes": 1347974,
+      "sha256": "8d10ad3947d1ae9afebb1c3c5d48935f425c47de01f64f4128486a2a74cc5855"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f000_3q.png",
+      "bytes": 1279606,
+      "sha256": "65edbdc9bb3590ba6f954be9c15cfa1c0460e582d33fbd25dcdeb55a6e1e0184"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f019.png",
+      "bytes": 1382972,
+      "sha256": "7f19bf336c53b291ab1b3ef71a50aed25949e5aee8fb9b462e6e8022e07ecbdc"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f019_3q.png",
+      "bytes": 1393808,
+      "sha256": "d40e77c8b42a36ef805bc12490a49a6e35ca796da5cc0278914e7df88a170cf8"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f020.png",
+      "bytes": 1361933,
+      "sha256": "13d625e378fff30a6f1114d501a5c07af6bc0a0cdb53c6dac5e6caeefb739c80"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f020_3q.png",
+      "bytes": 1390330,
+      "sha256": "3f1a86aaf489170e16faa7c21bf2a146c068037dbda4d08f705005ff48ffd53b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f021.png",
+      "bytes": 1344100,
+      "sha256": "80428ac821ad825a8b56196358a92ba1dfa45bdd4f9c07a701e0bc4cf85948ef"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f021_3q.png",
+      "bytes": 1380119,
+      "sha256": "32e9814c3dee330d2b5f000f434625eb32d836ca42500d5862d6c7ab6067f4cf"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f023.png",
+      "bytes": 1320100,
+      "sha256": "161d5451bd97cbbe2add528fa1636c8c2aa8427239e2488b11c221db965491d1"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f023_3q.png",
+      "bytes": 1365532,
+      "sha256": "25be70831b54de573131bab84d60210f542f84c873ca75d11ce61cc0f801ed13"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f024.png",
+      "bytes": 1306365,
+      "sha256": "14fe4d9bd34d4fdb7ca4a75042d556981e69d79402f6ae38857468c1d8292255"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f024_3q.png",
+      "bytes": 1357379,
+      "sha256": "e52c760cbfb2a89cef2b9dc743d6b2867b8457a89642f5eea0e2eae8ea396309"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f033.png",
+      "bytes": 1287143,
+      "sha256": "1c7557020a002989e6d719bcd0e4c4f938fff17c6342bd27c7dd6895d55f2034"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f033_3q.png",
+      "bytes": 1304254,
+      "sha256": "9082f7dd6aab74421763ae09df79340431fb53f66a5a69bbe43511d8211013f6"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f066.png",
+      "bytes": 1253031,
+      "sha256": "e241409cb3e53109322b8d3a50bd96b3acde8732a10c9fbf97627f290defb02f"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f066_3q.png",
+      "bytes": 1205969,
+      "sha256": "ebd3bdc8555a5ad72e929b19bdcc04ab8cd2f22703a9271f1ab32bae1cbf8fba"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f080.png",
+      "bytes": 1290014,
+      "sha256": "1fc115cf54630db6eb662a3b902f774e1cdc79faa3efcc18c707def7cc7174d8"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f080_3q.png",
+      "bytes": 1236435,
+      "sha256": "eaf35c097f4d435bfe50a130caf4d997af364c60fae77a7883028eb1e5c3a651"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f085.png",
+      "bytes": 1323227,
+      "sha256": "c94ed98d708f94e5eccab210cd8769aae67f2ebf98a10120d93d49b1dc1c43dc"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f085_3q.png",
+      "bytes": 1293818,
+      "sha256": "9c450f8ccd1215f6d155d0c87794d37c65114a65dbc0713d66a0f61108df7d5b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f089.png",
+      "bytes": 1344305,
+      "sha256": "710d8b3b2985713322898024c0d81ad292e4ba1350647fa11fdcde137485bc31"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f089_3q.png",
+      "bytes": 1329479,
+      "sha256": "31e89b0c330ec3cf844f0abe9f981d136b4bd1634cabede531c6d15cbc6419a8"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f099.png",
+      "bytes": 1348246,
+      "sha256": "b66fe38530874ad9205402fac5b035770f048a5c63d9d6f7cae95d75b2d6ec92"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_BaiShanDual_Attack_A_f099_3q.png",
+      "bytes": 1362252,
+      "sha256": "583c31f7f22fcb975d8153ee6c2919d201713736538a33144ba76eb90193dba2"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f000.png",
+      "bytes": 1287859,
+      "sha256": "45ab6aa9c81052b3e4b8df5bd90ed964fc3b869773cbbdaf93e5d9da572e4641"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f000_3q.png",
+      "bytes": 1279782,
+      "sha256": "b6efec5b4936782f631ff1e84682883cd21d6afcab6dbe825599dbf6673b62eb"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f041.png",
+      "bytes": 1337822,
+      "sha256": "0e0eda50474be392d9a9c95de0fb975972e5a83184dde4672ea6d6d8c74197d9"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f041_3q.png",
+      "bytes": 1364796,
+      "sha256": "4b8026edad614dac697bcd87cd8e76b6d8748895a9a9bc632d874a92d846987b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f045.png",
+      "bytes": 1329154,
+      "sha256": "9651b20fdcc1932734e4ee09d74f26cbd6f6f0ba43c7df5c85bcae6a0a8dfde9"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f045_3q.png",
+      "bytes": 1369778,
+      "sha256": "195b2a83b9e65ad1d0e2a38c39ed3cdef5c94f26892d2043c39a7cd75c504c37"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f055.png",
+      "bytes": 1314459,
+      "sha256": "4d688ed898f1539810d7d5b178be317b15430914a30a9136cc8a17ff7f104e9a"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f055_3q.png",
+      "bytes": 1351777,
+      "sha256": "091941411719a668591d9aba60116b225c2bd721781969cd2a32017cade3fd8a"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f087.png",
+      "bytes": 1239553,
+      "sha256": "647cb5c27b1bbf756eb7bf04ed7df314ce188dc6caf625598c51833f5ebddeb8"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f087_3q.png",
+      "bytes": 1249014,
+      "sha256": "94d7001f712d24ab75233a2dd71e228d2e6fc0515ad3a7e9f7015955c953ac98"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f136.png",
+      "bytes": 1401528,
+      "sha256": "e4350c59d22e60b4aa3963296657c3c99f3ceec6c1558c88d4f77a1531e253c2"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f136_3q.png",
+      "bytes": 1388074,
+      "sha256": "9e6c53e35504084b91aa36f1d239dba3b4e0ef4ca7e54f93d1847fd2635e3f7b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f174.png",
+      "bytes": 1333044,
+      "sha256": "19c5ed3c403d564a5ccb1eb9944e41c372b46bc2a2d75cc270ac4beeb2cb9d4d"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f174_3q.png",
+      "bytes": 1362538,
+      "sha256": "cd9521bf9cfec16a6326224eaf6ae7c7f30f72faab939db7630da2114de355d3"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f261.png",
+      "bytes": 1286661,
+      "sha256": "b8d3b60f3e74ed82e067220fc30e7f3ff621574e919a8e94226790b2febe0f9e"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Attack_E_f261_3q.png",
+      "bytes": 1303692,
+      "sha256": "d42f6ed21fd56f37c4c336c72524358e054a6ca8d249ed85857a0652bba18937"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f000.png",
+      "bytes": 1286629,
+      "sha256": "796c201b8c78493aa0e61e11ae24dff5b93ce0fa97e38d321894f776a982c5da"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f000_3q.png",
+      "bytes": 1278767,
+      "sha256": "0ceb9033f5f71ecac7cd30cff7afd49935c73cc71e5115be177a2b296f31da0b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f056.png",
+      "bytes": 1261039,
+      "sha256": "7c3503fbd1d2c3d690331a4191a64410e2431c34abc02f5f0a00721c7da13e77"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f056_3q.png",
+      "bytes": 1265240,
+      "sha256": "a1a5c3d9c4b161534bbcc627b3c98596065ab4879c83800cbc11279c7960436e"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f069.png",
+      "bytes": 1148406,
+      "sha256": "90d5917a8fca11e681b4ee7bcab68e4768d67f981e18209da990e28730e8c64a"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f069_3q.png",
+      "bytes": 1236045,
+      "sha256": "6a0c50e63748dfc73d12159a37e8a8c373181368d625d55194719edb5ddab902"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f070.png",
+      "bytes": 1162456,
+      "sha256": "c81ae28adde909657eb89386d1a4ea18cf9503af7f1c6326e064441df3358e88"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f070_3q.png",
+      "bytes": 1242044,
+      "sha256": "406713cdf0624a006e272cad3c2fc8feed555f73abc0eced558a348962e8e2fb"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f075.png",
+      "bytes": 1246866,
+      "sha256": "e95da71d8f789115073d83aa0c88bbd6598e0d07dfd653133fc201e63d85575b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f075_3q.png",
+      "bytes": 1299044,
+      "sha256": "8d46fb4b68994a8e286c4d1a8aad81729bada9e673a8425c0c570dc59b5093c4"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f081.png",
+      "bytes": 1317702,
+      "sha256": "7f61b515aceae16b761db03c76df877848fafd5afe07f7e9fae33ed2589f4d21"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f081_3q.png",
+      "bytes": 1349004,
+      "sha256": "f429ec473886f19f6d2e7b215c33e979ddf24009e21b1dddf5272aa29505bf87"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f082.png",
+      "bytes": 1325511,
+      "sha256": "75c8c46c3a30a935bbb5f47b3e263252666894f418b79f16d27e53a64a56ad0b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f082_3q.png",
+      "bytes": 1356917,
+      "sha256": "ad1b449d96a4b360550557ecc005310ea13d10f4a11f9ceb47d6e056b0978d60"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f083.png",
+      "bytes": 1331111,
+      "sha256": "b882af6c142d7edeedb8bcd2a667de19a359ee2e168f6760d45e47b609bbbe52"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f083_3q.png",
+      "bytes": 1364305,
+      "sha256": "9e354c83bee9fb7e664002f1d4fca28951d6d03601c61010ee05d169a4326f93"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f112.png",
+      "bytes": 1267389,
+      "sha256": "44009d1864b0c217936fd5c6439e6c31ac7c2c7dd0f62d2ffc45d59f21c6fa9c"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f112_3q.png",
+      "bytes": 1227889,
+      "sha256": "71ace965072de53749049ab3c2ceb129b246e63687642a56536c191872c5c771"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f168.png",
+      "bytes": 1286491,
+      "sha256": "c95748125c7b11dbd40210c25f3ebc81adfed0c82cb34a2e5329551125c19969"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Dodge_F_f168_3q.png",
+      "bytes": 1275822,
+      "sha256": "569c053ae43904714ffd6a9b4943fa7d81a72e3cf7eb5622039d993e9e693a1f"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f000.png",
+      "bytes": 1287692,
+      "sha256": "cf1e5571632e597cf67841f842a2271d7bef822946de8d0bdd8c9b7820c0bb66"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f000_3q.png",
+      "bytes": 1279226,
+      "sha256": "be98854c9fd7a2008629803660d739d4fa5244c695e133833182ee0ffafac333"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f008.png",
+      "bytes": 1287268,
+      "sha256": "59414f9e5ea62dae255329297995dbcb2dc37f6121ec2215c06f5a8844db892b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f008_3q.png",
+      "bytes": 1279841,
+      "sha256": "6719a2d026410b261592ee7a7a9d9790c8a6859148098b3c8f162fc5d54ea14b"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f020.png",
+      "bytes": 1287053,
+      "sha256": "5d7734142e0ecdd4b08b25b41ec27acecda281a6ed91544e81af399a788d44d7"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f020_3q.png",
+      "bytes": 1280698,
+      "sha256": "707d97bb30400ec5cd8ca44c641c8f38ec20edd4a2213c1399e972d65af0fbec"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f056.png",
+      "bytes": 1286263,
+      "sha256": "66e498ef31c293a8724655b0bdbae0cb263bdb199c430d9fecfbdc9fb799bd45"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f056_3q.png",
+      "bytes": 1277993,
+      "sha256": "d35218a33db83a5ffa91e6a31a077b4589b17871f6d0ca297d0883803a97c8bd"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f082.png",
+      "bytes": 1287048,
+      "sha256": "1fc0991b7256de9f5a54c85b671452bc64e25ec0235e2ce143fa25835793c414"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f082_3q.png",
+      "bytes": 1279478,
+      "sha256": "9078a2984411ca059f7ccb60e4205d157a186e80246a5b9828467ed5327401de"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f112.png",
+      "bytes": 1288408,
+      "sha256": "48186955c2d9c02c68eb2685f98e6cb0426b066e57a945cc584bbdb3c0602be5"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f112_3q.png",
+      "bytes": 1278958,
+      "sha256": "2c0f0f23776b211fbae81b6670e57713627b947fff8a36625027bcb731818338"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f114.png",
+      "bytes": 1288687,
+      "sha256": "5c479f372698f169fadd4c98828237af1ec16a41046c1293aa7db3a5f5b4ea2c"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f114_3q.png",
+      "bytes": 1279407,
+      "sha256": "92243045342f06875292e6af396e377fe23d62a5d18728f9a02c6bd32eb31fce"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f168.png",
+      "bytes": 1288147,
+      "sha256": "45fb5150ef316b6b6dd1b10c0f5c38b03da251894c996eafafbcfc52a08477e4"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_ChiZheCanJian_Drunk_Idle_Loop_f168_3q.png",
+      "bytes": 1279153,
+      "sha256": "97d308e022a0b2eb78cc743b8b127c68b92cb2c4f8c1385a9db7e53de3d05740"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f000.png",
+      "bytes": 1368939,
+      "sha256": "e1fd2740a07ff477029ebe02e00a801348f67803b8a25d8ae6dafb035126722e"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f000_3q.png",
+      "bytes": 1322999,
+      "sha256": "9cffecd3dd62f2b67abf11894b0f048d6f8a509a8b3a5716450f997aba442bff"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f074.png",
+      "bytes": 1365209,
+      "sha256": "da8c2e6fb985f8be6400132b569f53b9f212c0888e49216beb510814ba352db7"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f074_3q.png",
+      "bytes": 1323878,
+      "sha256": "c8c8e28021604de3e393e6441f8795ad439907fa26da818f109b4d8da9ca40bb"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f094.png",
+      "bytes": 1366480,
+      "sha256": "4052d0f1947beeba5b2f41a96ebd99135dcd986b10e213023e8d9bb0e3c53acf"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f094_3q.png",
+      "bytes": 1324324,
+      "sha256": "e6ae659fecd1e2b0bd6a10f9767f4084ebf207955874636049d3b88e71e300a6"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f189.png",
+      "bytes": 1367563,
+      "sha256": "1ed5bed8673b3e05dc398090a53bcb8d44caf08a8a94ff40c975ea7f22fce3b2"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f189_3q.png",
+      "bytes": 1325016,
+      "sha256": "9e76bbdeb3aa0b75299a545b10d51513dba6a822816664b4047a6f4e1d22782d"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f283.png",
+      "bytes": 1369119,
+      "sha256": "7f5294a97149fc7ed31e9f7c5434232464d6fd72864a06335177bb2eabe5ebaa"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f283_3q.png",
+      "bytes": 1323497,
+      "sha256": "fddf4bdeb21d3c3799bddfe97680c8c5b6dbfdb9c4452859ca196fff9d3a8cec"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f362.png",
+      "bytes": 1367293,
+      "sha256": "eeac6bf05c3ab579ab32d313c896c85a2bdccfe20b0c42efe5a8c2f072530e89"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f362_3q.png",
+      "bytes": 1324480,
+      "sha256": "de2d40a4250bf62e85b3b2e735c1696f2b8f48eb4dcbeac4866cb042dd97eb1c"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f364.png",
+      "bytes": 1367488,
+      "sha256": "3bd733e2893d784d1e8fd5915a19059a7cfe9672e00dbf6fe88b8546b953c1bf"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_SoftSword_Stance_Idle_Loop_f364_3q.png",
+      "bytes": 1323541,
+      "sha256": "372d6d01b5bcea631cd948f5a25454e7167f22ab62bfbe2c1adc625ffd46e25a"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f000.png",
+      "bytes": 1386332,
+      "sha256": "203f8304a20de7754c70a213a47f609751bd4dbfcae9d6549c1d02820ff4d6c5"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f000_3q.png",
+      "bytes": 1355728,
+      "sha256": "ff2b68a2f87cbd019d52ec1d7cae903fd3d4ad5fd999926e194edecd41cd47bf"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f014.png",
+      "bytes": 1384280,
+      "sha256": "133df5a6c53158d0c489284cde432730b444f0d8fbecf03c36a54a95cc571aed"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f014_3q.png",
+      "bytes": 1355534,
+      "sha256": "5c916ee685f0bb0fbc20dc57842ab928fefff40150a7e6bb96c9dcfe2cd01f20"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f077.png",
+      "bytes": 1385693,
+      "sha256": "c565936ca25499f73bc8145059418ad0ef33aeceb50e57402700b80cbf2288fc"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f077_3q.png",
+      "bytes": 1355768,
+      "sha256": "366fe92a1a644c0dd6d152643ba9fca3d38ec262f8cc4bf593de7ef09fb07e99"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f151.png",
+      "bytes": 1386701,
+      "sha256": "241c70f28614fa8e9253cb8563ad6bd38c7da306535e23d5f4b0e1108906108d"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f151_3q.png",
+      "bytes": 1354375,
+      "sha256": "d1e3d25f679b2787b88683d988b886d7becd9689b280ac062251f620283784d9"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f153.png",
+      "bytes": 1386126,
+      "sha256": "6f815ec315e46afc313dbcd9b65f0807c8d253359f9640a830ee598c6872fd41"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f153_3q.png",
+      "bytes": 1354689,
+      "sha256": "93fc0ca68e454a6d74d20657209a5fa292e60a5d7256c7726c2bf3ac89163f57"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f154.png",
+      "bytes": 1385625,
+      "sha256": "970b965b6ad26d15e2e70c6cf03e389c0f043cd5b5fcae621897819405fc7c3a"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f154_3q.png",
+      "bytes": 1354741,
+      "sha256": "3cf3d1052bd9617bf635f588b1133c3ab65ea91f4b3b182372892f1288995b17"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f231.png",
+      "bytes": 1386523,
+      "sha256": "79c18c6c1cce3bcfaa5ac5f4aefa276309cd1f6a4060e77be6c6dc64a5c097a4"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Idle_Loop_f231_3q.png",
+      "bytes": 1355632,
+      "sha256": "e4f993387174db0bfded634dc375cbfe694c69a9f284bea1fa0ac38146310eb8"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f000.png",
+      "bytes": 1290975,
+      "sha256": "6e826a9eb0479915a2aacab79dcbf745d949d136d87e79b0f02f587c47d4403c"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f000_3q.png",
+      "bytes": 1319728,
+      "sha256": "ab25b6f851667b5614901c77bfc2ddb36622ce8205bb8f7a1e52744b65069954"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f025.png",
+      "bytes": 1303369,
+      "sha256": "29d6871c20a9d98633c9b9ca8cf83be5a09413ccc9f30919d332a63938c339e1"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f025_3q.png",
+      "bytes": 1300306,
+      "sha256": "92719959791cb9dfcb0cdad3708dec46fc0b5e25e542a741e718fce00ce8fd10"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f038.png",
+      "bytes": 1306197,
+      "sha256": "27022102f318e86ea7c14c05b855f9fbf9bced493ffcf6a1bd97a4307945a84f"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f038_3q.png",
+      "bytes": 1322794,
+      "sha256": "255d2e906297c50071cd71af3f8aeea1c402fffcfc9fb107fedf4ad00361ec8f"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f051.png",
+      "bytes": 1295229,
+      "sha256": "064f07864930d7ac0d36ae30b4283366f4667e7149ea7e33d2035ea8fda49e8f"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f051_3q.png",
+      "bytes": 1281823,
+      "sha256": "8c17f6a575d1a4c9fd239b02fee32eaae347b6aef5ea7942e38b09885649fa04"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f058.png",
+      "bytes": 1302070,
+      "sha256": "b7ee71c2a244d54dff7e92746f4c77493deedfbfe5cd0d04e3320b23864a1522"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f058_3q.png",
+      "bytes": 1289633,
+      "sha256": "0fb8dcce2c9df1f2e52c5b273807ce6cb1f83216c54a7917d7a358223073dca3"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f074.png",
+      "bytes": 1299216,
+      "sha256": "c7f5aadc8a1a940de6399d0b14963470703268219c6c01e68e49a3abe90d0f32"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f074_3q.png",
+      "bytes": 1314687,
+      "sha256": "e112ceb1bad402b1421ba2a6f7bdcc6a4beb08024c4426509b04b47840a936bd"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f076.png",
+      "bytes": 1297449,
+      "sha256": "f72e8133132f1a15d8a32e0b3969aee57aeb41abb6aed61ff41653f210e83428"
+    },
+    {
+      "path": "output/live2d_delta/arm_semantic_review/Hun_Unarmed_Run_Fwd_Loop_f076_3q.png",
+      "bytes": 1314311,
+      "sha256": "79463f5c4858c9d47dac14ab2415a86fa0717a2a4aeb10440186827d7a8cd78a"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/cooked_deformation.json",
+      "bytes": 2733,
+      "sha256": "ef933d984297cf20e28c1d39d3fad9f2eaae41b62bd261fbe749d79dcb534dba"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/Install.cmd",
+      "bytes": 49,
+      "sha256": "9deb4d294ab1003e783153f7d111938e50b608b122f30d2d9ec9087ba611ba72"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/install_delta.py",
+      "bytes": 3367,
+      "sha256": "689faf2d1879ac157636a63a71f018615161e2baf4769ab03c576e929040bd48"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/install_receipt.json",
+      "bytes": 744,
+      "sha256": "9e73fab53a8838156fa393ca163f8bf02c0a62d0342502c3fb7437d04627d9dd"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/manifest.json",
+      "bytes": 4115,
+      "sha256": "3f2ea8af60a248a4fd4d7e47f909b162a17e33fa76acbafd6d390c35ca06a951"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/readback.json",
+      "bytes": 20989,
+      "sha256": "e01077500761b26a2f890589b361921dd0cce7c98df53498657c7acc7fbfe60b"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/README.txt",
+      "bytes": 1304,
+      "sha256": "85f395833a574680d7b83cf3f21e5706999326f508366685ba0342fef1714720"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/runtime_review.json",
+      "bytes": 3850,
+      "sha256": "358bc95d0bf393425ece6d26659ff3451edda91fbb5085de08f9a2a718e5976a"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/Uninstall.cmd",
+      "bytes": 61,
+      "sha256": "8d5566cc176e6df63040ae444e53ca47e5997141ef5a7aaa7b9b1c57d36aecfb"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/z_DeltaLive2D_P.pak",
+      "bytes": 564,
+      "sha256": "0a9095fbba94fe586a56d13d936c4db00cc8ea95031a8c937bae3fd47b05c15a"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/z_DeltaLive2D_P.ucas",
+      "bytes": 5185056,
+      "sha256": "c3831f6a7322346f481a82a827fa91fcf46977103e7647f4e3bf4297b8e98711"
+    },
+    {
+      "path": "output/live2d_delta/game_candidate/z_DeltaLive2D_P.utoc",
+      "bytes": 11513,
+      "sha256": "de801429e52a661dd34db0aef9784448f70e5768ad34f6f70de54c3b0d0625ec"
+    }
+  ],
+  "game_runtime_tested": true,
+  "visual_quality": "local basic checks passed; user visual acceptance pending",
+  "runtime_review": "output/live2d_delta/game_candidate/runtime_review.json"
+}

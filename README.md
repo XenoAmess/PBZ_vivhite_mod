@@ -12,15 +12,16 @@
 - [资料依据](qa/sources.json)
 - [测试集说明](qa/README.md)
 
-初始诊断工具已覆盖颈部三轴、头骨隔离、肩臂、屈肘及组合动作。正在扩展为参数化的全身验收配置。
+v1.0.0 已包含 30 组动作、182 个姿态，其中含 37 个项目自定义颈部组合/隔离姿态。覆盖肩、肘、腕、手指、脊柱、髋、膝、踝、脚掌和组合姿态。全部采样包含三个规定视角与灰模/贴图两种渲染，共 1,092 张图。
 
-本机使用 Blender 5.3 与 Python 3；Blender 负责姿态、蒙皮求值和真实网格渲染，普通 Python/Pillow 负责把采样图整理成对照表。工作文件在本地 `output/` 生成，完整可复现快照整理后上传。
+本机使用 Blender 5.3 与 Python 3；Blender 负责姿态、蒙皮求值和真实网格渲染，普通 Python/Pillow 负责把采样图整理成对照表。工作文件在本地 `output/` 生成。[首轮完整归档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/qa-v1.0.0-initial)包含 1,092 张采样、完整测试 Blend 和准确的输入及代码，保留失败状态。更多状态见 [PROJECT_STATE](SOP/PROJECT_STATE.md)。
 
 ```powershell
 .venv\Scripts\python.exe scripts/blender_task.py artifacts/self_test_suite.log scripts/build_self_test_suite.py
-.venv\Scripts\python.exe scripts/assemble_self_test_review.py
+.venv\Scripts\python.exe scripts/assemble_self_test_review.py --output output/live2d_delta/self_test_standard
+python -m unittest discover -s qa/tests -v
 ```
 
-当前命令默认读取本机 `build/shoulder_inputs/Delta_adult.blend`。其他机器需要自行准备模型和骨骼输入；公开仓库中的代码不包含这些资源。
+当前命令默认读取本机 `build/shoulder_inputs/Delta_adult.blend`。克隆仓库后可直接使用已上传的完整输入：为渲染命令增加 `--candidate repro/native_inputs/repair_001/Delta_adult.blend`。
 
 数值检查用于定位伸长、压缩和权重突变，不能证明外观自然。必须保留失败记录，并使用同一套动作、角度、镜头、灯光和阈值复测。
