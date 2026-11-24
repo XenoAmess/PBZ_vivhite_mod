@@ -6,23 +6,7 @@ const puerts = require("puerts");
 const OUTFIT = "pbz_outfit_baiqi";
 const ACTION = "/SGameCombatSystem/Weapon/Action/GAA_PlaySound_Opt.GAA_PlaySound_Opt_C";
 const SOURCE_ROOT = "/game/wwise/events/vo/int/hun/battle/";
-const TARGET_ROOT = "/Game/Wwise/Events/SFX/Combat/VO/Monster_Vo/BaiChiLian/";
-// Stock Bai Chilian recordings, using the same combat voice source as QOutlaw's playable character.
-const ROUTES = {
-    BaiChiLian_Attack_BiXian: [1339064079, [
-        "Attack_Short", "ChuZhao_01_DuanCu", "ShouZhao_DoubleBlade", "ShouZhao_LongBlade", "ShouZhao_TangBlade",
-        "Charge_Release_Light",
-    ]],
-    BaiChiLian_Attack_Heavy_BiXian: [3362275343, [
-        "ChuZhao_02", "Charge_Release_Heavy", "Execute_Attack_Heavy", "Heavy_Release", "ZhongZhuan", "ZhongZhuan_01",
-    ]],
-    BaiChiLian_Charge: [2254013653, [
-        "Charge_Short", "Charge_Long", "Charge_Heavy_Short", "Charge_Heavy_Long", "Charge_SuperLong",
-        "BiQi_01_DuanCu", "BiQi_02_Long",
-    ]],
-    BaiChiLian_Battle_Hurt: [44283577, ["Hurt", "Hurt_BiXian"]],
-    BaiChiLianP2_Hurt: [2357963452, ["Hurt_Heavy", "Hurt_Heavy_Mix", "Break", "Weapon_Break"]],
-};
+const TARGET_ROOT = "/Game/Wwise/Events/VO/Int/Eve/BaiQiX/";
 const prefix = "[BaiQiVoice]";
 const valid = value => Boolean(value && UE.KismetSystemLibrary.IsValid(value));
 const globalSlot = Symbol.for("PBZ.BaiQi.CombatVoice");
@@ -42,27 +26,9 @@ function log(message) {
     }
 }
 
-function loadEvents() {
-    const sources = new Map();
-    for (const [target, [id, sourceNames]] of Object.entries(ROUTES)) {
-        const name = "SFX_Combat_VO_" + target;
-        const path = TARGET_ROOT + name + "." + name;
-        try {
-            const event = UE.Object.Load(path);
-            if (!valid(event) || (event.GetWwiseShortID() >>> 0) !== id) {
-                throw new Error("audio event ID mismatch");
-            }
-            event.LoadData();
-            for (const source of sourceNames) {
-                const stem = "sfx_combat_vo_hun_" + source.toLowerCase();
-                sources.set(SOURCE_ROOT + stem + "." + stem, { event, name });
-            }
-            log("MEDIA " + name + " " + id);
-        } catch (error) {
-            log("MEDIA_UNAVAILABLE " + name + " " + String(error));
-        }
-    }
-    return sources;
+function isChineseVoice() {
+    const language = String(UE.AkGameplayStatics.GetCurrentAudioCulture()).trim().toLowerCase();
+    return language.startsWith("chinese") || language === "mandarin" || /^zh(?:[-_]|$)/.test(language);
 }
 
 function outfitFor(actor) {
@@ -73,6 +39,18 @@ function outfitFor(actor) {
 }
 
 function install() {
+    const routes = require("./eve-combat-data");
+    const sources = new Map();
+    for (const [stem, target] of Object.entries(routes)) {
+        const path = target.object;
+        if (!/^sfx_combat_vo_hun_[a-z0-9_]+$/.test(stem) || !Number.isInteger(target.id) ||
+            !(target.id > 0 && target.id <= 0xffffffff) || typeof path !== "string" ||
+            path.toLowerCase() !== TARGET_ROOT.toLowerCase() + stem + "." + stem) {
+            throw new Error("Invalid EVE combat event table");
+        }
+        sources.set(SOURCE_ROOT + stem + "." + stem, target);
+    }
+    if (!sources.size) throw new Error("Empty EVE combat event table");
     // Keep one Blueprint binding per game process, including during loader hot reload.
     let binding = globalThis[globalSlot];
     if (!binding) {
@@ -80,10 +58,10 @@ function install() {
         if (!valid(actionClass)) throw new Error("BaiQi combat audio action is unavailable");
         const original = UE.LGAAction_PlaySoundDefault.prototype.OnPrePostEvent;
         if (typeof original !== "function") throw new Error("BaiQi combat audio original filter is unavailable");
-        binding = {
-            route: undefined,
-            end: puerts.toManualReleaseDelegate(() => {}),
-        };
+        binding = { route: undefined, ended: undefined };
+        binding.callback = puerts.toManualReleaseDelegate((type, info) => {
+            if (type === UE.EAkCallbackType.EndOfEvent && valid(info) && binding.ended) binding.ended(info.PlayingID);
+        });
         let observed = false;
         class CombatVoice {
             OnPrePostEvent(component, actor) {
@@ -108,9 +86,20 @@ function install() {
         globalThis[globalSlot] = binding;
     }
 
-    const sources = loadEvents();
-    if (!sources.size) throw new Error("BaiQi combat voice could not load any source route");
     const reported = new Set();
+    const cache = new Map();
+    let current;
+    let watchdog;
+
+    function clearClip(stop) {
+        const previous = current;
+        current = undefined;
+        if (watchdog !== undefined) {
+            clearInterval(watchdog);
+            watchdog = undefined;
+        }
+        if (stop && previous && valid(previous.sound)) previous.sound.PBZStopPlayingID(previous.id, 0.05);
+    }
     function reportOnce(key, message) {
         if (reported.has(key)) return;
         log(message);
@@ -132,35 +121,65 @@ function install() {
                 reportOnce(path, "UNMAPPED " + path.split("/").pop());
                 return true;
             }
+            if (!isChineseVoice()) return true;
+            let event = cache.get(target.id);
+            if (!valid(event)) {
+                reportOnce("load:" + target.id, "LOAD_EVENT " + target.object);
+                event = UE.Object.Load(target.object);
+                if (!valid(event) || (event.GetWwiseShortID() >>> 0) !== target.id) {
+                    reportOnce("missing:" + target.id, "MEDIA_UNAVAILABLE " + target.object);
+                    return true;
+                }
+                reportOnce("found:" + target.id, "EVENT_RESOLVED " + target.id);
+                event.LoadData();
+                cache.set(target.id, event);
+            }
             const sound = UE.SubsystemBlueprintLibrary.GetWorldSubsystem(actor, UE.PBZSoundFXSubsystem.StaticClass());
-            if (!valid(sound) || !valid(target.event)) return true;
-            const playing = sound.PBZPostEventOnAkComponent(target.event, component, binding.end, true, false, 0);
-            if (!Number.isInteger(playing) || playing === 0) {
-                reportOnce("failed:" + target.name, "POST_FAILED " + target.name);
+            if (!valid(sound)) return true;
+            const id = sound.PBZPostEventOnAkComponent(event, component, binding.callback, true, false, 0);
+            if (!Number.isInteger(id) || !id) {
+                reportOnce("failed:" + target.id, "POST_FAILED " + target.object);
                 return true;
             }
-            reportOnce(path, "ROUTED " + path.split("/").pop() + " " + target.name + " " + (playing >>> 0));
+            clearClip(true);
+            current = { owner: actor, id, sound, until: Date.now() + 6000 };
+            watchdog = setInterval(() => {
+                if (current && (outfitFor(current.owner) !== OUTFIT || !isChineseVoice())) {
+                    clearClip(true);
+                } else if (current && Date.now() >= current.until) {
+                    clearClip(false);
+                }
+            }, 180);
+            reportOnce(path, "EVE_ROUTED " + path.split("/").pop() + " " + (id >>> 0));
             return false;
         } catch (error) {
             reportOnce("route-error", "ROUTE_ERROR " + String(error));
             return true;
         }
     };
-    log("READY " + OUTFIT + " sources=" + sources.size);
+    binding.ended = id => {
+        if (current && (id >>> 0) === (current.id >>> 0)) clearClip(false);
+    };
+    log("EVE_READY " + OUTFIT + " sources=" + sources.size + " language=Chinese");
     const context = puerts.argv.getByName("GameInstance");
     const pawn = valid(context) && UE.GameplayStatics.GetPlayerPawn(context, 0);
     if (valid(pawn)) log("ACTIVE_OUTFIT " + outfitFor(pawn));
-    return binding;
+    return () => {
+        binding.route = undefined;
+        binding.ended = undefined;
+        clearClip(true);
+        cache.clear();
+    };
 }
 
-let binding;
+let stopVoice;
 try {
-    binding = install();
+    stopVoice = install();
 } catch (error) {
     log("VOICE_SETUP_FAILED " + String(error));
 }
 const stopPreview = require("./preview").monitor(log);
 exports.stop = function stop() {
-    if (binding) binding.route = undefined;
+    if (stopVoice) stopVoice();
     stopPreview();
 };
