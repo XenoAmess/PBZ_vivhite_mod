@@ -29,12 +29,13 @@ def palm_rotation(position, wrist, middle, index, little):
 
 
 class Cc0Motion:
-    def __init__(self, soul, cc0, forearm_roll_share=1.0):
+    def __init__(self, soul, cc0, forearm_roll_share=1.0, neck_head_share=0.0):
         self.soul = soul
         self.cc0 = cc0
         self.links = dict(CENTER)
         self.segments = {}
         self.forearm_roll_share = forearm_roll_share
+        self.neck_head_share = neck_head_share
         orientation = {}
         source_pos = lambda name: SOUL_TO_CC0 @ soul.data.bones[name].head_local
         target_pos = lambda name: cc0.data.bones[name].head_local
@@ -96,6 +97,12 @@ class Cc0Motion:
                 source = self.soul.pose.bones[self.links[bone.name]]
                 posed = source.matrix.to_quaternion()
                 source_delta = posed @ self.source_rest[source.name].inverted()
+                if bone.name == 'J_Bip_C_Neck' and self.neck_head_share:
+                    # Soul has two neck joints. Its head motion remains exact,
+                    # while part of the distal motion uses the CC0 neck joint.
+                    source_head = self.soul.pose.bones[self.links['J_Bip_C_Head']]
+                    head_delta = source_head.matrix.to_quaternion() @ self.source_rest[source_head.name].inverted()
+                    source_delta = source_delta.slerp(head_delta, self.neck_head_share)
                 goal = SOUL_TO_CC0 @ source_delta @ SOUL_TO_CC0.inverted() @ self.world_alignment[bone.name]
                 origin = bone.bone.convert_local_to_pose(local, rest, **parent_args)
                 if bone.name.endswith('_LowerArm') and self.forearm_roll_share < 1:

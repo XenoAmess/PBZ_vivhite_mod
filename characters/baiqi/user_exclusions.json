@@ -9,10 +9,14 @@
     "44要做。要做穿脱外套双形态。",
     "正式验收交付带外套和不带外套两种形态。",
     "女性身体本体使用原始 CC0 基模，禁止修改本体。白绮服饰、道具和装饰在外部添加。",
-    "脸和头部恢复之前的白绮版本，不使用 CC0 基模头脸。"
+    "脸和头部恢复之前的白绮版本，不使用 CC0 基模头脸。",
+    "原始 CC0 已有的问题只记录。白绮新增的问题要修复，特别检查头颈接缝。CC0 身体不改动。",
+    "脸部肤色参考 CC0 胳膊并与其匹配。"
   ],
   "preserve_mouth": "Retain the approved BaiQi head's neutral mouth. Do not add alternate mouth shapes.",
   "body_contract": "Keep the selected CC0 Base_Female Body vertex data, topology, UVs, shape keys, materials and original skin weights. Fit the external wardrobe to the body. Display the previously authored BaiQi head and face, with the CC0 Face hidden as source reference.",
+  "defect_policy": "Compare the same posed original CC0 body. Record inherited defects without editing the body. Repair defects introduced by the BaiQi additions, with particular care for the head-to-neck junction.",
+  "head_skin_tone": "Use the unchanged CC0 upper-arm pigment on the restored head and exposed neck. Retain the legacy face mesh, default mouth line and eye artwork.",
   "delivery_forms": ["coat_on", "coat_off"],
   "excluded_components": ["Part25", "M10", "M11", "M13"],
   "excluded_drawables": ["M12", "M14", "M", "ArtMesh53"],

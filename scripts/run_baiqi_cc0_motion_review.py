@@ -50,23 +50,54 @@ def load_source(path, names):
     return soul, dict(zip(names, assets.actions))
 
 
+def load_cc0_control(path, body, cc0):
+    with bpy.data.libraries.load(str(path), link=False) as (available, assets):
+        assert 'Body' in available.objects
+        assets.objects = ['Body']
+    control = assets.objects[0]
+    names = [material.name for material in body.data.materials]
+    actual = [material.name for material in control.data.materials]
+    assert len(names) == len(actual) and all(loaded == original or loaded.rsplit('.', 1)[0] == original
+                                             for loaded, original in zip(actual, names))
+    assert mesh_fingerprint(control, material_names=names) == mesh_fingerprint(body)
+    bpy.context.scene.collection.objects.link(control)
+    control.name = 'Original CC0 deformation control'
+    control.hide_render = True
+    control.parent = None
+    control.matrix_world = body.matrix_world.copy()
+    armature = next(modifier for modifier in control.modifiers if modifier.type == 'ARMATURE')
+    old = armature.object
+    assert [(bone.name, bone.matrix_local) for bone in old.data.bones] == [
+        (bone.name, bone.matrix_local) for bone in cc0.data.bones
+    ]
+    assert not armature.use_deform_preserve_volume
+    armature.object = cc0
+    return control
+
+
 def evaluated_points(obj, graph):
     return np.array([tuple(vertex.co) for vertex in obj.evaluated_get(graph).data.vertices])
 
 
 class Stretch:
-    def __init__(self, obj, zones):
+    def __init__(self, obj, zones, skin_only=False):
         self.obj = obj
         graph = bpy.context.evaluated_depsgraph_get()
         mesh = obj.evaluated_get(graph).data
         positions = evaluated_points(obj, graph)
         edges = np.array([tuple(edge.vertices) for edge in mesh.edges])
         lengths = np.linalg.norm(positions[edges[:, 0]] - positions[edges[:, 1]], axis=1)
+        valid_skin = np.ones(len(edges), dtype=bool)
+        if skin_only:
+            skin = next(i for i, material in enumerate(mesh.materials) if material.name.split('.')[0].endswith('_SKIN'))
+            ids = {mesh.loops[loop].edge_index for face in mesh.polygons if face.material_index == skin
+                   for loop in face.loop_indices}
+            valid_skin = np.array([edge.index in ids for edge in mesh.edges])
         self.regions = {}
         x, _, z = positions.T
         for name, (xmin, xmax, zmin, zmax) in zones.items():
             allowed = (abs(x) >= xmin) & (abs(x) < xmax) & (z > zmin) & (z < zmax)
-            valid = allowed[edges[:, 0]] & allowed[edges[:, 1]] & (lengths > .00045)
+            valid = valid_skin & allowed[edges[:, 0]] & allowed[edges[:, 1]] & (lengths > .00045)
             assert valid.any(), (obj.name, name)
             self.regions[name] = edges[valid], lengths[valid]
 
@@ -130,10 +161,13 @@ def main():
     parser.add_argument('--candidate', required=True, type=Path)
     parser.add_argument('--donor', required=True, type=Path)
     parser.add_argument('--suite', default=Path('qa/suites/humanoid_v1_1.json'), type=Path)
+    parser.add_argument('--cc0-control', default=Path('artifacts/anatomy_base/Base_Female.blend'), type=Path)
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--render', choices=('full', 'triage', 'none'), default='full')
     parser.add_argument('--case', action='append', default=[], help='Limit the run to named cases or native clips.')
     parser.add_argument('--forearm-roll-share', type=float, default=1.)
+    parser.add_argument('--neck-head-share', type=float, default=0.)
+    parser.add_argument('--native-neck-closeup', action='store_true')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -161,9 +195,13 @@ def main():
                                                                'BaiQi fitted navy', 'BaiQi pleated',
                                                                'BaiQi open coat'))]
     checks = [Stretch(body, ARM_ZONES), Stretch(head, NECK_ZONES)]
+    control_path = ROOT / args.cc0_control
+    control = load_cc0_control(control_path, body, cc0)
+    bpy.context.view_layer.update()
+    control_check = Stretch(control, ARM_ZONES, skin_only=True)
     soul, actions = load_source(donor, [row['action'] for row in donor_report['clips']])
-    assert 0 <= args.forearm_roll_share <= 1
-    transfer = Cc0Motion(soul, cc0, args.forearm_roll_share)
+    assert 0 <= args.forearm_roll_share <= 1 and 0 <= args.neck_head_share <= 1
+    transfer = Cc0Motion(soul, cc0, args.forearm_roll_share, args.neck_head_share)
     camera = setup_studio(scene)
     lights = {obj.name: obj.location.copy() for obj in scene.objects if obj.type == 'LIGHT'}
     scene.render.resolution_x = scene.render.resolution_y = 512
@@ -184,16 +222,20 @@ def main():
             metrics = {}
             for check in checks:
                 metrics.update(check.sample(graph))
+            baseline_metrics = control_check.sample(graph)
             skin = surface_tree(body, graph, skin=True)
             intersections = {obj.name: len(skin.overlap(surface_tree(obj, graph))) for obj in wardrobe}
             alignment = max(math.degrees(error) for error in transfer.angle_errors().values())
-            row['samples'].append({**sample, 'metrics': metrics, 'max_mapped_segment_error_degrees': alignment,
+            row['samples'].append({**sample, 'metrics': metrics, 'original_cc0_metrics': baseline_metrics,
+                                   'max_mapped_segment_error_degrees': alignment,
                                    'intersecting_skin_apparel_triangle_pairs': intersections})
             if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]
             root = cc0.pose.bones['Root'].head
             target = root + Vector((0, 0, camera_height))
+            if source_hash and args.native_neck_closeup:
+                target = cc0.pose.bones['J_Bip_C_Head'].head + Vector((0, 0, .040))
             for name, studio_location in lights.items():
                 scene.objects[name].location = studio_location + root
             for kind in spec['passes']:
@@ -221,16 +263,22 @@ def main():
         start, stop = (float(frame) for frame in action.frame_range)
         samples = [{'frame': round(start + (stop - start) * fraction), 'value': fraction}
                    for fraction in (0., .25, .5, .75, 1.)]
-        assess(name, 'body', action, samples, file_hash(path))
+        assess(name, 'neck' if args.native_neck_closeup else 'body', action, samples, file_hash(path))
 
     flags = []
+    inherited_flags = []
     for row in rows:
         for sample in row['samples']:
             for region, metrics in sample['metrics'].items():
                 for key, limit in spec['thresholds'][region].items():
                     if metrics[key] > limit:
-                        flags.append({'case': row['id'], 'frame': sample['frame'], 'region': region,
-                                      'metric': key, 'value': metrics[key], 'limit': limit})
+                        flag = {'case': row['id'], 'frame': sample['frame'], 'region': region,
+                                'metric': key, 'value': metrics[key], 'limit': limit}
+                        original = sample['original_cc0_metrics'].get(region, {}).get(key)
+                        if original is not None and original > limit and abs(original - metrics[key]) < 1e-4:
+                            inherited_flags.append({**flag, 'original_cc0_value': original})
+                        else:
+                            flags.append(flag)
     coverage = not args.case and args.render == 'full' and all(len(row['images']) == len(row['samples']) * 6 for row in rows)
     studio('textured')
     assert mesh_fingerprint(body) == body['baiqi_cc0_geometry_sha256']
@@ -239,8 +287,10 @@ def main():
               'donor_sha256': file_hash(donor), 'runner_sha256': file_hash(Path(__file__)),
               'retarget_sha256': file_hash(Path(__file__).with_name('baiqi_cc0_motion.py')),
               'mapped_bones': len(transfer.links), 'render_profile': args.render,
-              'forearm_roll_share': args.forearm_roll_share,
-              'full_render_coverage': coverage, 'flags': flags, 'clips': rows,
+              'forearm_roll_share': args.forearm_roll_share, 'neck_head_share': args.neck_head_share,
+              'native_neck_closeup': args.native_neck_closeup,
+              'full_render_coverage': coverage, 'flags': flags, 'inherited_cc0_flags': inherited_flags,
+              'original_cc0_sha256': file_hash(control_path), 'clips': rows,
               'limits': ['Adult Soul motion samples exclude runtime AnimBP, IK and physics.',
                          'Apparel intersection counts require visual review and include intentional overlap.']}
     (output / 'motion_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

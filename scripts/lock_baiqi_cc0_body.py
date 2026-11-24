@@ -9,7 +9,7 @@ import bpy
 import numpy as np
 
 
-def mesh_fingerprint(obj):
+def mesh_fingerprint(obj, material_names=None):
     mesh = obj.data
     digest = hashlib.sha256()
     positions = np.empty(len(mesh.vertices) * 3, dtype=np.float32)
@@ -22,8 +22,8 @@ def mesh_fingerprint(obj):
         uv = np.empty(len(uv_layer.uv) * 2, dtype=np.float32)
         uv_layer.uv.foreach_get('vector', uv)
         digest.update(uv.tobytes())
-    for material in mesh.materials:
-        digest.update(material.name.encode())
+    for name in (material_names if material_names is not None else [material.name for material in mesh.materials]):
+        digest.update(name.encode())
     for group in obj.vertex_groups:
         digest.update(group.name.encode())
     for vertex in mesh.vertices:
