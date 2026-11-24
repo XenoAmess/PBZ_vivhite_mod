@@ -1,0 +1,1151 @@
+{
+  "character": "白绮",
+  "model_sha256": "5e3a17ec5f21fde57820dd79d59d541c0ab1b159e857e0c4a9e82186e217f228",
+  "source_contract_sha256": "1e30984e46261d1cd6598fa9930faa01224aa8f845a2f56a8245a1d83e670442",
+  "status": "pending_visual_review",
+  "game_runtime_allowed": false,
+  "components": [
+    {
+      "id": "Part40",
+      "target_objects": [
+        "BaiQi S1",
+        "BaiQi S2",
+        "BaiQi S3",
+        "BaiQi S4"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Machine",
+      "target_objects": [
+        "BaiQi machine_core",
+        "BaiQi machine_rings",
+        "BaiQi machine_screen",
+        "BaiQi machine_wings"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Head",
+      "target_objects": [
+        "BaiQi black gold headdress",
+        "BaiQi bob front",
+        "BaiQi glasses temple -1",
+        "BaiQi glasses temple 1",
+        "BaiQi optional ponytails",
+        "BaiQi rear hair clump 0",
+        "BaiQi rear hair clump 1",
+        "BaiQi rear hair clump 10",
+        "BaiQi rear hair clump 11",
+        "BaiQi rear hair clump 12",
+        "BaiQi rear hair clump 13",
+        "BaiQi rear hair clump 14",
+        "BaiQi rear hair clump 15",
+        "BaiQi rear hair clump 16",
+        "BaiQi rear hair clump 17",
+        "BaiQi rear hair clump 18",
+        "BaiQi rear hair clump 19",
+        "BaiQi rear hair clump 2",
+        "BaiQi rear hair clump 20",
+        "BaiQi rear hair clump 21",
+        "BaiQi rear hair clump 22",
+        "BaiQi rear hair clump 3",
+        "BaiQi rear hair clump 4",
+        "BaiQi rear hair clump 5",
+        "BaiQi rear hair clump 6",
+        "BaiQi rear hair clump 7",
+        "BaiQi rear hair clump 8",
+        "BaiQi rear hair clump 9",
+        "BaiQi round gold glasses",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Shirt",
+      "target_objects": [
+        "BaiQi black gold bow tie",
+        "BaiQi fitted white blouse",
+        "BaiQi shirt_collar"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Neck",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Coat",
+      "target_objects": [
+        "BaiQi coat side back",
+        "BaiQi coat side seam -1",
+        "BaiQi coat side seam 1",
+        "BaiQi fitted shoulder coverage l",
+        "BaiQi fitted shoulder coverage r",
+        "BaiQi open coat front and lapels"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part29",
+      "target_objects": [
+        "BaiQi navy gold laced girdle"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Body",
+      "target_objects": [
+        "BaiQi anatomical sleeve l",
+        "BaiQi anatomical sleeve r",
+        "BaiQi fitted shoulder coverage l",
+        "BaiQi fitted shoulder coverage r",
+        "BaiQi gold cuff edge l",
+        "BaiQi gold cuff edge r",
+        "BaiQi navy arm ribbon",
+        "BaiQi optional hand_ring",
+        "BaiQi white sleeve cuff l",
+        "BaiQi white sleeve cuff r",
+        "BaiQi wrist band l",
+        "BaiQi wrist band r",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Skirt",
+      "target_objects": [
+        "BaiQi pleated skirt"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Bhair",
+      "target_objects": [
+        "BaiQi rear hair clump 0",
+        "BaiQi rear hair clump 1",
+        "BaiQi rear hair clump 10",
+        "BaiQi rear hair clump 11",
+        "BaiQi rear hair clump 12",
+        "BaiQi rear hair clump 13",
+        "BaiQi rear hair clump 14",
+        "BaiQi rear hair clump 15",
+        "BaiQi rear hair clump 16",
+        "BaiQi rear hair clump 17",
+        "BaiQi rear hair clump 18",
+        "BaiQi rear hair clump 19",
+        "BaiQi rear hair clump 2",
+        "BaiQi rear hair clump 20",
+        "BaiQi rear hair clump 21",
+        "BaiQi rear hair clump 22",
+        "BaiQi rear hair clump 3",
+        "BaiQi rear hair clump 4",
+        "BaiQi rear hair clump 5",
+        "BaiQi rear hair clump 6",
+        "BaiQi rear hair clump 7",
+        "BaiQi rear hair clump 8",
+        "BaiQi rear hair clump 9"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Leg",
+      "target_objects": [
+        "BaiQi boot foundation",
+        "BaiQi fitted boot upper",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Machine2",
+      "target_objects": [
+        "BaiQi machine_core",
+        "BaiQi machine_rings",
+        "BaiQi machine_screen",
+        "BaiQi machine_wings"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Hair",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Headdress",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Ponytail",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi optional ponytails"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Face",
+      "target_objects": [
+        "BaiQi glasses temple -1",
+        "BaiQi glasses temple 1",
+        "BaiQi round gold glasses",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Mhair",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi rear hair clump 0",
+        "BaiQi rear hair clump 1",
+        "BaiQi rear hair clump 10",
+        "BaiQi rear hair clump 11",
+        "BaiQi rear hair clump 12",
+        "BaiQi rear hair clump 13",
+        "BaiQi rear hair clump 14",
+        "BaiQi rear hair clump 15",
+        "BaiQi rear hair clump 16",
+        "BaiQi rear hair clump 17",
+        "BaiQi rear hair clump 18",
+        "BaiQi rear hair clump 19",
+        "BaiQi rear hair clump 2",
+        "BaiQi rear hair clump 20",
+        "BaiQi rear hair clump 21",
+        "BaiQi rear hair clump 22",
+        "BaiQi rear hair clump 3",
+        "BaiQi rear hair clump 4",
+        "BaiQi rear hair clump 5",
+        "BaiQi rear hair clump 6",
+        "BaiQi rear hair clump 7",
+        "BaiQi rear hair clump 8",
+        "BaiQi rear hair clump 9"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part26",
+      "target_objects": [
+        "BaiQi black gold bow tie"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Collar",
+      "target_objects": [
+        "BaiQi fitted white blouse",
+        "BaiQi shirt_collar"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Shirt2",
+      "target_objects": [
+        "BaiQi fitted white blouse"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Solar",
+      "target_objects": [
+        "BaiQi open coat front and lapels"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part30",
+      "target_objects": [
+        "BaiQi navy gold laced girdle"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part31",
+      "target_objects": [
+        "BaiQi optional hand_ring",
+        "BaiQi wrist band r",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part35",
+      "target_objects": [
+        "BaiQi wrist band l",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part38",
+      "target_objects": [
+        "BaiQi anatomical sleeve r",
+        "BaiQi fitted shoulder coverage r",
+        "BaiQi gold cuff edge r",
+        "BaiQi navy arm ribbon",
+        "BaiQi white sleeve cuff r"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part39",
+      "target_objects": [
+        "BaiQi anatomical sleeve l",
+        "BaiQi fitted shoulder coverage l",
+        "BaiQi gold cuff edge l",
+        "BaiQi white sleeve cuff l"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part41",
+      "target_objects": [
+        "BaiQi boot foundation",
+        "BaiQi fitted boot upper"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part42",
+      "target_objects": [
+        "BaiQi boot foundation",
+        "BaiQi fitted boot upper"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Leg2",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part43",
+      "target_objects": [
+        "BaiQi boot foundation",
+        "BaiQi fitted boot upper"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part44",
+      "target_objects": [
+        "BaiQi boot foundation",
+        "BaiQi fitted boot upper"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part",
+      "target_objects": [
+        "BaiQi machine_screen"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part2",
+      "target_objects": [
+        "BaiQi machine_core",
+        "BaiQi machine_rings",
+        "BaiQi machine_wings"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Fhair",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part5",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part10",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "ArtMesh55_Skinning2",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi optional ponytails"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part46",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi optional ponytails"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "ArtMesh55_Skinning",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi optional ponytails"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part45",
+      "target_objects": [
+        "BaiQi bob front",
+        "BaiQi optional ponytails"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part15",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Glasses",
+      "target_objects": [
+        "BaiQi glasses temple -1",
+        "BaiQi glasses temple 1",
+        "BaiQi round gold glasses"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Eyes",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Nose",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Mouth",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Face2",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part27",
+      "target_objects": [
+        "BaiQi black gold bow tie"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part28",
+      "target_objects": [
+        "BaiQi black gold bow tie"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Ring",
+      "target_objects": [
+        "BaiQi wrist band r"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part32",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part33",
+      "target_objects": [
+        "BaiQi optional hand_ring",
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Ring3",
+      "target_objects": [
+        "BaiQi wrist band l"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part36",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part37",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Sleeve",
+      "target_objects": [
+        "BaiQi anatomical sleeve r",
+        "BaiQi gold cuff edge r",
+        "BaiQi white sleeve cuff r"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Bandage",
+      "target_objects": [
+        "BaiQi navy arm ribbon"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Sleeve2",
+      "target_objects": [
+        "BaiQi anatomical sleeve l",
+        "BaiQi gold cuff edge l",
+        "BaiQi white sleeve cuff l"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part3",
+      "target_objects": [
+        "BaiQi machine_wings"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part4",
+      "target_objects": [
+        "BaiQi machine_rings"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part6",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part7",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part8",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part9",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part11",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part12",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part13",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part14",
+      "target_objects": [
+        "BaiQi black gold headdress"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M1",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M2",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M3",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M4",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M5",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M6",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part16",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part17",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part21",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part25",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Tlip",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Mouth3",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part34",
+      "target_objects": [
+        "BaiQi optional hand_ring"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M7",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M8",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M9",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Tear",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part18",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part19",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Tear3",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part22",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part23",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M10",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M11",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "M13",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Uteeth",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Bteeth",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part20",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Pupil",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Part24",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "Pupil3",
+      "target_objects": [
+        "BaiQi_FemaleFoundation"
+      ],
+      "status": "pending",
+      "verification_images": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "E-Body-Coat.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Block.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Blue.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Fog.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Glasses.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Heart.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Shocked.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Smile.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Eye-Star.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-AllBlack.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Angry.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Black.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Blood.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Music.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Question.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Shocked.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Face-Sweat.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Hair-HeadDress.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Hair-HeadDressLight.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Hair-Ponytail.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Machine-Open.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Machine-Screen.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Mouth-Pout.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Mouth-Shh.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    },
+    {
+      "id": "E-Mouth-Smile.exp3",
+      "target_objects": [
+        "BaiQi_Source_State_Controller"
+      ],
+      "status": "pending",
+      "verification_images": []
+    }
+  ],
+  "unparented_drawables": [
+    {
+      "id": "ArtMesh215",
+      "role": "original rear coat backing",
+      "migration_status": "assembled_pending_review",
+      "target_objects": [
+        "BaiQi coat side back"
+      ],
+      "verification_images": [],
+      "status": "pending"
+    }
+  ],
+  "open_defects": [
+    "Multi-view garment and head review is incomplete",
+    "Source alternate hand gestures not yet validated",
+    "Optional holographic controls are not implemented in the game",
+    "Full ROM visual review not completed"
+  ]
+}

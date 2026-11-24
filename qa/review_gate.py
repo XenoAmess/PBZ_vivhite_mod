@@ -2,7 +2,7 @@
 import argparse,json
 from pathlib import Path
 from qa.motion_suite import acceptance
-parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--review');parser.add_argument('--shape-run')
+parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--review');parser.add_argument('--shape-run');parser.add_argument('--identity-review')
 args=parser.parse_args();run=Path(args.run).resolve()
 manifest=json.loads((run/'sampling_report.json').read_text(encoding='utf-8'))
 review_path=Path(args.review) if args.review else run/'visual_review.json'
@@ -20,6 +20,7 @@ if args.shape_run:
     review['shape_check']={'coverage_complete':shape_manifest['coverage_complete'],
         'model_sha256':shape_manifest['input_hashes']['model'],'sections':shape_review['sections'],
         'open_defects':shape_review['open_defects']}
+if args.identity_review:review['identity_check']=json.loads(Path(args.identity_review).read_text(encoding='utf-8'))
 result=acceptance(manifest,review);result['input_hashes']=manifest['input_hashes']
 (run/'offline_gate.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(result,ensure_ascii=True))

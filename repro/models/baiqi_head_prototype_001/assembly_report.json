@@ -1,0 +1,933 @@
+{
+  "character": "白绮",
+  "base": "anatomy_foundation_002",
+  "native_rig_bones": 264,
+  "source_component_collections": 98,
+  "head_projection_objects": [
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh17",
+      "object": "BaiQi_Fhair__ArtMesh17",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh19",
+      "object": "BaiQi_Fhair__ArtMesh19",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh21",
+      "object": "BaiQi_Fhair__ArtMesh21",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh23",
+      "object": "BaiQi_Fhair__ArtMesh23",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh24",
+      "object": "BaiQi_Fhair__ArtMesh24",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh26",
+      "object": "BaiQi_Fhair__ArtMesh26",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh27",
+      "object": "BaiQi_Fhair__ArtMesh27",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh29",
+      "object": "BaiQi_Mhair__ArtMesh29",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh30",
+      "object": "BaiQi_Mhair__ArtMesh30",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh31",
+      "object": "BaiQi_Mhair__ArtMesh31",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh32",
+      "object": "BaiQi_Mhair__ArtMesh32",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh33",
+      "object": "BaiQi_Mhair__ArtMesh33",
+      "default_visible": true
+    },
+    {
+      "part": "Hair",
+      "drawable": "FHighLight",
+      "object": "BaiQi_Hair__FHighLight",
+      "default_visible": true
+    },
+    {
+      "part": "Part6",
+      "drawable": "ArtMesh36",
+      "object": "BaiQi_Part6__ArtMesh36",
+      "default_visible": true
+    },
+    {
+      "part": "Part6",
+      "drawable": "ArtMesh37",
+      "object": "BaiQi_Part6__ArtMesh37",
+      "default_visible": true
+    },
+    {
+      "part": "Part7",
+      "drawable": "ArtMesh38",
+      "object": "BaiQi_Part7__ArtMesh38",
+      "default_visible": true
+    },
+    {
+      "part": "Part7",
+      "drawable": "ArtMesh39",
+      "object": "BaiQi_Part7__ArtMesh39",
+      "default_visible": true
+    },
+    {
+      "part": "Part8",
+      "drawable": "ArtMesh41",
+      "object": "BaiQi_Part8__ArtMesh41",
+      "default_visible": true
+    },
+    {
+      "part": "Part8",
+      "drawable": "ArtMesh42",
+      "object": "BaiQi_Part8__ArtMesh42",
+      "default_visible": true
+    },
+    {
+      "part": "Part9",
+      "drawable": "ArtMesh43",
+      "object": "BaiQi_Part9__ArtMesh43",
+      "default_visible": true
+    },
+    {
+      "part": "Part9",
+      "drawable": "ArtMesh44",
+      "object": "BaiQi_Part9__ArtMesh44",
+      "default_visible": true
+    },
+    {
+      "part": "Part5",
+      "drawable": "ArtMesh40",
+      "object": "BaiQi_Part5__ArtMesh40",
+      "default_visible": true
+    },
+    {
+      "part": "M2",
+      "drawable": "ArtMesh58",
+      "object": "BaiQi_M2__ArtMesh58",
+      "default_visible": false
+    },
+    {
+      "part": "M2",
+      "drawable": "ArtMesh59",
+      "object": "BaiQi_M2__ArtMesh59",
+      "default_visible": false
+    },
+    {
+      "part": "M3",
+      "drawable": "ArtMesh60",
+      "object": "BaiQi_M3__ArtMesh60",
+      "default_visible": false
+    },
+    {
+      "part": "M4",
+      "drawable": "ArtMesh61",
+      "object": "BaiQi_M4__ArtMesh61",
+      "default_visible": false
+    },
+    {
+      "part": "M5",
+      "drawable": "blood",
+      "object": "BaiQi_M5__blood",
+      "default_visible": false
+    },
+    {
+      "part": "M6",
+      "drawable": "shocked",
+      "object": "BaiQi_M6__shocked",
+      "default_visible": false
+    },
+    {
+      "part": "Glasses",
+      "drawable": "Glasses2",
+      "object": "BaiQi_Glasses__Glasses2",
+      "default_visible": true
+    },
+    {
+      "part": "Glasses",
+      "drawable": "ArtMesh63",
+      "object": "BaiQi_Glasses__ArtMesh63",
+      "default_visible": false
+    },
+    {
+      "part": "Glasses",
+      "drawable": "ArtMesh64",
+      "object": "BaiQi_Glasses__ArtMesh64",
+      "default_visible": false
+    },
+    {
+      "part": "Glasses",
+      "drawable": "ArtMesh65",
+      "object": "BaiQi_Glasses__ArtMesh65",
+      "default_visible": true
+    },
+    {
+      "part": "M7",
+      "drawable": "ArtMesh66",
+      "object": "BaiQi_M7__ArtMesh66",
+      "default_visible": false
+    },
+    {
+      "part": "M7",
+      "drawable": "ArtMesh67",
+      "object": "BaiQi_M7__ArtMesh67",
+      "default_visible": false
+    },
+    {
+      "part": "M7",
+      "drawable": "ArtMesh68",
+      "object": "BaiQi_M7__ArtMesh68",
+      "default_visible": false
+    },
+    {
+      "part": "M7",
+      "drawable": "ArtMesh69",
+      "object": "BaiQi_M7__ArtMesh69",
+      "default_visible": false
+    },
+    {
+      "part": "M8",
+      "drawable": "ArtMesh70",
+      "object": "BaiQi_M8__ArtMesh70",
+      "default_visible": false
+    },
+    {
+      "part": "M8",
+      "drawable": "ArtMesh72",
+      "object": "BaiQi_M8__ArtMesh72",
+      "default_visible": false
+    },
+    {
+      "part": "M9",
+      "drawable": "ArtMesh74",
+      "object": "BaiQi_M9__ArtMesh74",
+      "default_visible": false
+    },
+    {
+      "part": "M9",
+      "drawable": "ArtMesh75",
+      "object": "BaiQi_M9__ArtMesh75",
+      "default_visible": false
+    },
+    {
+      "part": "Tear",
+      "drawable": "Tear2",
+      "object": "BaiQi_Tear__Tear2",
+      "default_visible": false
+    },
+    {
+      "part": "Tear",
+      "drawable": "DropTear",
+      "object": "BaiQi_Tear__DropTear",
+      "default_visible": false
+    },
+    {
+      "part": "Part18",
+      "drawable": "ArtMesh78",
+      "object": "BaiQi_Part18__ArtMesh78",
+      "default_visible": true
+    },
+    {
+      "part": "Part18",
+      "drawable": "ArtMesh79",
+      "object": "BaiQi_Part18__ArtMesh79",
+      "default_visible": true
+    },
+    {
+      "part": "Part18",
+      "drawable": "ArtMesh80",
+      "object": "BaiQi_Part18__ArtMesh80",
+      "default_visible": true
+    },
+    {
+      "part": "Part18",
+      "drawable": "ArtMesh81",
+      "object": "BaiQi_Part18__ArtMesh81",
+      "default_visible": true
+    },
+    {
+      "part": "Part20",
+      "drawable": "ArtMesh83",
+      "object": "BaiQi_Part20__ArtMesh83",
+      "default_visible": true
+    },
+    {
+      "part": "Part20",
+      "drawable": "ArtMesh84",
+      "object": "BaiQi_Part20__ArtMesh84",
+      "default_visible": true
+    },
+    {
+      "part": "Part20",
+      "drawable": "ArtMesh85",
+      "object": "BaiQi_Part20__ArtMesh85",
+      "default_visible": true
+    },
+    {
+      "part": "Pupil",
+      "drawable": "Pupil2",
+      "object": "BaiQi_Pupil__Pupil2",
+      "default_visible": true
+    },
+    {
+      "part": "Pupil",
+      "drawable": "ArtMesh87",
+      "object": "BaiQi_Pupil__ArtMesh87",
+      "default_visible": false
+    },
+    {
+      "part": "Part19",
+      "drawable": "ArtMesh88",
+      "object": "BaiQi_Part19__ArtMesh88",
+      "default_visible": true
+    },
+    {
+      "part": "Part19",
+      "drawable": "ArtMesh89",
+      "object": "BaiQi_Part19__ArtMesh89",
+      "default_visible": true
+    },
+    {
+      "part": "Part17",
+      "drawable": "ArtMesh76",
+      "object": "BaiQi_Part17__ArtMesh76",
+      "default_visible": true
+    },
+    {
+      "part": "Part17",
+      "drawable": "ArtMesh77",
+      "object": "BaiQi_Part17__ArtMesh77",
+      "default_visible": true
+    },
+    {
+      "part": "Part17",
+      "drawable": "ArtMesh90",
+      "object": "BaiQi_Part17__ArtMesh90",
+      "default_visible": true
+    },
+    {
+      "part": "Part23",
+      "drawable": "ArtMesh103",
+      "object": "BaiQi_Part23__ArtMesh103",
+      "default_visible": true
+    },
+    {
+      "part": "Part23",
+      "drawable": "ArtMesh104",
+      "object": "BaiQi_Part23__ArtMesh104",
+      "default_visible": true
+    },
+    {
+      "part": "Part21",
+      "drawable": "ArtMesh92",
+      "object": "BaiQi_Part21__ArtMesh92",
+      "default_visible": true
+    },
+    {
+      "part": "Nose",
+      "drawable": "Nose2",
+      "object": "BaiQi_Nose__Nose2",
+      "default_visible": true
+    },
+    {
+      "part": "Nose",
+      "drawable": "ArtMesh106",
+      "object": "BaiQi_Nose__ArtMesh106",
+      "default_visible": true
+    },
+    {
+      "part": "M10",
+      "drawable": "M",
+      "object": "BaiQi_M10__M",
+      "default_visible": false
+    },
+    {
+      "part": "M11",
+      "drawable": "M12",
+      "object": "BaiQi_M11__M12",
+      "default_visible": false
+    },
+    {
+      "part": "M13",
+      "drawable": "M14",
+      "object": "BaiQi_M13__M14",
+      "default_visible": false
+    },
+    {
+      "part": "Tlip",
+      "drawable": "TUlip",
+      "object": "BaiQi_Tlip__TUlip",
+      "default_visible": false
+    },
+    {
+      "part": "Tlip",
+      "drawable": "TBlip",
+      "object": "BaiQi_Tlip__TBlip",
+      "default_visible": false
+    },
+    {
+      "part": "Bteeth",
+      "drawable": "ArtMesh110",
+      "object": "BaiQi_Bteeth__ArtMesh110",
+      "default_visible": true
+    },
+    {
+      "part": "Bteeth",
+      "drawable": "ArtMesh111",
+      "object": "BaiQi_Bteeth__ArtMesh111",
+      "default_visible": true
+    },
+    {
+      "part": "Mouth",
+      "drawable": "Mouth2",
+      "object": "BaiQi_Mouth__Mouth2",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh114",
+      "object": "BaiQi_Face2__ArtMesh114",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh117",
+      "object": "BaiQi_Face2__ArtMesh117",
+      "default_visible": false
+    },
+    {
+      "part": "Bhair",
+      "drawable": "ArtMesh200",
+      "object": "BaiQi_Bhair__ArtMesh200",
+      "default_visible": true
+    },
+    {
+      "part": "Bhair",
+      "drawable": "ArtMesh201",
+      "object": "BaiQi_Bhair__ArtMesh201",
+      "default_visible": true
+    },
+    {
+      "part": "Bhair",
+      "drawable": "ArtMesh202",
+      "object": "BaiQi_Bhair__ArtMesh202",
+      "default_visible": false
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh28",
+      "object": "BaiQi_Fhair__ArtMesh28",
+      "default_visible": true
+    },
+    {
+      "part": "Part11",
+      "drawable": "ArtMesh216",
+      "object": "BaiQi_Part11__ArtMesh216",
+      "default_visible": true
+    },
+    {
+      "part": "Part11",
+      "drawable": "ArtMesh217",
+      "object": "BaiQi_Part11__ArtMesh217",
+      "default_visible": true
+    },
+    {
+      "part": "Part12",
+      "drawable": "ArtMesh218",
+      "object": "BaiQi_Part12__ArtMesh218",
+      "default_visible": true
+    },
+    {
+      "part": "Part12",
+      "drawable": "ArtMesh219",
+      "object": "BaiQi_Part12__ArtMesh219",
+      "default_visible": true
+    },
+    {
+      "part": "Part13",
+      "drawable": "ArtMesh221",
+      "object": "BaiQi_Part13__ArtMesh221",
+      "default_visible": true
+    },
+    {
+      "part": "Part13",
+      "drawable": "ArtMesh222",
+      "object": "BaiQi_Part13__ArtMesh222",
+      "default_visible": true
+    },
+    {
+      "part": "Part14",
+      "drawable": "ArtMesh223",
+      "object": "BaiQi_Part14__ArtMesh223",
+      "default_visible": true
+    },
+    {
+      "part": "Part14",
+      "drawable": "ArtMesh224",
+      "object": "BaiQi_Part14__ArtMesh224",
+      "default_visible": true
+    },
+    {
+      "part": "Part6",
+      "drawable": "ArtMesh35",
+      "object": "BaiQi_Part6__ArtMesh35",
+      "default_visible": true
+    },
+    {
+      "part": "Part7",
+      "drawable": "ArtMesh45",
+      "object": "BaiQi_Part7__ArtMesh45",
+      "default_visible": false
+    },
+    {
+      "part": "Part8",
+      "drawable": "ArtMesh46",
+      "object": "BaiQi_Part8__ArtMesh46",
+      "default_visible": true
+    },
+    {
+      "part": "Part9",
+      "drawable": "ArtMesh47",
+      "object": "BaiQi_Part9__ArtMesh47",
+      "default_visible": true
+    },
+    {
+      "part": "Part11",
+      "drawable": "ArtMesh225",
+      "object": "BaiQi_Part11__ArtMesh225",
+      "default_visible": true
+    },
+    {
+      "part": "Part12",
+      "drawable": "ArtMesh226",
+      "object": "BaiQi_Part12__ArtMesh226",
+      "default_visible": true
+    },
+    {
+      "part": "Part13",
+      "drawable": "ArtMesh227",
+      "object": "BaiQi_Part13__ArtMesh227",
+      "default_visible": true
+    },
+    {
+      "part": "Part14",
+      "drawable": "ArtMesh56",
+      "object": "BaiQi_Part14__ArtMesh56",
+      "default_visible": true
+    },
+    {
+      "part": "Part21",
+      "drawable": "ArtMesh228",
+      "object": "BaiQi_Part21__ArtMesh228",
+      "default_visible": true
+    },
+    {
+      "part": "Pupil3",
+      "drawable": "ArtMesh229",
+      "object": "BaiQi_Pupil3__ArtMesh229",
+      "default_visible": false
+    },
+    {
+      "part": "Pupil3",
+      "drawable": "ArtMesh91",
+      "object": "BaiQi_Pupil3__ArtMesh91",
+      "default_visible": false
+    },
+    {
+      "part": "Pupil3",
+      "drawable": "Pupil5",
+      "object": "BaiQi_Pupil3__Pupil5",
+      "default_visible": true
+    },
+    {
+      "part": "Pupil",
+      "drawable": "ArtMesh86",
+      "object": "BaiQi_Pupil__ArtMesh86",
+      "default_visible": false
+    },
+    {
+      "part": "Part18",
+      "drawable": "ArtMesh82",
+      "object": "BaiQi_Part18__ArtMesh82",
+      "default_visible": true
+    },
+    {
+      "part": "Part24",
+      "drawable": "ArtMesh102",
+      "object": "BaiQi_Part24__ArtMesh102",
+      "default_visible": true
+    },
+    {
+      "part": "Part24",
+      "drawable": "ArtMesh101",
+      "object": "BaiQi_Part24__ArtMesh101",
+      "default_visible": true
+    },
+    {
+      "part": "Part22",
+      "drawable": "ArtMesh232",
+      "object": "BaiQi_Part22__ArtMesh232",
+      "default_visible": true
+    },
+    {
+      "part": "Part22",
+      "drawable": "ArtMesh231",
+      "object": "BaiQi_Part22__ArtMesh231",
+      "default_visible": true
+    },
+    {
+      "part": "Part22",
+      "drawable": "ArtMesh100",
+      "object": "BaiQi_Part22__ArtMesh100",
+      "default_visible": true
+    },
+    {
+      "part": "Part22",
+      "drawable": "ArtMesh99",
+      "object": "BaiQi_Part22__ArtMesh99",
+      "default_visible": true
+    },
+    {
+      "part": "Part22",
+      "drawable": "ArtMesh98",
+      "object": "BaiQi_Part22__ArtMesh98",
+      "default_visible": true
+    },
+    {
+      "part": "Part21",
+      "drawable": "ArtMesh93",
+      "object": "BaiQi_Part21__ArtMesh93",
+      "default_visible": true
+    },
+    {
+      "part": "Tear",
+      "drawable": "DropTear3",
+      "object": "BaiQi_Tear__DropTear3",
+      "default_visible": false
+    },
+    {
+      "part": "Tear",
+      "drawable": "Tear5",
+      "object": "BaiQi_Tear__Tear5",
+      "default_visible": false
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh18",
+      "object": "BaiQi_Fhair__ArtMesh18",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh20",
+      "object": "BaiQi_Fhair__ArtMesh20",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh22",
+      "object": "BaiQi_Fhair__ArtMesh22",
+      "default_visible": true
+    },
+    {
+      "part": "Fhair",
+      "drawable": "ArtMesh25",
+      "object": "BaiQi_Fhair__ArtMesh25",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "Facecolor",
+      "object": "BaiQi_Face2__Facecolor",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh116",
+      "object": "BaiQi_Face2__ArtMesh116",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh234",
+      "object": "BaiQi_Face2__ArtMesh234",
+      "default_visible": false
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh54",
+      "object": "BaiQi_Face2__ArtMesh54",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh115",
+      "object": "BaiQi_Face2__ArtMesh115",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh235",
+      "object": "BaiQi_Face2__ArtMesh235",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh233",
+      "object": "BaiQi_Face2__ArtMesh233",
+      "default_visible": true
+    },
+    {
+      "part": "Mhair",
+      "drawable": "ArtMesh48",
+      "object": "BaiQi_Mhair__ArtMesh48",
+      "default_visible": true
+    },
+    {
+      "part": "Part10",
+      "drawable": "ArtMesh49",
+      "object": "BaiQi_Part10__ArtMesh49",
+      "default_visible": true
+    },
+    {
+      "part": "Part24",
+      "drawable": "ArtMesh94",
+      "object": "BaiQi_Part24__ArtMesh94",
+      "default_visible": true
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh62",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh62",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh71",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh71",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh73",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh73",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh95",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh95",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh96",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh96",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh97",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh97",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh105",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh105",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh220",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh220",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning",
+      "drawable": "ArtMesh230",
+      "object": "BaiQi_ArtMesh55_Skinning__ArtMesh230",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh245",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh245",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh244",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh244",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh243",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh243",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh242",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh242",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh241",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh241",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh240",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh240",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh239",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh239",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh238",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh238",
+      "default_visible": false
+    },
+    {
+      "part": "ArtMesh55_Skinning2",
+      "drawable": "ArtMesh237",
+      "object": "BaiQi_ArtMesh55_Skinning2__ArtMesh237",
+      "default_visible": false
+    },
+    {
+      "part": "Mouth3",
+      "drawable": "ArtMesh113",
+      "object": "BaiQi_Mouth3__ArtMesh113",
+      "default_visible": true
+    },
+    {
+      "part": "Bteeth",
+      "drawable": "ArtMesh118",
+      "object": "BaiQi_Bteeth__ArtMesh118",
+      "default_visible": true
+    },
+    {
+      "part": "Uteeth",
+      "drawable": "ArtMesh109",
+      "object": "BaiQi_Uteeth__ArtMesh109",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh57",
+      "object": "BaiQi_Face2__ArtMesh57",
+      "default_visible": true
+    },
+    {
+      "part": "M1",
+      "drawable": "ArtMesh107",
+      "object": "BaiQi_M1__ArtMesh107",
+      "default_visible": false
+    },
+    {
+      "part": "Bteeth",
+      "drawable": "Tongue",
+      "object": "BaiQi_Bteeth__Tongue",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh108",
+      "object": "BaiQi_Face2__ArtMesh108",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh246",
+      "object": "BaiQi_Face2__ArtMesh246",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh247",
+      "object": "BaiQi_Face2__ArtMesh247",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh248",
+      "object": "BaiQi_Face2__ArtMesh248",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh249",
+      "object": "BaiQi_Face2__ArtMesh249",
+      "default_visible": true
+    },
+    {
+      "part": "Face2",
+      "drawable": "ArtMesh250",
+      "object": "BaiQi_Face2__ArtMesh250",
+      "default_visible": true
+    },
+    {
+      "part": "Part23",
+      "drawable": "ImaskR",
+      "object": "BaiQi_Part23__ImaskR",
+      "default_visible": false
+    },
+    {
+      "part": "Part19",
+      "drawable": "ImaskL",
+      "object": "BaiQi_Part19__ImaskL",
+      "default_visible": false
+    }
+  ],
+  "status": "head_projection_prototype_not_accepted",
+  "limits": [
+    "Face layers require baking and visual calibration",
+    "Hair side/back volume needs contour review",
+    "Body clothing and remaining accessories are not migrated",
+    "Original expression states are inventoried, not implemented as game controls"
+  ]
+}

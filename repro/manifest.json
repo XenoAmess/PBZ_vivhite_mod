@@ -242,6 +242,856 @@
       "sha256": "a09b9dedd4473f97297ca0c9a0c12e0ecad068981e81572f17c7afb7b80e9c9f"
     },
     {
+      "path": "repro/models/anatomy_foundation_003/Delta_adult.blend",
+      "bytes": 9027103,
+      "sha256": "0c88ac7b35e53289e49972b2e123d4730054f7b66211d6dad05de87f36179ffb"
+    },
+    {
+      "path": "repro/models/anatomy_foundation_003/foundation_report.json",
+      "bytes": 2132,
+      "sha256": "ebbb60bc4f3a5bfb77259099d23d8790b6a8aff2d96763485eba665e03687d64"
+    },
+    {
+      "path": "repro/models/anatomy_foundation_004/Delta_adult.blend",
+      "bytes": 9244403,
+      "sha256": "d9fceab166f2f4e9a2d44229dd09816b11e632dd729dc21aa90bc1a743dfb1d6"
+    },
+    {
+      "path": "repro/models/anatomy_foundation_004/foundation_report.json",
+      "bytes": 2133,
+      "sha256": "e4cd71979d17e8acb5158d5ab7e93ffaf1b4fe6e609cf351f5fd448b24dcd64b"
+    },
+    {
+      "path": "repro/models/baiqi_head_prototype_001/BaiQi_Head_Assembly.blend",
+      "bytes": 10606316,
+      "sha256": "9d0b6365c6a6fb5353b763728f15892a8cca3b36ea535aeefc59f5c620999647"
+    },
+    {
+      "path": "repro/models/baiqi_head_prototype_001/assembly_report.json",
+      "bytes": 22273,
+      "sha256": "9f611b3a7d6b157c1fad06e22c532575efd02edaf5c4cf0281a0a7fb72013338"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_003/BaiQi_Assembly.blend",
+      "bytes": 20027819,
+      "sha256": "861e2f0a4967625e10b9c90c5068b334d42dd17201608c4b1efaefdf6292dd1a"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_003/hair_volume_report.json",
+      "bytes": 567,
+      "sha256": "0a7dd4841f8cbcdb4e9bb40b23b618de550b8628c0199d3515a012acdac3504c"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_007/BaiQi_Assembly.blend",
+      "bytes": 7942453,
+      "sha256": "e4772d8946b51972e84fd438f8e2376a62625581c555f8b366df6b5146cc9bc0"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_007/rig_binding_failure.json",
+      "bytes": 28099,
+      "sha256": "e7c9c6172e0e2ea8d3e41c94e8dfcfe8d2bfdacdd5b28d77e42e4c81489f917a"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_009/BaiQi_Assembly.blend",
+      "bytes": 7629903,
+      "sha256": "5e3a17ec5f21fde57820dd79d59d541c0ab1b159e857e0c4a9e82186e217f228"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_009/fit_report.json",
+      "bytes": 584,
+      "sha256": "71defa8dc4edb94c5e888258ae9787bf709ff2d133b98c8100fb1ca8bf852eed"
+    },
+    {
+      "path": "repro/models/baiqi_component_assembly_009/identity_review.json",
+      "bytes": 26026,
+      "sha256": "d5638b6c27ba74c3ce89a0c7de8ca1ab0d70ee24e4f341807cc28147eabea858"
+    },
+    {
+      "path": "repro/tests/baiqi_components_009/Delta_SelfTest.blend",
+      "bytes": 7868402,
+      "sha256": "23caeb476a75b665deea5d8f4fd49240d846aa19351512b0f0668499590a9711"
+    },
+    {
+      "path": "repro/tests/baiqi_components_009/sampling_report.json",
+      "bytes": 345244,
+      "sha256": "47d92163a5996ca75c9eb7b69813d94e663ba6a1ea7ca832762a6d65b570649c"
+    },
+    {
+      "path": "repro/tests/baiqi_components_009/rig_preflight.json",
+      "bytes": 12997,
+      "sha256": "ece3bd80cc2dea06ede3c5d9343b621ed110010f6c638aa350da717824544fb0"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/Delta_ShapeAudit.blend",
+      "bytes": 7634229,
+      "sha256": "7c244ae1a2741f96c2d33e5343a2c45fbdb232d5d9a953c94162fa0113541348"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/shape_manifest.json",
+      "bytes": 25956,
+      "sha256": "33e8e956df518904c464351acdb566c279a9ef7d72d2c9db3e231b0d617b5c34"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/face.png",
+      "bytes": 45106,
+      "sha256": "0db0879f5b07e04c4bc21bf5fdfe0183fddb9196140d824dbbcec8e12a60f419"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/glasses.png",
+      "bytes": 25295,
+      "sha256": "5f07c3e3658f933502000b69358d299329f83da2cedc02b9cc0e5d0718d66a23"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/hair_back.png",
+      "bytes": 34106,
+      "sha256": "aee5937389f4343e8b7f7998581c52c67ff70c064d67507af7e48e2c53cb304c"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/hair_back_opaque.png",
+      "bytes": 37997,
+      "sha256": "3caf39170a8a89bae68342bf4c636b04ef28b2cc0c5653d13a08f31be5902565"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/hair_front.png",
+      "bytes": 66371,
+      "sha256": "b440be1bf0fdae42d51574ba83d4c0fe003ca053fb6007648d0a98ddaaa607bc"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/headdress.png",
+      "bytes": 30356,
+      "sha256": "ab864cdc757458551acf48fcd99cf5e43cf18e37d3da6a67c1450052d2aff00d"
+    },
+    {
+      "path": "repro/baiqi_source/head_layers/manifest.json",
+      "bytes": 2562,
+      "sha256": "9e39e88e4ef800003fd44dd7b50ad74d9eb88be3ef82a02d1b677f73100f2683"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/bandage.png",
+      "bytes": 20051,
+      "sha256": "99b77ad1e2ecf3d116ce88215d45e287016c3a9ca80fc27f23a28ab7346f6c0e"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/bow_tie.png",
+      "bytes": 22270,
+      "sha256": "70ab77dfda972f811955c476c0007e660434b1bb2b7a13b6b33cf4620a1ac26f"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/coat.png",
+      "bytes": 80081,
+      "sha256": "5f71a34f6cda94f7fe8155bcb0c63c70363483b474c6202afdb4f42b2eb8b20f"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/girdle.png",
+      "bytes": 39092,
+      "sha256": "1db9b426404dcd2186d1240675ec36c1baad1d7349d9299857b02d3d2fd8ac98"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/hand_ring_enabled.png",
+      "bytes": 22353,
+      "sha256": "412d47a9a0df233bc3bb83afc058a0f19cf71422546f4f7ca2b1311211328421"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/legs.png",
+      "bytes": 65897,
+      "sha256": "bae9897a5000aaab8501aa54e5c349ff16844289448fc8c7ecb05636b7a1ad78"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/machine.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/machine_enabled.png",
+      "bytes": 69422,
+      "sha256": "89de62bc8df16c6f9c2aa1ce16ba74b9c8609bba0a0b7a15c19eb446c92ee0cf"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/manifest.json",
+      "bytes": 3338,
+      "sha256": "204fe6f5b6a9a3394a1e99718b763b8dbddc4d5617c98712e0c74824e9722290"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/Part33_diagnostic.png",
+      "bytes": 19237,
+      "sha256": "1c9baf1698e59f048c3ccd806fceb7fb8e201fc1339612d587e72a052cb7d19f"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/Part34_diagnostic.png",
+      "bytes": 22353,
+      "sha256": "412d47a9a0df233bc3bb83afc058a0f19cf71422546f4f7ca2b1311211328421"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/Part37_diagnostic.png",
+      "bytes": 20347,
+      "sha256": "340b6f5a9d7f5687e154b3b86cec47af9a85f1ce833e41e3ffb28d748c5da82c"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/Part40_diagnostic.png",
+      "bytes": 291230,
+      "sha256": "93a53fe0a8bc459fcbfb8cca00204a9736314680b8db1e271cfdd6afaa642221"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/Part_diagnostic.png",
+      "bytes": 21383,
+      "sha256": "a0638a7aff5f0c1c20fdd09e869d1649217c6e343e41eeaabdc6b0ceaf317771"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/ponytails_enabled.png",
+      "bytes": 34963,
+      "sha256": "df75f45d1cd943cb5611b84f7f093e3cdf3aa8a61ee06cef9a12fb15df53928c"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/shirt.png",
+      "bytes": 40409,
+      "sha256": "2c071e24be660b8fba68344182cf37bf18ed685d935570520e6b347be2628d24"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/shoes.png",
+      "bytes": 38782,
+      "sha256": "a9fa7fa4e3ebd11c498604725a1cc331a586730199fc8a0eef92a6e2d62f0400"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/skirt.png",
+      "bytes": 65546,
+      "sha256": "f679d13c1bcd37b343e582e4a3d87a60ac60556bb6e05cbffbda1c41c675b8fd"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/sleeve_screen_left.png",
+      "bytes": 28773,
+      "sha256": "80a1d7b772f9619caa59858fc6615432264c168594b11f2ebe036f468e27493c"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/sleeve_screen_right.png",
+      "bytes": 28698,
+      "sha256": "88724222b85eae164bbf9b8450aafce859745d0af5b3d6466204569c85fa6846"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/wrist_screen_left.png",
+      "bytes": 14031,
+      "sha256": "8b26e93d80a59fe2349e51eeed2f986e0a9fd9d8b7f99d4fa5068e206a53d718"
+    },
+    {
+      "path": "repro/baiqi_source/body_layers/wrist_screen_right.png",
+      "bytes": 13987,
+      "sha256": "93d012fd23e55a9eebd749803b197bd23214a1ee3d91de798221bf1345133962"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/ArtMesh53.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/machine_core.png",
+      "bytes": 15317,
+      "sha256": "e8c2ee0a3c41766e3fad68841ef6d3718cc06dd394937f5a763c69249d4198ee"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/machine_rings.png",
+      "bytes": 13737,
+      "sha256": "900d250ad53e820e9d8648b9f9bdb3850478c26dee2da4646bd29d617ebe49f5"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/machine_screen.png",
+      "bytes": 18378,
+      "sha256": "19d8796439687f67aa4b4c754bf0111abb0890f49af53226875fe1765d6a42c8"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/machine_wings.png",
+      "bytes": 64605,
+      "sha256": "6b5db7c1ec7671d77468d5ab4516a05fb2ec405c95e7d67d57b82038b98b2236"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/manifest.json",
+      "bytes": 2777,
+      "sha256": "238b399949592fd6e81616abacdc654ed93e522cac2d42af027980592b4f4692"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/S1.png",
+      "bytes": 14228,
+      "sha256": "195a87c484faa858a6aef646a0469b265d85d95d1bb703fe4350af108fe8bade"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/S2.png",
+      "bytes": 39793,
+      "sha256": "3e4a3d829206d2f180ba30ef28b02ee439a1ce84c6c89ad1e34ebcfcf600f284"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/S3.png",
+      "bytes": 118015,
+      "sha256": "eea2dc822745066bdb13f9c639d6aed030c3c4ea7bbc636dc8022af0b484af90"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/S4.png",
+      "bytes": 167230,
+      "sha256": "a85dbc293818cf32f878a81917f2c428da2af70b2111393cd77373b9510998be"
+    },
+    {
+      "path": "repro/baiqi_source/optional_layers/shirt_collar.png",
+      "bytes": 21035,
+      "sha256": "090abe68840ff7b83fdfaaadb4a023f62b9bf7b91928ffe31cc3cf1f904c8c39"
+    },
+    {
+      "path": "repro/baiqi_source/variant_atlases/face.png",
+      "bytes": 879598,
+      "sha256": "9f62d867e7e3b557d72a6e591d8185132b464e5e0aa2b76aa7804bc4c4a25d31"
+    },
+    {
+      "path": "repro/baiqi_source/variant_atlases/glasses.png",
+      "bytes": 336787,
+      "sha256": "c073f0406d5b899947316c236202d1a4a21525534ee01807132d9a2c746e92e3"
+    },
+    {
+      "path": "repro/baiqi_source/variant_atlases/hair_front.png",
+      "bytes": 1083523,
+      "sha256": "b32043869dd74ee4b4ef96af45fae9cda5c7e27c35f0f54a37acda7370f894d8"
+    },
+    {
+      "path": "repro/baiqi_source/variant_atlases/headdress.png",
+      "bytes": 421562,
+      "sha256": "1947c10d23c06708e5d2865e7110e2c212cdeca52094eba6b89e757f3faffd10"
+    },
+    {
+      "path": "repro/baiqi_source/variant_atlases/manifest.json",
+      "bytes": 3706,
+      "sha256": "2821d054d19d515b98542290905ae542c2aa2be3b7a77473dc0289bf70d53d09"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/ArtMesh215.png",
+      "bytes": 24374,
+      "sha256": "7652372bc5daa0e38bc55b468a9b9a740d5b9ffbe7cc0a2c6fbcb4d276d6f9c0"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/ArtMesh55_Skinning.png",
+      "bytes": 23968,
+      "sha256": "74ff83043d42de46d12d7c1a8b0a34a21cd7f9155f13d35ac949245511c1c2af"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/ArtMesh55_Skinning2.png",
+      "bytes": 24058,
+      "sha256": "17599b65362c8fca9dd8caba5174aae36bc395c3995c8946d45f967f6e10016e"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Bandage.png",
+      "bytes": 20051,
+      "sha256": "99b77ad1e2ecf3d116ce88215d45e287016c3a9ca80fc27f23a28ab7346f6c0e"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Bhair.png",
+      "bytes": 34106,
+      "sha256": "aee5937389f4343e8b7f7998581c52c67ff70c064d67507af7e48e2c53cb304c"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Body.png",
+      "bytes": 15404,
+      "sha256": "d6c9f5b88b809d01e59e4e71c6bbbf27069660312696d8d33009825e414c7e7e"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Bteeth.png",
+      "bytes": 12114,
+      "sha256": "3bae47e788764f91ce811ebeb4028fc929a3b7fb185bc6daba542a73cd1c857b"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Coat.png",
+      "bytes": 79209,
+      "sha256": "d034203245edae6320ef56717423522c188fe49831fa9a897cfe15ca1053aeff"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Collar.png",
+      "bytes": 21035,
+      "sha256": "090abe68840ff7b83fdfaaadb4a023f62b9bf7b91928ffe31cc3cf1f904c8c39"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Eyes.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Face.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Face2.png",
+      "bytes": 30413,
+      "sha256": "2ecb300f041024215a1067846592436f6b2213ecb355ef8d4c6185238e243e2a"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Fhair.png",
+      "bytes": 51649,
+      "sha256": "1012eeae701251e03cd8ee66a707975439e85a9d6a2887180b063674e555b988"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Glasses.png",
+      "bytes": 25295,
+      "sha256": "5f07c3e3658f933502000b69358d299329f83da2cedc02b9cc0e5d0718d66a23"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Hair.png",
+      "bytes": 26879,
+      "sha256": "6dc9d91d6cadfb718b0a7642788d1bedc1e3dc129aa41efb1db83f5178e6d9b1"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Head.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Headdress.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Leg.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Leg2.png",
+      "bytes": 65897,
+      "sha256": "bae9897a5000aaab8501aa54e5c349ff16844289448fc8c7ecb05636b7a1ad78"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M1.png",
+      "bytes": 15704,
+      "sha256": "c9afb433d66b6bf3e75f447d4d085ce2a4ad597fb687211b64c335261e24f618"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M10.png",
+      "bytes": 13881,
+      "sha256": "a91445b1ef9dc95ea178bd04053e06143dd367cad1daf862af3d54403209ce3d"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M11.png",
+      "bytes": 12285,
+      "sha256": "319e04cf90e304df012601cd5317ab16fd59cb0c1d884ab0a675ae0bb5b8fe31"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M13.png",
+      "bytes": 12440,
+      "sha256": "27cba987753d3163360128215cdb7f6a3b92b4455ff3b30b9f1d30365ee9cf34"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M2.png",
+      "bytes": 16735,
+      "sha256": "ca04d6ed46bbe41ac67afd98fa44c85ac665e90e86bf7b5eee677744b60bfaa6"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M3.png",
+      "bytes": 14373,
+      "sha256": "337a7524ef40ffc8615c6db8c11df6b439801105f05a0fdd367a74a803b00ee9"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M4.png",
+      "bytes": 13679,
+      "sha256": "fee44d9a1e5ab0797a3976452288b69c043c9cf6fcb23d5d7734e19b88569ae2"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M5.png",
+      "bytes": 12260,
+      "sha256": "8123b7c382a67002fb3f35c8efa6ae35d61d92cb6ac02745e201a857f095fa3e"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M6.png",
+      "bytes": 18862,
+      "sha256": "6dca99515a34ce0049699d01743579713f0d4c67039a09803155c2ffe9307613"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M7.png",
+      "bytes": 14056,
+      "sha256": "a2b55b2ae9797212b09850eda558356bfa56f2c2b00023e007f39345c26cb055"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M8.png",
+      "bytes": 14509,
+      "sha256": "15fe7f643b92506d012bb16f79996afee6a9e697d3c8af61c5d8120826f7e374"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/M9.png",
+      "bytes": 13756,
+      "sha256": "96e8e3b7a96b511ab8b48af840b3d920eca293192dbf7bf6ff43363c1bab451a"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Machine.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Machine2.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/manifest.json",
+      "bytes": 41879,
+      "sha256": "e235194e1f006674b8e4e578e59b8e25791304eb2c8c44f07f04f11d88ce73bf"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Mhair.png",
+      "bytes": 36034,
+      "sha256": "8070dcf02a3490a51b3a8c0bf7f3ce6cf082de0720104472e2758611e6ea3151"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Mouth.png",
+      "bytes": 12129,
+      "sha256": "698a8372b7d4138c2b6c2ad29d04eb147e806c473a16eda1039cb2c91cacd3ab"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Mouth3.png",
+      "bytes": 12066,
+      "sha256": "60a112665a30d1528c76e916019ba47981c80aca18c51a79f8638e52ae27e400"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Neck.png",
+      "bytes": 17642,
+      "sha256": "1a97e3722fc1841893d94abf11480a5a422840554c8df346bdc5c7775e5cae6a"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Nose.png",
+      "bytes": 12417,
+      "sha256": "7972099944cba3129e187fde020b457fbc55ca86815db5ddc2d608ceced44283"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part.png",
+      "bytes": 18378,
+      "sha256": "19d8796439687f67aa4b4c754bf0111abb0890f49af53226875fe1765d6a42c8"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part10.png",
+      "bytes": 12705,
+      "sha256": "655e3fd79aae9f666e7a2a68df394d769ec8533d97488c857ae8842314f2dc10"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part11.png",
+      "bytes": 16675,
+      "sha256": "e519d3578f45f1ed4b2c73aad8a0a286059598c835ffe0e6309b59ae7948383d"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part12.png",
+      "bytes": 16464,
+      "sha256": "f6b874888dae87fc73dabc07733c7e1a8e475a7415028f0218898386c846d1f7"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part13.png",
+      "bytes": 16517,
+      "sha256": "bd5c68721e73adf046bc052ec3cf5984188d96fc9052f01e1b889e9365a6f178"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part14.png",
+      "bytes": 15348,
+      "sha256": "1e252c6a98bd51c35bd54ef6663eef1e2a58ab225e239c5cf76b0498d656ca4f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part15.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part16.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part17.png",
+      "bytes": 14191,
+      "sha256": "8c3282ae0e5dfb5dda56f5caba0786685d43a5e7827ac6655f05503d2d280dd5"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part18.png",
+      "bytes": 13788,
+      "sha256": "93bed267249fabf42b362969288658cd66dc94559335b16fe945eea041a26801"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part19.png",
+      "bytes": 14710,
+      "sha256": "0dbf917c97e0606457e538bada6e5bc9452e98512efa94bd84f9af7050cbd163"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part2.png",
+      "bytes": 15317,
+      "sha256": "e8c2ee0a3c41766e3fad68841ef6d3718cc06dd394937f5a763c69249d4198ee"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part20.png",
+      "bytes": 12350,
+      "sha256": "120e0bc097c610616145d575010501ebde5b989f405778c7bdcd1632a4efcd97"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part21.png",
+      "bytes": 14187,
+      "sha256": "216b7e6e31207653823971cc14b37eaa59aa7daa9a65ed08d400a72ab26f5327"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part22.png",
+      "bytes": 13754,
+      "sha256": "98f5940bf93dc72fc2a924399b901c05eadbfc825eb5326024946360c19c4d97"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part23.png",
+      "bytes": 14668,
+      "sha256": "2c7112c75e53ab5aab65611f23290d839909aa230720f51a11af89513372fbd5"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part24.png",
+      "bytes": 12390,
+      "sha256": "c6af4e721dba6c3d9238228b06cbc339cdce97f09a925b99841fbb656c11462d"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part25.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part26.png",
+      "bytes": 12982,
+      "sha256": "4dbe952b0157420c256b5a547958c8321adc217c899727b3b2618865c95712d0"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part27.png",
+      "bytes": 17296,
+      "sha256": "900368aa697ee7d2616300443b7970e66ddf29788b81e588c1b46fdd6322eb34"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part28.png",
+      "bytes": 17413,
+      "sha256": "663489b5a6a4c3d4f7ccec741bf568aebdfcc990097c75aad73c8a9debcd43ee"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part29.png",
+      "bytes": 38425,
+      "sha256": "660ee914b16312276cfb90ccd4c42019e515eaab807694c132428e38509a6f52"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part3.png",
+      "bytes": 64605,
+      "sha256": "6b5db7c1ec7671d77468d5ab4516a05fb2ec405c95e7d67d57b82038b98b2236"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part30.png",
+      "bytes": 12897,
+      "sha256": "17770346a2dcee2b280caedf2cb40a660f796340add29ea6b407d069a79094c9"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part31.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part32.png",
+      "bytes": 19943,
+      "sha256": "acb5c7cc273568bc96bd259d688b6fec51174b206a0c34344dbb7f8774021966"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part33.png",
+      "bytes": 19237,
+      "sha256": "1c9baf1698e59f048c3ccd806fceb7fb8e201fc1339612d587e72a052cb7d19f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part34.png",
+      "bytes": 22353,
+      "sha256": "412d47a9a0df233bc3bb83afc058a0f19cf71422546f4f7ca2b1311211328421"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part35.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part36.png",
+      "bytes": 19874,
+      "sha256": "8c3717f5505bf9824ba17906dcb8f0fe1a2692d47ba1ffe62fb61e337d81dbe0"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part37.png",
+      "bytes": 20347,
+      "sha256": "340b6f5a9d7f5687e154b3b86cec47af9a85f1ce833e41e3ffb28d748c5da82c"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part38.png",
+      "bytes": 26857,
+      "sha256": "e6f718df131cdfd0c9b2d5edcbc317647f20f124ccb5fa4dfaef418bb0f270b0"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part39.png",
+      "bytes": 26863,
+      "sha256": "cdf6fd5ef72a882ba0b73284b9ec23da13a20f9470aa614f83181177254328fa"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part4.png",
+      "bytes": 13737,
+      "sha256": "900d250ad53e820e9d8648b9f9bdb3850478c26dee2da4646bd29d617ebe49f5"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part40.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part41.png",
+      "bytes": 25194,
+      "sha256": "99ddcaa8ae518db645e4f3c040905570d142bb15a77805dabc88b22316260779"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part42.png",
+      "bytes": 25072,
+      "sha256": "e980fed7ec73d5caf5776f1d7460edb51f0e1da7da59aade87124a929f10d32d"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part43.png",
+      "bytes": 14728,
+      "sha256": "4a37d87df88e48cedcfb7e630bdced828fa84d58112b2b1e604209f2e716ea98"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part44.png",
+      "bytes": 14692,
+      "sha256": "cbf2852ef43d77ce41d0a09e5b95326a9471613dad5c9d835b94a2a529c4840c"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part45.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part46.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part5.png",
+      "bytes": 12631,
+      "sha256": "b151e41023c6b4e2c769939df9c7ffda71bca2db4864316a964535a60b4249f4"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part6.png",
+      "bytes": 16569,
+      "sha256": "94f6dcd49680ea5e2b65940f43905d42a7ff6326558fa2aa7b22e0f72f199dda"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part7.png",
+      "bytes": 16301,
+      "sha256": "035ba3908a7083515474b6915e9984a17720094fe0ffe5de670e808082a644fd"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part8.png",
+      "bytes": 16415,
+      "sha256": "a8f2f4395aa05cca47cc7d449f8fa0220b1715ccaae5a76cb29186117e6157b1"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Part9.png",
+      "bytes": 15268,
+      "sha256": "30fffbd15e0424028668a5306a403c34decf95ac28050d8bddf65fe9fab28216"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Ponytail.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Pupil.png",
+      "bytes": 12211,
+      "sha256": "25f6f537c54ffd3ca99318776d6e4223fe2d6fdf34b42623cb0d26e515c77cef"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Pupil3.png",
+      "bytes": 12181,
+      "sha256": "52562f78428e349e95fbd1bda03e6023626fea03ee52da372096e6f757bd24ae"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Ring.png",
+      "bytes": 14031,
+      "sha256": "8b26e93d80a59fe2349e51eeed2f986e0a9fd9d8b7f99d4fa5068e206a53d718"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Ring3.png",
+      "bytes": 13987,
+      "sha256": "93d012fd23e55a9eebd749803b197bd23214a1ee3d91de798221bf1345133962"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Shirt.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Shirt2.png",
+      "bytes": 36176,
+      "sha256": "6a02ad37c1ef65ddff3516ceac36801f83833dd47bc2e43de2285804fe362ba5"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Skirt.png",
+      "bytes": 65546,
+      "sha256": "f679d13c1bcd37b343e582e4a3d87a60ac60556bb6e05cbffbda1c41c675b8fd"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Sleeve.png",
+      "bytes": 16333,
+      "sha256": "0527e6ad661447f881add37451581a3c4ca13e3c3367a50a5e837cb1ee05a4b0"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Sleeve2.png",
+      "bytes": 16277,
+      "sha256": "94d5c53ccf1b5aba0d05a4fc980d99e5e43ca6fdf3a50b94e27be8e6f3023ddc"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Solar.png",
+      "bytes": 13537,
+      "sha256": "404fcfe17ce374211e2d7a1681e11de61af6eaef613088d5062cf5a1d65e553b"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Tear.png",
+      "bytes": 13453,
+      "sha256": "8b35f3624cd7e0f8b0213d3fd621a86ccf9093cbbb268055bd8cbbc29edfde3f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Tear3.png",
+      "bytes": 12034,
+      "sha256": "5afdd7df79ffb9c3327afc5280abc850038706479a351be6ac3f79c7abf89e2f"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Tlip.png",
+      "bytes": 12096,
+      "sha256": "d060002a6290023b371ccf282b830de0a9330e58405b337e9c7b2b0bbf94998d"
+    },
+    {
+      "path": "repro/baiqi_source/clean_parts/Uteeth.png",
+      "bytes": 12052,
+      "sha256": "cc011105f6f73eea3ac9d3c3a09ff25352667a00ad110724ed71f469217ec802"
+    },
+    {
+      "path": "repro/baiqi_source/default.png",
+      "bytes": 448246,
+      "sha256": "de72a41584dd8fc823e5e621f1dcdb039688951dfe1e011909903338298955e1"
+    },
+    {
+      "path": "repro/baiqi_source/raw_raster_validation.json",
+      "bytes": 132,
+      "sha256": "71198635c69d2a71e354e2671cbdb256c62675245a63a8057eae27c22edad2e6"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/head.jpg",
+      "bytes": 437246,
+      "sha256": "3d85c8171d021e657e715d01df8dd9e68c382ee8ecb33c212b9f50ebbe4c6472"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/neck_shoulders.jpg",
+      "bytes": 449167,
+      "sha256": "2c47295b5a12d879a930ae94698707fccf8181f87597f5793edf4e9dbcec0459"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/full_body_textured.jpg",
+      "bytes": 161720,
+      "sha256": "0baa7dcd87f6ac7d3a117764b4b86b373139ec6eba63b3168d9f1cecfdc3802a"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/hand_left.jpg",
+      "bytes": 328057,
+      "sha256": "613a0700351a1d5a6355b7bd159b68b871d307fbcb4adfc8a13462e22abdb247"
+    },
+    {
+      "path": "repro/tests/shape_baiqi_components_009/feet.jpg",
+      "bytes": 254766,
+      "sha256": "364589edc431b0117970d2103f45640fe1885d8b62c6a5a4e2010117c7b0ced0"
+    },
+    {
       "path": "resources/Delta.zip",
       "bytes": 40675064,
       "sha256": "443a84d3fa1b52f166e9034dfe5f0d285a17d72fa80dd5cd8d7cd56bfd7c3b86"
@@ -250,6 +1100,16 @@
       "path": "resources/full.jpg",
       "bytes": 72858,
       "sha256": "dedd6d040a55ce504d05aadbc0cd7cf682b24cb4096ce62f9c8eae3281dbbf2a"
+    },
+    {
+      "path": "repro/baiqi_source/core_geometry.json",
+      "bytes": 2335758,
+      "sha256": "8441a7ca0cc425f2aed35ba61fde58539ad865757247703163d7d63a8847af40"
+    },
+    {
+      "path": "repro/baiqi_source/source_canvas.json",
+      "bytes": 333,
+      "sha256": "e2afc7e9650e2ad146cd05c65e578058b5a01e4148063818fae12c267999eb57"
     }
   ]
 }

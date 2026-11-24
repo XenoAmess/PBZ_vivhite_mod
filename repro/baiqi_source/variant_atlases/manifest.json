@@ -1,0 +1,179 @@
+{
+  "character": "白绮",
+  "source_expression_presets": 25,
+  "states": [
+    {
+      "index": 0,
+      "id": "default",
+      "role": "default"
+    },
+    {
+      "index": 1,
+      "id": "E-Body-Coat.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 2,
+      "id": "E-Eye-Block.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 3,
+      "id": "E-Eye-Blue.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 4,
+      "id": "E-Eye-Fog.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 5,
+      "id": "E-Eye-Glasses.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 6,
+      "id": "E-Eye-Heart.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 7,
+      "id": "E-Eye-Shocked.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 8,
+      "id": "E-Eye-Smile.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 9,
+      "id": "E-Eye-Star.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 10,
+      "id": "E-Face-AllBlack.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 11,
+      "id": "E-Face-Angry.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 12,
+      "id": "E-Face-Black.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 13,
+      "id": "E-Face-Blood.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 14,
+      "id": "E-Face-Music.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 15,
+      "id": "E-Face-Question.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 16,
+      "id": "E-Face-Shocked.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 17,
+      "id": "E-Face-Sweat.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 18,
+      "id": "E-Hair-HeadDress.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 19,
+      "id": "E-Hair-HeadDressLight.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 20,
+      "id": "E-Hair-Ponytail.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 21,
+      "id": "E-Machine-Open.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 22,
+      "id": "E-Machine-Screen.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 23,
+      "id": "E-Mouth-Pout.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 24,
+      "id": "E-Mouth-Shh.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 25,
+      "id": "E-Mouth-Smile.exp3",
+      "role": "original preset"
+    },
+    {
+      "index": 26,
+      "id": "Machine_And_Screen",
+      "role": "derived combination"
+    }
+  ],
+  "source_canvas": {
+    "width": 1400,
+    "height": 2200,
+    "crop": [
+      480,
+      300,
+      920,
+      700
+    ]
+  },
+  "tile": [
+    880,
+    800
+  ],
+  "columns": 6,
+  "rows": 5,
+  "images": [
+    {
+      "layer": "face",
+      "path": "artifacts/baiqi_component_audit/variant_atlases/face.png",
+      "sha256": "9f62d867e7e3b557d72a6e591d8185132b464e5e0aa2b76aa7804bc4c4a25d31"
+    },
+    {
+      "layer": "glasses",
+      "path": "artifacts/baiqi_component_audit/variant_atlases/glasses.png",
+      "sha256": "c073f0406d5b899947316c236202d1a4a21525534ee01807132d9a2c746e92e3"
+    },
+    {
+      "layer": "hair_front",
+      "path": "artifacts/baiqi_component_audit/variant_atlases/hair_front.png",
+      "sha256": "b32043869dd74ee4b4ef96af45fae9cda5c7e27c35f0f54a37acda7370f894d8"
+    },
+    {
+      "layer": "headdress",
+      "path": "artifacts/baiqi_component_audit/variant_atlases/headdress.png",
+      "sha256": "1947c10d23c06708e5d2865e7110e2c212cdeca52094eba6b89e757f3faffd10"
+    }
+  ]
+}

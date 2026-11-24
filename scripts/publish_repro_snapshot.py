@@ -52,6 +52,26 @@ for character in ['YuEr','MuXiaoKui']:
         items[path.relative_to(ROOT).as_posix()]=f'game_reference/female/{character}_{part}.uemodel'
     for name in [character+'_Reference.blend','reference_report.json','body_front.png','body_side.png','head_oblique.png']:
         items[f'artifacts/female_references/{character}/{name}']=f'game_reference/female/{character}/{name}'
+
+for run in ['anatomy_foundation_003','anatomy_foundation_004']:
+    for name in ['Delta_adult.blend','foundation_report.json']:items[f'output/live2d_delta/{run}/{name}']=f'models/{run}/{name}'
+for run,names in {
+    'baiqi_head_prototype_001':['BaiQi_Head_Assembly.blend','assembly_report.json'],
+    'baiqi_component_assembly_003':['BaiQi_Assembly.blend','hair_volume_report.json'],
+    'baiqi_component_assembly_007':['BaiQi_Assembly.blend','rig_binding_failure.json'],
+    'baiqi_component_assembly_009':['BaiQi_Assembly.blend','fit_report.json','identity_review.json']}.items():
+    for name in names:items[f'output/live2d_delta/{run}/{name}']=f'models/{run}/{name}'
+for name in ['Delta_SelfTest.blend','sampling_report.json','rig_preflight.json']:
+    items[f'output/live2d_delta/qa_runs/baiqi_components_009/{name}']=f'tests/baiqi_components_009/{name}'
+for name in ['Delta_ShapeAudit.blend','shape_manifest.json']:
+    items[f'output/live2d_delta/shape_audits/baiqi_components_009/{name}']=f'tests/shape_baiqi_components_009/{name}'
+for folder in ['head_layers','body_layers','optional_layers','variant_atlases','clean_parts']:
+    for file in (ROOT/'artifacts/baiqi_component_audit'/folder).glob('*'):
+        if file.is_file():items[file.relative_to(ROOT).as_posix()]=f'baiqi_source/{folder}/{file.name}'
+for name in ['default.png','raw_raster_validation.json']:
+    items[f'artifacts/baiqi_component_audit/{name}']='baiqi_source/'+name
+for name in ['head.jpg','neck_shoulders.jpg','full_body_textured.jpg','hand_left.jpg','feet.jpg']:
+    items[f'output/live2d_delta/shape_audits/baiqi_components_009/{name}']=f'tests/shape_baiqi_components_009/{name}'
 denied=re.compile(r'(^|/)(_private|credentials?|secrets?)(/|$)|(^|/)(aes\.txt|\.env|id_rsa|id_ed25519)$',re.I)
 token=re.compile(rb'gh[op]_[A-Za-z0-9]{30,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----')
 records=[]
@@ -76,5 +96,9 @@ for name in ['Delta.zip','full.jpg']:
     path=ROOT/'resources'/name;assert path.is_file()
     records.append({'path':path.relative_to(ROOT).as_posix(),'bytes':path.stat().st_size,
                     'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+for name in ['core_geometry.json','source_canvas.json']:
+    path=DEST/'baiqi_source'/name;assert path.is_file()
+    path.write_bytes(path.read_bytes().replace(b'\r\n',b'\n'))
+    records.append({'path':path.relative_to(ROOT).as_posix(),'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
 (DEST/'manifest.json').write_text(json.dumps({'status':'failed_QA_reproduction_snapshots_not_a_finished_release','files':records},indent=2),encoding='utf-8')
 print('PUBLIC_REPRO_SNAPSHOT',len(records),'files',sum(r['bytes'] for r in records),'bytes')

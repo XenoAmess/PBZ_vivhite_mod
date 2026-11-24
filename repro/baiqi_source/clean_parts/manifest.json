@@ -1,0 +1,1670 @@
+{
+  "role": "original_2D_evidence_not_3D_validation",
+  "parts": [
+    {
+      "id": "Part40",
+      "source_name": "11.psd",
+      "path": "Part40.png",
+      "state": "E-Face-AllBlack.exp3",
+      "bbox": null,
+      "own_drawables": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "ArtMesh53"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Machine",
+      "source_name": "Machine",
+      "path": "Machine.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Head",
+      "source_name": "Head",
+      "path": "Head.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Shirt",
+      "source_name": "Shirt",
+      "path": "Shirt.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Neck",
+      "source_name": "Neck",
+      "path": "Neck.png",
+      "state": "default",
+      "bbox": [
+        656,
+        572,
+        745,
+        683
+      ],
+      "own_drawables": [
+        "ArtMesh136",
+        "ArtMesh137",
+        "ArtMesh138",
+        "ArtMesh139"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Coat",
+      "source_name": "Coat",
+      "path": "Coat.png",
+      "state": "default",
+      "bbox": [
+        497,
+        588,
+        903,
+        1121
+      ],
+      "own_drawables": [
+        "ArtMesh143",
+        "ArtMesh144",
+        "ArtMesh142"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part29",
+      "source_name": "Girdle waist",
+      "path": "Part29.png",
+      "state": "default",
+      "bbox": [
+        596,
+        737,
+        811,
+        936
+      ],
+      "own_drawables": [
+        "ArtMesh149",
+        "ArtMesh150",
+        "ArtMesh151",
+        "GW",
+        "ArtMesh152",
+        "ArtMesh153",
+        "ArtMesh154"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Body",
+      "source_name": "Body",
+      "path": "Body.png",
+      "state": "default",
+      "bbox": [
+        590,
+        639,
+        811,
+        699
+      ],
+      "own_drawables": [
+        "Body2"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Skirt",
+      "source_name": "Skirt",
+      "path": "Skirt.png",
+      "state": "default",
+      "bbox": [
+        512,
+        870,
+        888,
+        1195
+      ],
+      "own_drawables": [
+        "ArtMesh194",
+        "ArtMesh195",
+        "ArtMesh196",
+        "Skirt2",
+        "ArtMesh197",
+        "ArtMesh198",
+        "ArtMesh199"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Bhair",
+      "source_name": "Bhair",
+      "path": "Bhair.png",
+      "state": "default",
+      "bbox": [
+        579,
+        342,
+        823,
+        655
+      ],
+      "own_drawables": [
+        "ArtMesh200",
+        "ArtMesh201",
+        "ArtMesh202"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Leg",
+      "source_name": "Leg",
+      "path": "Leg.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Machine2",
+      "source_name": "Machine",
+      "path": "Machine2.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Hair",
+      "source_name": "Hair",
+      "path": "Hair.png",
+      "state": "default",
+      "bbox": [
+        591,
+        379,
+        807,
+        434
+      ],
+      "own_drawables": [
+        "FHighLight"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Headdress",
+      "source_name": "Headdress",
+      "path": "Headdress.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Ponytail",
+      "source_name": "Ponytail",
+      "path": "Ponytail.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Face",
+      "source_name": "Face",
+      "path": "Face.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Mhair",
+      "source_name": "Mhair",
+      "path": "Mhair.png",
+      "state": "default",
+      "bbox": [
+        571,
+        378,
+        828,
+        616
+      ],
+      "own_drawables": [
+        "ArtMesh29",
+        "ArtMesh30",
+        "ArtMesh31",
+        "ArtMesh32",
+        "ArtMesh33",
+        "ArtMesh48"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part26",
+      "source_name": "Bow tie",
+      "path": "Part26.png",
+      "state": "default",
+      "bbox": [
+        692,
+        677,
+        708,
+        696
+      ],
+      "own_drawables": [
+        "Bow"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Collar",
+      "source_name": "Collar",
+      "path": "Collar.png",
+      "state": "default",
+      "bbox": [
+        638,
+        613,
+        762,
+        692
+      ],
+      "own_drawables": [
+        "ArtMesh132",
+        "ArtMesh254"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Shirt2",
+      "source_name": "Shirt",
+      "path": "Shirt2.png",
+      "state": "default",
+      "bbox": [
+        607,
+        629,
+        793,
+        810
+      ],
+      "own_drawables": [
+        "ArtMesh135",
+        "Shirt3"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Solar",
+      "source_name": "Solar",
+      "path": "Solar.png",
+      "state": "default",
+      "bbox": [
+        826,
+        747,
+        853,
+        787
+      ],
+      "own_drawables": [
+        "Clip",
+        "earth",
+        "sol",
+        "line",
+        "ArtMesh141",
+        "ArtMesh140"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part30",
+      "source_name": "GW-stone",
+      "path": "Part30.png",
+      "state": "default",
+      "bbox": [
+        657,
+        925,
+        740,
+        942
+      ],
+      "own_drawables": [
+        "ArtMesh145",
+        "ArtMesh146",
+        "ArtMesh147",
+        "ArtMesh148"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part31",
+      "source_name": "Hand-L",
+      "path": "Part31.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part35",
+      "source_name": "Hand-R",
+      "path": "Part35.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part38",
+      "source_name": "Arm-L",
+      "path": "Part38.png",
+      "state": "default",
+      "bbox": [
+        423,
+        637,
+        647,
+        1028
+      ],
+      "own_drawables": [
+        "ArtMesh182",
+        "ArtMesh183",
+        "ArtMesh185",
+        "ArtMesh184"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part39",
+      "source_name": "Arm-R",
+      "path": "Part39.png",
+      "state": "default",
+      "bbox": [
+        751,
+        634,
+        979,
+        1029
+      ],
+      "own_drawables": [
+        "ArtMesh190",
+        "ArtMesh191",
+        "ArtMesh192",
+        "ArtMesh193"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part41",
+      "source_name": "Shose-L",
+      "path": "Part41.png",
+      "state": "default",
+      "bbox": [
+        560,
+        1706,
+        659,
+        1947
+      ],
+      "own_drawables": [
+        "ArtMesh203",
+        "Shose",
+        "ArtMesh205",
+        "ArtMesh34"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part42",
+      "source_name": "Shose-R",
+      "path": "Part42.png",
+      "state": "default",
+      "bbox": [
+        743,
+        1707,
+        842,
+        1947
+      ],
+      "own_drawables": [
+        "ArtMesh206",
+        "Shose2",
+        "ArtMesh208",
+        "ArtMesh50"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Leg2",
+      "source_name": "Leg",
+      "path": "Leg2.png",
+      "state": "default",
+      "bbox": [
+        560,
+        1098,
+        842,
+        1843
+      ],
+      "own_drawables": [
+        "ArtMesh209",
+        "ArtMesh210"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part43",
+      "source_name": "Shose-L-b",
+      "path": "Part43.png",
+      "state": "default",
+      "bbox": [
+        561,
+        1698,
+        643,
+        1768
+      ],
+      "own_drawables": [
+        "ArtMesh211",
+        "ArtMesh212"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part44",
+      "source_name": "Shose-R-b",
+      "path": "Part44.png",
+      "state": "default",
+      "bbox": [
+        758,
+        1698,
+        839,
+        1768
+      ],
+      "own_drawables": [
+        "ArtMesh213",
+        "ArtMesh214"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part",
+      "source_name": "M-screen",
+      "path": "Part.png",
+      "state": "E-Machine-Screen.exp3",
+      "bbox": [
+        330,
+        470,
+        879,
+        716
+      ],
+      "own_drawables": [
+        "Screen",
+        "ArtMesh"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part2",
+      "source_name": "M-body",
+      "path": "Part2.png",
+      "state": "E-Machine-Open.exp3",
+      "bbox": [
+        305,
+        428,
+        355,
+        482
+      ],
+      "own_drawables": [
+        "ArtMesh0",
+        "Mmask",
+        "ArtMesh3",
+        "ArtMesh1"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Fhair",
+      "source_name": "Fhair",
+      "path": "Fhair.png",
+      "state": "default",
+      "bbox": [
+        565,
+        342,
+        837,
+        565
+      ],
+      "own_drawables": [
+        "ArtMesh17",
+        "ArtMesh19",
+        "ArtMesh21",
+        "ArtMesh23",
+        "ArtMesh24",
+        "ArtMesh26",
+        "ArtMesh27",
+        "ArtMesh28",
+        "ArtMesh18",
+        "ArtMesh20",
+        "ArtMesh22",
+        "ArtMesh25"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part5",
+      "source_name": "HD-L",
+      "path": "Part5.png",
+      "state": "default",
+      "bbox": [
+        585,
+        425,
+        601,
+        448
+      ],
+      "own_drawables": [
+        "ArtMesh40"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part10",
+      "source_name": "HD-R",
+      "path": "Part10.png",
+      "state": "default",
+      "bbox": [
+        798,
+        425,
+        815,
+        448
+      ],
+      "own_drawables": [
+        "ArtMesh49"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "ArtMesh55_Skinning2",
+      "source_name": "Phair-1(蒙皮)",
+      "path": "ArtMesh55_Skinning2.png",
+      "state": "E-Hair-Ponytail.exp3",
+      "bbox": [
+        806,
+        426,
+        877,
+        651
+      ],
+      "own_drawables": [
+        "ArtMesh245",
+        "ArtMesh244",
+        "ArtMesh243",
+        "ArtMesh242",
+        "ArtMesh241",
+        "ArtMesh240",
+        "ArtMesh239",
+        "ArtMesh238",
+        "ArtMesh237"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part46",
+      "source_name": "Phair-1(旋转)",
+      "path": "Part46.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "ArtMesh55_Skinning",
+      "source_name": "Phair-1(蒙皮)",
+      "path": "ArtMesh55_Skinning.png",
+      "state": "E-Hair-Ponytail.exp3",
+      "bbox": [
+        523,
+        426,
+        595,
+        651
+      ],
+      "own_drawables": [
+        "ArtMesh62",
+        "ArtMesh71",
+        "ArtMesh73",
+        "ArtMesh95",
+        "ArtMesh96",
+        "ArtMesh97",
+        "ArtMesh105",
+        "ArtMesh220",
+        "ArtMesh230"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part45",
+      "source_name": "Phair-1(旋转)",
+      "path": "Part45.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part15",
+      "source_name": "Face-Memes",
+      "path": "Part15.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Glasses",
+      "source_name": "Glasses",
+      "path": "Glasses.png",
+      "state": "default",
+      "bbox": [
+        613,
+        479,
+        787,
+        554
+      ],
+      "own_drawables": [
+        "Glasses2",
+        "ArtMesh63",
+        "ArtMesh64",
+        "ArtMesh65"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Eyes",
+      "source_name": "Eyes",
+      "path": "Eyes.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Nose",
+      "source_name": "Nose",
+      "path": "Nose.png",
+      "state": "default",
+      "bbox": [
+        695,
+        524,
+        705,
+        543
+      ],
+      "own_drawables": [
+        "Nose2",
+        "ArtMesh106"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Mouth",
+      "source_name": "Mouth",
+      "path": "Mouth.png",
+      "state": "default",
+      "bbox": [
+        686,
+        567,
+        713,
+        568
+      ],
+      "own_drawables": [
+        "Mouth2"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Face2",
+      "source_name": "Face",
+      "path": "Face2.png",
+      "state": "default",
+      "bbox": [
+        607,
+        374,
+        793,
+        610
+      ],
+      "own_drawables": [
+        "ArtMesh114",
+        "ArtMesh117",
+        "Facecolor",
+        "ArtMesh116",
+        "ArtMesh234",
+        "ArtMesh54",
+        "ArtMesh115",
+        "ArtMesh235",
+        "ArtMesh233",
+        "ArtMesh57",
+        "ArtMesh108",
+        "ArtMesh246",
+        "ArtMesh247",
+        "ArtMesh248",
+        "ArtMesh249",
+        "ArtMesh250"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part27",
+      "source_name": "Bow-L",
+      "path": "Part27.png",
+      "state": "default",
+      "bbox": [
+        653,
+        677,
+        699,
+        754
+      ],
+      "own_drawables": [
+        "ArtMesh120",
+        "ArtMesh121",
+        "ArtMesh125",
+        "ArtMesh124",
+        "ArtMesh122",
+        "ArtMesh123",
+        "ArtMesh119",
+        "ArtMesh251"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part28",
+      "source_name": "Bow-R",
+      "path": "Part28.png",
+      "state": "default",
+      "bbox": [
+        701,
+        677,
+        747,
+        754
+      ],
+      "own_drawables": [
+        "ArtMesh128",
+        "ArtMesh127",
+        "ArtMesh126",
+        "ArtMesh131",
+        "ArtMesh129",
+        "ArtMesh130",
+        "ArtMesh253",
+        "ArtMesh252"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Ring",
+      "source_name": "Ring",
+      "path": "Ring.png",
+      "state": "default",
+      "bbox": [
+        410,
+        998,
+        456,
+        1042
+      ],
+      "own_drawables": [
+        "Ring2"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part32",
+      "source_name": "L-Hand-1",
+      "path": "Part32.png",
+      "state": "default",
+      "bbox": [
+        326,
+        1017,
+        438,
+        1121
+      ],
+      "own_drawables": [
+        "ArtMesh258",
+        "ArtMesh257",
+        "ArtMesh256",
+        "ArtMesh255",
+        "ArtMesh207",
+        "ArtMesh204"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part33",
+      "source_name": "L-Hand-2",
+      "path": "Part33.png",
+      "state": "diagnostic part opacity reveal; not an original preset",
+      "bbox": [
+        344,
+        1023,
+        445,
+        1150
+      ],
+      "own_drawables": [
+        "ArtMesh51"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Ring3",
+      "source_name": "Ring",
+      "path": "Ring3.png",
+      "state": "default",
+      "bbox": [
+        945,
+        997,
+        991,
+        1042
+      ],
+      "own_drawables": [
+        "Ring4"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part36",
+      "source_name": "R-Hand-1",
+      "path": "Part36.png",
+      "state": "default",
+      "bbox": [
+        963,
+        1022,
+        1063,
+        1136
+      ],
+      "own_drawables": [
+        "ArtMesh155",
+        "ArtMesh156",
+        "ArtMesh157",
+        "ArtMesh158",
+        "ArtMesh159",
+        "ArtMesh160"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part37",
+      "source_name": "R-Hand-2",
+      "path": "Part37.png",
+      "state": "diagnostic part opacity reveal; not an original preset",
+      "bbox": [
+        956,
+        1013,
+        1047,
+        1117
+      ],
+      "own_drawables": [
+        "ArtMesh170",
+        "ArtMesh171",
+        "ArtMesh172",
+        "ArtMesh173",
+        "ArtMesh174"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Sleeve",
+      "source_name": "Sleeve",
+      "path": "Sleeve.png",
+      "state": "default",
+      "bbox": [
+        445,
+        892,
+        528,
+        971
+      ],
+      "own_drawables": [
+        "ArtMesh175",
+        "ArtMesh176",
+        "ArtMesh177",
+        "ArtMesh178"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Bandage",
+      "source_name": "Bandage",
+      "path": "Bandage.png",
+      "state": "default",
+      "bbox": [
+        437,
+        746,
+        611,
+        830
+      ],
+      "own_drawables": [
+        "ArtMesh179",
+        "ArtMesh180",
+        "ArtMesh181",
+        "Bandage2"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Sleeve2",
+      "source_name": "Sleeve",
+      "path": "Sleeve2.png",
+      "state": "default",
+      "bbox": [
+        874,
+        893,
+        956,
+        972
+      ],
+      "own_drawables": [
+        "ArtMesh186",
+        "ArtMesh187",
+        "ArtMesh188",
+        "ArtMesh189"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part3",
+      "source_name": "M-wing",
+      "path": "Part3.png",
+      "state": "E-Machine-Open.exp3",
+      "bbox": [
+        146,
+        456,
+        512,
+        616
+      ],
+      "own_drawables": [
+        "ArtMesh2",
+        "ArtMesh5",
+        "ArtMesh6",
+        "ArtMesh8",
+        "ArtMesh9",
+        "ArtMesh11",
+        "ArtMesh12",
+        "ArtMesh4",
+        "ArtMesh52",
+        "ArtMesh7",
+        "ArtMesh10",
+        "ArtMesh13"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part4",
+      "source_name": "M-ring",
+      "path": "Part4.png",
+      "state": "E-Machine-Open.exp3",
+      "bbox": [
+        315,
+        487,
+        344,
+        522
+      ],
+      "own_drawables": [
+        "ArtMesh14",
+        "ArtMesh15",
+        "ArtMesh16"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part6",
+      "source_name": "HD-L-1",
+      "path": "Part6.png",
+      "state": "default",
+      "bbox": [
+        517,
+        428,
+        596,
+        512
+      ],
+      "own_drawables": [
+        "ArtMesh36",
+        "ArtMesh37",
+        "ArtMesh35"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part7",
+      "source_name": "HD-L-2",
+      "path": "Part7.png",
+      "state": "default",
+      "bbox": [
+        541,
+        431,
+        596,
+        549
+      ],
+      "own_drawables": [
+        "ArtMesh38",
+        "ArtMesh39",
+        "ArtMesh45"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part8",
+      "source_name": "HD-L-3",
+      "path": "Part8.png",
+      "state": "default",
+      "bbox": [
+        537,
+        431,
+        596,
+        541
+      ],
+      "own_drawables": [
+        "ArtMesh41",
+        "ArtMesh42",
+        "ArtMesh46"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part9",
+      "source_name": "HD-L-4",
+      "path": "Part9.png",
+      "state": "default",
+      "bbox": [
+        512,
+        427,
+        596,
+        483
+      ],
+      "own_drawables": [
+        "ArtMesh43",
+        "ArtMesh44",
+        "ArtMesh47"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part11",
+      "source_name": "HD-R-1",
+      "path": "Part11.png",
+      "state": "default",
+      "bbox": [
+        806,
+        428,
+        884,
+        512
+      ],
+      "own_drawables": [
+        "ArtMesh216",
+        "ArtMesh217",
+        "ArtMesh225"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part12",
+      "source_name": "HD-R-2",
+      "path": "Part12.png",
+      "state": "default",
+      "bbox": [
+        806,
+        431,
+        861,
+        549
+      ],
+      "own_drawables": [
+        "ArtMesh218",
+        "ArtMesh219",
+        "ArtMesh226"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part13",
+      "source_name": "HD-R-3",
+      "path": "Part13.png",
+      "state": "default",
+      "bbox": [
+        806,
+        431,
+        865,
+        541
+      ],
+      "own_drawables": [
+        "ArtMesh221",
+        "ArtMesh222",
+        "ArtMesh227"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part14",
+      "source_name": "HD-R-4",
+      "path": "Part14.png",
+      "state": "default",
+      "bbox": [
+        805,
+        427,
+        889,
+        483
+      ],
+      "own_drawables": [
+        "ArtMesh223",
+        "ArtMesh224",
+        "ArtMesh56"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M1",
+      "source_name": "M1",
+      "path": "M1.png",
+      "state": "E-Face-Music.exp3",
+      "bbox": [
+        779,
+        378,
+        876,
+        464
+      ],
+      "own_drawables": [
+        "ArtMesh107"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M2",
+      "source_name": "M2",
+      "path": "M2.png",
+      "state": "E-Face-Angry.exp3",
+      "bbox": [
+        725,
+        331,
+        829,
+        455
+      ],
+      "own_drawables": [
+        "ArtMesh58",
+        "ArtMesh59"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M3",
+      "source_name": "M3",
+      "path": "M3.png",
+      "state": "E-Face-Question.exp3",
+      "bbox": [
+        756,
+        333,
+        821,
+        454
+      ],
+      "own_drawables": [
+        "ArtMesh60"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M4",
+      "source_name": "M4",
+      "path": "M4.png",
+      "state": "E-Face-Sweat.exp3",
+      "bbox": [
+        777,
+        359,
+        825,
+        442
+      ],
+      "own_drawables": [
+        "ArtMesh61"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M5",
+      "source_name": "M5",
+      "path": "M5.png",
+      "state": "E-Face-Blood.exp3",
+      "bbox": [
+        696,
+        544,
+        704,
+        565
+      ],
+      "own_drawables": [
+        "blood"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M6",
+      "source_name": "M6",
+      "path": "M6.png",
+      "state": "E-Face-Shocked.exp3",
+      "bbox": [
+        799,
+        309,
+        964,
+        432
+      ],
+      "own_drawables": [
+        "shocked"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part16",
+      "source_name": "Eye-Memes",
+      "path": "Part16.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part17",
+      "source_name": "L-Eye",
+      "path": "Part17.png",
+      "state": "default",
+      "bbox": [
+        630,
+        479,
+        684,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh76",
+        "ArtMesh77",
+        "ArtMesh90"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part21",
+      "source_name": "R-Eye",
+      "path": "Part21.png",
+      "state": "default",
+      "bbox": [
+        716,
+        479,
+        768,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh92",
+        "ArtMesh228",
+        "ArtMesh93"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part25",
+      "source_name": "Mouth-Memes",
+      "path": "Part25.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Tlip",
+      "source_name": "Tlip",
+      "path": "Tlip.png",
+      "state": "diagnostic part opacity reveal; not an original preset",
+      "bbox": [
+        687,
+        567,
+        713,
+        568
+      ],
+      "own_drawables": [
+        "TUlip",
+        "TBlip"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Mouth3",
+      "source_name": "Mouth2",
+      "path": "Mouth3.png",
+      "state": "default",
+      "bbox": [
+        689,
+        567,
+        709,
+        568
+      ],
+      "own_drawables": [
+        "ArtMesh113"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part34",
+      "source_name": "Hand-ring",
+      "path": "Part34.png",
+      "state": "diagnostic part opacity reveal; not an original preset",
+      "bbox": [
+        324,
+        1004,
+        486,
+        1152
+      ],
+      "own_drawables": [
+        "ArtMesh161",
+        "ArtMesh162",
+        "ArtMesh163"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M7",
+      "source_name": "M1",
+      "path": "M7.png",
+      "state": "E-Eye-Block.exp3",
+      "bbox": [
+        632,
+        498,
+        762,
+        529
+      ],
+      "own_drawables": [
+        "ArtMesh66",
+        "ArtMesh67",
+        "ArtMesh68",
+        "ArtMesh69"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M8",
+      "source_name": "M2",
+      "path": "M8.png",
+      "state": "E-Eye-Shocked.exp3",
+      "bbox": [
+        644,
+        496,
+        754,
+        530
+      ],
+      "own_drawables": [
+        "ArtMesh70",
+        "ArtMesh72"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M9",
+      "source_name": "M3",
+      "path": "M9.png",
+      "state": "E-Eye-Smile.exp3",
+      "bbox": [
+        634,
+        493,
+        767,
+        524
+      ],
+      "own_drawables": [
+        "ArtMesh74",
+        "ArtMesh75"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Tear",
+      "source_name": "Tear",
+      "path": "Tear.png",
+      "state": "diagnostic part opacity reveal; not an original preset",
+      "bbox": [
+        640,
+        523,
+        760,
+        534
+      ],
+      "own_drawables": [
+        "Tear2",
+        "DropTear",
+        "DropTear3",
+        "Tear5"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part18",
+      "source_name": "L-Eyelash",
+      "path": "Part18.png",
+      "state": "default",
+      "bbox": [
+        625,
+        493,
+        683,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh78",
+        "ArtMesh79",
+        "ArtMesh80",
+        "ArtMesh81",
+        "ArtMesh82"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part19",
+      "source_name": "L-Eyeball",
+      "path": "Part19.png",
+      "state": "default",
+      "bbox": [
+        646,
+        498,
+        673,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh88",
+        "ArtMesh89",
+        "ImaskL"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Tear3",
+      "source_name": "Tear",
+      "path": "Tear3.png",
+      "state": "default",
+      "bbox": null,
+      "own_drawables": [],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part22",
+      "source_name": "R-Eyelash",
+      "path": "Part22.png",
+      "state": "default",
+      "bbox": [
+        718,
+        493,
+        775,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh232",
+        "ArtMesh231",
+        "ArtMesh100",
+        "ArtMesh99",
+        "ArtMesh98"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part23",
+      "source_name": "R-Eyeball",
+      "path": "Part23.png",
+      "state": "default",
+      "bbox": [
+        728,
+        498,
+        755,
+        531
+      ],
+      "own_drawables": [
+        "ArtMesh103",
+        "ArtMesh104",
+        "ImaskR"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M10",
+      "source_name": "M1",
+      "path": "M10.png",
+      "state": "E-Mouth-Smile.exp3",
+      "bbox": [
+        674,
+        559,
+        726,
+        588
+      ],
+      "own_drawables": [
+        "M"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M11",
+      "source_name": "M2",
+      "path": "M11.png",
+      "state": "E-Mouth-Pout.exp3",
+      "bbox": [
+        689,
+        563,
+        714,
+        575
+      ],
+      "own_drawables": [
+        "M12"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "M13",
+      "source_name": "M3",
+      "path": "M13.png",
+      "state": "E-Mouth-Shh.exp3",
+      "bbox": [
+        694,
+        558,
+        706,
+        578
+      ],
+      "own_drawables": [
+        "M14"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Uteeth",
+      "source_name": "Uteeth",
+      "path": "Uteeth.png",
+      "state": "default",
+      "bbox": [
+        689,
+        567,
+        691,
+        568
+      ],
+      "own_drawables": [
+        "ArtMesh109"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Bteeth",
+      "source_name": "Bteeth",
+      "path": "Bteeth.png",
+      "state": "default",
+      "bbox": [
+        689,
+        567,
+        709,
+        568
+      ],
+      "own_drawables": [
+        "ArtMesh110",
+        "ArtMesh111",
+        "ArtMesh118",
+        "Tongue"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part20",
+      "source_name": "L-E-Highlight",
+      "path": "Part20.png",
+      "state": "default",
+      "bbox": [
+        642,
+        507,
+        673,
+        529
+      ],
+      "own_drawables": [
+        "ArtMesh83",
+        "ArtMesh84",
+        "ArtMesh85"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Pupil",
+      "source_name": "Pupil",
+      "path": "Pupil.png",
+      "state": "default",
+      "bbox": [
+        657,
+        511,
+        662,
+        519
+      ],
+      "own_drawables": [
+        "Pupil2",
+        "ArtMesh87",
+        "ArtMesh86"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Part24",
+      "source_name": "R-E-Highlight",
+      "path": "Part24.png",
+      "state": "default",
+      "bbox": [
+        724,
+        506,
+        754,
+        530
+      ],
+      "own_drawables": [
+        "ArtMesh102",
+        "ArtMesh101",
+        "ArtMesh94"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "Pupil3",
+      "source_name": "Pupil",
+      "path": "Pupil3.png",
+      "state": "default",
+      "bbox": [
+        739,
+        510,
+        744,
+        519
+      ],
+      "own_drawables": [
+        "ArtMesh229",
+        "ArtMesh91",
+        "Pupil5"
+      ],
+      "note": "Only this Part is painted; required masks are sampled separately. Empty container/point-anchor parts have no raster surface."
+    },
+    {
+      "id": "ArtMesh215",
+      "parent": null,
+      "role": "original coat rear backing",
+      "path": "ArtMesh215.png",
+      "state": "default",
+      "bbox": [
+        500,
+        726,
+        903,
+        1114
+      ]
+    }
+  ]
+}

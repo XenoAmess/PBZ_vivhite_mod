@@ -1,0 +1,155 @@
+[
+  {
+    "layer": "shirt",
+    "source_parts": [
+      "Collar",
+      "Shirt",
+      "Shirt2"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/shirt.png",
+    "state": "default"
+  },
+  {
+    "layer": "bow_tie",
+    "source_parts": [
+      "Part26",
+      "Part27",
+      "Part28"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/bow_tie.png",
+    "state": "default"
+  },
+  {
+    "layer": "coat",
+    "source_parts": [
+      "Coat",
+      "Solar"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/coat.png",
+    "state": "default"
+  },
+  {
+    "layer": "girdle",
+    "source_parts": [
+      "Part29",
+      "Part30"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/girdle.png",
+    "state": "default"
+  },
+  {
+    "layer": "skirt",
+    "source_parts": [
+      "Skirt"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/skirt.png",
+    "state": "default"
+  },
+  {
+    "layer": "sleeve_screen_left",
+    "source_parts": [
+      "Part38",
+      "Sleeve"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/sleeve_screen_left.png",
+    "state": "default"
+  },
+  {
+    "layer": "sleeve_screen_right",
+    "source_parts": [
+      "Part39",
+      "Sleeve2"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/sleeve_screen_right.png",
+    "state": "default"
+  },
+  {
+    "layer": "bandage",
+    "source_parts": [
+      "Bandage"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/bandage.png",
+    "state": "default"
+  },
+  {
+    "layer": "wrist_screen_left",
+    "source_parts": [
+      "Ring"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/wrist_screen_left.png",
+    "state": "default"
+  },
+  {
+    "layer": "wrist_screen_right",
+    "source_parts": [
+      "Ring3"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/wrist_screen_right.png",
+    "state": "default"
+  },
+  {
+    "layer": "legs",
+    "source_parts": [
+      "Leg2"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/legs.png",
+    "state": "default"
+  },
+  {
+    "layer": "shoes",
+    "source_parts": [
+      "Part41",
+      "Part42",
+      "Part43",
+      "Part44"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/shoes.png",
+    "state": "default"
+  },
+  {
+    "layer": "machine",
+    "source_parts": [
+      "Machine",
+      "Machine2",
+      "Part",
+      "Part2",
+      "Part3",
+      "Part4"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/machine.png",
+    "state": "default"
+  },
+  {
+    "layer": "ponytails_enabled",
+    "source_parts": [
+      "ArtMesh55_Skinning",
+      "ArtMesh55_Skinning2",
+      "Part45",
+      "Part46",
+      "Ponytail"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/ponytails_enabled.png",
+    "state": "E-Hair-Ponytail.exp3"
+  },
+  {
+    "layer": "machine_enabled",
+    "source_parts": [
+      "Machine",
+      "Machine2",
+      "Part",
+      "Part2",
+      "Part3",
+      "Part4"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/machine_enabled.png",
+    "state": "E-Machine-Open.exp3"
+  },
+  {
+    "layer": "hand_ring_enabled",
+    "source_parts": [
+      "Part34"
+    ],
+    "path": "artifacts/baiqi_component_audit/body_layers/hand_ring_enabled.png",
+    "state": "diagnostic opacity reveal; not an original preset"
+  }
+]

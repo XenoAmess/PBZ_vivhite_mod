@@ -12,9 +12,11 @@ class ContractTests(unittest.TestCase):
         ops={c['operator'] for c in load(ROOT/'qa/suites/humanoid_v1.json')['cases']}
         self.assertTrue({'neck','abduction','forward','elbow','twist','shrug','wrist','fingers','reach','spine','hip','knee','ankle','toes','squat'}<=ops)
     def fixture(self):
-        m={'coverage_complete':True,'numerical_checks_passed':True,'input_hashes':{'model':'a','suite':'b'},'case_ids':['neck']}
+        m={'coverage_complete':True,'numerical_checks_passed':True,'rig_preflight':{'status':'passed'},'input_hashes':{'model':'a','suite':'b'},'case_ids':['neck']}
         r={'input_hashes':dict(m['input_hashes']),'neutral_shape':'pass','cases':[{'id':'neck','status':'pass'}],'open_defects':[]}
         r['shape_check']={'coverage_complete':True,'model_sha256':'a','sections':[{'id':s['id'],'status':'pass'} for s in json.loads((ROOT/'qa/shape_audit_v1.json').read_text(encoding='utf-8'))['sections']],'open_defects':[]}
+        source=json.loads((ROOT/'characters/baiqi/components.json').read_text(encoding='utf-8'))
+        r['identity_check']={'character':'白绮','model_sha256':'a','open_defects':[],**{field:[{'id':p['id'],'status':'pass','target_objects':['mock_object'],'verification_images':['mock.png']} for p in source.get(field,[])] for field in ['components','variants','unparented_drawables']}}
         return m,r
     def test_numeric_pass_does_not_allow_pending_visual_review(self):
         m,r=self.fixture();r['neutral_shape']='pending'
@@ -38,5 +40,20 @@ class ContractTests(unittest.TestCase):
         self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
     def test_partial_shape_render_is_rejected(self):
         m,r=self.fixture();r['shape_check']['coverage_complete']=False
+        self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
+    def test_generic_female_foundation_is_rejected(self):
+        m,r=self.fixture();del r['identity_check']
+        self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
+    def test_missing_hidden_component_is_rejected(self):
+        m,r=self.fixture();r['identity_check']['components']=[p for p in r['identity_check']['components'] if p['id']!='Part3']
+        self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
+    def test_missing_alternate_hair_is_rejected(self):
+        m,r=self.fixture();r['identity_check']['variants']=[p for p in r['identity_check']['variants'] if p['id']!='E-Hair-Ponytail.exp3']
+        self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
+    def test_stale_identity_review_is_rejected(self):
+        m,r=self.fixture();r['identity_check']['model_sha256']='old'
+        self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
+    def test_identity_without_visual_evidence_is_rejected(self):
+        m,r=self.fixture();r['identity_check']['components'][0]['verification_images']=[]
         self.assertFalse(acceptance(m,r)['game_runtime_allowed'])
 if __name__=='__main__':unittest.main()

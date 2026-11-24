@@ -1,0 +1,20 @@
+{
+  "status": "pending_visual_review",
+  "source_candidate": "output/live2d_delta/baiqi_component_assembly_002/BaiQi_Assembly.blend",
+  "source_sha256": "a705bd71437596deb19bce9ec8d16c18554e321963a29134b2a02ba7414bed46",
+  "model_sha256": "861e2f0a4967625e10b9c90c5068b334d42dd17201608c4b1efaefdf6292dd1a",
+  "hair_vertices": 302884,
+  "hair_polygons": 302890,
+  "native_bones_unchanged": true,
+  "source_parts": [
+    "ArtMesh55_Skinning",
+    "ArtMesh55_Skinning2",
+    "Bhair",
+    "Fhair",
+    "Hair",
+    "Mhair",
+    "Part45",
+    "Part46",
+    "Ponytail"
+  ]
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "layer": "hair_front",
+    "source_parts": [
+      "ArtMesh55_Skinning",
+      "ArtMesh55_Skinning2",
+      "Fhair",
+      "Hair",
+      "Mhair",
+      "Part45",
+      "Part46",
+      "Ponytail"
+    ],
+    "included_face_shadow_drawables": [],
+    "excluded_face_shadow_drawables": [
+      "ArtMesh18",
+      "ArtMesh20",
+      "ArtMesh22",
+      "ArtMesh25",
+      "ArtMesh27"
+    ],
+    "path": "artifacts/baiqi_component_audit/head_layers/hair_front.png",
+    "method": "original atlas compositing with original masks and render order"
+  },
+  {
+    "layer": "hair_back",
+    "source_parts": [
+      "Bhair"
+    ],
+    "included_face_shadow_drawables": [],
+    "excluded_face_shadow_drawables": [],
+    "path": "artifacts/baiqi_component_audit/head_layers/hair_back.png",
+    "method": "original atlas compositing with original masks and render order"
+  },
+  {
+    "layer": "face",
+    "source_parts": [
+      "Bteeth",
+      "Eyes",
+      "Face",
+      "Face2",
+      "M1",
+      "M10",
+      "M11",
+      "M13",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M7",
+      "M8",
+      "M9",
+      "Mouth",
+      "Mouth3",
+      "Nose",
+      "Part15",
+      "Part16",
+      "Part17",
+      "Part18",
+      "Part19",
+      "Part20",
+      "Part21",
+      "Part22",
+      "Part23",
+      "Part24",
+      "Part25",
+      "Pupil",
+      "Pupil3",
+      "Tear",
+      "Tear3",
+      "Tlip",
+      "Uteeth"
+    ],
+    "included_face_shadow_drawables": [
+      "ArtMesh18",
+      "ArtMesh20",
+      "ArtMesh22",
+      "ArtMesh25",
+      "ArtMesh27"
+    ],
+    "excluded_face_shadow_drawables": [],
+    "path": "artifacts/baiqi_component_audit/head_layers/face.png",
+    "method": "original atlas compositing with original masks and render order"
+  },
+  {
+    "layer": "glasses",
+    "source_parts": [
+      "Glasses"
+    ],
+    "included_face_shadow_drawables": [],
+    "excluded_face_shadow_drawables": [],
+    "path": "artifacts/baiqi_component_audit/head_layers/glasses.png",
+    "method": "original atlas compositing with original masks and render order"
+  },
+  {
+    "layer": "headdress",
+    "source_parts": [
+      "Headdress",
+      "Part10",
+      "Part11",
+      "Part12",
+      "Part13",
+      "Part14",
+      "Part5",
+      "Part6",
+      "Part7",
+      "Part8",
+      "Part9"
+    ],
+    "included_face_shadow_drawables": [],
+    "excluded_face_shadow_drawables": [],
+    "path": "artifacts/baiqi_component_audit/head_layers/headdress.png",
+    "method": "original atlas compositing with original masks and render order"
+  }
+]

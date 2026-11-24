@@ -1,0 +1,14 @@
+{
+  "status": "pending_visual_review",
+  "source_candidate": "output/live2d_delta/baiqi_component_assembly_008/BaiQi_Assembly.blend",
+  "model_sha256": "5e3a17ec5f21fde57820dd79d59d541c0ab1b159e857e0c4a9e82186e217f228",
+  "shoe_floor_before_cm": -0.25426334142684937,
+  "shoe_floor_after_cm": -0.051834,
+  "shoe_vertical_offset_cm": 0.20242934142684937,
+  "repairs": [
+    "body neck no longer samples facial outline",
+    "rear hair UV no longer samples source silhouette border",
+    "native-weighted shoulder coverage",
+    "sole aligned to measured original adult reference"
+  ]
+}

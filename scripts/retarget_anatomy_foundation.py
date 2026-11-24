@@ -8,7 +8,7 @@ from pathlib import Path
 import bpy,numpy as np
 from mathutils import Matrix,Vector
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--skin-only',action='store_true');args=p.parse_args(sys.argv[sys.argv.index('--')+1:]);out=(ROOT/args.output).resolve();assert out.is_relative_to(ROOT);out.mkdir(parents=True,exist_ok=True)
+p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--skin-only',action='store_true');p.add_argument('--continuous-neck',action='store_true');p.add_argument('--flat-sole',action='store_true');args=p.parse_args(sys.argv[sys.argv.index('--')+1:]);out=(ROOT/args.output).resolve();assert out.is_relative_to(ROOT);out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/'build/qa_pre_inputs_015/Delta_adult.blend'))
 native=next(o for o in bpy.data.objects if o.type=='ARMATURE');rest_before={b.name:(b.matrix_local.copy(),b.parent.name if b.parent else None) for b in native.data.bones}
 for obj in list(bpy.data.objects):
@@ -60,6 +60,13 @@ for name,target_name in mapping.items():
         radial=1.10 if target_name.startswith('neck') else 1.18
         linear=frame(td)@np.diag([td.length/sd.length,radial,radial])@frame(sd).T
     transforms[name]=(linear,np.array(source_points[name]),np.array(target_points[name]))
+if args.flat_sole:
+    for side in ['left','right']:
+        foot=human[side+'Foot'];toe=human[side+'Toes'];a=source_points[foot];b=target_points[foot]
+        sd=source_points[toe]-a;td=target_points[toe]-b
+        angle=np.arctan2(td.y,td.x)-np.arctan2(sd.y,sd.x);c,s=np.cos(angle),np.sin(angle)
+        linear=np.array([[c,-s,0],[s,c,0],[0,0,1.]])@np.diag([1.18,1.18,b.z/a.z])
+        transforms[foot]=(linear,np.array(a),np.array(b));transforms[toe]=transforms[foot]
 clay=bpy.data.materials.new('Anatomical foundation clay');clay.use_nodes=True;clay.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.36,.40,.44,1)
 source_surfaces=[]
 for obj in meshes:
@@ -67,6 +74,8 @@ for obj in meshes:
     source_surfaces.append({'object':obj.name,'materials':classes,'polygon_counts':{name:sum(poly.material_index==i for poly in obj.data.polygons) for i,name in enumerate(classes)}})
     tag=obj.data.attributes.new('anatomy_source_material','INT','FACE')
     for poly,item in zip(obj.data.polygons,tag.data):item.value=poly.material_index
+    tag=obj.data.attributes.new('anatomy_source_object','INT','FACE')
+    for item in tag.data:item.value=0 if obj.name=='Body' else 1
     obj['anatomy_source_materials']=json.dumps(classes)
     if args.skin_only:
         import bmesh
@@ -87,10 +96,15 @@ for obj in meshes:
             linear,a,b=transforms[name];fitted+=weight*(b+linear@(np.array(position)-a));n=mapping[name];native_weights[n]=native_weights.get(n,0)+weight
         new_positions.append(fitted);weights.append(native_weights)
     if obj.data.shape_keys:obj.shape_key_clear()
-    obj.vertex_groups.clear();groups={n:obj.vertex_groups.new(name=n) for n in sorted(set(mapping.values()))}
+    obj.vertex_groups.clear();groups={n:obj.vertex_groups.new(name=n) for n in sorted(set(mapping.values())|({'neck_02'} if args.continuous_neck else set()))}
     obj.parent=None;obj.matrix_world=Matrix.Identity(4)
     for v,position,influences in zip(obj.data.vertices,new_positions,weights):
         v.co=position
+        if args.continuous_neck and obj.name=='Body' and 145<position[2]<173 and abs(position[0])<11:
+            z=position[2];knots=[145,151,157,164,169,173]
+            rows=np.array([[1,0,0,0],[.94,.06,0,0],[.15,.5,.3,.05],[0,.2,.35,.45],[0,0,.05,.95],[0,0,0,1.]])
+            ws=np.array([np.interp(z,knots,rows[:,i]) for i in range(4)])
+            influences={n:float(w) for n,w in zip(['spine_05','neck_01','neck_02','head'],ws) if w>1e-6}
         for name,weight in influences.items():groups[name].add([v.index],weight,'REPLACE')
     obj.modifiers.clear();obj.parent=native;mod=obj.modifiers.new('Unchanged adult native skeleton','ARMATURE');mod.object=native;mod.use_deform_preserve_volume=False
     obj.data.materials.clear();obj.data.materials.append(clay)
@@ -106,5 +120,5 @@ for bone in native.data.bones:
     old,parent=rest_before[bone.name];assert bone.matrix_local==old and (bone.parent.name if bone.parent else None)==parent
 scene=bpy.context.scene;scene.unit_settings.system='METRIC';scene.unit_settings.scale_length=.01
 bpy.ops.wm.save_as_mainfile(filepath=str(out/'Delta_adult.blend'))
-report={'source':'VRoid Project Base_Female (CC0), anatomy foundation only','license_source':'https://vroid.pixiv.help/hc/en-us/articles/4402614652569','native_rig_unchanged':True,'mapped_source_bones':len(mapping),'vertices':len(mesh.data.vertices),'status':'foundation_only_pending_whole_body_review','target_geometry_anchors_cm':anchors,'source_surfaces':source_surfaces,'skin_only':args.skin_only}
+report={'source':'VRoid Project Base_Female (CC0), anatomy foundation only','license_source':'https://vroid.pixiv.help/hc/en-us/articles/4402614652569','native_rig_unchanged':True,'mapped_source_bones':len(mapping),'vertices':len(mesh.data.vertices),'status':'foundation_only_pending_whole_body_review','target_geometry_anchors_cm':anchors,'source_surfaces':source_surfaces,'skin_only':args.skin_only,'continuous_neck':args.continuous_neck,'flat_sole':args.flat_sole}
 (out/'foundation_report.json').write_text(json.dumps(report,indent=2));print('ANATOMY_FOUNDATION_READY',json.dumps(report))

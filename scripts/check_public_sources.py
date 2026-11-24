@@ -3,7 +3,7 @@ from pathlib import Path
 import re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 paths=[ROOT/'README.md',ROOT/'source-lock.json']
-for directory in ['qa','scripts','SOP']:
+for directory in ['qa','scripts','SOP','characters','repro/baiqi_source']:
     paths.extend(p for p in (ROOT/directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts)
 patterns=[re.compile(rb'gh[op]_[A-Za-z0-9]{30,}'),re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),
     re.compile(rb'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----')]

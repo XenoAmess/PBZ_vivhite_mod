@@ -9,7 +9,10 @@ import bpy, numpy as np
 from mathutils import Vector, Quaternion
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
+sys.path.insert(0,str(ROOT/'scripts'))
 from qa.motion_suite import load,sha
+from qa_materials import MaterialReview
+from qa_rig_preflight import preflight
 cli=argparse.ArgumentParser()
 cli.add_argument('--candidate',default='build/shoulder_inputs/Delta_adult.blend')
 cli.add_argument('--output',default='output/live2d_delta/self_test_standard')
@@ -18,11 +21,15 @@ cli.add_argument('--metrics-only',action='store_true')
 args=cli.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 candidate=(ROOT/args.candidate).resolve();suite=(ROOT/args.suite).resolve();spec=load(suite)
 OUT=(ROOT/args.output).resolve();assert OUT.is_relative_to(ROOT);OUT.mkdir(parents=True,exist_ok=True)
-hashes={'model':sha(candidate),'suite':sha(suite),'runner':sha(__file__),'contract':sha(ROOT/'qa/motion_suite.py')}
+hashes={'model':sha(candidate),'suite':sha(suite),'runner':sha(__file__),'contract':sha(ROOT/'qa/motion_suite.py'),
+        'materials':sha(ROOT/'scripts/qa_materials.py'),'identity':sha(ROOT/'qa/identity.py'),'character':sha(ROOT/'characters/baiqi/source_contract.json'),
+        'rig_preflight':sha(ROOT/'scripts/qa_rig_preflight.py'),'rig_contract':sha(ROOT/'qa/rig_binding.py')}
 bpy.ops.wm.open_mainfile(filepath=str(candidate))
 arm=next(o for o in bpy.data.objects if o.type=='ARMATURE')
-mesh=next(o for o in bpy.data.objects if o.type=='MESH')
+meshes=[o for o in bpy.data.objects if o.type=='MESH' and not o.hide_render]
+mesh=next((o for o in meshes if o.name=='BaiQi_FemaleFoundation'),meshes[0])
 assert len(arm.data.bones)==264
+rig_preflight=preflight(arm,mesh,OUT)
 scene=bpy.context.scene;scene.render.engine='BLENDER_EEVEE'
 scene.render.resolution_x=512;scene.render.resolution_y=512;scene.render.resolution_percentage=100
 scene.render.image_settings.file_format='PNG';scene.render.film_transparent=False
@@ -37,15 +44,15 @@ scene.camera=cam;data.type='ORTHO';data.clip_end=10000
 gray=bpy.data.materials.new('SelfTest clay');gray.use_nodes=True
 gray.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.36,.40,.44,1)
 gray.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.85
-original_materials=list(mesh.data.materials)
-original_indices=[p.material_index for p in mesh.data.polygons]
+review_materials=MaterialReview(meshes)
 controlled=['neck_01','neck_02','head','spine_03','spine_04','spine_05']
 controlled += [n+'_'+s for s in ['l','r'] for n in ['clavicle','upperarm','lowerarm']]
 controlled += ['pelvis']+[n+'_'+s for s in ['l','r'] for n in ['hand','thigh','calf','foot','ball']]
 controlled += [f'{digit}_{joint:02}_{side}' for side in ['l','r'] for digit in ['thumb','index','middle','ring','pinky'] for joint in [1,2,3]]
 assert all(n in arm.data.bones for n in controlled),'Rig mapping is incomplete'
-for mod in mesh.modifiers:
-    if mod.type=='ARMATURE':assert not mod.use_deform_preserve_volume,'Viewport-only dual quaternion skinning is forbidden'
+for obj in meshes:
+    for mod in obj.modifiers:
+        if mod.type=='ARMATURE':assert not mod.use_deform_preserve_volume,'Viewport-only dual quaternion skinning is forbidden'
 for n in controlled:arm.pose.bones[n].rotation_mode='QUATERNION'
 def qaxis(axis,degrees):return Quaternion(Vector(axis).normalized(),math.radians(degrees))
 def local(n,world_rotation):
@@ -191,7 +198,7 @@ def metrics(coords):
         result[n]={'edges':len(e),'stretch_p95':float(np.percentile(ratio,95)),
                    'stretch_max':float(ratio.max()),'compression_p05':float(np.percentile(ratio,5))}
     return result
-weight_sums=[sum(g.weight for g in v.groups) for v in mesh.data.vertices]
+weight_sums=[sum(g.weight for g in v.groups) for o in meshes for v in o.data.vertices]
 assert min(weight_sums)>1-spec['thresholds']['weight_sum_tolerance'] and max(weight_sums)<1+spec['thresholds']['weight_sum_tolerance']
 report={'model':str(candidate.relative_to(ROOT)),'input_hashes':hashes,'suite_version':spec['version'],
  'native_input':str(candidate.relative_to(ROOT)),'bones':264,'case_ids':[c['id'] for c in spec['cases']],
@@ -200,6 +207,7 @@ report={'model':str(candidate.relative_to(ROOT)),'input_hashes':hashes,'suite_ve
  'angle_note':'arm abduction is rotation from the native A pose, not from arms-down; these are chosen diagnostic ranges, not anatomical limits',
  'neck_distribution':{'neck_01':.25,'neck_02':.35,'head':.40},
  'metrics_note':'edge length changes flag frames for visual inspection; they do not establish good anatomy or visual acceptance',
+ 'visible_meshes':[o.name for o in meshes],'numerical_metric_mesh':mesh.name,'clay_preserves_alpha':True,'rig_preflight':rig_preflight,
  'clips':[],'user_visual_acceptance':False}
 actions={}
 for clip in clips:
@@ -234,13 +242,7 @@ for clip in clips:
 print('SELFTEST_ACTIONS_AUTHORED',len(clips),flush=True)
 
 def set_pass(kind):
-    mesh.data.materials.clear()
-    if kind=='clay':
-        mesh.data.materials.append(gray)
-        for p in mesh.data.polygons:p.material_index=0
-    else:
-        for m in original_materials:mesh.data.materials.append(m)
-        for p,i in zip(mesh.data.polygons,original_indices):p.material_index=i
+    review_materials.apply(kind)
 def view(group,name):
     z=168 if group=='neck' else 147 if group=='arms' else 110
     data.ortho_scale=68 if group=='neck' else 185 if group=='arms' else 260

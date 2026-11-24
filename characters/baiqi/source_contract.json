@@ -1,0 +1,481 @@
+{
+  "schema_version": 1,
+  "character": "白绮",
+  "source_moc_sha256": "abc3580488c3a992ad8db2961707fa18e5bb26ed7d9e7454d774487367f44a74",
+  "components": [
+    {
+      "id": "Part40",
+      "source_name": "11.psd"
+    },
+    {
+      "id": "Machine",
+      "source_name": "Machine"
+    },
+    {
+      "id": "Head",
+      "source_name": "Head"
+    },
+    {
+      "id": "Shirt",
+      "source_name": "Shirt"
+    },
+    {
+      "id": "Neck",
+      "source_name": "Neck"
+    },
+    {
+      "id": "Coat",
+      "source_name": "Coat"
+    },
+    {
+      "id": "Part29",
+      "source_name": "Girdle waist"
+    },
+    {
+      "id": "Body",
+      "source_name": "Body"
+    },
+    {
+      "id": "Skirt",
+      "source_name": "Skirt"
+    },
+    {
+      "id": "Bhair",
+      "source_name": "Bhair"
+    },
+    {
+      "id": "Leg",
+      "source_name": "Leg"
+    },
+    {
+      "id": "Machine2",
+      "source_name": "Machine"
+    },
+    {
+      "id": "Hair",
+      "source_name": "Hair"
+    },
+    {
+      "id": "Headdress",
+      "source_name": "Headdress"
+    },
+    {
+      "id": "Ponytail",
+      "source_name": "Ponytail"
+    },
+    {
+      "id": "Face",
+      "source_name": "Face"
+    },
+    {
+      "id": "Mhair",
+      "source_name": "Mhair"
+    },
+    {
+      "id": "Part26",
+      "source_name": "Bow tie"
+    },
+    {
+      "id": "Collar",
+      "source_name": "Collar"
+    },
+    {
+      "id": "Shirt2",
+      "source_name": "Shirt"
+    },
+    {
+      "id": "Solar",
+      "source_name": "Solar"
+    },
+    {
+      "id": "Part30",
+      "source_name": "GW-stone"
+    },
+    {
+      "id": "Part31",
+      "source_name": "Hand-L"
+    },
+    {
+      "id": "Part35",
+      "source_name": "Hand-R"
+    },
+    {
+      "id": "Part38",
+      "source_name": "Arm-L"
+    },
+    {
+      "id": "Part39",
+      "source_name": "Arm-R"
+    },
+    {
+      "id": "Part41",
+      "source_name": "Shose-L"
+    },
+    {
+      "id": "Part42",
+      "source_name": "Shose-R"
+    },
+    {
+      "id": "Leg2",
+      "source_name": "Leg"
+    },
+    {
+      "id": "Part43",
+      "source_name": "Shose-L-b"
+    },
+    {
+      "id": "Part44",
+      "source_name": "Shose-R-b"
+    },
+    {
+      "id": "Part",
+      "source_name": "M-screen"
+    },
+    {
+      "id": "Part2",
+      "source_name": "M-body"
+    },
+    {
+      "id": "Fhair",
+      "source_name": "Fhair"
+    },
+    {
+      "id": "Part5",
+      "source_name": "HD-L"
+    },
+    {
+      "id": "Part10",
+      "source_name": "HD-R"
+    },
+    {
+      "id": "ArtMesh55_Skinning2",
+      "source_name": "Phair-1(蒙皮)"
+    },
+    {
+      "id": "Part46",
+      "source_name": "Phair-1(旋转)"
+    },
+    {
+      "id": "ArtMesh55_Skinning",
+      "source_name": "Phair-1(蒙皮)"
+    },
+    {
+      "id": "Part45",
+      "source_name": "Phair-1(旋转)"
+    },
+    {
+      "id": "Part15",
+      "source_name": "Face-Memes"
+    },
+    {
+      "id": "Glasses",
+      "source_name": "Glasses"
+    },
+    {
+      "id": "Eyes",
+      "source_name": "Eyes"
+    },
+    {
+      "id": "Nose",
+      "source_name": "Nose"
+    },
+    {
+      "id": "Mouth",
+      "source_name": "Mouth"
+    },
+    {
+      "id": "Face2",
+      "source_name": "Face"
+    },
+    {
+      "id": "Part27",
+      "source_name": "Bow-L"
+    },
+    {
+      "id": "Part28",
+      "source_name": "Bow-R"
+    },
+    {
+      "id": "Ring",
+      "source_name": "Ring"
+    },
+    {
+      "id": "Part32",
+      "source_name": "L-Hand-1"
+    },
+    {
+      "id": "Part33",
+      "source_name": "L-Hand-2"
+    },
+    {
+      "id": "Ring3",
+      "source_name": "Ring"
+    },
+    {
+      "id": "Part36",
+      "source_name": "R-Hand-1"
+    },
+    {
+      "id": "Part37",
+      "source_name": "R-Hand-2"
+    },
+    {
+      "id": "Sleeve",
+      "source_name": "Sleeve"
+    },
+    {
+      "id": "Bandage",
+      "source_name": "Bandage"
+    },
+    {
+      "id": "Sleeve2",
+      "source_name": "Sleeve"
+    },
+    {
+      "id": "Part3",
+      "source_name": "M-wing"
+    },
+    {
+      "id": "Part4",
+      "source_name": "M-ring"
+    },
+    {
+      "id": "Part6",
+      "source_name": "HD-L-1"
+    },
+    {
+      "id": "Part7",
+      "source_name": "HD-L-2"
+    },
+    {
+      "id": "Part8",
+      "source_name": "HD-L-3"
+    },
+    {
+      "id": "Part9",
+      "source_name": "HD-L-4"
+    },
+    {
+      "id": "Part11",
+      "source_name": "HD-R-1"
+    },
+    {
+      "id": "Part12",
+      "source_name": "HD-R-2"
+    },
+    {
+      "id": "Part13",
+      "source_name": "HD-R-3"
+    },
+    {
+      "id": "Part14",
+      "source_name": "HD-R-4"
+    },
+    {
+      "id": "M1",
+      "source_name": "M1"
+    },
+    {
+      "id": "M2",
+      "source_name": "M2"
+    },
+    {
+      "id": "M3",
+      "source_name": "M3"
+    },
+    {
+      "id": "M4",
+      "source_name": "M4"
+    },
+    {
+      "id": "M5",
+      "source_name": "M5"
+    },
+    {
+      "id": "M6",
+      "source_name": "M6"
+    },
+    {
+      "id": "Part16",
+      "source_name": "Eye-Memes"
+    },
+    {
+      "id": "Part17",
+      "source_name": "L-Eye"
+    },
+    {
+      "id": "Part21",
+      "source_name": "R-Eye"
+    },
+    {
+      "id": "Part25",
+      "source_name": "Mouth-Memes"
+    },
+    {
+      "id": "Tlip",
+      "source_name": "Tlip"
+    },
+    {
+      "id": "Mouth3",
+      "source_name": "Mouth2"
+    },
+    {
+      "id": "Part34",
+      "source_name": "Hand-ring"
+    },
+    {
+      "id": "M7",
+      "source_name": "M1"
+    },
+    {
+      "id": "M8",
+      "source_name": "M2"
+    },
+    {
+      "id": "M9",
+      "source_name": "M3"
+    },
+    {
+      "id": "Tear",
+      "source_name": "Tear"
+    },
+    {
+      "id": "Part18",
+      "source_name": "L-Eyelash"
+    },
+    {
+      "id": "Part19",
+      "source_name": "L-Eyeball"
+    },
+    {
+      "id": "Tear3",
+      "source_name": "Tear"
+    },
+    {
+      "id": "Part22",
+      "source_name": "R-Eyelash"
+    },
+    {
+      "id": "Part23",
+      "source_name": "R-Eyeball"
+    },
+    {
+      "id": "M10",
+      "source_name": "M1"
+    },
+    {
+      "id": "M11",
+      "source_name": "M2"
+    },
+    {
+      "id": "M13",
+      "source_name": "M3"
+    },
+    {
+      "id": "Uteeth",
+      "source_name": "Uteeth"
+    },
+    {
+      "id": "Bteeth",
+      "source_name": "Bteeth"
+    },
+    {
+      "id": "Part20",
+      "source_name": "L-E-Highlight"
+    },
+    {
+      "id": "Pupil",
+      "source_name": "Pupil"
+    },
+    {
+      "id": "Part24",
+      "source_name": "R-E-Highlight"
+    },
+    {
+      "id": "Pupil3",
+      "source_name": "Pupil"
+    }
+  ],
+  "variants": [
+    {
+      "id": "E-Body-Coat.exp3"
+    },
+    {
+      "id": "E-Eye-Block.exp3"
+    },
+    {
+      "id": "E-Eye-Blue.exp3"
+    },
+    {
+      "id": "E-Eye-Fog.exp3"
+    },
+    {
+      "id": "E-Eye-Glasses.exp3"
+    },
+    {
+      "id": "E-Eye-Heart.exp3"
+    },
+    {
+      "id": "E-Eye-Shocked.exp3"
+    },
+    {
+      "id": "E-Eye-Smile.exp3"
+    },
+    {
+      "id": "E-Eye-Star.exp3"
+    },
+    {
+      "id": "E-Face-AllBlack.exp3"
+    },
+    {
+      "id": "E-Face-Angry.exp3"
+    },
+    {
+      "id": "E-Face-Black.exp3"
+    },
+    {
+      "id": "E-Face-Blood.exp3"
+    },
+    {
+      "id": "E-Face-Music.exp3"
+    },
+    {
+      "id": "E-Face-Question.exp3"
+    },
+    {
+      "id": "E-Face-Shocked.exp3"
+    },
+    {
+      "id": "E-Face-Sweat.exp3"
+    },
+    {
+      "id": "E-Hair-HeadDress.exp3"
+    },
+    {
+      "id": "E-Hair-HeadDressLight.exp3"
+    },
+    {
+      "id": "E-Hair-Ponytail.exp3"
+    },
+    {
+      "id": "E-Machine-Open.exp3"
+    },
+    {
+      "id": "E-Machine-Screen.exp3"
+    },
+    {
+      "id": "E-Mouth-Pout.exp3"
+    },
+    {
+      "id": "E-Mouth-Shh.exp3"
+    },
+    {
+      "id": "E-Mouth-Smile.exp3"
+    }
+  ],
+  "unparented_drawables": [
+    {
+      "id": "ArtMesh215"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ def acceptance(manifest,review):
     reasons=[]
     if not manifest.get('coverage_complete'):reasons.append('missing render coverage')
     if not manifest.get('numerical_checks_passed'):reasons.append('numerical checks failed')
+    if manifest.get('rig_preflight',{}).get('status')!='passed':reasons.append('native rig binding preflight missing or failed')
     if review.get('input_hashes')!=manifest.get('input_hashes'):reasons.append('review belongs to a different input')
     if review.get('neutral_shape')!='pass':reasons.append('neutral anatomy not accepted')
     expected=set(manifest.get('case_ids',[]))
@@ -27,4 +28,6 @@ def acceptance(manifest,review):
     if shape.get('model_sha256')!=manifest.get('input_hashes',{}).get('model'):reasons.append('shape review belongs to a different model')
     if set(sections)!=required or any(v!='pass' for v in sections.values()):reasons.append('whole-body shape review incomplete or failed')
     if shape.get('open_defects'):reasons.append('unresolved shape defects')
+    from qa.identity import identity_reasons
+    reasons.extend(identity_reasons(review.get('identity_check',{}),manifest.get('input_hashes',{}).get('model')))
     return {'status':'failed' if reasons else 'offline_accepted','game_runtime_allowed':not reasons,'reasons':reasons}

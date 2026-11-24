@@ -1,0 +1,146 @@
+[
+  {
+    "layer": "machine_core",
+    "source_parts": [
+      "Part2"
+    ],
+    "source_state": "Machine_And_Screen",
+    "path": "artifacts/baiqi_component_audit/optional_layers/machine_core.png",
+    "bbox": [
+      305,
+      428,
+      355,
+      482
+    ]
+  },
+  {
+    "layer": "machine_wings",
+    "source_parts": [
+      "Part3"
+    ],
+    "source_state": "Machine_And_Screen",
+    "path": "artifacts/baiqi_component_audit/optional_layers/machine_wings.png",
+    "bbox": [
+      146,
+      456,
+      512,
+      616
+    ]
+  },
+  {
+    "layer": "machine_rings",
+    "source_parts": [
+      "Part4"
+    ],
+    "source_state": "Machine_And_Screen",
+    "path": "artifacts/baiqi_component_audit/optional_layers/machine_rings.png",
+    "bbox": [
+      315,
+      487,
+      344,
+      522
+    ]
+  },
+  {
+    "layer": "machine_screen",
+    "source_parts": [
+      "Part"
+    ],
+    "source_state": "Machine_And_Screen",
+    "path": "artifacts/baiqi_component_audit/optional_layers/machine_screen.png",
+    "bbox": [
+      330,
+      470,
+      879,
+      716
+    ]
+  },
+  {
+    "layer": "S1",
+    "source_parts": [
+      "Part40"
+    ],
+    "source_drawables": [
+      "S1"
+    ],
+    "source_state": "diagnostic single-drawable reveal",
+    "path": "artifacts/baiqi_component_audit/optional_layers/S1.png",
+    "bbox": [
+      688,
+      1139,
+      730,
+      1183
+    ]
+  },
+  {
+    "layer": "S2",
+    "source_parts": [
+      "Part40"
+    ],
+    "source_drawables": [
+      "S2"
+    ],
+    "source_state": "diagnostic single-drawable reveal",
+    "path": "artifacts/baiqi_component_audit/optional_layers/S2.png",
+    "bbox": [
+      566,
+      1071,
+      822,
+      1290
+    ]
+  },
+  {
+    "layer": "S3",
+    "source_parts": [
+      "Part40"
+    ],
+    "source_drawables": [
+      "S3"
+    ],
+    "source_state": "diagnostic single-drawable reveal",
+    "path": "artifacts/baiqi_component_audit/optional_layers/S3.png",
+    "bbox": [
+      457,
+      864,
+      971,
+      1439
+    ]
+  },
+  {
+    "layer": "S4",
+    "source_parts": [
+      "Part40"
+    ],
+    "source_drawables": [
+      "S4"
+    ],
+    "source_state": "diagnostic single-drawable reveal",
+    "path": "artifacts/baiqi_component_audit/optional_layers/S4.png",
+    "bbox": [
+      291,
+      767,
+      1114,
+      1581
+    ]
+  },
+  {
+    "layer": "ArtMesh53",
+    "source_parts": [
+      "Part40"
+    ],
+    "source_drawables": [
+      "ArtMesh53"
+    ],
+    "source_state": "diagnostic single-drawable reveal",
+    "path": "artifacts/baiqi_component_audit/optional_layers/ArtMesh53.png",
+    "bbox": null
+  },
+  {
+    "layer": "shirt_collar",
+    "source_parts": [
+      "Collar"
+    ],
+    "source_state": "default",
+    "path": "artifacts/baiqi_component_audit/optional_layers/shirt_collar.png"
+  }
+]

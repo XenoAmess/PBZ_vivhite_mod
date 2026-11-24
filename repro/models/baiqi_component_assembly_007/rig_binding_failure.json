@@ -1,0 +1,1312 @@
+{
+  "candidate": "output/live2d_delta/baiqi_component_assembly_007/BaiQi_Assembly.blend",
+  "canonical_rig": "Armature",
+  "armature_objects": [
+    {
+      "name": "Armature",
+      "bones": 264,
+      "linked": true
+    }
+  ],
+  "before": [
+    {
+      "object": "BaiQi anatomical sleeve l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi anatomical sleeve r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi black gold bow tie",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi black gold headdress",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi bob front",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi boot foundation",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side back",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side seam -1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side seam 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi fitted boot upper",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi fitted white blouse",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi glasses temple -1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi glasses temple 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi gold cuff edge l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi gold cuff edge r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_core",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_rings",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_screen",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_wings",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi navy arm ribbon",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi navy gold laced girdle",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi open coat front and lapels",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi optional hand_ring",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi optional ponytails",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi pleated skirt",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 0",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 10",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 11",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 12",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 13",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 14",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 15",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 16",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 17",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 18",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 19",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 2",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 20",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 21",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 22",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 3",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 4",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 5",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 6",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 7",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 8",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 9",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi round gold glasses",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S2",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S3",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S4",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi shirt_collar",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi white sleeve cuff l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi white sleeve cuff r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi wrist band l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi wrist band r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi_FemaleFoundation",
+      "armature_modifiers": [],
+      "parent": "Armature"
+    }
+  ],
+  "missing_skin_modifiers": [
+    "BaiQi_FemaleFoundation"
+  ],
+  "repaired_candidate": "output/live2d_delta/baiqi_component_assembly_008/BaiQi_Assembly.blend",
+  "repaired_sha256": "15428e423e58c366548bece5098d04c7ef34a32cb5662b2a4cb45340095cb4f5",
+  "after": [
+    {
+      "object": "BaiQi anatomical sleeve l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi anatomical sleeve r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi black gold bow tie",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi black gold headdress",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi bob front",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi boot foundation",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side back",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side seam -1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi coat side seam 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi fitted boot upper",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi fitted white blouse",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi glasses temple -1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi glasses temple 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi gold cuff edge l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi gold cuff edge r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_core",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_rings",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_screen",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi machine_wings",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi navy arm ribbon",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi navy gold laced girdle",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi open coat front and lapels",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi optional hand_ring",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi optional ponytails",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi pleated skirt",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 0",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 10",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 11",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 12",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 13",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 14",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 15",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 16",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 17",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 18",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 19",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 2",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 20",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 21",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 22",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 3",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 4",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 5",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 6",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 7",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 8",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi rear hair clump 9",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi round gold glasses",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S1",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S2",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S3",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi S4",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi shirt_collar",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi white sleeve cuff l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi white sleeve cuff r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi wrist band l",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi wrist band r",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    },
+    {
+      "object": "BaiQi_FemaleFoundation",
+      "armature_modifiers": [
+        {
+          "target": "Armature",
+          "enabled": true,
+          "preserve_volume": false
+        }
+      ],
+      "parent": "Armature"
+    }
+  ]
+}

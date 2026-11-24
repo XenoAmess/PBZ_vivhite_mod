@@ -11,8 +11,12 @@ inputs={
  'suite':(ROOT/'qa/suites/humanoid_v1.json','code/qa/suites/humanoid_v1.json'),
  'runner':(ROOT/'scripts/build_self_test_suite.py','code/scripts/build_self_test_suite.py'),
  'contract':(ROOT/'qa/motion_suite.py','code/qa/motion_suite.py')}
+for key,path in {'materials':'scripts/qa_materials.py','identity':'qa/identity.py','character':'characters/baiqi/source_contract.json','rig_preflight':'scripts/qa_rig_preflight.py','rig_contract':'qa/rig_binding.py'}.items():
+    if key in report['input_hashes']:inputs[key]=(ROOT/path,'code/'+path)
+if 'rig_preflight' in report['input_hashes']:inputs['native_reference']=(ROOT/'repro/native_inputs/repair_015/Delta_adult.blend','code/repro/native_inputs/repair_015/Delta_adult.blend')
 for kind,(file,_) in inputs.items():
-    assert hashlib.sha256(file.read_bytes()).hexdigest()==report['input_hashes'][kind],('Execution input changed',kind)
+    expected=report['rig_preflight']['native_reference_sha256'] if kind=='native_reference' else report['input_hashes'][kind]
+    assert hashlib.sha256(file.read_bytes()).hexdigest()==expected,('Execution input changed',kind)
 out=ROOT/'output/qa_archives';out.mkdir(exist_ok=True)
 archive=out/(run.name+'_ROM_v'+report['suite_version']+'.zip')
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=4) as z:
