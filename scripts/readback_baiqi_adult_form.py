@@ -76,6 +76,7 @@ def main():
     export(GAME, destination, 'json', bodies, package)
     reference = json.loads((ROOT / 'repro/game_reference/adult_reference.skel.json').read_text())['bones']
     matrix = []
+    shade_packages = set()
     for body, stage in zip(bodies, allow['staged_bodies']):
         data = json.loads((destination / f'{body}.{Path(body).name}.skel.json').read_text(encoding='utf-8'))
         assert len(data['bones']) == allow['combined_bones']
@@ -85,13 +86,43 @@ def main():
         assert len(materials) == stage['slot_count']
         assert all(row['slot'].lower().replace('_', ' ').startswith('baiqi invisible driver section')
                    for row in materials[:18]), materials[:18]
-        assert all('BaiQi054/Shared/Materials/' in row['mat'] for row in materials), materials
+        material_root = 'BaiQi054/Shared/Native/Materials/' if allow.get('material_strategy') else 'BaiQi054/Shared/Materials/'
+        assert all(material_root in row['mat'] for row in materials), materials
+        by_slot = {row['slot']: index for index, row in enumerate(materials)}
+        skin_slots = [by_slot[name] for name in ('F00_001_01_Body_00_SKIN', 'BaiQi neck junction shading',
+                                                'BaiQi original face appearance')]
+        lod = data['lods'][0]
+        assert lod['requiredBones'] == allow['combined_bones']
+        triangles = {section['MaterialIndex']: section['NumTriangles'] for section in lod['sections']}
+        assert triangles[skin_slots[0]] == 7398 and triangles[skin_slots[2]] == 9516, triangles
+        assert triangles[skin_slots[1]] > 0
+        accessories = {name: triangles[by_slot[name]] for name in (
+            'BaiQi bob front appearance', 'BaiQi round gold glasses appearance',
+            'BaiQi black gold headdress appearance', 'BaiQi black and gold bow artwork')}
+        if allow.get('material_strategy'):
+            for index in skin_slots:
+                reference_path = materials[index]['mat'].split("'", 2)[1].split('.', 1)[0]
+                shade_packages.add(cooked_path(reference_path))
         payload = (destination / (body + '.json')).read_text(encoding='utf-8')
         assert 'ABP_AdultBaiQi' in payload and 'PH_BaiQiClothThighs' in payload, body
         matrix.append({'mesh': stage['path'], 'bones': len(data['bones']), 'original_bone_error_cm': error,
-                       'material_slots': len(materials), 'lods': data['lods'], 'replacement_post_process': True, 'cloth': True})
+                       'material_slots': len(materials), 'skin_sections': [materials[index] for index in skin_slots],
+                       'accessory_triangles': accessories,
+                       'lods': data['lods'], 'replacement_post_process': True, 'cloth': True})
+    if shade_packages:
+        assert len(shade_packages) == 3
+        export(GAME, destination, 'json', sorted(shade_packages), package)
+        for shader in shade_packages:
+            material = json.loads((destination / (shader + '.json')).read_text(encoding='utf-8'))[0]
+            assert material['Type'] == 'MaterialInstanceConstant'
+            assert 'MI_ZeroHun_Cloth_02_b' in material['Properties']['Parent']['ObjectPath']
+            assert material['LoadedMaterialResources'] == []
+            assert material['CachedData']['ParentLayerIndexRemap'] == [0, 1]
+            textures = material['Properties']['TextureParameterValues']
+            assert {row['ParameterInfo']['Name'] for row in textures} == {'Albedo', 'Normal', 'Mix'}
     report = {'status': 'readback_verified_pending_game', 'runtime_tested': False,
-              'source_sha256': allow['source_sha256'], 'form': allow['form'], 'members': sorted(members), 'body_checks': matrix}
+              'source_sha256': allow['source_sha256'], 'form': allow['form'], 'members': sorted(members),
+              'container_files': manifest['files'], 'body_checks': matrix}
     (package / 'readback.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     manifest.update(status=report['status'], readback_file='readback.json')
     (package / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')

@@ -15,7 +15,7 @@ from ue_build_baiqi_forms import assign_materials, build_material, skirt_collisi
 from ue_probe_baiqi_native_bridge import asset_library, attach_bridge, bridge_steps, import_mesh, reconcile_reference, tool
 
 
-INPUT = ROOT / 'build/baiqi_054_package_inputs'
+INPUT = ROOT / os.environ.get('PBZ_BAIQI_EDITOR_INPUTS', 'build/baiqi_054_package_inputs')
 HUN = '/HuaShira/Characters/Hero/Hero_Hun'
 DRIVER_SKELETON = HUN + '/Hun_Skin_Skeleton'
 BODY_PACKAGES = [HUN + '/SkinParts/Hun_Body_Simple',
@@ -26,7 +26,6 @@ BODY_PACKAGES = [HUN + '/SkinParts/Hun_Body_Simple',
 def main():
     form = os.environ['PBZ_BAIQI_FORM']
     assert form in {'coat_on', 'coat_off'}
-    assert os.environ.get('PBZ_BAIQI_EDITOR_INPUTS') == 'build/baiqi_054_package_inputs'
     prepared = json.loads((INPUT / 'form_inputs.json').read_text(encoding='utf-8'))[form]
     assert prepared['reserved_native_slots'] == 18 and prepared['native_bones'] == 264
     editor_audit = json.loads((ROOT / 'build/baiqi_054_game_inputs/editor_motion_readback.json').read_text(encoding='utf-8'))
@@ -57,7 +56,7 @@ def main():
         if source_physics:
             tool.set_mesh_physics_asset(mesh, source_physics)
         if graph is None:
-            graph = attach_bridge(mesh, bridge_steps(reference, calibration), graph_name, own)
+            graph = attach_bridge(mesh, bridge_steps(reference, calibration, follow_grip=True), graph_name, own)
         else:
             tool.set_post_process_anim_blueprint(mesh, unreal.load_asset(graph).generated_class())
         cloth = skirt_collision(mesh, reference, own + '/Cloth_' + str(index))

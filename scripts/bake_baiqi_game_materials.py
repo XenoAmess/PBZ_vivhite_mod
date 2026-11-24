@@ -36,7 +36,7 @@ def bake_texture(directory, material, record):
     if kind in {'hidden', 'skin_junction'} or not rows:
         return None
     source = load_rgba(directory / rows[0]['path'])
-    if kind in {'skin_body', 'masked'}:
+    if kind in {'skin_body', 'masked', 'opaque_cutout'}:
         rgba = source
     else:
         pigment = opaque_art(source, record['fallback_rgba'])

@@ -3,7 +3,7 @@ import bpy
 from mathutils import Vector
 
 
-def clip_mesh(obj, signed_distance):
+def clip_mesh(obj, signed_distance, *, texture_space=False, refine_edges=False):
     mesh = obj.data
     mesh.calc_loop_triangles()
     layers = list(mesh.uv_layers)
@@ -29,41 +29,59 @@ def clip_mesh(obj, signed_distance):
             },
         }
 
+    def distance(vertex):
+        return signed_distance(vertex['uv'][0] if texture_space else vertex['co'])
+
+    def refined(corners):
+        if not refine_edges:
+            return [corners]
+        a, b, c = corners
+        ab, bc, ca = interpolate(a, b, .5), interpolate(b, c, .5), interpolate(c, a, .5)
+        samples = [distance(vertex) >= 0 for vertex in (a, b, c, ab, bc, ca)]
+        if all(samples):
+            return [corners]
+        if not any(samples):
+            center = interpolate(ab, c, 1. / 3.)
+            return [(a, b, center), (b, c, center), (c, a, center)] if distance(center) >= 0 else []
+        return [(a, ab, ca), (ab, b, bc), (ca, bc, c), (ab, bc, ca)]
+
     for triangle in mesh.loop_triangles:
-        polygon = [corner(vertex, loop) for vertex, loop in zip(triangle.vertices, triangle.loops)]
-        clipped = []
-        for index, current in enumerate(polygon):
-            previous = polygon[index - 1]
-            inside = signed_distance(current['co']) >= 0
-            was_inside = signed_distance(previous['co']) >= 0
-            if inside != was_inside:
-                lower, upper = 0., 1.
-                for _ in range(20):
-                    middle = (lower + upper) / 2
-                    coordinate = previous['co'].lerp(current['co'], middle)
-                    if (signed_distance(coordinate) >= 0) == was_inside:
-                        lower = middle
-                    else:
-                        upper = middle
-                clipped.append(interpolate(previous, current, (lower + upper) / 2))
-            if inside:
-                clipped.append(current)
-        if len(clipped) < 3:
-            continue
-        indices = []
-        for vertex in clipped:
-            key = tuple(round(value, 6) for value in vertex['co'])
-            key += tuple(round(value, 6) for uv in vertex['uv'] for value in uv)
-            if key not in lookup:
-                lookup[key] = len(vertices)
-                vertices.append(vertex['co'])
-                weights.append(vertex['weights'])
-            indices.append(lookup[key])
-        if len(set(indices)) < 3:
-            continue
-        faces.append(indices)
-        face_uvs.append([vertex['uv'] for vertex in clipped])
-        face_materials.append(triangle.material_index)
+        corners = [corner(vertex, loop) for vertex, loop in zip(triangle.vertices, triangle.loops)]
+        for polygon in refined(corners):
+            clipped = []
+            distances = [distance(vertex) for vertex in polygon]
+            for index, current in enumerate(polygon):
+                previous = polygon[index - 1]
+                inside = distances[index] >= 0
+                was_inside = distances[index - 1] >= 0
+                if inside != was_inside:
+                    lower, upper = 0., 1.
+                    for _ in range(15 if texture_space else 20):
+                        middle = (lower + upper) / 2
+                        coordinate = interpolate(previous, current, middle)
+                        if (distance(coordinate) >= 0) == was_inside:
+                            lower = middle
+                        else:
+                            upper = middle
+                    clipped.append(interpolate(previous, current, (lower + upper) / 2))
+                if inside:
+                    clipped.append(current)
+            if len(clipped) < 3:
+                continue
+            indices = []
+            for vertex in clipped:
+                key = tuple(round(value, 6) for value in vertex['co'])
+                key += tuple(round(value, 6) for uv in vertex['uv'] for value in uv)
+                if key not in lookup:
+                    lookup[key] = len(vertices)
+                    vertices.append(vertex['co'])
+                    weights.append(vertex['weights'])
+                indices.append(lookup[key])
+            if len(set(indices)) < 3:
+                continue
+            faces.append(indices)
+            face_uvs.append([vertex['uv'] for vertex in clipped])
+            face_materials.append(triangle.material_index)
 
     result = bpy.data.meshes.new(obj.name + ' fitted boundaries')
     result.from_pydata(vertices, [], faces)

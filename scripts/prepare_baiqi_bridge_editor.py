@@ -26,7 +26,19 @@ def main():
     source = body.read_text(encoding='utf-8-sig')
     include = '#include "baiqi_bridge_animgraph.inl"'
     if include not in source:
-        body.write_text(source.rstrip() + '\n\n' + include + '\n', encoding='utf-8')
+        source = source.rstrip() + '\n\n' + include + '\n'
+    original = 'if (!Instance || !Instance->GetOutermost()->GetName().StartsWith(TEXT("/HuaShira/Mods/DeltaLive2D/Materials/"))) return;'
+    native_materials = '''if (!Instance) return;
+        const FString PackageName = Instance->GetOutermost()->GetName();
+        const bool bBaiQi = PackageName.StartsWith(TEXT("/HuaShira/Mods/BaiQi054/Shared/Native/Materials/"));
+        if (!bBaiQi && !PackageName.StartsWith(TEXT("/HuaShira/Mods/DeltaLive2D/Materials/"))) return;
+        const bool bHair = bBaiQi && Instance->Parent && Instance->Parent->GetName() == TEXT("MI_ZeroHun_HairCard_Health");'''
+    if original in source:
+        source = source.replace(original, native_materials)
+        source = source.replace('Cached.ParentLayerIndexRemap = {0, 1};',
+                                'Cached.ParentLayerIndexRemap = {0, bHair ? INDEX_NONE : 1};')
+    assert 'const bool bBaiQi' in source
+    body.write_text(source, encoding='utf-8')
     shutil.copyfile(ROOT / 'scripts/baiqi_bridge_animgraph.inl', private / 'baiqi_bridge_animgraph.inl')
 
 

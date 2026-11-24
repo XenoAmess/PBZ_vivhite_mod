@@ -95,7 +95,7 @@ def reconcile_reference(mesh):
     return readback
 
 
-def bridge_steps(readback, calibration):
+def bridge_steps(readback, calibration, follow_grip=False):
     driver = component_rotation(readback)
     target = component_rotation(calibration)
     steps = []
@@ -107,6 +107,12 @@ def bridge_steps(readback, calibration):
             steps.append({'source': 'head', 'target': carrier, 'weight': 1.,
                           'offset_xyzw': local_offset(driver['head'], target[b])})
             steps.append({'source': carrier, 'target': b, 'weight': data['neck_head_share']})
+    if follow_grip:
+        for side in ('l', 'r'):
+            driver_hand = f'hand_{side}'
+            visible_hand = f'BaiQi_J_Bip_{side.upper()}_Hand'
+            steps.append({'source': visible_hand, 'target': driver_hand, 'weight': 1., 'copy_translation': True,
+                          'offset_xyzw': local_offset(target[visible_hand], driver[driver_hand])})
     return steps
 
 

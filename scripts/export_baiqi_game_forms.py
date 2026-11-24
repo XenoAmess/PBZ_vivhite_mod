@@ -8,6 +8,7 @@ import sys
 
 import bmesh
 import bpy
+import numpy as np
 from mathutils import Matrix, Vector
 
 
@@ -38,7 +39,7 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names):
+def export_mesh(obj, native, names, mask_materials):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -53,6 +54,10 @@ def export_mesh(obj, native, names):
     if obj.name == 'Body':
         isolate_skin(duplicate)
     game_uv(duplicate.data)
+    if len(duplicate.data.materials) == 1:
+        material = duplicate.data.materials[0]
+        if material.name in mask_materials:
+            trim_texture_mask(duplicate, first_texture(material).image)
     if obj.name == 'BaiQi pleated skirt':
         merge_skirt_material(duplicate.data)
     if obj.name == 'BaiQi restored authored head and face':
@@ -66,6 +71,27 @@ def export_mesh(obj, native, names):
     skinning = duplicate.modifiers.new('Original CC0 skin weights on deform branch', 'ARMATURE')
     skinning.object = native
     return duplicate
+
+
+def trim_texture_mask(obj, image):
+    width, height = image.size
+    pixels = np.empty(width * height * 4, dtype=np.float32)
+    image.pixels.foreach_get(pixels)
+    alpha = pixels.reshape(height, width, 4)[:, :, 3]
+
+    def opacity(uv):
+        x = min(width - 1, max(0., uv.x * width - .5))
+        y = min(height - 1, max(0., uv.y * height - .5))
+        col, row = int(x), int(y)
+        right, upper = min(col + 1, width - 1), min(row + 1, height - 1)
+        dx, dy = x - col, y - row
+        return ((1 - dy) * ((1 - dx) * alpha[row, col] + dx * alpha[row, right]) +
+                dy * ((1 - dx) * alpha[upper, col] + dx * alpha[upper, right])) - .25
+
+    before = len(obj.data.polygons)
+    clip_mesh(obj, opacity, texture_space=True, refine_edges=True)
+    assert obj.data.polygons, f'Mask removed every polygon from {obj.name}'
+    print('BAIQI_GEOMETRY_CUTOUT', obj.name, before, len(obj.data.polygons))
 
 
 def merge_skirt_material(mesh):
@@ -180,7 +206,7 @@ def retain_drivers(native, names, reserved=1):
     return marker
 
 
-def packed_materials(meshes, output):
+def packed_materials(meshes, output, mask_materials):
     directory = output / 'textures'
     directory.mkdir(exist_ok=True)
     records = {}
@@ -213,6 +239,8 @@ def packed_materials(meshes, output):
             record['type'] = 'skin_body'
         elif material.name.startswith('BaiQi invisible driver section'):
             record['type'] = 'hidden'
+        elif material.name in mask_materials:
+            record['type'] = 'opaque_cutout'
         records[material.name] = record
     return records
 
@@ -222,6 +250,7 @@ def main():
     parser.add_argument('--candidate', required=True, type=Path)
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--reserve-native-slots', action='store_true')
+    parser.add_argument('--bake-alpha-geometry', action='store_true')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     candidate = ROOT / args.candidate
     output = ROOT / args.out
@@ -249,7 +278,11 @@ def main():
         aliases = add_branch(native, cc0)
         native_plus_cc0 = rest_signature(native)
         assert {name: native_plus_cc0[name][0] for name in native_rest} == {n: v[0] for n, v in native_rest.items()}
-        assembled = [export_mesh(obj, native, aliases) for obj in meshes]
+        masks = {'BaiQi bob front appearance', 'BaiQi round gold glasses appearance',
+                 'BaiQi black gold headdress appearance', 'BaiQi black and gold bow artwork'}
+        if not args.bake_alpha_geometry:
+            masks.clear()
+        assembled = [export_mesh(obj, native, aliases, masks) for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)
         assembled.append(driver)
@@ -276,7 +309,7 @@ def main():
         rows[form] = {'fbx': str(path), 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                       'body_sha256': original, 'native_bones': len(native_rest), 'cc0_bones': len(aliases),
                       'reserved_native_slots': reserved,
-                      'visible_meshes': [obj.name for obj in meshes], 'materials': packed_materials(assembled, output)}
+                      'visible_meshes': [obj.name for obj in meshes], 'materials': packed_materials(assembled, output, masks)}
     (output / 'form_inputs.json').write_text(json.dumps(rows, indent=2) + '\n', encoding='utf-8')
     print('BAIQI_ADULT_FORM_MESH_INPUTS_READY')
 

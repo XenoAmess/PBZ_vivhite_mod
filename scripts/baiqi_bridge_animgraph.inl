@@ -24,8 +24,13 @@ FString UPBZModToolsLibrary::BuildBaiQiBridgeGraph(UAnimBlueprint* Blueprint, co
 		const TSharedPtr<FJsonObject> Step = Value->AsObject();
 		const FName Source(*Step->GetStringField(TEXT("source")));
 		const FName Target(*Step->GetStringField(TEXT("target")));
+		bool bCopyTranslation = false;
+		Step->TryGetBoolField(TEXT("copy_translation"), bCopyTranslation);
+		const bool bGrip = bCopyTranslation &&
+			((Target == TEXT("hand_l") && Source == TEXT("BaiQi_J_Bip_L_Hand")) ||
+			 (Target == TEXT("hand_r") && Source == TEXT("BaiQi_J_Bip_R_Hand")));
 		if (Ref.FindBoneIndex(Source) == INDEX_NONE || Ref.FindBoneIndex(Target) == INDEX_NONE ||
-			!Target.ToString().StartsWith(TEXT("BaiQi_")))
+			!(Target.ToString().StartsWith(TEXT("BaiQi_")) || bGrip))
 		{
 			return FString::Printf(TEXT("error: unexpected bridge binding %s -> %s"), *Source.ToString(), *Target.ToString());
 		}
@@ -105,6 +110,9 @@ FString UPBZModToolsLibrary::BuildBaiQiBridgeGraph(UAnimBlueprint* Blueprint, co
 		Copy->Node.SourceBone.BoneName = FName(*Step->GetStringField(TEXT("source")));
 		Copy->Node.TargetBone.BoneName = Target;
 		Copy->Node.bCopyRotation = true;
+		bool bCopyTranslation = false;
+		Step->TryGetBoolField(TEXT("copy_translation"), bCopyTranslation);
+		Copy->Node.bCopyTranslation = bCopyTranslation;
 		Copy->Node.ControlSpace = BCS_ComponentSpace;
 		Copy->Node.Alpha = static_cast<float>(Step->GetNumberField(TEXT("weight")));
 		Copy->NodePosX = X;
