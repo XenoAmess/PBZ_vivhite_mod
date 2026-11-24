@@ -1,7 +1,8 @@
 """Author controlled diagnostic actions and sample them without running PBZ.
 
 Rotations are specified in anatomical world axes and converted into each
-native bone's rest axes. These authored motions are NOT copied game animation.
+native bone's rest axes. The sweeps are authored; thumb opposition uses a
+documented local rotation reference from one original Soul animation frame.
 """
 import argparse, json, math, sys, time
 from pathlib import Path
@@ -13,17 +14,22 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from qa.motion_suite import load,sha
 from qa_materials import MaterialReview
 from qa_rig_preflight import preflight
+from qa.anatomy_axes import finger_flexion,thumb_grip
 cli=argparse.ArgumentParser()
 cli.add_argument('--candidate',default='build/shoulder_inputs/Delta_adult.blend')
 cli.add_argument('--output',default='output/live2d_delta/self_test_standard')
-cli.add_argument('--suite',default='qa/suites/humanoid_v1.json')
+cli.add_argument('--suite',default='qa/suites/humanoid_v1_1.json')
 cli.add_argument('--metrics-only',action='store_true')
 args=cli.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 candidate=(ROOT/args.candidate).resolve();suite=(ROOT/args.suite).resolve();spec=load(suite)
 OUT=(ROOT/args.output).resolve();assert OUT.is_relative_to(ROOT);OUT.mkdir(parents=True,exist_ok=True)
 hashes={'model':sha(candidate),'suite':sha(suite),'runner':sha(__file__),'contract':sha(ROOT/'qa/motion_suite.py'),
         'materials':sha(ROOT/'scripts/qa_materials.py'),'identity':sha(ROOT/'qa/identity.py'),'character':sha(ROOT/'characters/baiqi/source_contract.json'),
-        'rig_preflight':sha(ROOT/'scripts/qa_rig_preflight.py'),'rig_contract':sha(ROOT/'qa/rig_binding.py')}
+        'rig_preflight':sha(ROOT/'scripts/qa_rig_preflight.py'),'rig_contract':sha(ROOT/'qa/rig_binding.py'),
+        'anatomy_axes':sha(ROOT/'qa/anatomy_axes.py'),'native_finger_axes':sha(ROOT/'qa/native_finger_axes.json'),
+        'native_thumb_grip':sha(ROOT/'qa/native_thumb_grip.json')}
+identity_v2=ROOT/'characters/baiqi/source_contract_v2.json'
+if identity_v2.is_file():hashes['character_v2']=sha(identity_v2)
 bpy.ops.wm.open_mainfile(filepath=str(candidate))
 arm=next(o for o in bpy.data.objects if o.type=='ARMATURE')
 meshes=[o for o in bpy.data.objects if o.type=='MESH' and not o.hide_render]
@@ -148,13 +154,16 @@ def apply_case(case,value):
         for side in sides:rotate('hand_'+side,limb_axis(side,p['axis']),value)
     elif op=='fingers':
         for side in sides:
-            normal=limb_axis(side,'roll')
-            for digit in ['thumb','index','middle','ring','pinky']:
+            normal=Vector(finger_flexion(side))
+            for digit in ['index','middle','ring','pinky']:
                 for joint,angle in [(1,55),(2,80),(3,55)]:
                     name=f'{digit}_{joint:02}_{side}';position=arm.data.bones[name].head_local
                     if joint<3:direction=arm.data.bones[f'{digit}_{joint+1:02}_{side}'].head_local-position
                     else:direction=position-arm.data.bones[f'{digit}_02_{side}'].head_local
                     rotate(name,direction.normalized().cross(normal),angle*value)
+            for joint in [1,2,3]:
+                name=f'thumb_{joint:02}_{side}'
+                arm.pose.bones[name].rotation_quaternion=Quaternion((1,0,0,0)).slerp(Quaternion(thumb_grip(name)),value)
     elif op=='spine':
         axis={'pitch':(1,0,0),'roll':(0,1,0),'yaw':(0,0,1)}[p['axis']]
         for n,k in [('spine_03',.25),('spine_04',.35),('spine_05',.40)]:rotate(n,axis,value*k)
@@ -200,7 +209,7 @@ def metrics(coords):
     return result
 weight_sums=[sum(g.weight for g in v.groups) for o in meshes for v in o.data.vertices]
 assert min(weight_sums)>1-spec['thresholds']['weight_sum_tolerance'] and max(weight_sums)<1+spec['thresholds']['weight_sum_tolerance']
-report={'model':str(candidate.relative_to(ROOT)),'input_hashes':hashes,'suite_version':spec['version'],
+report={'model':str(candidate.relative_to(ROOT)),'input_hashes':hashes,'suite_version':spec['version'],'suite_path':suite.relative_to(ROOT).as_posix(),
  'native_input':str(candidate.relative_to(ROOT)),'bones':264,'case_ids':[c['id'] for c in spec['cases']],
  'purpose':'controlled offline diagnosis; no game process launched',
  'axis_convention':'native Z up; -Y front; character left is +X; neck pitch positive means up',

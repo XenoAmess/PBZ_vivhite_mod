@@ -1,0 +1,475 @@
+{
+  "method": "weighted second-phalanx local rotations in original Soul clips, expressed in native rest world axes",
+  "vectors": {
+    "l": [
+      -0.9722737073898315,
+      0.03629322350025177,
+      -0.2310124635696411
+    ],
+    "r": [
+      0.9722750782966614,
+      0.03638647869229317,
+      -0.23099173605442047
+    ]
+  },
+  "samples": [
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "index_02_l",
+      "angle_rad": 0.5824535489082336,
+      "bend_towards": [
+        -0.9483764171600342,
+        0.19903123378753662,
+        -0.24691855907440186
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "middle_02_l",
+      "angle_rad": 0.6214142441749573,
+      "bend_towards": [
+        -0.9770792722702026,
+        0.10477370023727417,
+        -0.18530717492103577
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "ring_02_l",
+      "angle_rad": 0.6464840769767761,
+      "bend_towards": [
+        -0.9853315353393555,
+        -0.07171083986759186,
+        -0.15485264360904694
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "pinky_02_l",
+      "angle_rad": 0.6558497548103333,
+      "bend_towards": [
+        -0.9457184076309204,
+        -0.22073419392108917,
+        -0.23852290213108063
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "index_02_r",
+      "angle_rad": 0.6531826257705688,
+      "bend_towards": [
+        0.9447627067565918,
+        0.208499476313591,
+        -0.2528861165046692
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "middle_02_r",
+      "angle_rad": 0.6921624541282654,
+      "bend_towards": [
+        0.9751224517822266,
+        0.11479564756155014,
+        -0.18962638080120087
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "ring_02_r",
+      "angle_rad": 0.7174455523490906,
+      "bend_towards": [
+        0.9855750203132629,
+        -0.06405151635408401,
+        -0.1566498726606369
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Idle_Loop",
+      "frame": 77,
+      "bone": "pinky_02_r",
+      "angle_rad": 0.7265456914901733,
+      "bend_towards": [
+        0.9437153935432434,
+        -0.23077169060707092,
+        -0.2369510382413864
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "index_02_l",
+      "angle_rad": 1.849075436592102,
+      "bend_towards": [
+        -0.9105637669563293,
+        0.28372111916542053,
+        -0.30062592029571533
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "middle_02_l",
+      "angle_rad": 1.8667094707489014,
+      "bend_towards": [
+        -0.9515133500099182,
+        0.20544466376304626,
+        -0.22894315421581268
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "ring_02_l",
+      "angle_rad": 1.961600422859192,
+      "bend_towards": [
+        -0.9851202368736267,
+        -0.0015716825146228075,
+        -0.17185981571674347
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "pinky_02_l",
+      "angle_rad": 1.7125380039215088,
+      "bend_towards": [
+        -0.9203996062278748,
+        -0.3214184641838074,
+        -0.2226090133190155
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "index_02_r",
+      "angle_rad": 1.8490755558013916,
+      "bend_towards": [
+        0.910589873790741,
+        0.2837359607219696,
+        -0.30053266882896423
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "middle_02_r",
+      "angle_rad": 1.8667101860046387,
+      "bend_towards": [
+        0.9515344500541687,
+        0.2054549604654312,
+        -0.22884604334831238
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "ring_02_r",
+      "angle_rad": 1.9616012573242188,
+      "bend_towards": [
+        0.9851378202438354,
+        -0.0015697639901190996,
+        -0.17175866663455963
+      ]
+    },
+    {
+      "clip": "Hun_Unarmed_Run_Fwd_Loop",
+      "frame": 25,
+      "bone": "pinky_02_r",
+      "angle_rad": 1.7125366926193237,
+      "bend_towards": [
+        0.9204241633415222,
+        -0.3214246332645416,
+        -0.2224983423948288
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "index_02_l",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        -0.9107273817062378,
+        0.2834051847457886,
+        -0.300428181886673
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "middle_02_l",
+      "angle_rad": 1.337556004524231,
+      "bend_towards": [
+        -0.9514513611793518,
+        0.20563925802707672,
+        -0.229025736451149
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "ring_02_l",
+      "angle_rad": 1.3147764205932617,
+      "bend_towards": [
+        -0.98519366979599,
+        -0.0034777941182255745,
+        -0.171409472823143
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "pinky_02_l",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        -0.9207416772842407,
+        -0.32030293345451355,
+        -0.22280216217041016
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "index_02_r",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        0.9107540249824524,
+        0.28341901302337646,
+        -0.30033430457115173
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "middle_02_r",
+      "angle_rad": 1.3375567197799683,
+      "bend_towards": [
+        0.9514724016189575,
+        0.20565003156661987,
+        -0.22892886400222778
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "ring_02_r",
+      "angle_rad": 1.314778208732605,
+      "bend_towards": [
+        0.9852113723754883,
+        -0.003476010402664542,
+        -0.1713082492351532
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 33,
+      "bone": "pinky_02_r",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        0.9207665920257568,
+        -0.3203083574771881,
+        -0.22269146144390106
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "index_02_l",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        -0.9107273817062378,
+        0.2834051847457886,
+        -0.300428181886673
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "middle_02_l",
+      "angle_rad": 1.337556004524231,
+      "bend_towards": [
+        -0.9514513611793518,
+        0.20563925802707672,
+        -0.229025736451149
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "ring_02_l",
+      "angle_rad": 1.3147764205932617,
+      "bend_towards": [
+        -0.98519366979599,
+        -0.0034777941182255745,
+        -0.171409472823143
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "pinky_02_l",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        -0.9207416772842407,
+        -0.32030293345451355,
+        -0.22280216217041016
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "index_02_r",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        0.9107540249824524,
+        0.28341901302337646,
+        -0.30033430457115173
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "middle_02_r",
+      "angle_rad": 1.3375567197799683,
+      "bend_towards": [
+        0.9514724016189575,
+        0.20565003156661987,
+        -0.22892886400222778
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "ring_02_r",
+      "angle_rad": 1.314778208732605,
+      "bend_towards": [
+        0.9852113723754883,
+        -0.003476010402664542,
+        -0.1713082492351532
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 66,
+      "bone": "pinky_02_r",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        0.9207665920257568,
+        -0.3203083574771881,
+        -0.22269146144390106
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "index_02_l",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        -0.9107273817062378,
+        0.2834051847457886,
+        -0.300428181886673
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "middle_02_l",
+      "angle_rad": 1.337556004524231,
+      "bend_towards": [
+        -0.9514513611793518,
+        0.20563925802707672,
+        -0.229025736451149
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "ring_02_l",
+      "angle_rad": 1.3147764205932617,
+      "bend_towards": [
+        -0.98519366979599,
+        -0.0034777941182255745,
+        -0.171409472823143
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "pinky_02_l",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        -0.9207416772842407,
+        -0.32030293345451355,
+        -0.22280216217041016
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "index_02_r",
+      "angle_rad": 0.929582953453064,
+      "bend_towards": [
+        0.9107540249824524,
+        0.28341901302337646,
+        -0.30033430457115173
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "middle_02_r",
+      "angle_rad": 1.3375567197799683,
+      "bend_towards": [
+        0.9514724016189575,
+        0.20565003156661987,
+        -0.22892886400222778
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "ring_02_r",
+      "angle_rad": 1.314778208732605,
+      "bend_towards": [
+        0.9852113723754883,
+        -0.003476010402664542,
+        -0.1713082492351532
+      ]
+    },
+    {
+      "clip": "Hun_BaiShanDual_Attack_A",
+      "frame": 99,
+      "bone": "pinky_02_r",
+      "angle_rad": 1.1405707597732544,
+      "bend_towards": [
+        0.9207665920257568,
+        -0.3203083574771881,
+        -0.22269146144390106
+      ]
+    }
+  ],
+  "previous_operator": {
+    "l": {
+      "normal": [
+        0.8714102506637573,
+        -0.04399903118610382,
+        0.48857784271240234
+      ],
+      "dot_game_flexion": -0.9617137075401843
+    },
+    "r": {
+      "normal": [
+        -0.8714570999145508,
+        -0.04400988295674324,
+        0.488493412733078
+      ],
+      "dot_game_flexion": -0.961735304677859
+    }
+  }
+}

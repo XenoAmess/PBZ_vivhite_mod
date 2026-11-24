@@ -1,0 +1,1271 @@
+{
+  "schema_version": 1,
+  "suite_id": "humanoid_rom",
+  "version": "1.1.0",
+  "provenance": "Project-designed ROM acceptance set based on sources.json. The 37 neck poses are our parameter grid, not a copy of MetaHuman poses.",
+  "units": "degrees; transforms use the input rig unit",
+  "skinning": "LINEAR_BLEND",
+  "timeline": {
+    "fps": 24,
+    "neutral_start": 1,
+    "first_sample": 13,
+    "sample_step": 16,
+    "neutral_hold_frames": 16
+  },
+  "views": {
+    "neck": [
+      "front",
+      "side",
+      "oblique"
+    ],
+    "arms": [
+      "front",
+      "back",
+      "oblique"
+    ],
+    "body": [
+      "front",
+      "side",
+      "back"
+    ]
+  },
+  "passes": [
+    "clay",
+    "textured"
+  ],
+  "review_rules": {
+    "pose_coverage": "all cases, samples, views and passes required",
+    "geometry": "no cracks, spikes, visible volume collapse, detached limbs, neck/collar fusion or deep intersections",
+    "neutral": "proportions and silhouette must match the intended character reference",
+    "numerical_pass_is_not_visual_acceptance": true
+  },
+  "thresholds": {
+    "weight_sum_tolerance": 0.0001,
+    "neck": {
+      "stretch_p95": 1.5,
+      "stretch_max": 3.0
+    },
+    "shoulder": {
+      "stretch_p95": 1.75,
+      "stretch_max": 4.0
+    },
+    "elbow": {
+      "stretch_p95": 1.75,
+      "stretch_max": 3.0
+    }
+  },
+  "cases": [
+    {
+      "id": "neck_pitch",
+      "title": "颈部：低头与抬头",
+      "group": "neck",
+      "operator": "neck",
+      "parameters": {
+        "axis": "pitch"
+      },
+      "samples": [
+        {
+          "value": -25,
+          "label": "-25 deg"
+        },
+        {
+          "value": -10,
+          "label": "-10 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 35,
+          "label": "35 deg"
+        }
+      ]
+    },
+    {
+      "id": "neck_yaw",
+      "title": "颈部：左右转头",
+      "group": "neck",
+      "operator": "neck",
+      "parameters": {
+        "axis": "yaw"
+      },
+      "samples": [
+        {
+          "value": -60,
+          "label": "-60 deg"
+        },
+        {
+          "value": -30,
+          "label": "-30 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        }
+      ]
+    },
+    {
+      "id": "neck_roll",
+      "title": "颈部：左右侧倾",
+      "group": "neck",
+      "operator": "neck",
+      "parameters": {
+        "axis": "roll"
+      },
+      "samples": [
+        {
+          "value": -25,
+          "label": "-25 deg"
+        },
+        {
+          "value": -12,
+          "label": "-12 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 12,
+          "label": "12 deg"
+        },
+        {
+          "value": 25,
+          "label": "25 deg"
+        }
+      ]
+    },
+    {
+      "id": "head_pivot",
+      "title": "头骨隔离：俯仰",
+      "group": "neck",
+      "operator": "neck",
+      "parameters": {
+        "axis": "pitch",
+        "mode": "head_only"
+      },
+      "samples": [
+        {
+          "value": -25,
+          "label": "-25 deg"
+        },
+        {
+          "value": -10,
+          "label": "-10 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 35,
+          "label": "35 deg"
+        }
+      ]
+    },
+    {
+      "id": "neck_combinations_37",
+      "title": "颈部：37个项目组合与隔离姿态",
+      "group": "neck",
+      "operator": "neck",
+      "parameters": {},
+      "samples": [
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=-60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=-60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=-60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=0, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=0, roll=0"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=0, roll=25"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=-25, yaw=60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=-25, yaw=60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=-25, yaw=60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=-60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=-60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=-60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=0, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=0, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=0, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=0, yaw=60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=0, yaw=60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=-60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=-60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": -60,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=-60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=0, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=0, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=0, roll=25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": -25
+          },
+          "label": "pitch=35, yaw=60, roll=-25"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": 0
+          },
+          "label": "pitch=35, yaw=60, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 60,
+            "roll": 25
+          },
+          "label": "pitch=35, yaw=60, roll=25"
+        },
+        {
+          "value": {
+            "pitch": -12.5,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=-12.5, yaw=0, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 17.5,
+            "yaw": 0,
+            "roll": 0
+          },
+          "label": "pitch=17.5, yaw=0, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": -30,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=-30, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 30,
+            "roll": 0
+          },
+          "label": "pitch=0, yaw=30, roll=0"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": -12.5
+          },
+          "label": "pitch=0, yaw=0, roll=-12.5"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 12.5
+          },
+          "label": "pitch=0, yaw=0, roll=12.5"
+        },
+        {
+          "value": {
+            "pitch": -25,
+            "yaw": 0,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=-25, yaw=0, roll=0, mode=head_only"
+        },
+        {
+          "value": {
+            "pitch": 35,
+            "yaw": 0,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=35, yaw=0, roll=0, mode=head_only"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": -60,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=0, yaw=-60, roll=0, mode=head_only"
+        },
+        {
+          "value": {
+            "pitch": 0,
+            "yaw": 60,
+            "roll": 0,
+            "mode": "head_only"
+          },
+          "label": "pitch=0, yaw=60, roll=0, mode=head_only"
+        }
+      ]
+    },
+    {
+      "id": "arms_abduction",
+      "title": "双臂：侧平举与高举",
+      "group": "arms",
+      "operator": "abduction",
+      "parameters": {
+        "sides": [
+          "l",
+          "r"
+        ]
+      },
+      "samples": [
+        {
+          "value": -35,
+          "label": "-35 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 45,
+          "label": "45 deg"
+        },
+        {
+          "value": 85,
+          "label": "85 deg"
+        },
+        {
+          "value": 125,
+          "label": "125 deg"
+        }
+      ]
+    },
+    {
+      "id": "arm_left",
+      "title": "左臂：抬臂",
+      "group": "arms",
+      "operator": "abduction",
+      "parameters": {
+        "sides": [
+          "l"
+        ]
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 45,
+          "label": "45 deg"
+        },
+        {
+          "value": 85,
+          "label": "85 deg"
+        },
+        {
+          "value": 125,
+          "label": "125 deg"
+        }
+      ]
+    },
+    {
+      "id": "arm_right",
+      "title": "右臂：抬臂",
+      "group": "arms",
+      "operator": "abduction",
+      "parameters": {
+        "sides": [
+          "r"
+        ]
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 45,
+          "label": "45 deg"
+        },
+        {
+          "value": 85,
+          "label": "85 deg"
+        },
+        {
+          "value": 125,
+          "label": "125 deg"
+        }
+      ]
+    },
+    {
+      "id": "arms_forward",
+      "title": "双臂：前伸",
+      "group": "arms",
+      "operator": "forward",
+      "parameters": {
+        "sides": [
+          "l",
+          "r"
+        ]
+      },
+      "samples": [
+        {
+          "value": -20,
+          "label": "-20 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        },
+        {
+          "value": 85,
+          "label": "85 deg"
+        }
+      ]
+    },
+    {
+      "id": "elbows",
+      "title": "双肘：屈曲",
+      "group": "arms",
+      "operator": "elbow",
+      "parameters": {
+        "sides": [
+          "l",
+          "r"
+        ]
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        },
+        {
+          "value": 90,
+          "label": "90 deg"
+        },
+        {
+          "value": 120,
+          "label": "120 deg"
+        }
+      ]
+    },
+    {
+      "id": "arm_twist",
+      "title": "上臂：轴向旋转",
+      "group": "arms",
+      "operator": "twist",
+      "parameters": {
+        "sides": [
+          "l",
+          "r"
+        ]
+      },
+      "samples": [
+        {
+          "value": -60,
+          "label": "-60 deg"
+        },
+        {
+          "value": -30,
+          "label": "-30 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        }
+      ]
+    },
+    {
+      "id": "shrug",
+      "title": "锁骨：耸肩",
+      "group": "arms",
+      "operator": "shrug",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 4,
+          "label": "4 deg"
+        },
+        {
+          "value": 8,
+          "label": "8 deg"
+        },
+        {
+          "value": 12,
+          "label": "12 deg"
+        },
+        {
+          "value": 16,
+          "label": "16 deg"
+        }
+      ]
+    },
+    {
+      "id": "wrists_pitch",
+      "title": "双腕：屈伸",
+      "group": "arms",
+      "operator": "wrist",
+      "parameters": {
+        "axis": "pitch"
+      },
+      "samples": [
+        {
+          "value": -45,
+          "label": "-45 deg"
+        },
+        {
+          "value": -20,
+          "label": "-20 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 45,
+          "label": "45 deg"
+        }
+      ]
+    },
+    {
+      "id": "wrists_roll",
+      "title": "双腕：侧偏",
+      "group": "arms",
+      "operator": "wrist",
+      "parameters": {
+        "axis": "roll"
+      },
+      "samples": [
+        {
+          "value": -25,
+          "label": "-25 deg"
+        },
+        {
+          "value": -12,
+          "label": "-12 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 12,
+          "label": "12 deg"
+        },
+        {
+          "value": 25,
+          "label": "25 deg"
+        }
+      ]
+    },
+    {
+      "id": "fingers",
+      "title": "双手：张开至握拳",
+      "group": "arms",
+      "operator": "fingers",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 0.25,
+          "label": "25%"
+        },
+        {
+          "value": 0.5,
+          "label": "50%"
+        },
+        {
+          "value": 0.75,
+          "label": "75%"
+        },
+        {
+          "value": 1,
+          "label": "100%"
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "title": "组合：前伸屈肘防御",
+      "group": "arms",
+      "operator": "guard",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 0.25,
+          "label": "25%"
+        },
+        {
+          "value": 0.5,
+          "label": "50%"
+        },
+        {
+          "value": 0.75,
+          "label": "75%"
+        },
+        {
+          "value": 1,
+          "label": "100%"
+        }
+      ]
+    },
+    {
+      "id": "reach_shoulder",
+      "title": "组合：交叉触肩",
+      "group": "arms",
+      "operator": "reach",
+      "parameters": {
+        "target": "opposite_shoulder"
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 0.25,
+          "label": "25%"
+        },
+        {
+          "value": 0.5,
+          "label": "50%"
+        },
+        {
+          "value": 0.75,
+          "label": "75%"
+        },
+        {
+          "value": 1,
+          "label": "100%"
+        }
+      ]
+    },
+    {
+      "id": "reach_head",
+      "title": "组合：双手触头",
+      "group": "arms",
+      "operator": "reach",
+      "parameters": {
+        "target": "head"
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 0.25,
+          "label": "25%"
+        },
+        {
+          "value": 0.5,
+          "label": "50%"
+        },
+        {
+          "value": 0.75,
+          "label": "75%"
+        },
+        {
+          "value": 1,
+          "label": "100%"
+        }
+      ]
+    },
+    {
+      "id": "spine_pitch",
+      "title": "脊柱：前屈后仰",
+      "group": "body",
+      "operator": "spine",
+      "parameters": {
+        "axis": "pitch"
+      },
+      "samples": [
+        {
+          "value": -15,
+          "label": "-15 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 10,
+          "label": "10 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        }
+      ]
+    },
+    {
+      "id": "spine_roll",
+      "title": "脊柱：侧屈",
+      "group": "body",
+      "operator": "spine",
+      "parameters": {
+        "axis": "roll"
+      },
+      "samples": [
+        {
+          "value": -20,
+          "label": "-20 deg"
+        },
+        {
+          "value": -10,
+          "label": "-10 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 10,
+          "label": "10 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        }
+      ]
+    },
+    {
+      "id": "spine_yaw",
+      "title": "脊柱：扭转",
+      "group": "body",
+      "operator": "spine",
+      "parameters": {
+        "axis": "yaw"
+      },
+      "samples": [
+        {
+          "value": -40,
+          "label": "-40 deg"
+        },
+        {
+          "value": -20,
+          "label": "-20 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 40,
+          "label": "40 deg"
+        }
+      ]
+    },
+    {
+      "id": "torso_turn",
+      "title": "组合：躯干和头反向转动",
+      "group": "body",
+      "operator": "torso_turn",
+      "parameters": {},
+      "samples": [
+        {
+          "value": -30,
+          "label": "-3000%"
+        },
+        {
+          "value": -15,
+          "label": "-1500%"
+        },
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 15,
+          "label": "1500%"
+        },
+        {
+          "value": 30,
+          "label": "3000%"
+        }
+      ]
+    },
+    {
+      "id": "hips_forward",
+      "title": "髋：抬腿",
+      "group": "body",
+      "operator": "hip",
+      "parameters": {
+        "axis": "forward"
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 25,
+          "label": "25 deg"
+        },
+        {
+          "value": 50,
+          "label": "50 deg"
+        },
+        {
+          "value": 75,
+          "label": "75 deg"
+        },
+        {
+          "value": 100,
+          "label": "100 deg"
+        }
+      ]
+    },
+    {
+      "id": "hips_side",
+      "title": "髋：侧抬腿",
+      "group": "body",
+      "operator": "hip",
+      "parameters": {
+        "axis": "side"
+      },
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 15,
+          "label": "15 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 45,
+          "label": "45 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        }
+      ]
+    },
+    {
+      "id": "hips_twist",
+      "title": "髋：轴向旋转",
+      "group": "body",
+      "operator": "hip",
+      "parameters": {
+        "axis": "twist"
+      },
+      "samples": [
+        {
+          "value": -30,
+          "label": "-30 deg"
+        },
+        {
+          "value": -15,
+          "label": "-15 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 15,
+          "label": "15 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        }
+      ]
+    },
+    {
+      "id": "knees",
+      "title": "双膝：屈曲",
+      "group": "body",
+      "operator": "knee",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 60,
+          "label": "60 deg"
+        },
+        {
+          "value": 90,
+          "label": "90 deg"
+        },
+        {
+          "value": 120,
+          "label": "120 deg"
+        }
+      ]
+    },
+    {
+      "id": "ankles_pitch",
+      "title": "双踝：屈伸",
+      "group": "body",
+      "operator": "ankle",
+      "parameters": {
+        "axis": "pitch"
+      },
+      "samples": [
+        {
+          "value": -30,
+          "label": "-30 deg"
+        },
+        {
+          "value": -15,
+          "label": "-15 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 15,
+          "label": "15 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        }
+      ]
+    },
+    {
+      "id": "ankles_roll",
+      "title": "双踝：内外翻",
+      "group": "body",
+      "operator": "ankle",
+      "parameters": {
+        "axis": "roll"
+      },
+      "samples": [
+        {
+          "value": -15,
+          "label": "-15 deg"
+        },
+        {
+          "value": -7.5,
+          "label": "-7.5 deg"
+        },
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 7.5,
+          "label": "7.5 deg"
+        },
+        {
+          "value": 15,
+          "label": "15 deg"
+        }
+      ]
+    },
+    {
+      "id": "toes",
+      "title": "前脚掌：弯曲",
+      "group": "body",
+      "operator": "toes",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0 deg"
+        },
+        {
+          "value": 10,
+          "label": "10 deg"
+        },
+        {
+          "value": 20,
+          "label": "20 deg"
+        },
+        {
+          "value": 30,
+          "label": "30 deg"
+        },
+        {
+          "value": 40,
+          "label": "40 deg"
+        }
+      ]
+    },
+    {
+      "id": "squat",
+      "title": "组合：逐级下蹲",
+      "group": "body",
+      "operator": "squat",
+      "parameters": {},
+      "samples": [
+        {
+          "value": 0,
+          "label": "0%"
+        },
+        {
+          "value": 0.25,
+          "label": "25%"
+        },
+        {
+          "value": 0.5,
+          "label": "50%"
+        },
+        {
+          "value": 0.75,
+          "label": "75%"
+        },
+        {
+          "value": 1,
+          "label": "100%"
+        }
+      ]
+    }
+  ],
+  "revision_note": "Corrected flexion direction, native thumb opposition reference, closure percentage labels; original v1.0.0 ranges remain frozen."
+}
