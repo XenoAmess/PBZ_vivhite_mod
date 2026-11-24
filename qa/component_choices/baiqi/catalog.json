@@ -1,0 +1,583 @@
+{
+  "character": "白绮",
+  "status": "awaiting_user_choices",
+  "image_role": "original_Live2D_source_excerpts_not_finished_3D",
+  "already_excluded": [
+    "可选嘴型",
+    "ArtMesh53 全身乘色变暗效果"
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "金色圆框眼镜",
+      "description": "原模型默认佩戴的金色圆框。",
+      "kind": "默认饰物",
+      "image": "head_layers/glasses.png",
+      "source_evidence": "artifacts/baiqi_component_audit/head_layers/glasses.png",
+      "thumbnail": "source_crops/01.png",
+      "decision": "pending",
+      "thumbnail_sha256": "af90f41f5a5983074116adf9ae29d073e0b05c21f39f330ad69705f021789853"
+    },
+    {
+      "id": 2,
+      "name": "黑金蝴蝶结发饰",
+      "description": "头部左右两侧的黑金色锯齿状发饰。",
+      "kind": "默认饰物",
+      "image": "head_layers/headdress.png",
+      "source_evidence": "artifacts/baiqi_component_audit/head_layers/headdress.png",
+      "thumbnail": "source_crops/02.png",
+      "decision": "pending",
+      "thumbnail_sha256": "7a75a198e190fc66c1266eacbf640bb933ec8ccce8e869cb9b570312c89c30f1"
+    },
+    {
+      "id": 3,
+      "name": "黑金领结",
+      "description": "衬衫领口中央的黑底金边蝴蝶结。",
+      "kind": "默认饰物",
+      "image": "body_layers/bow_tie.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/bow_tie.png",
+      "thumbnail": "source_crops/03.png",
+      "decision": "pending",
+      "thumbnail_sha256": "0561f57ce2852eb9502122e8a490a30dd610fff5450ac9c36cfc000497c205ca"
+    },
+    {
+      "id": 4,
+      "name": "白色衬衫领口",
+      "description": "颈部下方的白色翻领细节。",
+      "kind": "衣装细节",
+      "image": "optional_layers/shirt_collar.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/shirt_collar.png",
+      "thumbnail": "source_crops/04.png",
+      "decision": "pending",
+      "thumbnail_sha256": "104a0c23e8a51bafba58ea05b1bcfff72d062cb0fe20635a797648ff946a96e8"
+    },
+    {
+      "id": 5,
+      "name": "银色菱形夹扣",
+      "description": "外套胸前的菱形金属夹扣与连接细线。",
+      "kind": "默认饰物",
+      "drawables": [
+        "Clip",
+        "line",
+        "ArtMesh141",
+        "ArtMesh140"
+      ],
+      "source_evidence": "original_drawables:Clip,line,ArtMesh141,ArtMesh140",
+      "thumbnail": "source_crops/05.png",
+      "decision": "pending",
+      "thumbnail_sha256": "7e43ef9807f82b71d7510524b503555f78ce19b02e4bf6d1059ec1ffabe06c9f"
+    },
+    {
+      "id": 6,
+      "name": "金色太阳胸针",
+      "description": "胸前的金黄色圆形小饰物。",
+      "kind": "默认饰物",
+      "drawables": [
+        "sol"
+      ],
+      "source_evidence": "original_drawables:sol",
+      "thumbnail": "source_crops/06.png",
+      "decision": "pending",
+      "thumbnail_sha256": "0f62260bdc3cd4c4ca14c0d016879f2e840af72c9354c07202981ea6f9c43dd7"
+    },
+    {
+      "id": 7,
+      "name": "蓝色小圆珠胸针",
+      "description": "金色圆饰旁边的蓝色小圆点。",
+      "kind": "默认饰物",
+      "drawables": [
+        "earth"
+      ],
+      "source_evidence": "original_drawables:earth",
+      "thumbnail": "source_crops/07.png",
+      "decision": "pending",
+      "thumbnail_sha256": "81be08cbae49d5837b557fc68c7719e17707a8e9cec982cc470b12759d80ab8d"
+    },
+    {
+      "id": 8,
+      "name": "蓝色上臂蝴蝶结",
+      "description": "一侧上臂外侧的蓝色布结与飘带。",
+      "kind": "默认饰物",
+      "image": "body_layers/bandage.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/bandage.png",
+      "thumbnail": "source_crops/08.png",
+      "decision": "pending",
+      "thumbnail_sha256": "4699383efeefa4db5c25150216e53eb8081b7d269e901191e17e1dcf27c0a058"
+    },
+    {
+      "id": 9,
+      "name": "白金袖口",
+      "description": "袖子末端的白色袖口与金色细边，左右一对。",
+      "kind": "衣装细节",
+      "image": "clean_parts/Sleeve.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Sleeve.png",
+      "thumbnail": "source_crops/09.png",
+      "decision": "pending",
+      "thumbnail_sha256": "0095a0d2a0d1d093b84d7d4bad7ac202fe84f0f0b29a4ae361944444105abc9d"
+    },
+    {
+      "id": 10,
+      "name": "深色腕带",
+      "description": "手腕处的深色短腕带，左右一对。",
+      "kind": "默认饰物",
+      "image": "body_layers/wrist_screen_left.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/wrist_screen_left.png",
+      "thumbnail": "source_crops/10.png",
+      "decision": "pending",
+      "thumbnail_sha256": "1c35876d05523638e5a8148f88f21973bbcc00d15a1bb5696e8cbcd52971ebeb"
+    },
+    {
+      "id": 11,
+      "name": "蓝色束腰与金色系绳",
+      "description": "腰部蓝色束带及其正面的交叉金色系绳。",
+      "kind": "衣装细节",
+      "image": "body_layers/girdle.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/girdle.png",
+      "thumbnail": "source_crops/11.png",
+      "decision": "pending",
+      "thumbnail_sha256": "ed3f144217edd8699417099065941215a82fb064f1aebd7a6646f60e9a333304"
+    },
+    {
+      "id": 12,
+      "name": "粉色腰绳吊坠",
+      "description": "系绳下端垂下的两颗粉色小石饰。",
+      "kind": "默认饰物",
+      "image": "clean_parts/Part30.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Part30.png",
+      "thumbnail": "source_crops/12.png",
+      "decision": "pending",
+      "thumbnail_sha256": "bfe8d706100e82af57c82269ff3bc502006053cd8b7ea4696a01e6a567d2fbcf"
+    },
+    {
+      "id": 13,
+      "name": "裙摆金边与波浪花边",
+      "description": "裙子下沿的金色饰条及白色波浪边。",
+      "kind": "衣装细节",
+      "image": "body_layers/skirt.png",
+      "crop": [
+        490,
+        1100,
+        910,
+        1205
+      ],
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/skirt.png",
+      "thumbnail": "source_crops/13.png",
+      "decision": "pending",
+      "thumbnail_sha256": "efcc8e7d4986e76e3090e2e24be2e02b968cbaa5dac6196e80bc810795d8850a"
+    },
+    {
+      "id": 14,
+      "name": "靴侧翻折片",
+      "description": "短靴两侧向外翻折的蓝色小片。",
+      "kind": "默认饰物",
+      "image": "clean_parts/Part43.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Part43.png",
+      "thumbnail": "source_crops/14.png",
+      "decision": "pending",
+      "thumbnail_sha256": "1bb01c5c64d0e2d00ee58713f1c889982a9e122b42141a4953169170487825c6"
+    },
+    {
+      "id": 15,
+      "name": "靴面金色交叉饰线",
+      "description": "靴子正面的小型金色交叉线条。",
+      "kind": "衣装细节",
+      "image": "body_layers/shoes.png",
+      "crop": [
+        550,
+        1735,
+        850,
+        1830
+      ],
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/shoes.png",
+      "thumbnail": "source_crops/15.png",
+      "decision": "pending",
+      "thumbnail_sha256": "61c2bbab2706db2a9b0288c2376658c5b40ab0b65765ba4394e51afb92925f2d"
+    },
+    {
+      "id": 16,
+      "name": "双马尾发型",
+      "description": "切换发型时，头部两侧出现的短马尾。",
+      "kind": "隐藏可选",
+      "image": "body_layers/ponytails_enabled.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/ponytails_enabled.png",
+      "thumbnail": "source_crops/16.png",
+      "decision": "pending",
+      "thumbnail_sha256": "798fceb61d1b775caff1b3e1f4d0c04ca9d9a4d51456259a7f0fd6a24804a170"
+    },
+    {
+      "id": 17,
+      "name": "头饰亮边开关",
+      "description": "切换发饰上的金色亮边，图中为关闭态。",
+      "kind": "外观预设",
+      "preset": "E-Hair-HeadDressLight.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Hair-HeadDressLight.exp3.png",
+      "thumbnail": "source_crops/17.png",
+      "decision": "pending",
+      "thumbnail_sha256": "3cd522fd9dc3edf5d11cc6a4af5d5f08705d0877355a0d1e4966e1bb386e1d61"
+    },
+    {
+      "id": 18,
+      "name": "浮游机械机身",
+      "description": "悬浮在人物肩颈附近的小型机械主体。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/machine_core.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/machine_core.png",
+      "thumbnail": "source_crops/18.png",
+      "decision": "pending",
+      "thumbnail_sha256": "e9f9b2bdcc5a92af41892c7dde7e9825cd4a95c5befb8989c189d93f1b95d493"
+    },
+    {
+      "id": 19,
+      "name": "机械全息光翼",
+      "description": "机械主体周围展开的青色光翼。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/machine_wings.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/machine_wings.png",
+      "thumbnail": "source_crops/19.png",
+      "decision": "pending",
+      "thumbnail_sha256": "bb7daecb46f541d60ccea7b2cbcd1ef075785d6f05f747c2de36008b29b71767"
+    },
+    {
+      "id": 20,
+      "name": "机械环绕光圈",
+      "description": "机械装置周围的环状全息图形。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/machine_rings.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/machine_rings.png",
+      "thumbnail": "source_crops/20.png",
+      "decision": "pending",
+      "thumbnail_sha256": "4a39285325bcec5a6a7eb6bb05a5268753c2e82a198ffdf132f598e3cebb6a7d"
+    },
+    {
+      "id": 21,
+      "name": "全息屏幕",
+      "description": "机械装置展开的青色透明屏幕。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/machine_screen.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/machine_screen.png",
+      "thumbnail": "source_crops/21.png",
+      "decision": "pending",
+      "thumbnail_sha256": "37f9db398b9c2d0a810f34800ff94e09865a2d61a966334c4e894d11ce7fdbac"
+    },
+    {
+      "id": 22,
+      "name": "手部蓝色光环",
+      "description": "围绕一侧手掌的蓝色环状特效。",
+      "kind": "隐藏可选",
+      "image": "body_layers/hand_ring_enabled.png",
+      "source_evidence": "artifacts/baiqi_component_audit/body_layers/hand_ring_enabled.png",
+      "thumbnail": "source_crops/22.png",
+      "decision": "pending",
+      "thumbnail_sha256": "f3017b122f7e19b57aecaf20e5db8027a94d75b60671c4455c2832a71a6b2092"
+    },
+    {
+      "id": 23,
+      "name": "星图 S1",
+      "description": "星图动画的第一个、小范围阶段。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/S1.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/S1.png",
+      "thumbnail": "source_crops/23.png",
+      "decision": "pending",
+      "thumbnail_sha256": "2d5efe695eaa57732db391a9c46cb8db277b037b77dd7c1f6dbfeb5f43c73f8c"
+    },
+    {
+      "id": 24,
+      "name": "星图 S2",
+      "description": "星图动画的第二个扩展阶段。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/S2.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/S2.png",
+      "thumbnail": "source_crops/24.png",
+      "decision": "pending",
+      "thumbnail_sha256": "a0827d5ac709c0d069d3a1a1aca323b5f2c1659abce97cd1e08f409a57c36c92"
+    },
+    {
+      "id": 25,
+      "name": "星图 S3",
+      "description": "星图动画的第三个扩展阶段。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/S3.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/S3.png",
+      "thumbnail": "source_crops/25.png",
+      "decision": "pending",
+      "thumbnail_sha256": "0a809fed4cb6626d40b5741b479278a9c1675298ed2e55c3456eea4bc78763ea"
+    },
+    {
+      "id": 26,
+      "name": "星图 S4",
+      "description": "星图动画的第四个、大范围阶段。",
+      "kind": "隐藏可选",
+      "image": "optional_layers/S4.png",
+      "source_evidence": "artifacts/baiqi_component_audit/optional_layers/S4.png",
+      "thumbnail": "source_crops/26.png",
+      "decision": "pending",
+      "thumbnail_sha256": "5da840bb8c33936247b2198414381901f89aa9e8958f4c0e4d0a09da3a01866c"
+    },
+    {
+      "id": 27,
+      "name": "方块眼",
+      "description": "把眼部切换成紫色方块式表情。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Block.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Block.exp3.png",
+      "thumbnail": "source_crops/27.png",
+      "decision": "pending",
+      "thumbnail_sha256": "6ebe18e3667a8f4b44bc1bfc8d296eead91854b84f2fa4488e819a76e3b19745",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 28,
+      "name": "蓝色瞳孔",
+      "description": "把默认瞳孔切换为蓝色外观。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Blue.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Blue.exp3.png",
+      "thumbnail": "source_crops/28.png",
+      "decision": "pending",
+      "thumbnail_sha256": "531822b6b154dbc49f31bf581e75a6db6e2e97757278266c61b48dbe8e3cd5c7",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 29,
+      "name": "镜片泛白",
+      "description": "镜片泛白，弱化眼睛细节。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Fog.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Fog.exp3.png",
+      "thumbnail": "source_crops/29.png",
+      "decision": "pending",
+      "thumbnail_sha256": "57aeaf644d457beca6c3fe25499cc397e3efe14aecde97c7932905c2e9fabf85",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 30,
+      "name": "爱心瞳孔",
+      "description": "眼睛里出现爱心图形。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Heart.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Heart.exp3.png",
+      "thumbnail": "source_crops/30.png",
+      "decision": "pending",
+      "thumbnail_sha256": "18155f3a084197f22f7a933f928e8f523056e7a336e6c8cfcf20d42074a74f2a",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 31,
+      "name": "震惊眼",
+      "description": "原文件中的震惊眼部表情。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Shocked.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Shocked.exp3.png",
+      "thumbnail": "source_crops/31.png",
+      "decision": "pending",
+      "thumbnail_sha256": "a623e6404fb8a7db9d092355d8d67cfe8b6ca93766388126fbdca48e2949eca2",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 32,
+      "name": "弯月笑眼",
+      "description": "眼睛眯成弯月状的表情。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Smile.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Smile.exp3.png",
+      "thumbnail": "source_crops/32.png",
+      "decision": "pending",
+      "thumbnail_sha256": "cf88df8815267ca5f856648dfaab3f94fda822293e9a6e9a3bd84d2c38689721",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 33,
+      "name": "星星瞳孔",
+      "description": "眼睛里出现星星图形。",
+      "kind": "眼部预设",
+      "preset": "E-Eye-Star.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Star.exp3.png",
+      "thumbnail": "source_crops/33.png",
+      "decision": "pending",
+      "thumbnail_sha256": "316c237485040dc604197eeba93f874e626dfba1139e465dd94f6f72586f770f",
+      "crop": [
+        90,
+        235,
+        390,
+        355
+      ]
+    },
+    {
+      "id": 34,
+      "name": "生气怒纹",
+      "description": "额头附近出现的生气符号。",
+      "kind": "面部预设",
+      "preset": "E-Face-Angry.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Angry.exp3.png",
+      "thumbnail": "source_crops/34.png",
+      "decision": "pending",
+      "thumbnail_sha256": "1f0ded5d01ba9fbf6f689dcabbcaaeb955fb1f0ed329e5bedce6d73d327e8116"
+    },
+    {
+      "id": 35,
+      "name": "上半脸阴影",
+      "description": "额头、眼睛附近的局部暗色阴影。",
+      "kind": "面部预设",
+      "preset": "E-Face-Black.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Black.exp3.png",
+      "thumbnail": "source_crops/35.png",
+      "decision": "pending",
+      "thumbnail_sha256": "1039bf44dec1891950797ac5140e8796287155790811d8cd971ca23b82932ae9"
+    },
+    {
+      "id": 36,
+      "name": "鼻血表情",
+      "description": "鼻子下方出现的细小血迹。",
+      "kind": "面部预设",
+      "preset": "E-Face-Blood.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Blood.exp3.png",
+      "thumbnail": "source_crops/36.png",
+      "decision": "pending",
+      "thumbnail_sha256": "124db644743400a6ba12df3c45a2c3aaecb6efe819aa54dab6f3f6cd25170b94",
+      "crop": [
+        165,
+        315,
+        315,
+        385
+      ]
+    },
+    {
+      "id": 37,
+      "name": "音符表情",
+      "description": "脸旁出现的音符符号。",
+      "kind": "面部预设",
+      "preset": "E-Face-Music.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Music.exp3.png",
+      "thumbnail": "source_crops/37.png",
+      "decision": "pending",
+      "thumbnail_sha256": "21e980e2883fcf0cd5d50cfaad067b4a924b64615c4d375ce143a1a085aab981"
+    },
+    {
+      "id": 38,
+      "name": "问号表情",
+      "description": "脸旁出现的问号符号。",
+      "kind": "面部预设",
+      "preset": "E-Face-Question.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Question.exp3.png",
+      "thumbnail": "source_crops/38.png",
+      "decision": "pending",
+      "thumbnail_sha256": "7b312c7057d0addb4b8ebef1dcc864df84e361574b78814132abf275681d8c6a"
+    },
+    {
+      "id": 39,
+      "name": "震惊符号",
+      "description": "脸旁出现的震惊提示图形。",
+      "kind": "面部预设",
+      "preset": "E-Face-Shocked.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Shocked.exp3.png",
+      "thumbnail": "source_crops/39.png",
+      "decision": "pending",
+      "thumbnail_sha256": "5b840376c54f4a6eefaa1c1d6223eaa2c8a759f5108c2281e2026b69b1c04d7a"
+    },
+    {
+      "id": 40,
+      "name": "汗滴表情",
+      "description": "脸旁出现的汗滴符号。",
+      "kind": "面部预设",
+      "preset": "E-Face-Sweat.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Face-Sweat.exp3.png",
+      "thumbnail": "source_crops/40.png",
+      "decision": "pending",
+      "thumbnail_sha256": "62c95642f8b4b0d2c655e725cdf6b16b13d36a73600c14de658323f331d9205d"
+    },
+    {
+      "id": 41,
+      "name": "眼角泪光与泪滴",
+      "description": "源文件中可显示的眼角泪水图层。",
+      "kind": "隐藏可选",
+      "image": "clean_parts/Tear.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Tear.png",
+      "thumbnail": "source_crops/41.png",
+      "decision": "pending",
+      "thumbnail_sha256": "02e9be2abb8bdaab4958694f18c55cd167ceb16d33cccd4480e48602695c0e99"
+    },
+    {
+      "id": 42,
+      "name": "额外张掌展示预设",
+      "description": "源文件第二套张开手掌的展示姿势。",
+      "kind": "展示预设",
+      "image": "clean_parts/Part33.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Part33.png",
+      "thumbnail": "source_crops/42.png",
+      "decision": "pending",
+      "thumbnail_sha256": "870188156958f00f35f0f0bfbc8fba75adadde36c6d01422a104b7ff9d762fe3"
+    },
+    {
+      "id": 43,
+      "name": "额外握拳展示预设",
+      "description": "源文件第二套握拳手掌的展示姿势。",
+      "kind": "展示预设",
+      "image": "clean_parts/Part37.png",
+      "source_evidence": "artifacts/baiqi_component_audit/clean_parts/Part37.png",
+      "thumbnail": "source_crops/43.png",
+      "decision": "pending",
+      "thumbnail_sha256": "19374659ffc0a225c2e99e27062cd452ee20e5b4310be886244eb1da3c08b38c"
+    },
+    {
+      "id": 44,
+      "name": "脱外套切换形态",
+      "description": "保留衬衫、束腰和裙子的无外套形态。",
+      "kind": "衣装预设",
+      "preset": "E-Body-Coat.exp3",
+      "full_body": true,
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Body-Coat.exp3.png",
+      "thumbnail": "source_crops/44.png",
+      "decision": "pending",
+      "thumbnail_sha256": "d25824333b15aa425cd908ec2b3f6136ff52d9a328dc00df8ce74564157a83cf"
+    },
+    {
+      "id": 45,
+      "name": "摘眼镜切换形态",
+      "description": "同一角色摘下眼镜的外观预设。",
+      "kind": "外观预设",
+      "preset": "E-Eye-Glasses.exp3",
+      "source_evidence": "artifacts/baiqi_component_audit/variants/E-Eye-Glasses.exp3.png",
+      "thumbnail": "source_crops/45.png",
+      "decision": "pending",
+      "thumbnail_sha256": "54ea1df15bdb96dadee1389645cecbfd306c46d5299bf58a14714c54e91f67bb"
+    }
+  ],
+  "boards": [
+    "board_01.jpg",
+    "board_02.jpg",
+    "board_03.jpg",
+    "board_04.jpg",
+    "board_05.jpg"
+  ]
+}

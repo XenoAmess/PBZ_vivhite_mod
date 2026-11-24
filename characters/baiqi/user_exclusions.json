@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "character": "白绮",
+  "decision_status": "explicit_user_exclusions_remaining_accessories_pending_user_choice",
+  "user_instructions": [
+    "几个可选的嘴型组件都不要上，我要求保留原模型嘴部。",
+    "ArtMesh53 的全身变暗、眼睛保亮的乘色效果也不要上，给我删除。"
+  ],
+  "preserve_mouth": "Restore the pre-edit female-foundation mouth geometry and retain the default character mouth appearance.",
+  "excluded_components": ["Part25", "M10", "M11", "M13"],
+  "excluded_drawables": ["M12", "M14", "M", "ArtMesh53"],
+  "excluded_variants": [
+    "E-Mouth-Pout.exp3",
+    "E-Mouth-Shh.exp3",
+    "E-Mouth-Smile.exp3",
+    "E-Face-AllBlack.exp3"
+  ],
+  "remaining_accessories": "Awaiting the user's numbered image-catalog decisions before further additions."
+}
