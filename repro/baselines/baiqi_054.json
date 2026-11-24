@@ -1,0 +1,59 @@
+{
+  "baseline": "baiqi-model-baseline-054",
+  "source_revision": "5725b1c17689978f8a32de11c098b173f76a772d",
+  "capture": "unmodified model currently installed before face refinement",
+  "steam_build": "26367565",
+  "outfit": "PBZ_OutFit_BaiQi",
+  "protected_cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+  "files": [
+    {
+      "name": "BaiQi_CC0_coat_on.blend",
+      "bytes": 10847512,
+      "sha256": "5cbba12d9f69dc8786ae035843d603cfb7b7594ebf9aff531465cd5fed9e83ca"
+    },
+    {
+      "name": "BaiQi_CC0_coat_off.blend",
+      "bytes": 10847531,
+      "sha256": "3ec229296c84ddd965a03fd5e573647d67e07a3d058d1594e0631b1e3d71ca5c"
+    },
+    {
+      "name": "BaiQi_054_Baked_Inputs.zip",
+      "bytes": 14331939,
+      "sha256": "22f574fcb43fe04158cf2ed4e6c3b8d699a21a00321bd59b58bdb2bcd54c1d51"
+    },
+    {
+      "name": "BaiQi_054_Standalone.zip",
+      "bytes": 2345064,
+      "sha256": "6658562d79b5f3b2b37517b0a28b9eb9e6e5b4856bfeb3ff1721ebfa86b780f7"
+    }
+  ],
+  "installed_containers": [
+    {
+      "name": "PBZOutfit_BaiQi_P.pak",
+      "bytes": 528,
+      "sha256": "c2deb671b64ae923495a5821d48ad4d3d98d4a80b8d16daf6efdcd5ca9159383"
+    },
+    {
+      "name": "PBZOutfit_BaiQi_P.utoc",
+      "bytes": 27543,
+      "sha256": "c1e18b578ff2fc24a8ead4cd969cc9bfc43d593aa75c94605a70caf425fae975"
+    },
+    {
+      "name": "PBZOutfit_BaiQi_P.ucas",
+      "bytes": 2720848,
+      "sha256": "bc6f4afd2620df51dff27517cce55513169982d3363e6d37d9340be4fe85bfb8"
+    }
+  ],
+  "installed_scripts_sha256": {
+    "ProjectPBZ/PBZModLoader/mods/baiqi-voice/main.js": "64788e8354b715ef41000ce387ce8508ec76173a58adab87006dc3afa5085d1f",
+    "ProjectPBZ/PBZModLoader/mods/baiqi-voice/preview.js": "527d93a5f05b17baa2b8b0acd0871731c06b233dd376351ae2b02107f040264c"
+  },
+  "motion_suite": {
+    "path": "qa/suites/humanoid_v1_1.json",
+    "sha256": "9c4a3c59e290ed94f154357f2ba2b6915d7ebc94be6a6b821591c7e22954a3a1"
+  },
+  "archived_review": {
+    "asset": "https://github.com/XenoAmess/PBZ_vivhite_mod/releases/download/baiqi-cc0-fitting-054/BaiQi_054_Offline_Review.zip",
+    "sha256": "267a2f2c573a0ff5af02e55639fb9c52f19e9b25f8dd1e0625d9cd3f192aea40"
+  }
+}
