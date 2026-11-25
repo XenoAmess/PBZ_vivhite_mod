@@ -17,3 +17,4 @@
 | 064 | 虹膜独立受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-064) |
 | 065 | 虹膜局部法线与高光移动 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-065) |
 | 066 | 脸颈肤色过渡 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-066) |
+| 067 | 保留原眼位并收敛虹膜底色 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-067) |

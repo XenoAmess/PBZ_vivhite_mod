@@ -17,9 +17,12 @@ parser.add_argument('--inputs', type=Path, required=True, help='Game export cont
 parser.add_argument('--out', type=Path, required=True)
 parser.add_argument('--lower-glint-opacity', default=1., type=float,
                     help='Scale the original paired lower iris glint layers.')
+parser.add_argument('--iris-pigment', default=1., type=float,
+                    help='Scale the RGB multiply colour of the two original pink iris layers.')
 parser.add_argument('--iris-masks', action='store_true', help='Export the original clipped iris coverage for each pose.')
 args = parser.parse_args()
 assert .35 <= args.lower_glint_opacity <= 1.
+assert .75 <= args.iris_pigment <= 1.
 
 
 class V2(c.Structure):
@@ -76,7 +79,7 @@ lower_glints = {'ArtMesh85', 'ArtMesh94'}
 irises = {'ArtMesh88', 'ArtMesh103'}
 
 
-def face_at(parameters_override, glint=1.):
+def face_at(parameters_override, glint=1., pigment=1.):
     for i in parameters.values():
         values[i] = defaults[i]
     for key, value in parameters_override.items():
@@ -92,10 +95,13 @@ def face_at(parameters_override, glint=1.):
     if args.iris_masks:
         coverage = source.render(set(), include_drawables=irises)
         iris = Image.fromarray(coverage).crop(crop).getchannel('A').filter(ImageFilter.GaussianBlur(.60))
-    if glint != 1.:
+    if glint != 1. or pigment != 1.:
         for row in overrides:
             if row['id'] in lower_glints:
                 row['opacity'] *= glint
+            if row['id'] in irises and pigment != 1.:
+                red, green, blue, alpha = source.by_id[row['id']]['multiply_color']
+                row['multiply_color'] = [red * pigment, green * pigment, blue * pigment, alpha]
         source.set_state({'draw_overrides': overrides})
     picture = source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'})
     return np.array(Image.fromarray(picture).crop(crop)), mask, iris
@@ -128,18 +134,22 @@ out = root / args.out
 out.mkdir(parents=True, exist_ok=True)
 if neutral_iris is not None:
     neutral_iris.save(out / 'neutral_iris.png')
-if args.lower_glint_opacity == 1.:
+if args.lower_glint_opacity == args.iris_pigment == 1.:
     Image.fromarray(original).save(out / 'neutral.png')
 else:
-    softer, _, _ = face_at({}, args.lower_glint_opacity)
+    softer, _, _ = face_at({}, args.lower_glint_opacity, args.iris_pigment)
     result, measured = transfer(original, neutral, softer, 'neutral')
     assert measured['changed_pixels'] > 0
     Image.fromarray(result).save(out / 'neutral.png')
     (out / 'glint.json').write_text(json.dumps({'opacity_scale': args.lower_glint_opacity,
                                                 'drawables': sorted(lower_glints), **measured}, indent=2) + '\n')
+if args.iris_pigment != 1.:
+    (out / 'iris_pigment.json').write_text(json.dumps({'rgb_scale': args.iris_pigment,
+                                                       'drawables': sorted(irises)}, indent=2) + '\n')
 report = {}
 for name, override in states.items():
-    posed, mask, iris = face_at(override, args.lower_glint_opacity)
+    pigment = 1. if name == 'closed' else args.iris_pigment
+    posed, mask, iris = face_at(override, args.lower_glint_opacity, pigment)
     result, measured = transfer(original, neutral, posed, name)
     Image.fromarray(result).save(out / (name + '.png'))
     mask.save(out / (name + '_mask.png'))

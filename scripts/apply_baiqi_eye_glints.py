@@ -1,4 +1,4 @@
-"""Use softer source eye glints on the existing BaiQi face and eye states."""
+"""Apply artwork corrections to the existing BaiQi face and eye states."""
 import argparse
 import json
 from pathlib import Path
@@ -25,17 +25,26 @@ def pixels(image):
     return data.reshape(image.size[1], image.size[0], 4)[::-1]
 
 
-def replace(poses, state, node):
+def replace(poses, state, node, iris_only):
     original = node.image
     new = bpy.data.images.load(str(poses / f'{state}.png'))
     assert tuple(new.size) == tuple(original.size) == (880, 800)
     new.colorspace_settings.name = original.colorspace_settings.name
-    changed = np.any(np.abs(pixels(original) - pixels(new)) > 1e-6, axis=2)
+    source, result = pixels(original), pixels(new)
+    changed = np.any(np.abs(source - result) > 1e-6, axis=2)
     y, x = np.nonzero(changed)
+    if iris_only:
+        coverage = bpy.data.images.load(str(poses / f'{state}_iris.png'))
+        assert tuple(coverage.size) == tuple(original.size)
+        mask = pixels(coverage)[..., 0] > 0.
+        bpy.data.images.remove(coverage)
+        assert np.array_equal(source[..., 3], result[..., 3]), state
+        assert not (changed & ~mask).any() and bool(len(x)) == (state != 'closed'), state
     if not len(x):
         bpy.data.images.remove(new)
         return {'changed_pixels': 0, 'bounds': None}
-    assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= 412 and int(y.max()) <= 465, state
+    min_y = 375 if iris_only else 412
+    assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= min_y and int(y.max()) <= 465, state
     new.pack()
     node.image = new
     return {'changed_pixels': int(changed.sum()), 'bounds': [int(x.min()), int(y.min()), int(x.max()), int(y.max())]}
@@ -47,6 +56,7 @@ def main():
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--poses', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--iris-only', action='store_true', help='Require unchanged pixels outside original iris coverage.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, poses, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.poses, args.out))
     assert source != output and output.is_relative_to(ROOT)
@@ -54,6 +64,10 @@ def main():
     expected = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))
     glint = json.loads((poses / 'glint.json').read_text(encoding='utf-8'))
     assert set(glint['drawables']) == {'ArtMesh85', 'ArtMesh94'}
+    pigment = None
+    if args.iris_only:
+        pigment = json.loads((poses / 'iris_pigment.json').read_text(encoding='utf-8'))
+        assert set(pigment['drawables']) == {'ArtMesh88', 'ArtMesh103'}
     report = {}
     for form in ('coat_on', 'coat_off'):
         path = source / f'BaiQi_CC0_{form}.blend'
@@ -69,7 +83,7 @@ def main():
         states.update({node.label: node for node in tree.nodes
                        if node.type == 'TEX_IMAGE' and node.label in STATES[1:]})
         assert set(states) == set(STATES)
-        changed = {state: replace(poses, state, states[state]) for state in STATES}
+        changed = {state: replace(poses, state, states[state], args.iris_only) for state in STATES}
         assert changed['neutral']['changed_pixels'] > 0
         assert all(mesh_fingerprint(obj) == value for obj, value in geometry.items())
         assert rest_signature(rig) == skeleton
@@ -78,7 +92,10 @@ def main():
         report[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(destination),
                         'cc0_body_sha256': geometry[body], 'original_head_sha256': geometry[head],
                         'opacity_scale': glint['opacity_scale'], 'states': changed}
-    (output / 'eye_glints.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+        if pigment:
+            report[form]['iris_pigment'] = pigment
+    report_name = 'iris_pigment.json' if pigment else 'eye_glints.json'
+    (output / report_name).write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':
