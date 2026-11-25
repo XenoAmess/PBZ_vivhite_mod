@@ -19,4 +19,6 @@ $script = (Resolve-Path 'scripts/ue_render_baiqi_offline_preview.py').Path
 
 `PBZ_BAIQI_PREVIEW_PASS` 默认 `lit`。可设为 `albedo` 看基本色，`normal` 看世界空间法线，或 `mix` 看 AO、粗糙度、金属度图。诊断图是按 sRGB 导出的，读单个纹素的线性值时须考虑转换。材质光泽比较需要看同灯位的 `lit` 图。
 
+`PBZ_BAIQI_PREVIEW_PROFILE` 默认 `close`，即 101 厘米机位和 1280 像素图。`portrait` 用 375 厘米机位出 640 像素图，用于观察缩小后的发梢、眼镜与服装材质边缘。对照时给不同机位指定不同的输出目录。
+
 ![081 两种形态和眼部切换示例](../qa/figures/baiqi_unreal_preview_081/contact_sheet.jpg)

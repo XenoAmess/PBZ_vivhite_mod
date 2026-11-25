@@ -1,0 +1,26 @@
+{
+  "2": {
+    "edge_blocks": 1660,
+    "mean_rgb_error_085_pad4_pad8": [
+      23.644,
+      1.19,
+      1.188
+    ]
+  },
+  "4": {
+    "edge_blocks": 814,
+    "mean_rgb_error_085_pad4_pad8": [
+      26.123,
+      1.888,
+      1.878
+    ]
+  },
+  "8": {
+    "edge_blocks": 390,
+    "mean_rgb_error_085_pad4_pad8": [
+      41.808,
+      17.918,
+      7.817
+    ]
+  }
+}

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = '/Game/BaiQiBridgeProbe/OfflinePreview'
 FORMS = ('coat_on', 'coat_off')
 FACE = 'BaiQi original face appearance'
-PREVIEW_SIZE = 1280
+PROFILES = {'close': (1280, 101.), 'portrait': (640, 375.)}
 SHOTS = {
     'front_left': ((0., 1., 0.), -54.),
     'front_right': ((0., 1., 0.), -126.),
@@ -146,6 +146,8 @@ def main():
     for command in ('Editor.AsyncAssetCompilation 0', 'Editor.AsyncTextureCompilation 0', 'r.VT.EnableAutoImport 0'):
         unreal.SystemLibrary.execute_console_command(None, command)
     preview_pass = os.environ.get('PBZ_BAIQI_PREVIEW_PASS', 'lit')
+    profile = os.environ.get('PBZ_BAIQI_PREVIEW_PROFILE', 'close')
+    size, distance_cm = PROFILES[profile]
     source = unreal.SceneCaptureSource
     capture_sources = {'lit': source.SCS_FINAL_COLOR_LDR, 'albedo': source.SCS_BASE_COLOR,
                        'mix': source.SCS_BASE_COLOR, 'normal': source.SCS_NORMAL}
@@ -177,7 +179,7 @@ def main():
     capture.set_editor_property('capture_source', capture_sources[preview_pass])
     capture.set_editor_property('post_process_blend_weight', 0.)
     capture.set_editor_property('fov_angle', 24.)
-    target = RENDER.create_render_target2d(world, PREVIEW_SIZE, PREVIEW_SIZE, unreal.TextureRenderTargetFormat.RTF_RGBA8_SRGB)
+    target = RENDER.create_render_target2d(world, size, size, unreal.TextureRenderTargetFormat.RTF_RGBA8_SRGB)
     capture.set_editor_property('texture_target', target)
     key = actors.spawn_actor_from_class(unreal.DirectionalLight, origin, unreal.Rotator(pitch=-36., yaw=-54.), transient=True)
     key_light = key.get_component_by_class(unreal.DirectionalLightComponent)
@@ -212,11 +214,11 @@ def main():
             apply_maps(inputs, face, name, materials[name], finishes[name])
             for shot, (direction, yaw) in SHOTS.items():
                 key.set_actor_rotation(unreal.Rotator(pitch=-36., yaw=yaw), False)
-                eye = head + V(*direction) * 101.
+                eye = head + V(*direction) * distance_cm
                 camera.set_actor_location(eye, False, False)
                 camera.set_actor_rotation(unreal.MathLibrary.find_look_at_rotation(eye, head), False)
                 capture.capture_scene()
-                if preview_pass == 'lit' and state == selected[0] and shot == 'front_left':
+                if profile == 'close' and preview_pass == 'lit' and state == selected[0] and shot == 'front_left':
                     confirm_color(world, target, form)
                 file = f'{form}_{state}_{shot}.png'
                 RENDER.export_render_target(world, target, str(output), file)

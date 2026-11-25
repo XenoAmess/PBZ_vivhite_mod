@@ -36,3 +36,4 @@
 | 083 | 去除下颌重复描线，让三维下颌受光成形 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-083) |
 | 084 | 平顺补颈受光并烘焙到 Unreal | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-084) |
 | 085 | 使上衣领口包边连续贴合 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-085) |
+| 086 | 整理缩小后前发轮廓的颜色取样 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-086) |

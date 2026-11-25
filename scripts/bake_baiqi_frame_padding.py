@@ -1,4 +1,4 @@
-"""Extend the gold rim color past its baked mesh cutout for texture filtering."""
+"""Extend artwork color past its baked mesh cutout for texture filtering."""
 import argparse
 import hashlib
 import json
@@ -12,6 +12,7 @@ from bake_baiqi_native_material_inputs import FRAME_MATERIAL
 
 CUTOUT_ALPHA = 64
 DONOR_ALPHA = 128
+MATERIALS = {'frame': FRAME_MATERIAL, 'fringe': 'BaiQi bob front appearance'}
 
 
 def pad_cutout_color(rgba, radius):
@@ -47,27 +48,29 @@ def pad_cutout_color(rgba, radius):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--inputs', type=Path, required=True)
+    parser.add_argument('--target', choices=MATERIALS, default='frame')
     parser.add_argument('--radius', type=int, choices=range(1, 9), default=4)
     parser.add_argument('--report', type=Path)
     args = parser.parse_args()
 
     materials = json.loads((args.inputs / 'engine_materials.json').read_text(encoding='utf-8'))
-    frame = materials[FRAME_MATERIAL]
-    if frame['type'] != 'opaque_cutout':
-        raise ValueError(f"Unexpected frame texture type {frame['type']!r}")
-    stem = hashlib.sha256(FRAME_MATERIAL.encode()).hexdigest()[:14]
+    material = MATERIALS[args.target]
+    record = materials[material]
+    if record['type'] != 'opaque_cutout':
+        raise ValueError(f"Unexpected cutout texture type {record['type']!r} for {material}")
+    stem = hashlib.sha256(material.encode()).hexdigest()[:14]
     path = args.inputs / 'native_textures' / f'T_BaiQiNative_{stem}.png'
-    with Image.open(path) as native, Image.open(args.inputs / frame['texture']) as source:
+    with Image.open(path) as native, Image.open(args.inputs / record['texture']) as source:
         current = np.asarray(native.convert('RGB'))
         rgba = np.asarray(source.convert('RGBA').resize(native.size, Image.Resampling.LANCZOS))
     original = rgba[..., :3]
     padded = pad_cutout_color(rgba, args.radius)
     if not (np.array_equal(current, original) or np.array_equal(current, padded)):
-        raise ValueError('Native frame color differs from its source bake. Rebuild the native textures first.')
+        raise ValueError('Native cutout color differs from its source bake. Rebuild the native textures first.')
     visible = rgba[..., 3] >= CUTOUT_ALPHA
     changed = np.any(padded != original, axis=2)
     if np.any(changed & visible):
-        raise ValueError('Color padding crossed the original frame cutout')
+        raise ValueError('Color padding crossed the original artwork cutout')
     Image.fromarray(padded).save(path)
     result = {
         'texture': path.name,
