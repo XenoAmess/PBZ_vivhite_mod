@@ -3,7 +3,7 @@ import bpy
 from mathutils import Vector
 
 
-def clip_mesh(obj, signed_distance, *, texture_space=False, refine_edges=False):
+def clip_mesh(obj, signed_distance, *, texture_space=False, refine_edges=False, conform_edges=False):
     mesh = obj.data
     mesh.calc_loop_triangles()
     layers = list(mesh.uv_layers)
@@ -45,9 +45,42 @@ def clip_mesh(obj, signed_distance, *, texture_space=False, refine_edges=False):
             return [(a, b, center), (b, c, center), (c, a, center)] if distance(center) >= 0 else []
         return [(a, ab, ca), (ab, b, bc), (ca, bc, c), (ab, bc, ca)]
 
-    for triangle in mesh.loop_triangles:
-        corners = [corner(vertex, loop) for vertex, loop in zip(triangle.vertices, triangle.loops)]
-        for polygon in refined(corners):
+    def source_triangles():
+        for triangle in mesh.loop_triangles:
+            corners = [corner(vertex, loop) for vertex, loop in zip(triangle.vertices, triangle.loops)]
+            yield triangle, corners, refined(corners)
+
+    def partitions():
+        if not conform_edges:
+            for triangle, _, polygons in source_triangles():
+                yield triangle.material_index, polygons
+            return
+
+        # Match shared midpoints so cut surfaces retain continuous smoothing.
+        planned = []
+        split_edges = set()
+        for triangle, corners, polygons in source_triangles():
+            a, b, c = triangle.vertices[:]
+            edges = [tuple(sorted(pair)) for pair in ((a, b), (b, c), (c, a))]
+            if len(polygons) == 4:
+                split_edges.update(edges)
+            planned.append((triangle.material_index, corners, polygons, edges))
+
+        for material_index, corners, polygons, edges in planned:
+            if len(polygons) == 1 and polygons[0] is corners and any(edge in split_edges for edge in edges):
+                boundary = []
+                for index, edge in enumerate(edges):
+                    start, end = corners[index], corners[(index + 1) % 3]
+                    boundary.append(start)
+                    if edge in split_edges:
+                        boundary.append(interpolate(start, end, .5))
+                a, b, c = corners
+                center = interpolate(interpolate(a, b, .5), c, 1. / 3.)
+                polygons = [(start, end, center) for start, end in zip(boundary, boundary[1:] + boundary[:1])]
+            yield material_index, polygons
+
+    for material_index, polygons in partitions():
+        for polygon in polygons:
             clipped = []
             distances = [distance(vertex) for vertex in polygon]
             for index, current in enumerate(polygon):
@@ -77,11 +110,15 @@ def clip_mesh(obj, signed_distance, *, texture_space=False, refine_edges=False):
                     vertices.append(vertex['co'])
                     weights.append(vertex['weights'])
                 indices.append(lookup[key])
+            if conform_edges:
+                distinct = [index for index in range(len(indices)) if indices[index] != indices[index - 1]]
+                indices = [indices[index] for index in distinct]
+                clipped = [clipped[index] for index in distinct]
             if len(set(indices)) < 3:
                 continue
             faces.append(indices)
             face_uvs.append([vertex['uv'] for vertex in clipped])
-            face_materials.append(triangle.material_index)
+            face_materials.append(material_index)
 
     result = bpy.data.meshes.new(obj.name + ' fitted boundaries')
     result.from_pydata(vertices, [], faces)

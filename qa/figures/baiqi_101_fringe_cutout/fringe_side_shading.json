@@ -1,0 +1,46 @@
+{
+  "pre_cut_t_junctions": [
+    570,
+    0
+  ],
+  "pre_cut_t_junctions_lower_side": [
+    68,
+    0
+  ],
+  "native_profile_texture_only_fixed_region_xyxy": [
+    500,
+    947,
+    550,
+    1028
+  ],
+  "scores": {
+    "coat_on": [
+      {
+        "n": 2967,
+        "median": 2.497400000000013,
+        "p95": 25.999999999999996,
+        "vertical_luma_second_diff_gt_10": 790
+      },
+      {
+        "n": 2967,
+        "median": 2.7874000000000194,
+        "p95": 21.526239999999973,
+        "vertical_luma_second_diff_gt_10": 594
+      }
+    ],
+    "coat_off": [
+      {
+        "n": 2967,
+        "median": 2.497400000000013,
+        "p95": 25.999999999999996,
+        "vertical_luma_second_diff_gt_10": 790
+      },
+      {
+        "n": 2967,
+        "median": 2.7874000000000194,
+        "p95": 21.526239999999973,
+        "vertical_luma_second_diff_gt_10": 594
+      }
+    ]
+  }
+}

@@ -42,7 +42,7 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat):
+def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat, *, conform_fringe_edges=False):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -77,7 +77,8 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
     if len(duplicate.data.materials) == 1:
         material = duplicate.data.materials[0]
         if material.name in mask_materials:
-            trim_texture_mask(duplicate, first_texture(material).image)
+            trim_texture_mask(duplicate, first_texture(material).image,
+                              conform_edges=conform_fringe_edges and material.name == 'BaiQi bob front appearance')
     if EXPORT_THICKNESS in duplicate.modifiers:
         bpy.context.view_layer.objects.active = duplicate
         assert bpy.ops.object.modifier_apply(modifier=EXPORT_THICKNESS) == {'FINISHED'}, duplicate.name
@@ -123,7 +124,7 @@ def add_skirt_leg_support(obj, rig):
                 group.add([vertex.index], ratio * strength, 'REPLACE')
 
 
-def trim_texture_mask(obj, image):
+def trim_texture_mask(obj, image, *, conform_edges=False):
     width, height = image.size
     pixels = np.empty(width * height * 4, dtype=np.float32)
     image.pixels.foreach_get(pixels)
@@ -139,7 +140,7 @@ def trim_texture_mask(obj, image):
                 dy * ((1 - dx) * alpha[upper, col] + dx * alpha[upper, right])) - .25
 
     before = len(obj.data.polygons)
-    clip_mesh(obj, opacity, texture_space=True, refine_edges=True)
+    clip_mesh(obj, opacity, texture_space=True, refine_edges=True, conform_edges=conform_edges)
     assert obj.data.polygons, f'Mask removed every polygon from {obj.name}'
     print('BAIQI_GEOMETRY_CUTOUT', obj.name, before, len(obj.data.polygons))
 
@@ -321,6 +322,8 @@ def main():
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--reserve-native-slots', action='store_true')
     parser.add_argument('--bake-alpha-geometry', action='store_true')
+    parser.add_argument('--conform-fringe-edges', action='store_true',
+                        help='Match shared triangle edges in the cut front hair mesh.')
     parser.add_argument('--support-skirt', action='store_true')
     parser.add_argument('--separate-coat-material', action='store_true',
                         help='Give the removable coat its own slot, independent of the wrist bands.')
@@ -355,7 +358,8 @@ def main():
                  'BaiQi black gold headdress appearance', 'BaiQi black and gold bow artwork'}
         if not args.bake_alpha_geometry:
             masks.clear()
-        assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt, args.separate_coat_material)
+        assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt, args.separate_coat_material,
+                                 conform_fringe_edges=args.conform_fringe_edges)
                      for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)
