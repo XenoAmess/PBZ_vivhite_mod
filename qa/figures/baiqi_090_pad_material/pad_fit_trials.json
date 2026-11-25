@@ -1,0 +1,74 @@
+{
+  "moved_source_vertices": 66,
+  "variants": {
+    "baseline": {
+      "head_pairs": 339,
+      "a": {
+        "count": 259,
+        "percentiles_mm": [
+          7.464,
+          7.563,
+          8.283,
+          9.051,
+          9.213
+        ]
+      },
+      "b": {
+        "count": 185,
+        "percentiles_mm": [
+          7.355,
+          7.567,
+          8.369,
+          9.1,
+          9.195
+        ]
+      }
+    },
+    "medium": {
+      "head_pairs": 339,
+      "a": {
+        "count": 259,
+        "percentiles_mm": [
+          3.414,
+          3.536,
+          4.312,
+          5.07,
+          6.339
+        ]
+      },
+      "b": {
+        "count": 185,
+        "percentiles_mm": [
+          3.362,
+          3.472,
+          4.386,
+          5.211,
+          6.284
+        ]
+      }
+    },
+    "full": {
+      "head_pairs": 339,
+      "a": {
+        "count": 259,
+        "percentiles_mm": [
+          0.419,
+          0.466,
+          1.666,
+          2.601,
+          4.416
+        ]
+      },
+      "b": {
+        "count": 185,
+        "percentiles_mm": [
+          0.346,
+          0.425,
+          1.721,
+          2.883,
+          4.348
+        ]
+      }
+    }
+  }
+}

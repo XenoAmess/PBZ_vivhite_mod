@@ -40,3 +40,4 @@
 | 087 | 修整前伸与抬臂时的上衣袖窿 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-087) |
 | 088 | 缓解外套腋下的内衬穿出 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-088) |
 | 089 | 将镜腿接回原有圆镜框 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-089) |
+| 090 | 给原鼻托独立的粗糙度和金属度 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-090) |

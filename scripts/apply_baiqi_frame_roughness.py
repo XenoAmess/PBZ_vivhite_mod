@@ -1,4 +1,4 @@
-"""Update the existing eyewear roughness or the original nose-pad artwork."""
+"""Update eyewear roughness, nose-pad artwork, or the nose-pad material finish."""
 import argparse
 import json
 from pathlib import Path
@@ -25,7 +25,9 @@ def main():
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--roughness', type=float, default=.46)
-    parser.add_argument('--pad-maps', type=Path, help='Use a local pad color update on the existing finish.')
+    update = parser.add_mutually_exclusive_group()
+    update.add_argument('--pad-maps', type=Path, help='Use a local pad color update on the existing finish.')
+    update.add_argument('--pad-finish', type=Path, help='Pack the separate nose-pad roughness and metallic channels.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.out))
     assert source != output and output.is_relative_to(ROOT)
@@ -37,6 +39,12 @@ def main():
         pad_path = directory / 'frame_pads.png'
         pad_data = json.loads((directory / 'frame_pads.json').read_text(encoding='utf-8'))
         assert fingerprint(pad_path) == pad_data['candidate_sha256']
+    pad_finish = None
+    if args.pad_finish:
+        directory = ROOT / args.pad_finish
+        mix_path = directory / 'frame_pad_mix.png'
+        pad_finish = json.loads((directory / 'frame_pad_mix.json').read_text(encoding='utf-8'))
+        assert fingerprint(mix_path) == pad_finish['mix_sha256']
     output.mkdir(parents=True, exist_ok=True)
     report = {}
     for form in ('coat_on', 'coat_off'):
@@ -48,7 +56,8 @@ def main():
         geometry = {obj: mesh_fingerprint(obj) for obj in bpy.context.scene.objects if obj.type == 'MESH'}
         skeleton = rest_signature(rig)
         assert geometry[body] == expected[form]['body_sha256']
-        nodes = bpy.data.materials[FRAME_MATERIAL].node_tree.nodes
+        tree = bpy.data.materials[FRAME_MATERIAL].node_tree
+        nodes = tree.nodes
         frame = nodes['Principled BSDF']
         assert not frame.inputs['Roughness'].is_linked and not frame.inputs['Metallic'].is_linked
         previous = frame.inputs['Roughness'].default_value
@@ -66,6 +75,22 @@ def main():
             assert (((x >= 410) & (x <= 427)) | ((x >= 452) & (x <= 469))).all()
             replacement.pack()
             node.image = replacement
+        elif pad_finish:
+            assert abs(previous - pad_finish['frame_roughness']) < 1e-6
+            assert abs(metal - pad_finish['frame_metallic']) < 1e-6
+            assert pad_finish['source_sha256'] == expected[form]['materials'][FRAME_MATERIAL]['images'][0]['sha256']
+            albedo = nodes['Image Texture']
+            mix = nodes.new('ShaderNodeTexImage')
+            mix.label = 'Gold frame and silicone pads'
+            mix.image = bpy.data.images.load(str(mix_path))
+            mix.image.colorspace_settings.name = 'Non-Color'
+            mix.image.pack()
+            mix.extension = albedo.extension
+            tree.links.new(albedo.inputs['Vector'].links[0].from_socket, mix.inputs['Vector'])
+            channels = nodes.new('ShaderNodeSeparateColor')
+            tree.links.new(mix.outputs['Color'], channels.inputs['Color'])
+            tree.links.new(channels.outputs['Green'], frame.inputs['Roughness'])
+            tree.links.new(channels.outputs['Blue'], frame.inputs['Metallic'])
         else:
             assert abs(previous - .36) < 1e-6
             frame.inputs['Roughness'].default_value = args.roughness
@@ -78,6 +103,8 @@ def main():
                         'frame_roughness': frame.inputs['Roughness'].default_value, 'frame_metallic': metal}
         if pad_data:
             report[form]['pad_color'] = pad_data
+        if pad_finish:
+            report[form]['pad_finish'] = pad_finish
     report_name = 'frame_pads.json' if pad_data else 'frame_finish.json'
     (output / report_name).write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 

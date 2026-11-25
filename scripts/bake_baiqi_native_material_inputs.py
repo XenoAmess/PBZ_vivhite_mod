@@ -9,6 +9,8 @@ from shutil import copyfile
 import numpy as np
 from PIL import Image
 
+from bake_baiqi_frame_pad_materials import frame_albedo, pad_mix
+
 
 # Roughness, specular and metallic values for the adult game's cloth layer.
 FRAME_MATERIAL = 'BaiQi round gold glasses appearance'
@@ -64,7 +66,7 @@ def face_mix_texture(mask_path, roughness):
     return Image.fromarray(np.rint(channels).astype(np.uint8))
 
 
-def surface_finish(inputs, directory, materials, *, frame_roughness=None, neck_normal=None):
+def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_pad_finish=False, neck_normal=None):
     source = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))['coat_on']['materials']
     weave = weave_texture(directory)
     profiles = {}
@@ -79,6 +81,10 @@ def surface_finish(inputs, directory, materials, *, frame_roughness=None, neck_n
         if materials[name]['type'] == 'skin_face':
             mask = next(row for row in source[name]['images'] if row['label'] == 'Keep original facial artwork')
             image = face_mix_texture(inputs / mask['path'], roughness)
+        elif name == FRAME_MATERIAL and frame_pad_finish:
+            albedo, _ = frame_albedo(inputs)
+            with Image.open(albedo) as reference:
+                image, _ = pad_mix(reference, roughness, metallic)
         else:
             image = Image.new('RGB', (64, 64), (255, round(255 * roughness), round(255 * metallic)))
         image.save(directory / f'{mix}.png')
@@ -99,12 +105,15 @@ def main():
     parser.add_argument('skin_report', type=Path)
     parser.add_argument('--surface-finish', action='store_true', help='Bake separate roughness and normal profiles.')
     parser.add_argument('--frame-roughness', type=float, help='Roughness of the gold eyewear frame only.')
+    parser.add_argument('--frame-pad-finish', action='store_true', help='Bake the existing nose pads as a separate material response.')
     parser.add_argument('--neck-normal', type=Path, help='Bake the approved bridge map into its native material only.')
     args = parser.parse_args()
     if args.frame_roughness is not None:
         assert args.surface_finish and .36 <= args.frame_roughness <= .58
     if args.neck_normal and not args.surface_finish:
         parser.error('--neck-normal requires --surface-finish')
+    if args.frame_pad_finish and not args.surface_finish:
+        parser.error('--frame-pad-finish requires --surface-finish')
     directory = args.inputs / 'native_textures'
     directory.mkdir(exist_ok=True)
     materials = json.loads((args.inputs / 'engine_materials.json').read_text(encoding='utf-8'))
@@ -127,7 +136,7 @@ def main():
         Image.new('RGB', (64, 64), flat).save(directory / f'T_BaiQiNative_{name}.png')
     if args.surface_finish:
         surface_finish(args.inputs, directory, materials, frame_roughness=args.frame_roughness,
-                       neck_normal=args.neck_normal)
+                       frame_pad_finish=args.frame_pad_finish, neck_normal=args.neck_normal)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,110 @@
+{
+  "front_left": {
+    "089 stock": {
+      "below_100": 91,
+      "above_232": 277,
+      "median": 192.66
+    },
+    "089 local .05": {
+      "below_100": 39,
+      "above_232": 2,
+      "median": 208.35
+    },
+    "090 stock": {
+      "below_100": 373,
+      "above_232": 108,
+      "median": 151.31
+    },
+    "090 local .20": {
+      "below_100": 269,
+      "above_232": 13,
+      "median": 184.2
+    },
+    "090 local .05": {
+      "below_100": 245,
+      "above_232": 11,
+      "median": 190.7
+    }
+  },
+  "front_right": {
+    "089 stock": {
+      "below_100": 57,
+      "above_232": 299,
+      "median": 200.9
+    },
+    "089 local .05": {
+      "below_100": 44,
+      "above_232": 7,
+      "median": 211.2
+    },
+    "090 stock": {
+      "below_100": 386,
+      "above_232": 78,
+      "median": 148.49
+    },
+    "090 local .20": {
+      "below_100": 265,
+      "above_232": 1,
+      "median": 176.96
+    },
+    "090 local .05": {
+      "below_100": 226,
+      "above_232": 0,
+      "median": 183.34
+    }
+  },
+  "oblique": {
+    "089 stock": {
+      "below_100": 88,
+      "above_232": 65,
+      "median": 189.89
+    },
+    "089 local .05": {
+      "below_100": 48,
+      "above_232": 0,
+      "median": 198.89
+    },
+    "090 stock": {
+      "below_100": 107,
+      "above_232": 21,
+      "median": 180.87
+    },
+    "090 local .20": {
+      "below_100": 74,
+      "above_232": 0,
+      "median": 196.21
+    },
+    "090 local .05": {
+      "below_100": 65,
+      "above_232": 0,
+      "median": 199.76
+    }
+  },
+  "other_oblique": {
+    "089 stock": {
+      "below_100": 25,
+      "above_232": 52,
+      "median": 208.47
+    },
+    "089 local .05": {
+      "below_100": 16,
+      "above_232": 0,
+      "median": 210.18
+    },
+    "090 stock": {
+      "below_100": 66,
+      "above_232": 16,
+      "median": 154.02
+    },
+    "090 local .20": {
+      "below_100": 41,
+      "above_232": 0,
+      "median": 177.69
+    },
+    "090 local .05": {
+      "below_100": 36,
+      "above_232": 0,
+      "median": 183.4
+    }
+  }
+}
