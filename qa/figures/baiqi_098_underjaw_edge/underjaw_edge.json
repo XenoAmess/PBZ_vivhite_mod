@@ -1,0 +1,146 @@
+{
+  "coat_on": {
+    "source_sha256": "ea7cf697958c0880602f76fbed20d60a1bf6a87134c651787d9897f5793f5649",
+    "candidate_sha256": "ecd77a59a7dc687fee9211f1b517ea0279a1604754f2c9bd365b7cd4da6748a1",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "states": {
+      "neutral": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "half_blink": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "closed": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "look_left": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "look_right": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      }
+    },
+    "opacity_scale": 0.55,
+    "underjaw_edge": {
+      "drawables": [
+        "ArtMesh54"
+      ],
+      "amount": 0.72,
+      "skin_rgb": [
+        254,
+        243,
+        234
+      ],
+      "states": {
+        "neutral": 215,
+        "half_blink": 215,
+        "closed": 215,
+        "look_left": 215,
+        "look_right": 215
+      }
+    }
+  },
+  "coat_off": {
+    "source_sha256": "6564c0074ba260fe332533dea8e4291b29d038bc0b28497f253034829e32129b",
+    "candidate_sha256": "486e6db2481fc9461eb861e3ef00033eebdeca8ed2d52fffeb540b906e7188e0",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "states": {
+      "neutral": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "half_blink": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "closed": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "look_left": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      },
+      "look_right": {
+        "changed_pixels": 215,
+        "bounds": [
+          348,
+          546,
+          458,
+          604
+        ]
+      }
+    },
+    "opacity_scale": 0.55,
+    "underjaw_edge": {
+      "drawables": [
+        "ArtMesh54"
+      ],
+      "amount": 0.72,
+      "skin_rgb": [
+        254,
+        243,
+        234
+      ],
+      "states": {
+        "neutral": 215,
+        "half_blink": 215,
+        "closed": 215,
+        "look_left": 215,
+        "look_right": 215
+      }
+    }
+  }
+}

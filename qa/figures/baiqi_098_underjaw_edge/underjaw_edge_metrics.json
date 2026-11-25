@@ -1,0 +1,622 @@
+{
+  "coat_off": {
+    "lit": {
+      "front_under_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            216.0,
+            190.0,
+            175.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 851,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            217.0,
+            196.0,
+            184.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 991,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            217.0,
+            198.0,
+            185.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 974,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            217.0,
+            198.0,
+            185.0
+          ]
+        }
+      },
+      "oblique_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            155.0,
+            124.0,
+            104.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1217,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            155.0,
+            124.0,
+            105.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1389,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            155.0,
+            126.0,
+            108.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1346,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            155.0,
+            125.5,
+            106.0
+          ]
+        }
+      },
+      "higher_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            139.0,
+            102.0,
+            83.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 610,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            142.0,
+            110.0,
+            91.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 656,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            146.0,
+            118.0,
+            98.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 647,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            146.0,
+            118.0,
+            98.0
+          ]
+        }
+      },
+      "front_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            216.0,
+            193.0,
+            180.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 325,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            217.0,
+            198.0,
+            185.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 391,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            218.0,
+            202.0,
+            191.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 391,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            218.0,
+            202.0,
+            190.0
+          ]
+        }
+      }
+    },
+    "albedo": {
+      "front_under_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 909,
+          "median_rgb": [
+            239.0,
+            192.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1044,
+          "modest_red_rg45": 291,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1196,
+          "modest_red_rg45": 72,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1163,
+          "modest_red_rg45": 86,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "oblique_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 1253,
+          "median_rgb": [
+            239.0,
+            191.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1428,
+          "modest_red_rg45": 408,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1626,
+          "modest_red_rg45": 103,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1583,
+          "modest_red_rg45": 123,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "higher_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 894,
+          "median_rgb": [
+            239.0,
+            192.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1039,
+          "modest_red_rg45": 263,
+          "median_rgb": [
+            241.0,
+            198.0,
+            177.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1175,
+          "modest_red_rg45": 58,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1151,
+          "modest_red_rg45": 77,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "front_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 387,
+          "median_rgb": [
+            239.0,
+            191.0,
+            170.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 436,
+          "modest_red_rg45": 138,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 498,
+          "modest_red_rg45": 40,
+          "median_rgb": [
+            244.0,
+            203.0,
+            182.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 483,
+          "modest_red_rg45": 50,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      }
+    }
+  },
+  "coat_on": {
+    "lit": {
+      "front_under_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            215.0,
+            190.0,
+            175.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 849,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            217.0,
+            196.0,
+            183.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 995,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            217.0,
+            197.0,
+            184.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 966,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            217.0,
+            197.0,
+            184.0
+          ]
+        }
+      },
+      "oblique_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            158.0,
+            126.0,
+            108.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1221,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            160.0,
+            130.0,
+            113.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1392,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            160.0,
+            131.0,
+            113.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1355,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            158.0,
+            131.0,
+            110.0
+          ]
+        }
+      },
+      "higher_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            138.0,
+            101.0,
+            81.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 619,
+          "modest_red_rg45": 1,
+          "median_rgb": [
+            142.0,
+            110.0,
+            90.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 690,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            145.0,
+            117.0,
+            98.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 668,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            145.0,
+            117.0,
+            96.0
+          ]
+        }
+      },
+      "front_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            216.0,
+            192.0,
+            179.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 326,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            217.0,
+            198.0,
+            184.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 402,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            218.0,
+            202.0,
+            190.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 403,
+          "modest_red_rg45": 0,
+          "median_rgb": [
+            218.0,
+            202.0,
+            190.0
+          ]
+        }
+      }
+    },
+    "albedo": {
+      "front_under_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 909,
+          "median_rgb": [
+            239.0,
+            192.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1044,
+          "modest_red_rg45": 291,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1196,
+          "modest_red_rg45": 72,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1163,
+          "modest_red_rg45": 86,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "oblique_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 1253,
+          "median_rgb": [
+            239.0,
+            191.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1428,
+          "modest_red_rg45": 408,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1626,
+          "modest_red_rg45": 103,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1583,
+          "modest_red_rg45": 123,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "higher_under": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 894,
+          "median_rgb": [
+            239.0,
+            192.0,
+            171.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 1039,
+          "modest_red_rg45": 263,
+          "median_rgb": [
+            241.0,
+            198.0,
+            177.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 1175,
+          "modest_red_rg45": 58,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 1151,
+          "modest_red_rg45": 77,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      },
+      "front_left": {
+        "097": {
+          "changed_gt3": 0,
+          "modest_red_rg45": 387,
+          "median_rgb": [
+            239.0,
+            191.0,
+            170.0
+          ]
+        },
+        "soft": {
+          "changed_gt3": 436,
+          "modest_red_rg45": 138,
+          "median_rgb": [
+            241.0,
+            198.0,
+            176.0
+          ]
+        },
+        "complete": {
+          "changed_gt3": 498,
+          "modest_red_rg45": 40,
+          "median_rgb": [
+            244.0,
+            203.0,
+            182.0
+          ]
+        },
+        "premult": {
+          "changed_gt3": 483,
+          "modest_red_rg45": 50,
+          "median_rgb": [
+            244.0,
+            203.0,
+            181.0
+          ]
+        }
+      }
+    }
+  }
+}
