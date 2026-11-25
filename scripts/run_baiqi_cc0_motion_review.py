@@ -199,6 +199,11 @@ def main():
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--render', choices=('full', 'triage', 'none'), default='full')
     parser.add_argument('--case', action='append', default=[], help='Limit the run to named cases or native clips.')
+    parser.add_argument('--resolution', type=int, nargs=2, metavar=('WIDTH', 'HEIGHT'), default=(512, 512))
+    parser.add_argument('--samples', type=int, default=24, help='Number of EEVEE samples per rendered image.')
+    parser.add_argument('--view', choices=VIEWS, action='append', default=[], help='Render these views for each case.')
+    parser.add_argument('--sample-index', type=int, action='append', default=[],
+                        help='Render this zero-based pose index in each case.')
     parser.add_argument('--forearm-roll-share', type=float, default=1.)
     parser.add_argument('--neck-head-share', type=float, default=0.)
     parser.add_argument('--native-neck-closeup', action='store_true')
@@ -218,6 +223,10 @@ def main():
     parser.add_argument('--temple-contacts', action='store_true',
                         help='Record contact between each glasses temple and the head surface.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
+    if min(args.resolution) <= 0 or args.samples <= 0 or any(index < 0 for index in args.sample_index):
+        parser.error('Resolution and EEVEE samples must be positive. Pose indices start at zero.')
+    if len(set(args.view)) != len(args.view) or len(set(args.sample_index)) != len(args.sample_index):
+        parser.error('Each view and pose index may be selected once.')
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
     photo = ROOT / args.candidate
@@ -273,12 +282,23 @@ def main():
     if args.game_hair_shadows:
         match_game_hair_shadows(scene, meshes)
     lights = {obj.name: obj.location.copy() for obj in scene.objects if obj.type == 'LIGHT'}
-    scene.render.resolution_x = scene.render.resolution_y = 512
-    scene.eevee.taa_render_samples = 24
+    scene.render.resolution_x, scene.render.resolution_y = args.resolution
+    scene.eevee.taa_render_samples = args.samples
     studio = prepare_studio(meshes, body, face_closeup=args.face_closeup)
     rows = []
 
     def assess(case_id, group, action, samples, source_hash=None):
+        if any(index >= len(samples) for index in args.sample_index):
+            raise ValueError(f'{case_id} has {len(samples)} poses. The requested index is out of range.')
+        if args.render == 'none':
+            render_indices = set()
+        elif args.sample_index:
+            render_indices = set(args.sample_index)
+        elif args.render == 'triage':
+            render_indices = {0, len(samples) // 2, len(samples) - 1}
+        else:
+            render_indices = range(len(samples))
+        views = args.view or spec['views'][group]
         set_action(soul, action)
         row = {'id': case_id, 'group': group, 'samples': [], 'images': [], 'source_sha256': source_hash}
         rows.append(row)
@@ -327,7 +347,7 @@ def main():
             if args.temple_contacts:
                 row['samples'][-1]['intersecting_glasses_temple_head_triangle_pairs'] = {
                     temple.name: len(head_surface.overlap(surface_tree(temple, graph))) for temple in temples}
-            if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
+            if index not in render_indices:
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]
             root = cc0.pose.bones['Root'].head
@@ -342,8 +362,7 @@ def main():
             for name, studio_location in lights.items():
                 scene.objects[name].location = studio_location + root
             for kind in spec['passes']:
-                render_kind(studio, camera, scene, row, target, output, kind,
-                            spec['views'][group], f'{index:02}', size)
+                render_kind(studio, camera, scene, row, target, output, kind, views, f'{index:02}', size)
             studio('textured')
         print('BAIQI_CC0_CASE', case_id, len(row['samples']), len(row['images']), flush=True)
 
@@ -382,7 +401,8 @@ def main():
                             inherited_flags.append({**flag, 'original_cc0_value': original})
                         else:
                             flags.append(flag)
-    coverage = not args.case and args.render == 'full' and all(len(row['images']) == len(row['samples']) * 6 for row in rows)
+    coverage = (not args.case and not args.view and not args.sample_index and args.render == 'full'
+                and all(len(row['images']) == len(row['samples']) * 6 for row in rows))
     studio('textured')
     assert mesh_fingerprint(body) == body['baiqi_cc0_geometry_sha256']
     report = {'status': 'failed' if flags else 'pending_review', 'game_runtime_allowed': False,
@@ -390,6 +410,8 @@ def main():
               'donor_sha256': file_hash(donor), 'runner_sha256': file_hash(Path(__file__)),
               'retarget_sha256': file_hash(Path(__file__).with_name('baiqi_cc0_motion.py')),
               'mapped_bones': len(transfer.links), 'render_profile': args.render,
+              'render_options': {'resolution': list(args.resolution), 'samples': args.samples,
+                                 'views': args.view, 'sample_indices': args.sample_index},
               'forearm_roll_share': args.forearm_roll_share, 'neck_head_share': args.neck_head_share,
               'native_neck_closeup': args.native_neck_closeup,
               'face_closeup': args.face_closeup,

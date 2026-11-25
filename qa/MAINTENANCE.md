@@ -24,3 +24,42 @@
 数值检查只负责筛选问题，不能代替外观。必须同时满足：参数覆盖完整、所有数值硬门槛通过、所有动作和中立形体人工复查通过、已知缺陷关闭、复查记录与本次输入哈希一致。
 
 状态只能是 `failed`、`pending_review`、`offline_accepted`。`failed` 或 `pending_review` 不允许启动实机验收。离线通过后，实机仍须另记结果，不能沿用旧包的截图或哈希。
+
+## 6000D 渲染节点 HTTP 接口提案
+
+首期支持 `blender_review`，使用 Blender 5.3.0 的 EEVEE 跑白绮动作套组。模型文件打包贴图。动作供体 `Delta_SelfTest.blend` 及同目录 `sampling_report.json`、CC0 对照 `Base_Female.blend`、实际游戏动作与其 Blender 导入器都按版本固定。输入和输出的文件名均使用相对路径。
+
+| 请求 | 响应 |
+|---|---|
+| `GET /v1/capabilities` | `200`。返回 `schema_version`、GPU 型号与显存、Blender 版本和后端、支持的任务、参数范围、队列和文件限制。 |
+| `PUT /v1/assets/{sha256}` | 上传 `application/zip` 原始字节。服务端计算并校验 64 位小写十六进制 SHA-256。首次上传返回 `201`，同内容已缓存返回 `200`。 |
+| `POST /v1/jobs` | 提交 JSON。带 `Idempotency-Key`，重复请求返回同一个 `job_id`。返回 `202` 和 `job_id`。 |
+| `GET /v1/jobs/{job_id}` | `200`。返回 `status`、已完成图数、计划图数、排队和运行时间、结构化错误以及成功时的结果哈希。 |
+| `GET /v1/jobs/{job_id}/result` | 完成后返回 `200` 和 `application/zip`。结果含 PNG、各形态的 `motion_report.json`、总清单和运行日志，支持用 `Range` 续传。 |
+| `DELETE /v1/jobs/{job_id}` | 取消排队或运行中的任务，返回 `202`。查询状态可确认取消是否结束。 |
+
+`status` 取 `queued`、`running`、`succeeded`、`failed` 或 `cancelled`。建议私网 HTTPS 与 `Authorization: Bearer …`、单 GPU 重任务并发 1、上传上限 2 GiB、结果留存 7 天。用 `429` 和 `Retry-After` 报告队列已满，用 `422` 报告参数或哈希错误，用 `409` 报告结果未就绪或幂等键对应另一份请求。
+
+```json
+{
+  "kind": "blender_review",
+  "input_sha256": "<64 lowercase hexadecimal characters>",
+  "source_commit": "<git commit>",
+  "params": {
+    "forms": ["coat_on", "coat_off"],
+    "cases": ["arms_forward", "arms_abduction", "Hun_BaiShanDual_Attack_A"],
+    "sample_indices": [0, 2, 4],
+    "views": ["front", "oblique"],
+    "resolution": [1280, 1280],
+    "samples": 32,
+    "engine": "EEVEE",
+    "timeout_seconds": 1800
+  }
+}
+```
+
+`sample_indices` 从 0 起，逐个动作校验。机位可选 `front`、`back`、`side`、`oblique`。建议节点首期开放每边 128–4096 像素和每图 1–128 个采样，服务端按 `capabilities` 返回实际范围。结果清单应写出实际参数、输入包与模型哈希、套组和代码版本、GPU 和 Blender 版本、耗时、峰值显存及文件清单。客户端可依此配对来自同一动作、姿态、视角和渲染模式的两个版本。
+
+调用由节点预装并锁定版本的 `scripts/run_baiqi_cc0_motion_review.py`。用 `--render triage` 和 `--case`、`--sample-index`、`--view`、`--resolution WIDTH HEIGHT`、`--samples` 映射上述参数，两套形态各运行一次。白绮预设固定 `--neck-head-share .35 --game-hair-shadows`，每个取样点输出灰模与贴图两张。动作诊断仍记录请求动作的所有采样姿态。建议用 Blender `--disable-autoexec`，HTTP 任务只接收上表的结构化参数。
+
+上述例子已在本地 Blender 5.3.0 验证，输出 72 张 1280×1280 的 PNG 和两份动作报告。该结果可作为节点接通后的同输入对照。
