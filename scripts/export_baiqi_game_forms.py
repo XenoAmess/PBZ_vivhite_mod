@@ -42,7 +42,7 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat, *, conform_fringe_edges=False):
+def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat, *, conforming_masks=()):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -78,7 +78,7 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
         material = duplicate.data.materials[0]
         if material.name in mask_materials:
             trim_texture_mask(duplicate, first_texture(material).image,
-                              conform_edges=conform_fringe_edges and material.name == 'BaiQi bob front appearance')
+                              conform_edges=material.name in conforming_masks)
     if EXPORT_THICKNESS in duplicate.modifiers:
         bpy.context.view_layer.objects.active = duplicate
         assert bpy.ops.object.modifier_apply(modifier=EXPORT_THICKNESS) == {'FINISHED'}, duplicate.name
@@ -324,6 +324,8 @@ def main():
     parser.add_argument('--bake-alpha-geometry', action='store_true')
     parser.add_argument('--conform-fringe-edges', action='store_true',
                         help='Match shared triangle edges in the cut front hair mesh.')
+    parser.add_argument('--conform-frame-edges', action='store_true',
+                        help='Match shared triangle edges in the cut round glasses frame.')
     parser.add_argument('--support-skirt', action='store_true')
     parser.add_argument('--separate-coat-material', action='store_true',
                         help='Give the removable coat its own slot, independent of the wrist bands.')
@@ -331,6 +333,10 @@ def main():
     candidate = ROOT / args.candidate
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
+    conforming_masks = {name for name, enabled in (
+        ('BaiQi bob front appearance', args.conform_fringe_edges),
+        ('BaiQi round gold glasses appearance', args.conform_frame_edges),
+    ) if enabled}
     rows = {}
     for form in ('coat_on', 'coat_off'):
         source = candidate / f'BaiQi_CC0_{form}.blend'
@@ -359,7 +365,7 @@ def main():
         if not args.bake_alpha_geometry:
             masks.clear()
         assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt, args.separate_coat_material,
-                                 conform_fringe_edges=args.conform_fringe_edges)
+                                 conforming_masks=conforming_masks)
                      for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)
