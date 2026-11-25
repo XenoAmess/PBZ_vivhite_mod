@@ -23,3 +23,4 @@
 | 070 | 原鼻纹和三维鼻梁对齐 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-070) |
 | 071 | 收敛鼻翼法线过渡 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-071) |
 | 072 | 刘海发束随光显形 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-072) |
+| 073 | 收敛镜框鼻托亮度 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-073) |
