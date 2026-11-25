@@ -18,16 +18,16 @@ FACE = 'BaiQi original face appearance'
 STATES = ('neutral', 'half_blink', 'closed', 'look_left', 'look_right')
 
 
-def add_iris_layer(material, controller, poses, roughness):
+def pose_texture_selection(material, controller, images, label):
     tree = material.node_tree
     atlas = tree.nodes['Image Texture']
     coords = atlas.inputs['Vector'].links[0].from_socket
     maps = []
-    for state in STATES:
+    for state, image in zip(STATES, images, strict=True):
         texture = tree.nodes.new('ShaderNodeTexImage')
-        texture.label = 'Iris coverage ' + state
+        texture.label = label + ' ' + state
         texture.extension = 'EXTEND'
-        texture.image = bpy.data.images.load(str(poses / f'{state}_iris.png'))
+        texture.image = bpy.data.images.load(str(image))
         texture.image.colorspace_settings.name = 'Non-Color'
         texture.image.pack()
         tree.links.new(coords, texture.inputs['Vector'])
@@ -35,7 +35,7 @@ def add_iris_layer(material, controller, poses, roughness):
     coverage = maps[0]
     for index, mask in enumerate(maps[1:], start=1):
         selector = tree.nodes.new('ShaderNodeMixRGB')
-        selector.label = 'Iris pose ' + STATES[index]
+        selector.label = label + ' pose ' + STATES[index]
         driver = selector.inputs[0].driver_add('default_value').driver
         value = driver.variables.new()
         value.name = 'pose'
@@ -45,6 +45,13 @@ def add_iris_layer(material, controller, poses, roughness):
         tree.links.new(coverage, selector.inputs[1])
         tree.links.new(mask, selector.inputs[2])
         coverage = selector.outputs['Color']
+    return coverage
+
+
+def add_iris_layer(material, controller, poses, roughness):
+    tree = material.node_tree
+    coverage = pose_texture_selection(material, controller, [poses / f'{state}_iris.png' for state in STATES],
+                                      'Iris coverage')
     surface = tree.nodes['Principled BSDF'].inputs['Roughness']
     assert not surface.is_linked
     baseline = surface.default_value

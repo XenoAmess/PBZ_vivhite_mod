@@ -15,3 +15,4 @@
 | 062 | 虹膜固定高光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-062) |
 | 063 | 金属镜框受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-063) |
 | 064 | 虹膜独立受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-064) |
+| 065 | 虹膜局部法线与高光移动 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-065) |
