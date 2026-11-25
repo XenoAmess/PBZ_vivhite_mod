@@ -25,7 +25,25 @@
 
 状态只能是 `failed`、`pending_review`、`offline_accepted`。`failed` 或 `pending_review` 不允许启动实机验收。离线通过后，实机仍须另记结果，不能沿用旧包的截图或哈希。
 
+## 6000D 统一服务调用
+
+`scripts/run_baiqi_remote_review.py` 默认采用 `auto`。它检查网关是否接单，打包两套模型、动作供体及报告、CC0 对照和本次选中的游戏动作，再通过 `/v1/render/assets` 和 `/v1/render/jobs` 提交。节点固定使用验收脚本 `fb7e7cf`、Blender 5.3.0 和 EEVEE。客户端按结果 ZIP 哈希、逐文件哈希、输入模型哈希、动作套组哈希和图数核对回包。[统一模型服务协议](https://github.com/XenoAmess/local-model-operations/blob/main/deployments/video-generation/docs/unified-model-service.md#blender-白绮动作验收)
+
+```powershell
+py -3 scripts/run_baiqi_remote_review.py --models output/live2d_delta/baiqi_094_crown_profile --out artifacts/remote_review_094
+```
+
+`--models` 指向含 `BaiQi_CC0_coat_on.blend` 和 `BaiQi_CC0_coat_off.blend` 的目录。`--form`、`--case`、`--view`、`--sample-index` 可重复指定。默认跑两种形态、三组动作、三个采样、两个视角，分别输出灰模与贴图。默认每图 1280×1280、32 样本，共 72 张。服务每次最多接收 512 张图。需要自定义供体和对照时使用 `--donor` 与 `--cc0-control`。
+
+远端拒绝连接、维护、任务失败、结果校验失败、排队超过 60 秒或 120 秒无进展时，自动退回本机 Blender 执行同一动作和渲染参数。等待上限可用 `--queue-timeout` 和 `--stall-timeout` 调整，超时会尝试取消该次提交的任务。`--mode local` 直接本地执行，`--mode remote` 用于单测远端并保留错误。服务地址可通过 `PBZ_RENDER_SERVICE_URL` 或 `--service-url` 设置，局域网默认 `http://192.168.1.11:8080`。如服务启用认证，用环境变量 `PBZ_RENDER_SERVICE_TOKEN` 传入。可用 `--blender` 或 `PBZ_BLENDER_EXE` 指定本机 Blender。
+
+两条路径都把图片和动作报告写入输出目录下的 `result/`。`run.json` 记录执行端、耗时及回退原因。远端还保留经校验的原始 `result.zip` 和其中的 `manifest.json`。整套动作接触度量、面部专用近景及 Unreal 读回继续用各自的本机验收入口。
+
+2026-11-25 联调分别用真实 6000D 和故意断连后的本机回退运行默认批次。两端各回收 72 张 PNG，两个形态各有 3 组动作和 15 个姿态，逐项动作报告一致。6000D 渲染流程约 28.5 秒，本机约 29.3 秒，队列与文件传输时间另计。
+
 ## 6000D 渲染节点 HTTP 接口提案
+
+此节记录最初的接口提案。接入后使用上一节的统一服务协议。
 
 首期支持 `blender_review`，使用 Blender 5.3.0 的 EEVEE 跑白绮动作套组。模型文件打包贴图。动作供体 `Delta_SelfTest.blend` 及同目录 `sampling_report.json`、CC0 对照 `Base_Female.blend`、实际游戏动作与其 Blender 导入器都按版本固定。输入和输出的文件名均使用相对路径。
 
