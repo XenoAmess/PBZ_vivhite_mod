@@ -1,0 +1,87 @@
+{
+  "identical_native_textures": 100,
+  "motion_contact_sums": {
+    "coat_on": {
+      "intersecting_neckline_triangle_pairs": [
+        2543,
+        1101
+      ],
+      "intersecting_skin_apparel_triangle_pairs": [
+        17586,
+        17571
+      ]
+    },
+    "coat_off": {
+      "intersecting_neckline_triangle_pairs": [
+        2543,
+        1101
+      ],
+      "intersecting_skin_apparel_triangle_pairs": [
+        17586,
+        17571
+      ]
+    }
+  },
+  "binding_id_render_regions": {
+    "neutral_front": [
+      {
+        "pixels": 5380,
+        "largest_region": 1773
+      },
+      {
+        "pixels": 7986,
+        "largest_region": 7811
+      }
+    ],
+    "neutral_high": [
+      {
+        "pixels": 2807,
+        "largest_region": 1425
+      },
+      {
+        "pixels": 3599,
+        "largest_region": 2119
+      }
+    ],
+    "neutral_oblique": [
+      {
+        "pixels": 3953,
+        "largest_region": 1563
+      },
+      {
+        "pixels": 5534,
+        "largest_region": 4401
+      }
+    ],
+    "neutral_rear": [
+      {
+        "pixels": 4112,
+        "largest_region": 2011
+      },
+      {
+        "pixels": 7424,
+        "largest_region": 7298
+      }
+    ],
+    "head_turn_oblique": [
+      {
+        "pixels": 3792,
+        "largest_region": 1247
+      },
+      {
+        "pixels": 6151,
+        "largest_region": 4093
+      }
+    ],
+    "look_down_rear": [
+      {
+        "pixels": 4499,
+        "largest_region": 3080
+      },
+      {
+        "pixels": 7293,
+        "largest_region": 7067
+      }
+    ]
+  }
+}

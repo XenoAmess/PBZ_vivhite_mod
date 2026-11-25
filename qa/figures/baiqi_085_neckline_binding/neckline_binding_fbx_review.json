@@ -1,0 +1,12 @@
+{
+  "coat_on": {
+    "changed_triangles": 320,
+    "total_binding_triangles": 1008,
+    "all_uvs_unchanged": true
+  },
+  "coat_off": {
+    "changed_triangles": 320,
+    "total_binding_triangles": 1008,
+    "all_uvs_unchanged": true
+  }
+}
