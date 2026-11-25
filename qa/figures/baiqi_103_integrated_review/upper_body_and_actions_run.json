@@ -1,0 +1,42 @@
+{
+  "backend": "remote",
+  "job_id": "render_eafbcb1ec5434f6ca583fa1259b20236",
+  "result_sha256": "f614c648f62fded1fc6e580506cb0b21eae6d264d8df3e7c1465aff47abd3de1",
+  "input_sha256": "943ed98c18329a8461a8134273cacd7919e282dce8804fef2ce6e08702d2565a",
+  "queue_seconds": 0.08919119834899902,
+  "run_seconds": 43.19777989387512,
+  "gpu": "NVIDIA RTX 6000D",
+  "render_seconds": 41.719,
+  "images": 144,
+  "params": {
+    "forms": [
+      "coat_on",
+      "coat_off"
+    ],
+    "cases": [
+      "neck_pitch",
+      "arms_abduction",
+      "shrug",
+      "guard",
+      "Hun_Unarmed_Run_Fwd_Loop",
+      "Hun_BaiShanDual_Attack_A"
+    ],
+    "views": [
+      "front",
+      "oblique"
+    ],
+    "sample_indices": [
+      0,
+      2,
+      4
+    ],
+    "resolution": [
+      1280,
+      1280
+    ],
+    "samples": 32,
+    "engine": "EEVEE",
+    "timeout_seconds": 1800
+  },
+  "fallback_reason": null
+}

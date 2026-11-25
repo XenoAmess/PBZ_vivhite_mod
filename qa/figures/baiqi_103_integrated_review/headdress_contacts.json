@@ -1,0 +1,33 @@
+{
+  "fringe": {
+    "pairs": 141,
+    "accessory_polygons": 82,
+    "lateral_mm_minmax": [
+      123.0752097117901,
+      130.37597279230752
+    ],
+    "num_face_centers_beyond_124mm": 77,
+    "num_face_centers_beyond_145mm": 0
+  },
+  "crown": {
+    "pairs": 0,
+    "accessory_polygons": 0,
+    "lateral_mm_minmax": [],
+    "num_face_centers_beyond_124mm": 0,
+    "num_face_centers_beyond_145mm": 0
+  },
+  "rear_locks": {
+    "pairs": 243,
+    "accessory_polygons": 202,
+    "lateral_mm_minmax": [
+      120.04621187369028,
+      131.44457200686136
+    ],
+    "num_face_centers_beyond_124mm": 179,
+    "num_face_centers_beyond_145mm": 0
+  },
+  "accessory_lateral_minmax_each_side": [
+    -205.30222356319427,
+    192.42918491363525
+  ]
+}

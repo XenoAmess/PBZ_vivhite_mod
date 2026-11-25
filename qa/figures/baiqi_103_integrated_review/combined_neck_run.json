@@ -1,0 +1,39 @@
+{
+  "backend": "remote",
+  "job_id": "render_29b26d741f254e98ada97c1947d73499",
+  "result_sha256": "36d3b098b6704bf2f7be907b6337ee4b9861f2583ab902714f9b89a23f98b96b",
+  "input_sha256": "b8f54bbcf0e9fc93c64c51e6263385121ef068e91572b14aa4da17b6d9680932",
+  "queue_seconds": 0.9046707153320312,
+  "run_seconds": 25.788450956344604,
+  "gpu": "NVIDIA RTX 6000D",
+  "render_seconds": 24.425,
+  "images": 40,
+  "params": {
+    "forms": [
+      "coat_on",
+      "coat_off"
+    ],
+    "cases": [
+      "neck_combinations_37"
+    ],
+    "views": [
+      "oblique",
+      "side"
+    ],
+    "sample_indices": [
+      1,
+      8,
+      17,
+      26,
+      36
+    ],
+    "resolution": [
+      1280,
+      1280
+    ],
+    "samples": 32,
+    "engine": "EEVEE",
+    "timeout_seconds": 1800
+  },
+  "fallback_reason": null
+}
