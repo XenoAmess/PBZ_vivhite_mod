@@ -1,0 +1,102 @@
+{
+  "coat_off_neutral_oblique.png": {
+    "mask_pixels": 12301,
+    "tests": {
+      "package": {
+        "luma_below_80": 10721,
+        "median_luma": 19.27
+      },
+      "head_cast_off": {
+        "luma_below_80": 7078,
+        "median_luma": 58.08
+      },
+      "low_fill": {
+        "luma_below_80": 8406,
+        "median_luma": 68.53
+      },
+      "side_move_6": {
+        "luma_below_80": 10696,
+        "median_luma": 18.72
+      },
+      "side_move_9": {
+        "luma_below_80": 10771,
+        "median_luma": 16.43
+      }
+    }
+  },
+  "coat_off_neutral_other_oblique.png": {
+    "mask_pixels": 7298,
+    "tests": {
+      "package": {
+        "luma_below_80": 43,
+        "median_luma": 164.6
+      },
+      "head_cast_off": {
+        "luma_below_80": 42,
+        "median_luma": 164.6
+      },
+      "low_fill": {
+        "luma_below_80": 7,
+        "median_luma": 178.88
+      },
+      "side_move_6": {
+        "luma_below_80": 1928,
+        "median_luma": 145.06
+      },
+      "side_move_9": {
+        "luma_below_80": 2857,
+        "median_luma": 124.22
+      }
+    }
+  },
+  "coat_on_neutral_oblique.png": {
+    "mask_pixels": 12301,
+    "tests": {
+      "package": {
+        "luma_below_80": 10777,
+        "median_luma": 17.71
+      },
+      "head_cast_off": {
+        "luma_below_80": 7105,
+        "median_luma": 57.25
+      },
+      "low_fill": {
+        "luma_below_80": 8544,
+        "median_luma": 68.1
+      },
+      "side_move_6": {
+        "luma_below_80": 10746,
+        "median_luma": 16.93
+      },
+      "side_move_9": {
+        "luma_below_80": 10827,
+        "median_luma": 15.56
+      }
+    }
+  },
+  "coat_on_neutral_other_oblique.png": {
+    "mask_pixels": 7298,
+    "tests": {
+      "package": {
+        "luma_below_80": 48,
+        "median_luma": 164.53
+      },
+      "head_cast_off": {
+        "luma_below_80": 47,
+        "median_luma": 164.6
+      },
+      "low_fill": {
+        "luma_below_80": 11,
+        "median_luma": 178.79
+      },
+      "side_move_6": {
+        "luma_below_80": 1929,
+        "median_luma": 144.67
+      },
+      "side_move_9": {
+        "luma_below_80": 2857,
+        "median_luma": 123.6
+      }
+    }
+  }
+}

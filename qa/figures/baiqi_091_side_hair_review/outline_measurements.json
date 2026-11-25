@@ -1,0 +1,104 @@
+{
+  "front": {
+    "3": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    },
+    "6": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    },
+    "9": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    }
+  },
+  "left": {
+    "3": {
+      "iou": 0.999731,
+      "added": 23,
+      "removed": 92
+    },
+    "6": {
+      "iou": 0.999475,
+      "added": 32,
+      "removed": 193
+    },
+    "9": {
+      "iou": 0.999267,
+      "added": 45,
+      "removed": 269
+    }
+  },
+  "right": {
+    "3": {
+      "iou": 0.999823,
+      "added": 59,
+      "removed": 16
+    },
+    "6": {
+      "iou": 0.999692,
+      "added": 99,
+      "removed": 32
+    },
+    "9": {
+      "iou": 0.999579,
+      "added": 131,
+      "removed": 48
+    }
+  },
+  "left_steep": {
+    "3": {
+      "iou": 0.999884,
+      "added": 0,
+      "removed": 44
+    },
+    "6": {
+      "iou": 0.999884,
+      "added": 0,
+      "removed": 44
+    },
+    "9": {
+      "iou": 0.999884,
+      "added": 0,
+      "removed": 44
+    }
+  },
+  "right_steep": {
+    "3": {
+      "iou": 0.999947,
+      "added": 14,
+      "removed": 6
+    },
+    "6": {
+      "iou": 0.999894,
+      "added": 25,
+      "removed": 15
+    },
+    "9": {
+      "iou": 0.999844,
+      "added": 38,
+      "removed": 21
+    }
+  },
+  "rear": {
+    "3": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    },
+    "6": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    },
+    "9": {
+      "iou": 1.0,
+      "added": 0,
+      "removed": 0
+    }
+  }
+}
