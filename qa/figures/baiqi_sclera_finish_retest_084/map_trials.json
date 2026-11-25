@@ -1,0 +1,16 @@
+{
+  "sclera_59": {
+    "neutral": 4613,
+    "half_blink": 1489,
+    "closed": 0,
+    "look_left": 4630,
+    "look_right": 4672
+  },
+  "sclera_68": {
+    "neutral": 4807,
+    "half_blink": 1607,
+    "closed": 0,
+    "look_left": 4826,
+    "look_right": 4859
+  }
+}
