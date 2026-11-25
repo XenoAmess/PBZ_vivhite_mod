@@ -37,20 +37,33 @@ def match_face_pigment(pigment, mask, record):
     return pigment * (mask + (1 - mask) * (arm / face))
 
 
+def neck_pigment(record):
+    low, high = record['z_range']
+    height = high - (np.arange(256, dtype=np.float64) + .5) / 256 * (high - low)
+    factor = np.clip((1.358 - height) / .032, 0., 1.)[:, None]
+    factor = factor * factor * (3. - 2. * factor)
+    neck, arm = (linear(np.asarray(record[key])) for key in ('neck_srgb', 'arm_srgb'))
+    rgb = srgb(arm * (1. - factor) + neck * factor)
+    return np.repeat(np.column_stack((rgb, np.ones(len(rgb))))[:, None, :], 32, axis=1)
+
+
 def bake_texture(directory, material, record):
     rows = record['images']
     kind = record['type']
-    if kind in {'hidden', 'skin_junction'} or not rows:
+    if kind == 'skin_junction' and 'neck_pigment' in record:
+        rgba = neck_pigment(record['neck_pigment'])
+    elif kind in {'hidden', 'skin_junction'} or not rows:
         return None
-    source = load_rgba(directory / rows[0]['path'])
-    if kind in {'skin_body', 'masked', 'opaque_cutout'}:
-        rgba = source
     else:
-        pigment = opaque_art(source, record['fallback_rgba'])
-        if kind == 'skin_face':
-            mask = load_rgba(directory / rows[1]['path'])[..., 0:1]
-            pigment = match_face_pigment(pigment, mask, record)
-        rgba = np.concatenate((srgb(pigment), np.ones_like(source[..., 3:4])), axis=-1)
+        source = load_rgba(directory / rows[0]['path'])
+        if kind in {'skin_body', 'masked', 'opaque_cutout'}:
+            rgba = source
+        else:
+            pigment = opaque_art(source, record['fallback_rgba'])
+            if kind == 'skin_face':
+                mask = load_rgba(directory / rows[1]['path'])[..., 0:1]
+                pigment = match_face_pigment(pigment, mask, record)
+            rgba = np.concatenate((srgb(pigment), np.ones_like(source[..., 3:4])), axis=-1)
     pixels = np.rint(np.clip(rgba, 0, 1) * 255).astype(np.uint8)
     name = 'T_BaiQi_' + hashlib.sha256(material.encode('utf-8')).hexdigest()[:14]
     path = directory / 'baked' / (name + '.png')

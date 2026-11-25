@@ -17,6 +17,7 @@ sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tools/blender_libs'),
                 str(ROOT / 'vendor/UEFormat/plugins/blender')]
 
 from baiqi_mesh_clip import clip_mesh
+from apply_baiqi_neck_pigment import HIGH_Z, LOW_Z, NECK, NECK_MARKER
 from finish_baiqi_surfaces import EXPORT_THICKNESS
 from fit_baiqi_cc0_wardrobe import rest_signature, smoothstep
 from io_scene_ueformat.importer.import_context import UEFormatImport
@@ -78,6 +79,8 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
             source_rig = next(mod.object for mod in obj.modifiers if mod.type == 'ARMATURE')
             add_skirt_leg_support(duplicate, source_rig)
     if obj.name == 'BaiQi restored authored head and face':
+        if duplicate.data.materials[NECK].get(NECK_MARKER):
+            neck_pigment_uv(duplicate.data)
         junction_color(duplicate.data)
     duplicate.data.transform(Matrix.Rotation(math.pi, 4, 'Z') @ Matrix.Scale(100., 4), shape_keys=True)
     for group in list(duplicate.vertex_groups):
@@ -190,6 +193,21 @@ def srgb_to_linear(channel):
     return channel / 12.92 if channel <= .04045 else ((channel + .055) / 1.055) ** 2.4
 
 
+def neck_pigment_uv(mesh):
+    slot = mesh.materials.find(NECK)
+    layer = mesh.uv_layers['BaiQi game UV'].uv
+    for face in mesh.polygons:
+        if face.material_index != slot:
+            continue
+        points = [mesh.vertices[index].co for index in face.vertices]
+        u = [(math.atan2(point.y + .010, point.x - .000255) / math.tau) % 1. for point in points]
+        if max(u) - min(u) > .5:
+            u = [value + 1. if value < .5 else value for value in u]
+        for index, point, azimuth in zip(face.loop_indices, points, u, strict=True):
+            v = min(1., max(0., (point.z - LOW_Z) / (HIGH_Z - LOW_Z)))
+            layer[index].vector = (azimuth, v)
+
+
 def sample_rgb(texture):
     assert texture.inputs['Vector'].is_linked
     point = texture.inputs['Vector'].links[0].from_node
@@ -270,6 +288,9 @@ def packed_materials(meshes, output, mask_materials):
             record.update(type='skin_face', arm_sample=sample_rgb(texture_nodes[2]), face_sample=sample_rgb(texture_nodes[3]))
         elif material.name == 'BaiQi neck junction shading':
             record['type'] = 'skin_junction'
+            if material.get(NECK_MARKER):
+                neck, arm = [sample_rgb(node) for node in material.node_tree.nodes if node.type == 'TEX_IMAGE']
+                record['neck_pigment'] = {'z_range': [LOW_Z, HIGH_Z], 'neck_srgb': neck, 'arm_srgb': arm}
         elif material.name.endswith('_SKIN'):
             record['type'] = 'skin_body'
         elif material.name.startswith('BaiQi invisible driver section'):
