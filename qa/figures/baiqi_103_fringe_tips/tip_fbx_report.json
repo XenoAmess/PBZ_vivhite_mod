@@ -1,0 +1,16 @@
+{
+  "coat_on": {
+    "before_polygons": 14011,
+    "after_polygons": 15484,
+    "original_polygons_preserved": 13141,
+    "outside_front_hair_exact": true,
+    "production_triangles_equal_trial": true
+  },
+  "coat_off": {
+    "before_polygons": 14011,
+    "after_polygons": 15484,
+    "original_polygons_preserved": 13141,
+    "outside_front_hair_exact": true,
+    "production_triangles_equal_trial": true
+  }
+}

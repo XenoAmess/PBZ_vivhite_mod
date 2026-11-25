@@ -35,6 +35,8 @@
 
 Unreal 离线预览使用 `scripts/ue_render_baiqi_offline_preview.py`，设 `PBZ_BAIQI_PREVIEW_SHOT_SET=mouth`、`PBZ_BAIQI_PREVIEW_STATES=neutral` 和 `PBZ_BAIQI_PREVIEW_SHADOWS=package`。分别设置 `PBZ_BAIQI_PREVIEW_PASS=lit` 与 `albedo`，输出到不同目录。此预设使用低位主光、两侧照明和八个机位，覆盖正面、侧面以及约 20°、29°、35° 和 42° 仰视。
 
+常规双形态表情回归使用同一脚本的 `PBZ_BAIQI_PREVIEW_SHOT_SET=regression`，用 `lit` 预览 `neutral,half_blink,closed,look_left,look_right`。包含正面双侧打光、左右斜视和斜后五个机位，共 50 张图。
+
 099 的首个闭口候选保留原画唇线，重做了旧开口所在的局部曲面。100 对照三档唇部起伏后采用中间档，补足侧面体积。两种形态在正面、侧面和仰视复核中均只出现一条闭口唇线。以上机位进入后续回归。[099 嘴部验收记录](observations/baiqi_099_closed_mouth.md) [100 唇部体积记录](observations/baiqi_100_lip_volume.md)
 
 ## 6000D 统一服务调用

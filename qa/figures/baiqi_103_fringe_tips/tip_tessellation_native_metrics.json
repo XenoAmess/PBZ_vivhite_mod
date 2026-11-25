@@ -1,0 +1,10 @@
+{
+  "coat_on": {
+    "pixel_delta_ge8": 3754,
+    "pixel_delta_ge20": 800
+  },
+  "coat_off": {
+    "pixel_delta_ge8": 3805,
+    "pixel_delta_ge20": 830
+  }
+}

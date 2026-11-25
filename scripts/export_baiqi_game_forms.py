@@ -42,7 +42,8 @@ def isolate_skin(obj):
     obj.data.materials.append(material)
 
 
-def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat, *, conforming_masks=()):
+def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat, *, conforming_masks=(),
+                refine_fringe_tip=False):
     duplicate = obj.copy()
     duplicate.data = obj.data.copy()
     duplicate.name = obj.name + ' export'
@@ -77,6 +78,8 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
     if len(duplicate.data.materials) == 1:
         material = duplicate.data.materials[0]
         if material.name in mask_materials:
+            if refine_fringe_tip and material.name == 'BaiQi bob front appearance':
+                subdivide_fringe_tip(duplicate.data)
             trim_texture_mask(duplicate, first_texture(material).image,
                               conform_edges=material.name in conforming_masks)
     if EXPORT_THICKNESS in duplicate.modifiers:
@@ -122,6 +125,23 @@ def add_skirt_leg_support(obj, rig):
         for group, ratio in zip(groups, (1. - high_weight, high_weight)):
             if ratio * strength > 1e-6:
                 group.add([vertex.index], ratio * strength, 'REPLACE')
+
+
+def subdivide_fringe_tip(mesh):
+    """Sample the lower side locks more densely before cutting their alpha contours."""
+    editable = bmesh.new()
+    editable.from_mesh(mesh)
+    uv = editable.loops.layers.uv.active
+
+    def in_tip(loop):
+        u, v = loop[uv].uv
+        return 545. <= u * 880. <= 666. and 525. <= (1. - v) * 800. <= 625.
+
+    edges = [edge for edge in editable.edges if any(in_tip(loop) for loop in edge.link_loops)]
+    assert edges
+    bmesh.ops.subdivide_edges(editable, edges=edges, cuts=1, use_grid_fill=True)
+    editable.to_mesh(mesh)
+    editable.free()
 
 
 def trim_texture_mask(obj, image, *, conform_edges=False):
@@ -326,6 +346,8 @@ def main():
                         help='Match shared triangle edges in the cut front hair mesh.')
     parser.add_argument('--conform-frame-edges', action='store_true',
                         help='Match shared triangle edges in the cut round glasses frame.')
+    parser.add_argument('--refine-fringe-tip', action='store_true',
+                        help='Sample the front hair lower side locks more densely before cutting.')
     parser.add_argument('--support-skirt', action='store_true')
     parser.add_argument('--separate-coat-material', action='store_true',
                         help='Give the removable coat its own slot, independent of the wrist bands.')
@@ -365,7 +387,7 @@ def main():
         if not args.bake_alpha_geometry:
             masks.clear()
         assembled = [export_mesh(obj, native, aliases, masks, args.support_skirt, args.separate_coat_material,
-                                 conforming_masks=conforming_masks)
+                                 conforming_masks=conforming_masks, refine_fringe_tip=args.refine_fringe_tip)
                      for obj in meshes]
         reserved = 18 if args.reserve_native_slots else 1
         driver = retain_drivers(native, [*native_rest, NECK_CARRIER], reserved)

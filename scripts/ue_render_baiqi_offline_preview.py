@@ -33,7 +33,8 @@ MOUTH_SHOTS = {
     'front_other': ((.4, .9, .05), -108.),
     'profile': ((1., 0., 0.), -54.),
 }
-SHOT_SETS = {'standard': (SHOTS, -36.), 'mouth': (MOUTH_SHOTS, 14.)}
+REGRESSION_SHOTS = {**SHOTS, 'other_oblique': ((.58, .79, .06), -126.)}
+SHOT_SETS = {'standard': (SHOTS, -36.), 'regression': (REGRESSION_SHOTS, -36.), 'mouth': (MOUTH_SHOTS, 14.)}
 
 
 def read(path):
