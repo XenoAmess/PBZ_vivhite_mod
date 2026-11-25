@@ -32,7 +32,7 @@
 | 请求 | 响应 |
 |---|---|
 | `GET /v1/capabilities` | `200`。返回 `schema_version`、GPU 型号与显存、Blender 版本和后端、支持的任务、参数范围、队列和文件限制。 |
-| `PUT /v1/assets/{sha256}` | 上传 `application/zip` 原始字节。服务端计算并校验 64 位小写十六进制 SHA-256。首次上传返回 `201`，同内容已缓存返回 `200`。 |
+| `PUT /v1/assets/{sha256}` | 上传 `application/zip` 原始字节。服务端计算并校验 SHA-256，格式为 64 个小写十六进制字符。首次上传返回 `201`，同内容已缓存返回 `200`。 |
 | `POST /v1/jobs` | 提交 JSON。带 `Idempotency-Key`，重复请求返回同一个 `job_id`。返回 `202` 和 `job_id`。 |
 | `GET /v1/jobs/{job_id}` | `200`。返回 `status`、已完成图数、计划图数、排队和运行时间、结构化错误以及成功时的结果哈希。 |
 | `GET /v1/jobs/{job_id}/result` | 完成后返回 `200` 和 `application/zip`。结果含 PNG、各形态的 `motion_report.json`、总清单和运行日志，支持用 `Range` 续传。 |
