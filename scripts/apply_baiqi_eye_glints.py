@@ -34,7 +34,7 @@ def coverage(poses, state, kind):
     return pixels_read
 
 
-def replace(poses, state, node, coverage_kind):
+def replace(poses, state, node, correction_name):
     original = node.image
     new = bpy.data.images.load(str(poses / f'{state}.png'))
     assert tuple(new.size) == tuple(original.size) == (880, 800)
@@ -42,17 +42,22 @@ def replace(poses, state, node, coverage_kind):
     source, result = pixels(original), pixels(new)
     changed = np.any(np.abs(source - result) > 1e-6, axis=2)
     y, x = np.nonzero(changed)
+    coverage_kind = {'iris_pigment': 'iris', 'sclera_depth': 'sclera'}.get(correction_name)
     if coverage_kind:
         mask = coverage(poses, state, coverage_kind) > 0.
         assert np.array_equal(source[..., 3], result[..., 3]), state
         assert not (changed & ~mask).any() and bool(len(x)) == (state != 'closed'), state
         if coverage_kind == 'sclera':
             assert not (changed & (coverage(poses, state, 'iris') >= 249.5 / 255.)).any(), state
+    if correction_name == 'nose_registration':
+        assert len(x) and np.array_equal(source[..., 3], result[..., 3]), state
+        assert 398 <= x.min() <= x.max() <= 467 and 440 <= y.min() <= y.max() <= 511, state
     if not len(x):
         bpy.data.images.remove(new)
         return {'changed_pixels': 0, 'bounds': None}
     min_y = 375 if coverage_kind else 412
-    assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= min_y and int(y.max()) <= 465, state
+    if correction_name != 'nose_registration':
+        assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= min_y and int(y.max()) <= 465, state
     new.pack()
     node.image = new
     return {'changed_pixels': int(changed.sum()), 'bounds': [int(x.min()), int(y.min()), int(x.max()), int(y.max())]}
@@ -67,18 +72,24 @@ def main():
     area = parser.add_mutually_exclusive_group()
     area.add_argument('--iris-only', action='store_true', help='Require unchanged pixels outside original iris coverage.')
     area.add_argument('--sclera-only', action='store_true', help='Require unchanged pixels outside original eye-white coverage.')
+    area.add_argument('--nose-registration', action='store_true', help='Verify a local nose paint correction.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, poses, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.poses, args.out))
     assert source != output and output.is_relative_to(ROOT)
     output.mkdir(parents=True, exist_ok=True)
     expected = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))
-    glint = json.loads((poses / 'glint.json').read_text(encoding='utf-8'))
-    assert set(glint['drawables']) == {'ArtMesh85', 'ArtMesh94'}
-    coverage_kind, correction_name, correction = None, 'eye_glints', None
-    if args.iris_only or args.sclera_only:
-        coverage_kind = 'iris' if args.iris_only else 'sclera'
-        correction_name = 'iris_pigment' if args.iris_only else 'sclera_depth'
-        drawables = {'ArtMesh88', 'ArtMesh103'} if args.iris_only else {'ArtMesh90', 'ArtMesh93'}
+    glint_path = poses / 'glint.json'
+    glint = None
+    if not args.nose_registration or glint_path.is_file():
+        glint = json.loads(glint_path.read_text(encoding='utf-8'))
+        assert set(glint['drawables']) == {'ArtMesh85', 'ArtMesh94'}
+    selected = ((args.iris_only, 'iris_pigment', {'ArtMesh88', 'ArtMesh103'}),
+                (args.sclera_only, 'sclera_depth', {'ArtMesh90', 'ArtMesh93'}),
+                (args.nose_registration, 'nose_registration', {'Nose2', 'ArtMesh106'}))
+    correction_name, drawables = next(((name, drawables) for active, name, drawables in selected if active),
+                                      ('eye_glints', None))
+    correction = None
+    if drawables:
         correction = json.loads((poses / f'{correction_name}.json').read_text(encoding='utf-8'))
         assert set(correction['drawables']) == drawables
     report = {}
@@ -96,7 +107,7 @@ def main():
         states.update({node.label: node for node in tree.nodes
                        if node.type == 'TEX_IMAGE' and node.label in STATES[1:]})
         assert set(states) == set(STATES)
-        changed = {state: replace(poses, state, states[state], coverage_kind) for state in STATES}
+        changed = {state: replace(poses, state, states[state], correction_name) for state in STATES}
         assert changed['neutral']['changed_pixels'] > 0
         assert all(mesh_fingerprint(obj) == value for obj, value in geometry.items())
         assert rest_signature(rig) == skeleton
@@ -104,7 +115,9 @@ def main():
         bpy.ops.wm.save_as_mainfile(filepath=str(destination))
         report[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(destination),
                         'cc0_body_sha256': geometry[body], 'original_head_sha256': geometry[head],
-                        'opacity_scale': glint['opacity_scale'], 'states': changed}
+                        'states': changed}
+        if glint:
+            report[form]['opacity_scale'] = glint['opacity_scale']
         if correction:
             report[form][correction_name] = correction
     (output / f'{correction_name}.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
