@@ -10,6 +10,7 @@ import unreal
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from baiqi_artwork_shadow import set_baiqi_artwork_shadows
 from ue_stage_baiqi_adult_form import INPUT, BODY_PACKAGES, assign_materials
 from ue_build_baiqi_forms import asset_library, assets, cached_asset, slug, tool
 
@@ -119,9 +120,7 @@ def main():
     for path in BODY_PACKAGES:
         mesh = unreal.load_asset(path)
         assign_materials(mesh, palette)
-        for name in ('BaiQi bob front appearance', 'BaiQi side hair source color',
-                     'BaiQi black gold headdress appearance', 'BaiQi round gold glasses appearance'):
-            assert tool.set_section_cast_shadow(mesh, name, False) > 0, (path, name)
+        set_baiqi_artwork_shadows(mesh, tool)
         assert asset_library.save_loaded_asset(mesh)
     path = INPUT / f'{form}_allowlist.json'
     allow = json.loads(path.read_text(encoding='utf-8'))

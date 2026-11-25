@@ -1,0 +1,58 @@
+{
+  "neutral_front_left": {
+    "shadows off": {
+      "count_drop12": 0,
+      "mean_delta": 0.0
+    },
+    "native section flags": {
+      "count_drop12": 24663,
+      "mean_delta": -9.2
+    },
+    "all shadows": {
+      "count_drop12": 60151,
+      "mean_delta": -28.85
+    }
+  },
+  "neutral_front_right": {
+    "shadows off": {
+      "count_drop12": 0,
+      "mean_delta": 0.0
+    },
+    "native section flags": {
+      "count_drop12": 23960,
+      "mean_delta": -9.07
+    },
+    "all shadows": {
+      "count_drop12": 63044,
+      "mean_delta": -32.69
+    }
+  },
+  "neutral_oblique": {
+    "shadows off": {
+      "count_drop12": 0,
+      "mean_delta": 0.0
+    },
+    "native section flags": {
+      "count_drop12": 17382,
+      "mean_delta": -12.01
+    },
+    "all shadows": {
+      "count_drop12": 44081,
+      "mean_delta": -26.41
+    }
+  },
+  "half_blink_oblique": {
+    "shadows off": {
+      "count_drop12": 0,
+      "mean_delta": 0.0
+    },
+    "native section flags": {
+      "count_drop12": 14893,
+      "mean_delta": -11.72
+    },
+    "all shadows": {
+      "count_drop12": 42551,
+      "mean_delta": -26.71
+    }
+  }
+}

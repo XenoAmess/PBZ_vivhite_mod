@@ -5,11 +5,14 @@ import json
 import os
 from pathlib import Path
 import re
+import sys
 
 import unreal
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from baiqi_artwork_shadow import set_baiqi_artwork_shadows
 CONTENT = '/Game/BaiQiBridgeProbe/OfflinePreview'
 FORMS = ('coat_on', 'coat_off')
 FACE = 'BaiQi original face appearance'
@@ -148,6 +151,9 @@ def main():
     preview_pass = os.environ.get('PBZ_BAIQI_PREVIEW_PASS', 'lit')
     profile = os.environ.get('PBZ_BAIQI_PREVIEW_PROFILE', 'close')
     size, distance_cm = PROFILES[profile]
+    shadow_mode = os.environ.get('PBZ_BAIQI_PREVIEW_SHADOWS', 'off')
+    assert shadow_mode in {'off', 'package'}, shadow_mode
+    use_shadows = shadow_mode == 'package'
     source = unreal.SceneCaptureSource
     capture_sources = {'lit': source.SCS_FINAL_COLOR_LDR, 'albedo': source.SCS_BASE_COLOR,
                        'mix': source.SCS_BASE_COLOR, 'normal': source.SCS_NORMAL}
@@ -186,15 +192,27 @@ def main():
     key_light.set_editor_property('mobility', unreal.ComponentMobility.MOVABLE)
     key_light.set_editor_property('intensity', 3.5)
     fill = actors.spawn_actor_from_class(unreal.DirectionalLight, origin, unreal.Rotator(pitch=-24., yaw=-94.), transient=True)
-    fill.get_component_by_class(unreal.DirectionalLightComponent).set_editor_property('intensity', 1.75)
+    fill_light = fill.get_component_by_class(unreal.DirectionalLightComponent)
+    fill_light.set_editor_property('intensity', 1.75)
+    if use_shadows:
+        key_light.set_editor_property('cast_shadows', True)
+        key_light.set_editor_property('cast_dynamic_shadows', True)
+        key_light.set_editor_property('light_source_angle', .5357)
+        fill_light.set_editor_property('cast_shadows', False)
     manifest = []
     for form in FORMS:
         model = unreal.load_asset(readback['forms'][form]['mesh'])
         assert isinstance(model, unreal.SkeletalMesh), form
+        if use_shadows:
+            folder = CONTENT + '/Session'
+            _, name = ASSETS.create_unique_asset_name(f'{folder}/SK_BaiQiShadowProbe_{form}', '')
+            model = ASSETS.duplicate_asset(name, folder, model)
+            assert isinstance(model, unreal.SkeletalMesh), form
+            set_baiqi_artwork_shadows(model, unreal.PBZModToolsLibrary)
         actor = actors.spawn_actor_from_class(unreal.SkeletalMeshActor, origin, zero, transient=True)
         component = actor.get_component_by_class(unreal.SkeletalMeshComponent)
         component.set_skeletal_mesh_asset(model)
-        component.set_cast_shadow(False)
+        component.set_cast_shadow(use_shadows)
         face = None
         for index, slot in enumerate(model.get_editor_property('materials')):
             name = names[compact(str(slot.get_editor_property('material_slot_name')))]

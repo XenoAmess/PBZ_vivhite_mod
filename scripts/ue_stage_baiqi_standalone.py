@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 os.environ.setdefault('PBZ_BAIQI_EDITOR_INPUTS', 'build/baiqi_standalone')
 
+from baiqi_artwork_shadow import set_baiqi_artwork_shadows
 from ue_baiqi_native_materials import CLOTH, HAIR, PREFIX, build_native_palette
 from ue_build_baiqi_forms import assign_materials, assets, skirt_collision, slug
 from ue_probe_baiqi_native_bridge import asset_library, attach_bridge, bridge_steps, import_mesh, reconcile_reference, tool
@@ -59,9 +60,7 @@ def stage_body(prepared, mesh_path):
     calibration_bones = json.loads(tool.dump_ref_skeleton(calibration))
     attach_bridge(body, bridge_steps(reference, calibration_bones, follow_grip=True), 'ABP_AdultBaiQi', FOLDER)
     skirt_collision(body, reference, FOLDER + '/Cloth', prepared['skirt_leg_support'])
-    for name in ('BaiQi bob front appearance', 'BaiQi side hair source color',
-                 'BaiQi black gold headdress appearance', 'BaiQi round gold glasses appearance'):
-        assert tool.set_section_cast_shadow(body, name, False) > 0, name
+    set_baiqi_artwork_shadows(body, tool)
     asset_library.set_metadata_tag(body, 'BaiQiSourceHash', prepared['source_sha256'])
     save(body)
     return body

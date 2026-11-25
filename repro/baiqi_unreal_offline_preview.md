@@ -21,4 +21,6 @@ $script = (Resolve-Path 'scripts/ue_render_baiqi_offline_preview.py').Path
 
 `PBZ_BAIQI_PREVIEW_PROFILE` 默认 `close`，即 101 厘米机位和 1280 像素图。`portrait` 用 375 厘米机位出 640 像素图，用于观察缩小后的发梢、眼镜与服装材质边缘。对照时给不同机位指定不同的输出目录。
 
+`PBZ_BAIQI_PREVIEW_SHADOWS` 可设为 `package`，让会话网格采用与打包脚本相同的分区投影标记，以检查头颈和上衣的自投影。默认 `off` 便于分离贴图与受光。用同一档进行版本对照。
+
 ![081 两种形态和眼部切换示例](../qa/figures/baiqi_unreal_preview_081/contact_sheet.jpg)
