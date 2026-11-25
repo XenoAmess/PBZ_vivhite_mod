@@ -1,5 +1,7 @@
 # 复现资产与工程
 
+最新双形态工程、烘焙包及补充输入从 [103 GitHub 预发行](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-103) 下载。恢复步骤和附件哈希见 [交接手册](../docs/BaiQi_Handover.md)。下面的目录说明包含早期工作和原始参考。
+
 这些文件按用户要求直接保存在 Git 仓库中，普通克隆即可获取完整内容。本次单文件均小于 100 MiB；更大的渲染归档将保存在仓库 Release。账户的 LFS 配额当前不可用，因此本仓库未依赖 LFS 指针。
 
 - `../resources/Delta.zip`：第一份 Live2D 原始模型。

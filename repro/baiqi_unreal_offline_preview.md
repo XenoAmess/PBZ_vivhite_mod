@@ -15,6 +15,8 @@ $script = (Resolve-Path 'scripts/ue_render_baiqi_offline_preview.py').Path
 
 默认 `neutral` 输出两形态各四张。上面的五状态命令输出 40 张。这个预览检查静止形态和材质切换，动作范围继续用 Git 库里的白绮动作套组复验。
 
+103 回归使用 `PBZ_BAIQI_PREVIEW_SHOT_SET=regression` 加入另一侧斜视，五种状态共 50 张。`mouth` 使用低位灯光和八个机位，取 `neutral`、`lit`、`albedo` 两组共 32 张。新机器的工程恢复和完整命令见 [交接手册](../docs/BaiQi_Handover.md#unreal-离线读回)。
+
 083 起，PNG 使用同步纹理导入，在线性遮罩和法线完成编译后出图。最初的 Mix 对照中，材质实例回读返回正确的纹理对象，但诊断图上的面部采样为黑色。同步后原图与整脸强对照在正视图中已有约 10.6 万像素的通道差大于 4。1280 像素图也使用了较低光强，为亮部留出余量。对比版本时请用同一份渲染脚本分别重出旧版和新版。
 
 `PBZ_BAIQI_PREVIEW_PASS` 默认 `lit`。可设为 `albedo` 看基本色，`normal` 看世界空间法线，或 `mix` 看 AO、粗糙度、金属度图。诊断图是按 sRGB 导出的，读单个纹素的线性值时须考虑转换。材质光泽比较需要看同灯位的 `lit` 图。

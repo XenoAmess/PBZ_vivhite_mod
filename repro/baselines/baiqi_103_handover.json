@@ -1,0 +1,205 @@
+{
+  "model_tag": "baiqi-model-103",
+  "model_commit": "ae103ec41983b86059e04afecaf219a6773d9189",
+  "purpose": "BaiQi 103 motion donor, bake inputs and minimal editor authoring project",
+  "editor_dependencies": {
+    "/Game/PBZContent/Characters/Hero/Hun_New_V2b/Material/Hun_Status/MI_ZeroHun_HairCard_Health": [
+      "/Game/PBZContent/Mods/M_DeltaDummyMaster"
+    ],
+    "/Game/PBZContent/Mods/M_DeltaDummyMaster": [],
+    "/Game/PBZContent/Characters/Hero/Hun_New_V2b/Material/MI_ZeroHun_Cloth_02_b": [
+      "/Game/PBZContent/Mods/M_DeltaDummyMaster"
+    ],
+    "/HuaShira/Characters/Hero/Hero_Hun/Hun_Skin_Skeleton": []
+  },
+  "files": {
+    "artifacts/anatomy_base/Base_Female.blend": {
+      "bytes": 8596261,
+      "sha256": "1cee257f7d04e8ec5f43744fbff73541dbd5256128ac980c3eee29987284ec50"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/closed.png": {
+      "bytes": 80823,
+      "sha256": "530da833bd021a752d564e307e0731b861c9476c03f3debc7b6346c736cc4a70"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/closed_iris.png": {
+      "bytes": 763,
+      "sha256": "d2beb392b386fcb06f4ef529657b401fad772b8fbb717882b1aa3527f5284eec"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/closed_mask.png": {
+      "bytes": 5588,
+      "sha256": "409a9d3681c53c0054ce1993109806e8aa2eca3c0268e4e21cc37ce0706aa31f"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/closed_sclera.png": {
+      "bytes": 763,
+      "sha256": "d2beb392b386fcb06f4ef529657b401fad772b8fbb717882b1aa3527f5284eec"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/half_blink.png": {
+      "bytes": 88671,
+      "sha256": "557fd9fdb697d827b3502d3b28d8e3054811a379b4162fef03fa3844b11d9277"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/half_blink_iris.png": {
+      "bytes": 2368,
+      "sha256": "dee2b8c5296af8f087783418c95cb3fad537a156402e1b908e0376b02ab4de07"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/half_blink_mask.png": {
+      "bytes": 6406,
+      "sha256": "eb3f083c98c329331ef0088f84490cf13d3a467a0fe434cf4a4c574d5a2b6091"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/half_blink_sclera.png": {
+      "bytes": 1897,
+      "sha256": "385e9c47414b55bcc6dec9ae03027c6218fd04c20bc33c4d7e0710c7161c859e"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_left.png": {
+      "bytes": 95990,
+      "sha256": "0274ff8545b52db5e75023f384486e67c32d92c8845972fcd03ef076087eb16f"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_left_iris.png": {
+      "bytes": 3070,
+      "sha256": "e82ee85b622fb1c4d8480970f738b621a22d6bd6415b129657d5e24d6b38960d"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_left_mask.png": {
+      "bytes": 6654,
+      "sha256": "6fb6b3ae93db1959a59ef896427354d53560c096676b37e7e87cced118dc7492"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_left_sclera.png": {
+      "bytes": 2651,
+      "sha256": "c08e5cc8a0d12261fc2ed74e13dbce9d3859dc5368511be9793ec7819b34eba8"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_right.png": {
+      "bytes": 96056,
+      "sha256": "3dc62979b638dfae5013977581f08ac2fb9c57b89bd1be5b2858ac814b93413e"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_right_iris.png": {
+      "bytes": 3075,
+      "sha256": "9b8a7de5f83e4587fa1b727dc456d048b53bbef4db66bce8a8c0c0449f84ea65"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_right_mask.png": {
+      "bytes": 6659,
+      "sha256": "a89f4c98d9364937f0f462d2379e0e96d0a4566bfa33a1409302e84504119c55"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/look_right_sclera.png": {
+      "bytes": 2651,
+      "sha256": "c08e5cc8a0d12261fc2ed74e13dbce9d3859dc5368511be9793ec7819b34eba8"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/neutral.png": {
+      "bytes": 96067,
+      "sha256": "15f5d9c0239876cbbfd09b9bc408d8fa1dfa5e6835bacc827f3b3b1799d1f650"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/neutral_iris.png": {
+      "bytes": 3050,
+      "sha256": "c0c6d3d7f0dbab6ef7ca0673030de73d48775dab488a041a5f7f8f96ed8b1d8e"
+    },
+    "artifacts/baiqi_098_underjaw_edge/poses/neutral_sclera.png": {
+      "bytes": 2651,
+      "sha256": "c08e5cc8a0d12261fc2ed74e13dbce9d3859dc5368511be9793ec7819b34eba8"
+    },
+    "artifacts/baiqi_cc0_047_rom_donor/Delta_SelfTest.blend": {
+      "bytes": 14761222,
+      "sha256": "cddebac0f55727e98f3fd87f47659a5dd41c58c8a743b3ef04f8e7b639cecabf"
+    },
+    "artifacts/baiqi_cc0_047_rom_donor/sampling_report.json": {
+      "bytes": 176311,
+      "sha256": "314e19a54b918e6425047bf85a040120b64e680e613eea00b70cc73116c562ea"
+    },
+    "build/UE/ProjectPBZ/Config/DefaultEngine.ini": {
+      "bytes": 4695,
+      "sha256": "f930bc716671ff349250805f5ae38046ca6fe3a105f410561d663940558b3a00"
+    },
+    "build/UE/ProjectPBZ/Config/DefaultGame.ini": {
+      "bytes": 1188,
+      "sha256": "a540201f08052a9837eff80f0efe22a187abdd19fcc6cfc62049960437e21a38"
+    },
+    "build/UE/ProjectPBZ/Content/PBZContent/Characters/Hero/Hun_New_V2b/Material/Hun_Status/MI_ZeroHun_HairCard_Health.uasset": {
+      "bytes": 2450,
+      "sha256": "a4b8b1d83a2a7a89897dc4aae97147d49919bc541c7fb898e1d3d305859cdcf2"
+    },
+    "build/UE/ProjectPBZ/Content/PBZContent/Characters/Hero/Hun_New_V2b/Material/MI_ZeroHun_Cloth_02_b.uasset": {
+      "bytes": 2403,
+      "sha256": "0f28dfb257207495dc4073dd5e5db60e3afe1610c73c29e74b2b3b87cf2613ea"
+    },
+    "build/UE/ProjectPBZ/Content/PBZContent/Mods/M_DeltaDummyMaster.uasset": {
+      "bytes": 3940,
+      "sha256": "c0f1f18378b462897688a376090e272ba533765bff89783c94749f0c5569d952"
+    },
+    "build/UE/ProjectPBZ/Plugins/HuaShira/Content/Characters/Hero/Hero_Hun/Hun_Skin_Skeleton.uasset": {
+      "bytes": 76872,
+      "sha256": "52185b80edf0f97f5b53e739e3d36fa7e0763f990768cc1e23f33a81a90c9847"
+    },
+    "build/UE/ProjectPBZ/Plugins/HuaShira/HuaShira.uplugin": {
+      "bytes": 284,
+      "sha256": "41dcdeebddde6e4a027ade4b359498ec840ea3f3670dadc82772cc93889ce839"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModLoader/PBZModLoader.uplugin": {
+      "bytes": 110,
+      "sha256": "330a06d6a367cdb6c5b52336dee4cf9c58b2e7cf49523e6905b987dc01a566cd"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/PBZModTools.uplugin": {
+      "bytes": 422,
+      "sha256": "714469eb7577846d3c80182692f62cdcfc95fdf007ec2d102523c5f80c9e945d"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/Source/PBZModTools/PBZModTools.Build.cs": {
+      "bytes": 665,
+      "sha256": "78bec2fc91969d720cf2c2a0990ab4e759f4b700cd595e987b9494d2b4362faa"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/Source/PBZModTools/Private/PBZModToolsLibrary.cpp": {
+      "bytes": 50272,
+      "sha256": "b648787e927b6d0b4d695e85e60bdf40290316bbe5932755448f40c59b597349"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/Source/PBZModTools/Private/baiqi_bridge_animgraph.inl": {
+      "bytes": 7593,
+      "sha256": "f48530912ae511d3ce0cf6131fc6b13222ef5ef5f3110441b27c55059b8bb83d"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/Source/PBZModTools/Private/baiqi_outfit_tables.inl": {
+      "bytes": 6342,
+      "sha256": "bdd327addca7d60017185e664a6c4f3a018ee0927e741dff0e83c19cd3507625"
+    },
+    "build/UE/ProjectPBZ/Plugins/PBZModTools/Source/PBZModTools/Public/PBZModToolsLibrary.h": {
+      "bytes": 9568,
+      "sha256": "798d9679346949cffcb87acf40b5d0d82f18dfaa128090054a3924f47025312d"
+    },
+    "build/UE/ProjectPBZ/ProjectPBZ.uproject": {
+      "bytes": 923,
+      "sha256": "4b233c1abe762d9d200fc4e95031ef62f8e27c3a04f6850060453f65b1b1ecf6"
+    },
+    "build/UE/ProjectPBZ/Source/ProjectPBZ.Target.cs": {
+      "bytes": 325,
+      "sha256": "dae47bb3837a8a166fcc6abf29fbfbc80ef1e1ea2cbf69b5bf6853e3763bd644"
+    },
+    "build/UE/ProjectPBZ/Source/ProjectPBZ/ProjectPBZ.Build.cs": {
+      "bytes": 297,
+      "sha256": "8d9ba1f060202c1de053326321e14de7bfe6971b8bdfa74d7a7245188a1d16a7"
+    },
+    "build/UE/ProjectPBZ/Source/ProjectPBZ/ProjectPBZ.cpp": {
+      "bytes": 118,
+      "sha256": "3a515ad8f7a77b755e98fa40e15bb762fb32e0ac99d8e75ee849fb51cee2f9e5"
+    },
+    "build/UE/ProjectPBZ/Source/ProjectPBZ/baiqi_appearance_schema.h": {
+      "bytes": 1423,
+      "sha256": "3cfa3bc8f19f75281182c4a67b1f8a57b2fcc333dc05953065a20065d71b884d"
+    },
+    "build/UE/ProjectPBZ/Source/ProjectPBZEditor.Target.cs": {
+      "bytes": 339,
+      "sha256": "7fb8d32520edd59934db2437e8a7d3cd2d4b996714380a8eb2a67c0965012898"
+    },
+    "build/baiqi_bridge_pose_probe/bridge_probe.json": {
+      "bytes": 28869,
+      "sha256": "45cce905789e744dcf9566c8d3fd842b5eb72a6f2b8055fbedab38ac83d57d4b"
+    },
+    "output/live2d_delta/baiqi_084_neck_normals/T_BaiQiNative_NeckBridge.png": {
+      "bytes": 136365,
+      "sha256": "7960e0a956edd33c546129f0a64bc29da2b991716bbcd5c7fd99bc8b15ad6690"
+    },
+    "output/live2d_delta/baiqi_095_crown_relief/T_BaiQiNative_CrownRelief.png": {
+      "bytes": 18691,
+      "sha256": "88f8b0fb2bbbc85dad26502452c73e57042f7ba2c516711e0d9bbdb0310d20fd"
+    },
+    "output/live2d_delta/baiqi_096_nose_ridge/nose_basis.npz": {
+      "bytes": 172638,
+      "sha256": "db03dfb6a414bf1cb7f69605232fdf2e917a53251476f5632cdb7b500a0a9600"
+    },
+    "output/live2d_delta/baiqi_cc0_054/skin_tone_report.json": {
+      "bytes": 1906,
+      "sha256": "3867eca2bac6b4e4f7be78c884c381c98f2ca4867991a7acd64eea791d41f14c"
+    }
+  }
+}

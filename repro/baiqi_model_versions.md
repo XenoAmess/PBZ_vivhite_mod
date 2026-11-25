@@ -44,3 +44,13 @@
 | 091 | 减轻圆镜框反光旁的深边 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-091) |
 | 092 | 顺平耳侧前发的深度突变 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-092) |
 | 093 | 减轻原鼻尖下方的暗团 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-093) |
+| 094 | 调整头顶部位的前后发片衔接 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-094) |
+| 095 | 烘出发底局部受光过渡 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-095) |
+| 096 | 平顺原鼻梁两侧的法线过渡 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-096) |
+| 097 | 去除原下颌投影的过重色团 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-097) |
+| 098 | 收敛下颌残留描边 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-098) |
+| 099 | 沿原画默认唇线重做闭口曲面 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-099) |
+| 100 | 补足唇部侧面体积并维护仰视机位 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-100) |
+| 101 | 共享前发裁切三角边，平顺耳侧受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-101) |
+| 102 | 清理圆镜框裁切产生的额外侧壁 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-102) |
+| 103 | 细化耳侧发梢裁切，当前离线候选 | [模型存档与交接输入](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-103) |
