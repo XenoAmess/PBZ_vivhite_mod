@@ -40,6 +40,7 @@ def sample_basis(mesh):
     axes = np.stack((normal, tangent, bitangent), axis=1)
     left, top, right, bottom = BOX
     vertical = np.zeros((bottom - top, right - left, 3), dtype=np.float32)
+    horizontal = np.zeros_like(vertical)
     down = Vector((0, 0, -1))
     for row in range(top, bottom):
         for column in range(left, right):
@@ -49,8 +50,10 @@ def sample_basis(mesh):
             weights = np.array(barycentric_transform(hit, *(points[i] for i in ids), *UNITS))
             interpolated = np.sum(axes[list(ids)] * weights[:, None, None], axis=0)
             assert np.all(np.linalg.norm(interpolated, axis=1) > .5)
-            vertical[row - top, column - left] = interpolated[:, 2] / np.linalg.norm(interpolated, axis=1)
-    return vertical
+            lengths = np.linalg.norm(interpolated, axis=1)
+            vertical[row - top, column - left] = interpolated[:, 2] / lengths
+            horizontal[row - top, column - left] = interpolated[:, 0] / lengths
+    return vertical, horizontal
 
 
 def main():
@@ -79,8 +82,9 @@ def main():
         else:
             assert geometry == current
     destination.parent.mkdir(parents=True, exist_ok=True)
-    np.savez_compressed(destination, box=BOX, vertical=basis, head_sha256=geometry)
-    print('BAIQI_NOSE_UV_BASIS', BOX, float(basis[..., 0].min()), geometry, flush=True)
+    vertical, horizontal = basis
+    np.savez_compressed(destination, box=BOX, vertical=vertical, horizontal=horizontal, head_sha256=geometry)
+    print('BAIQI_NOSE_UV_BASIS', BOX, float(vertical[..., 0].min()), geometry, flush=True)
 
 
 if __name__ == '__main__':

@@ -74,7 +74,39 @@ def lift_nose_response(image, basis, amount, *, directx=False):
     return Image.fromarray(pixels), {'changed_texels': int(count), 'max_tilt_degrees': float(angles.max())}
 
 
-def attach_native(inputs, directx, strength, nose_basis=None, nose_lift=0.):
+def soften_nose_ridge(image, basis, amount, *, directx=False):
+    x0, y0, x1, y1 = basis['box']
+    normal_x, tangent_x, bitangent_x = basis['horizontal'].transpose((2, 0, 1))
+    rows, columns = np.mgrid[y0:y1, x0:x1]
+    weight = np.exp(-.5 * ((columns + .5 - 429.) / 5.1) ** 2)
+    weight *= ramp((rows - 478.) / 12.) * ramp((523. - rows) / 13.)
+    weight *= ramp((columns - 413.) / 10.) * ramp((445. - columns) / 10.)
+
+    def sample(field):
+        full = np.zeros((800, 880), dtype=np.float32)
+        full[y0:y1, x0:x1] = field
+        return np.asarray(Image.fromarray(full).resize(image.size, Image.Resampling.BILINEAR))
+
+    support = sample(weight)
+    affected = support > .003
+    axes = (tangent_x, -bitangent_x if directx else bitangent_x, normal_x)
+    x_axis = np.column_stack([sample(axis)[affected] for axis in axes])
+    x_axis /= np.linalg.norm(x_axis, axis=1, keepdims=True)
+    pixels = np.array(image.convert('RGB'))
+    base = pixels[affected].astype(np.float64) / 127.5 - 1.
+    base /= np.linalg.norm(base, axis=1, keepdims=True)
+    lateral = np.sum(base * x_axis, axis=1)
+    direction = x_axis - lateral[:, None] * base
+    desired = base - (amount * support[affected] * lateral)[:, None] * direction
+    desired /= np.linalg.norm(desired, axis=1, keepdims=True)
+    changed = np.rint((desired * .5 + .5) * 255).astype(np.uint8)
+    count = np.any(pixels[affected] != changed, axis=1).sum()
+    pixels[affected] = changed
+    angles = np.degrees(np.arccos(np.clip(np.sum(base * desired, axis=1), -1., 1.)))
+    return Image.fromarray(pixels), {'changed_texels': int(count), 'max_tilt_degrees': float(angles.max())}
+
+
+def attach_native(inputs, directx, strength, nose_basis=None, nose_lift=0., nose_ridge=0.):
     finish_path = inputs / 'surface_finish.json'
     finishes = load(finish_path)
     palettes = load(inputs / 'eye_palette.json')
@@ -83,6 +115,8 @@ def attach_native(inputs, directx, strength, nose_basis=None, nose_lift=0.):
     converted = directx.resize((1024, 1024), Image.Resampling.BILINEAR)
     if nose_basis is not None:
         converted, _ = lift_nose_response(converted, nose_basis, nose_lift, directx=True)
+    if nose_ridge:
+        converted, _ = soften_nose_ridge(converted, nose_basis, nose_ridge, directx=True)
     converted.save(native)
     for name in materials:
         finishes[name].update(normal=NORMAL, normal_strength=strength)
@@ -101,6 +135,8 @@ def main():
     parser.add_argument('--nose-basis', type=Path, help='Sampled nose tangent basis for the authored head.')
     parser.add_argument('--nose-lift', default=.40, type=float,
                         help='Tilt the downward-facing nose normals toward overhead light.')
+    parser.add_argument('--nose-ridge', default=0., type=float,
+                        help='Soften the lateral normal transition across the original nose ridge.')
     args = parser.parse_args()
     assert .35 <= args.amount <= 1.5 and 0 < args.strength <= 1.
     assert .45 <= args.nasal_strength <= 1.
@@ -114,6 +150,10 @@ def main():
         with np.load(args.nose_basis) as source:
             nose_basis = dict(source)
         blender, nose_report = lift_nose_response(blender, nose_basis, args.nose_lift)
+    if args.nose_ridge:
+        if not 0 < args.nose_ridge <= .90 or nose_basis is None or 'horizontal' not in nose_basis:
+            parser.error('--nose-ridge requires a rebuilt nose basis and a value greater than 0 and at most .90')
+        blender, ridge_report = soften_nose_ridge(blender, nose_basis, args.nose_ridge)
     blender.save(args.out / 'face_relief_blender.png')
     report = {'amount': args.amount, 'normal_strength': args.strength, 'nasal_strength': args.nasal_strength,
               'max_tangent_tilt_degrees': float(np.degrees(np.arctan(np.hypot(nx, ny).max()))),
@@ -121,8 +161,11 @@ def main():
     if nose_report:
         report['nose_lift'] = {'amount': args.nose_lift, 'basis_sha256': hashlib.sha256(args.nose_basis.read_bytes()).hexdigest(),
                                'head_sha256': str(nose_basis['head_sha256']), **nose_report}
+    if args.nose_ridge:
+        report['nose_ridge'] = {'amount': args.nose_ridge, **ridge_report}
     if args.game_inputs:
-        report['native_normal_sha256'] = attach_native(args.game_inputs, encode(nx, -ny), args.strength, nose_basis, args.nose_lift)
+        report['native_normal_sha256'] = attach_native(args.game_inputs, encode(nx, -ny), args.strength,
+                                                       nose_basis, args.nose_lift, args.nose_ridge)
     save(args.out / 'face_relief_inputs.json', report)
     print('BAIQI_FACE_RELIEF', report, flush=True)
 

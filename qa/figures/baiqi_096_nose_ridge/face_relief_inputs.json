@@ -1,0 +1,20 @@
+{
+  "amount": 1.0,
+  "normal_strength": 0.75,
+  "nasal_strength": 0.65,
+  "max_tangent_tilt_degrees": 9.369385096487486,
+  "blender_normal_sha256": "dfa71fc7c7dd33a02b01f5938e21e1b5ab428055ae976bfd892635074581873d",
+  "nose_lift": {
+    "amount": 0.4,
+    "basis_sha256": "db03dfb6a414bf1cb7f69605232fdf2e917a53251476f5632cdb7b500a0a9600",
+    "head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "changed_texels": 336,
+    "max_tilt_degrees": 17.950204932709273
+  },
+  "nose_ridge": {
+    "amount": 0.65,
+    "changed_texels": 996,
+    "max_tilt_degrees": 17.28833523882485
+  },
+  "native_normal_sha256": "c4c1c43c1f86ffdf5eaf5fbaaf8f06083cb0792c971718e4851eca69f3e84e8e"
+}
