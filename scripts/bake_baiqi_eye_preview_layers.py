@@ -17,6 +17,7 @@ parser.add_argument('--inputs', type=Path, required=True, help='Game export cont
 parser.add_argument('--out', type=Path, required=True)
 parser.add_argument('--lower-glint-opacity', default=1., type=float,
                     help='Scale the original paired lower iris glint layers.')
+parser.add_argument('--iris-masks', action='store_true', help='Export the original clipped iris coverage for each pose.')
 args = parser.parse_args()
 assert .35 <= args.lower_glint_opacity <= 1.
 
@@ -72,6 +73,7 @@ opacity = array('DrawableOpacities', c.c_float)
 orders = array('RenderOrders', c.c_int)
 crop = (960, 600, 1840, 1400)
 lower_glints = {'ArtMesh85', 'ArtMesh94'}
+irises = {'ArtMesh88', 'ArtMesh103'}
 
 
 def face_at(parameters_override, glint=1.):
@@ -86,13 +88,17 @@ def face_at(parameters_override, glint=1.):
     source.set_state({'draw_overrides': overrides})
     eyes = source.render(descendants('Eyes'), exclude_drawables={'ArtMesh53'})
     mask = Image.fromarray(eyes).crop(crop).getchannel('A').filter(ImageFilter.GaussianBlur(.45))
+    iris = None
+    if args.iris_masks:
+        coverage = source.render(set(), include_drawables=irises)
+        iris = Image.fromarray(coverage).crop(crop).getchannel('A').filter(ImageFilter.GaussianBlur(.60))
     if glint != 1.:
         for row in overrides:
             if row['id'] in lower_glints:
                 row['opacity'] *= glint
         source.set_state({'draw_overrides': overrides})
     picture = source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'})
-    return np.array(Image.fromarray(picture).crop(crop)), mask
+    return np.array(Image.fromarray(picture).crop(crop)), mask, iris
 
 
 def transfer(original, neutral, posed, name):
@@ -113,17 +119,19 @@ form = json.loads((inputs / 'form_inputs.json').read_text())['coat_off']
 entry = form['materials']['BaiQi original face appearance']['images'][0]['path']
 with Image.open(inputs / entry) as image:
     original = np.array(image.convert('RGBA'))
-neutral, _ = face_at({})
+neutral, _, neutral_iris = face_at({})
 assert original.shape == neutral.shape == (800, 880, 4)
 states = {'half_blink': {'ParamEyeLOpen': .5, 'ParamEyeROpen': .5},
           'closed': {'ParamEyeLOpen': 0., 'ParamEyeROpen': 0.},
           'look_left': {'ParamEyeBallX': -.65}, 'look_right': {'ParamEyeBallX': .65}}
 out = root / args.out
 out.mkdir(parents=True, exist_ok=True)
+if neutral_iris is not None:
+    neutral_iris.save(out / 'neutral_iris.png')
 if args.lower_glint_opacity == 1.:
     Image.fromarray(original).save(out / 'neutral.png')
 else:
-    softer, _ = face_at({}, args.lower_glint_opacity)
+    softer, _, _ = face_at({}, args.lower_glint_opacity)
     result, measured = transfer(original, neutral, softer, 'neutral')
     assert measured['changed_pixels'] > 0
     Image.fromarray(result).save(out / 'neutral.png')
@@ -131,10 +139,16 @@ else:
                                                 'drawables': sorted(lower_glints), **measured}, indent=2) + '\n')
 report = {}
 for name, override in states.items():
-    posed, mask = face_at(override, args.lower_glint_opacity)
+    posed, mask, iris = face_at(override, args.lower_glint_opacity)
     result, measured = transfer(original, neutral, posed, name)
     Image.fromarray(result).save(out / (name + '.png'))
     mask.save(out / (name + '_mask.png'))
+    if iris is not None:
+        if name == 'closed':
+            # The underlying iris ArtMeshes still exist during a full blink.
+            # Their material coverage is hidden by the closed eyelids.
+            iris = Image.new('L', iris.size, 0)
+        iris.save(out / (name + '_iris.png'))
     report[name] = {'parameters': override, **measured}
 (out / 'probe.json').write_text(json.dumps(report, indent=2))
 source.close()
