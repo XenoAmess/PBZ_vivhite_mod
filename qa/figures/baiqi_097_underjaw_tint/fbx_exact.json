@@ -1,0 +1,10 @@
+{
+  "coat_on": {
+    "only_changed_position_corners": {},
+    "polygon_order_indices_and_uvs_exact": true
+  },
+  "coat_off": {
+    "only_changed_position_corners": {},
+    "polygon_order_indices_and_uvs_exact": true
+  }
+}

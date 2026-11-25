@@ -1,0 +1,50 @@
+[
+  {
+    "id": "Facecolor",
+    "part": "Face2",
+    "pixels": 672,
+    "center": [
+      230,
+      188,
+      178,
+      255
+    ],
+    "max_delta": 255
+  },
+  {
+    "id": "ArtMesh54",
+    "part": "Face2",
+    "pixels": 85,
+    "center": [
+      230,
+      188,
+      178,
+      255
+    ],
+    "max_delta": 64
+  },
+  {
+    "id": "ArtMesh115",
+    "part": "Face2",
+    "pixels": 25,
+    "center": [
+      230,
+      188,
+      178,
+      255
+    ],
+    "max_delta": 35
+  },
+  {
+    "id": "ArtMesh233",
+    "part": "Face2",
+    "pixels": 25,
+    "center": [
+      230,
+      188,
+      178,
+      255
+    ],
+    "max_delta": 35
+  }
+]

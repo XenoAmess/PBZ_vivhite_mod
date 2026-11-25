@@ -1,0 +1,148 @@
+{
+  "coat_on": {
+    "source_sha256": "aede61e32da3d64eef98ced486f9463b9e7ca60e37568ae445293bdd304f253e",
+    "candidate_sha256": "ea7cf697958c0880602f76fbed20d60a1bf6a87134c651787d9897f5793f5649",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "states": {
+      "neutral": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "half_blink": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "closed": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "look_left": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "look_right": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      }
+    },
+    "opacity_scale": 0.55,
+    "underjaw_tint": {
+      "drawables": [
+        "ArtMesh115",
+        "ArtMesh233"
+      ],
+      "amount": 1.0,
+      "skin_rgb": [
+        254,
+        243,
+        234
+      ],
+      "states": {
+        "neutral": 723,
+        "half_blink": 723,
+        "closed": 723,
+        "look_left": 723,
+        "look_right": 723
+      }
+    }
+  },
+  "coat_off": {
+    "source_sha256": "a61c14ea921a656e590df246da073f425f1e28c9efafd8b3cb9e47ba14810f86",
+    "candidate_sha256": "6564c0074ba260fe332533dea8e4291b29d038bc0b28497f253034829e32129b",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "states": {
+      "neutral": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "half_blink": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "closed": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "look_left": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      },
+      "look_right": {
+        "changed_pixels": 723,
+        "bounds": [
+          387,
+          578,
+          440,
+          619
+        ]
+      }
+    },
+    "opacity_scale": 0.55,
+    "underjaw_tint": {
+      "drawables": [
+        "ArtMesh115",
+        "ArtMesh233"
+      ],
+      "amount": 1.0,
+      "skin_rgb": [
+        254,
+        243,
+        234
+      ],
+      "states": {
+        "neutral": 723,
+        "half_blink": 723,
+        "closed": 723,
+        "look_left": 723,
+        "look_right": 723
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "matching_layers": [
+    "ArtMesh54",
+    "ArtMesh115",
+    "ArtMesh233"
+  ],
+  "center_before": [
+    230,
+    188,
+    178,
+    255
+  ],
+  "center_after": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

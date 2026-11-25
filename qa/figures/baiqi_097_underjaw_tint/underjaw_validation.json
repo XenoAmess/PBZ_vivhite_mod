@@ -1,0 +1,109 @@
+{
+  "forms": {
+    "coat_on": {
+      "poses": 197,
+      "groups": 33,
+      "inherited_cc0_flags": 20,
+      "new_flags": 0,
+      "standard_unreal_images": 25,
+      "low_angle_matches": 12
+    },
+    "coat_off": {
+      "poses": 197,
+      "groups": 33,
+      "inherited_cc0_flags": 20,
+      "new_flags": 0,
+      "standard_unreal_images": 25,
+      "low_angle_matches": 12
+    }
+  },
+  "textures": {
+    "T_BaiQiNative_13a44793c5fe2d.png": {
+      "texels": 1501,
+      "xyxy": [
+        448,
+        737,
+        514,
+        794
+      ],
+      "sha256": "13793ff23c20114714e0741d8da8cdbaffca44a3eb87279a9154a6fd30c3d093"
+    },
+    "T_BaiQiNative_2bffa2808efe42.png": {
+      "texels": 1501,
+      "xyxy": [
+        448,
+        737,
+        514,
+        794
+      ],
+      "sha256": "8f47b1d9dcdcf774addb385ad1c753cd0571a63857dd130eab452b972a7baa99"
+    },
+    "T_BaiQiNative_7da61f06e87f15.png": {
+      "texels": 1501,
+      "xyxy": [
+        448,
+        737,
+        514,
+        794
+      ],
+      "sha256": "bab6ae29003625982a151f600abd5b98ef1fb95acbbcf31a8bbf8bc7a14172df"
+    },
+    "T_BaiQiNative_9c49704ebbe9ab.png": {
+      "texels": 1501,
+      "xyxy": [
+        448,
+        737,
+        514,
+        794
+      ],
+      "sha256": "0aaaef8ff21f2716eb21edbf3780c09c9be2abf055a8b8e269676fa664ef5470"
+    },
+    "T_BaiQiNative_9dc4d93519838e.png": {
+      "texels": 1501,
+      "xyxy": [
+        448,
+        737,
+        514,
+        794
+      ],
+      "sha256": "2075e482611199646e9b23c1b6ebbcfc8d3396e5cd10166fd02dd224f97e1c8e"
+    }
+  },
+  "remote": {
+    "backend": "remote",
+    "job_id": "render_306685ae4a084ee2a42ed9067c7607a1",
+    "result_sha256": "8ccc03b3d39e0732f43be73e7cfbbe26d87297210d25eb791a4946c188a7485e",
+    "input_sha256": "e8e9cc345e363a91d31331461a3ff1a5453efad1a861225f56be13315a8aa106",
+    "queue_seconds": 0.09576225280761719,
+    "run_seconds": 19.655423641204834,
+    "gpu": "NVIDIA RTX 6000D",
+    "render_seconds": 18.324,
+    "images": 16,
+    "params": {
+      "forms": [
+        "coat_on",
+        "coat_off"
+      ],
+      "cases": [
+        "neck_pitch"
+      ],
+      "views": [
+        "front",
+        "oblique"
+      ],
+      "sample_indices": [
+        3,
+        4
+      ],
+      "resolution": [
+        1280,
+        1280
+      ],
+      "samples": 32,
+      "engine": "EEVEE",
+      "timeout_seconds": 1800
+    },
+    "fallback_reason": null
+  },
+  "unchanged_native_textures": 98
+}
