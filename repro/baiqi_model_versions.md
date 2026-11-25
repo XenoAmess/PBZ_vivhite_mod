@@ -11,3 +11,4 @@
 | 058 | 领口、袖窿与外套下摆 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-058) |
 | 059 | 发根与刘海接缝 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-059) |
 | 060 | 原眼部表情的 Unreal 材质接入 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-060) |
+| 061 | 鼻翼、面颊和颈部受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-061) |
