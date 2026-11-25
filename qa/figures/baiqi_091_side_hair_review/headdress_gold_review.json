@@ -1,0 +1,362 @@
+{
+  "coat_off_left_side": {
+    "controlled_region": 2865,
+    "bounds": [
+      353,
+      468,
+      484,
+      823
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 166.56,
+        "dark_below_85": 275,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 162.4,
+        "dark_below_85": 287,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1384
+      },
+      "metal_44": {
+        "avg_luma": 158.71,
+        "dark_below_85": 300,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2865
+      },
+      "metal_25_ridge": {
+        "avg_luma": 162.38,
+        "dark_below_85": 289,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2056
+      }
+    },
+    "relief_only_pixels_gt5": 1309
+  },
+  "coat_off_right_side": {
+    "controlled_region": 2924,
+    "bounds": [
+      446,
+      521,
+      947,
+      885
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 162.36,
+        "dark_below_85": 329,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 157.67,
+        "dark_below_85": 350,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1589
+      },
+      "metal_44": {
+        "avg_luma": 153.56,
+        "dark_below_85": 364,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2924
+      },
+      "metal_25_ridge": {
+        "avg_luma": 157.82,
+        "dark_below_85": 349,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2100
+      }
+    },
+    "relief_only_pixels_gt5": 1261
+  },
+  "coat_off_rear_left": {
+    "controlled_region": 41,
+    "bounds": [
+      368,
+      556,
+      848,
+      1135
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 38.62,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 32.64,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 32
+      },
+      "metal_44": {
+        "avg_luma": 27.85,
+        "dark_below_85": 37,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 41
+      },
+      "metal_25_ridge": {
+        "avg_luma": 35.86,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 52
+      }
+    },
+    "relief_only_pixels_gt5": 46
+  },
+  "coat_off_rear_right": {
+    "controlled_region": 1169,
+    "bounds": [
+      409,
+      549,
+      463,
+      802
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 57.44,
+        "dark_below_85": 881,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 47.89,
+        "dark_below_85": 955,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1046
+      },
+      "metal_44": {
+        "avg_luma": 39.93,
+        "dark_below_85": 1035,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1169
+      },
+      "metal_25_ridge": {
+        "avg_luma": 47.42,
+        "dark_below_85": 956,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1085
+      }
+    },
+    "relief_only_pixels_gt5": 1028
+  },
+  "coat_off_high_side": {
+    "controlled_region": 3610,
+    "bounds": [
+      346,
+      522,
+      1159,
+      1122
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 141.15,
+        "dark_below_85": 748,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 134.74,
+        "dark_below_85": 799,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2737
+      },
+      "metal_44": {
+        "avg_luma": 128.59,
+        "dark_below_85": 872,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 3610
+      },
+      "metal_25_ridge": {
+        "avg_luma": 134.68,
+        "dark_below_85": 796,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2711
+      }
+    },
+    "relief_only_pixels_gt5": 439
+  },
+  "coat_on_left_side": {
+    "controlled_region": 2933,
+    "bounds": [
+      267,
+      500,
+      760,
+      1191
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 163.16,
+        "dark_below_85": 347,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 159.06,
+        "dark_below_85": 357,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1394
+      },
+      "metal_44": {
+        "avg_luma": 155.41,
+        "dark_below_85": 372,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2933
+      },
+      "metal_25_ridge": {
+        "avg_luma": 159.1,
+        "dark_below_85": 358,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2027
+      }
+    },
+    "relief_only_pixels_gt5": 1311
+  },
+  "coat_on_right_side": {
+    "controlled_region": 2998,
+    "bounds": [
+      469,
+      525,
+      1163,
+      1222
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 158.91,
+        "dark_below_85": 401,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 154.28,
+        "dark_below_85": 421,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1670
+      },
+      "metal_44": {
+        "avg_luma": 150.17,
+        "dark_below_85": 442,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2998
+      },
+      "metal_25_ridge": {
+        "avg_luma": 154.4,
+        "dark_below_85": 424,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2157
+      }
+    },
+    "relief_only_pixels_gt5": 1302
+  },
+  "coat_on_rear_left": {
+    "controlled_region": 41,
+    "bounds": [
+      311,
+      556,
+      848,
+      918
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 37.93,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 31.91,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 33
+      },
+      "metal_44": {
+        "avg_luma": 27.1,
+        "dark_below_85": 37,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 41
+      },
+      "metal_25_ridge": {
+        "avg_luma": 35.17,
+        "dark_below_85": 34,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 51
+      }
+    },
+    "relief_only_pixels_gt5": 45
+  },
+  "coat_on_rear_right": {
+    "controlled_region": 1170,
+    "bounds": [
+      409,
+      549,
+      478,
+      839
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 57.38,
+        "dark_below_85": 882,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 47.85,
+        "dark_below_85": 956,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1048
+      },
+      "metal_44": {
+        "avg_luma": 39.93,
+        "dark_below_85": 1035,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1170
+      },
+      "metal_25_ridge": {
+        "avg_luma": 47.3,
+        "dark_below_85": 956,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 1088
+      }
+    },
+    "relief_only_pixels_gt5": 1022
+  },
+  "coat_on_high_side": {
+    "controlled_region": 3735,
+    "bounds": [
+      343,
+      367,
+      879,
+      1261
+    ],
+    "materials": {
+      "baseline": {
+        "avg_luma": 137.55,
+        "dark_below_85": 856,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 0
+      },
+      "metal_25": {
+        "avg_luma": 131.29,
+        "dark_below_85": 920,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2781
+      },
+      "metal_44": {
+        "avg_luma": 125.21,
+        "dark_below_85": 990,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 3735
+      },
+      "metal_25_ridge": {
+        "avg_luma": 131.24,
+        "dark_below_85": 916,
+        "bright_above_215": 0,
+        "colors_changed_from_base_gt5": 2764
+      }
+    },
+    "relief_only_pixels_gt5": 464
+  }
+}

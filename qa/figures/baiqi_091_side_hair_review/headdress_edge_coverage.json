@@ -1,0 +1,17 @@
+{
+  "0.0": {
+    "render_vertices": 5633,
+    "render_polygons": 8194,
+    "contacts_with_face": 0
+  },
+  "0.65": {
+    "render_vertices": 11266,
+    "render_polygons": 19431,
+    "contacts_with_face": 0
+  },
+  "1.1": {
+    "render_vertices": 11266,
+    "render_polygons": 19431,
+    "contacts_with_face": 0
+  }
+}
