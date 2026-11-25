@@ -1,0 +1,33 @@
+{
+  "source": "059 neutral face, 060 uses the same neutral geometry and albedo",
+  "cheek_luminance_change": {
+    "43": 25.36228765432101,
+    "65": 28.494574074074052,
+    "85": 29.835051851851844
+  },
+  "samples_px": [
+    [
+      248,
+      442
+    ],
+    [
+      381,
+      442
+    ],
+    [
+      246,
+      456
+    ],
+    [
+      382,
+      457
+    ]
+  ],
+  "mean_sample": "9 by 9, 0-255 display-referred estimate",
+  "nose_tip": {
+    "height_mm": 1415,
+    "forward_mm": 90.54595232009888
+  },
+  "bridge_height_mm": 1435,
+  "bridge_forward_mm": 74.0995705127716
+}
