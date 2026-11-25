@@ -30,6 +30,13 @@ def opaque_art(input_image, fallback):
     return linear(input_image[..., :3]) * alpha + np.asarray(fallback[:3]) * (1 - alpha)
 
 
+def match_face_pigment(pigment, mask, record):
+    arm = linear(np.asarray(record['arm_sample']))
+    face = linear(np.asarray(record['face_sample']))
+    assert np.all(face > .15)
+    return pigment * (mask + (1 - mask) * (arm / face))
+
+
 def bake_texture(directory, material, record):
     rows = record['images']
     kind = record['type']
@@ -42,10 +49,7 @@ def bake_texture(directory, material, record):
         pigment = opaque_art(source, record['fallback_rgba'])
         if kind == 'skin_face':
             mask = load_rgba(directory / rows[1]['path'])[..., 0:1]
-            arm = linear(np.asarray(record['arm_sample']))
-            face = linear(np.asarray(record['face_sample']))
-            assert np.all(face > .15)
-            pigment = pigment * (mask + (1 - mask) * (arm / face))
+            pigment = match_face_pigment(pigment, mask, record)
         rgba = np.concatenate((srgb(pigment), np.ones_like(source[..., 3:4])), axis=-1)
     pixels = np.rint(np.clip(rgba, 0, 1) * 255).astype(np.uint8)
     name = 'T_BaiQi_' + hashlib.sha256(material.encode('utf-8')).hexdigest()[:14]

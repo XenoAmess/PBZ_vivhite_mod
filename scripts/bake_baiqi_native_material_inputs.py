@@ -52,6 +52,14 @@ def weave_texture(directory):
     return name
 
 
+def face_mix_texture(mask_path, roughness):
+    with Image.open(mask_path) as protected:
+        opacity = np.asarray(protected.convert('L').resize(texture_size(protected), Image.Resampling.LANCZOS)) / 255
+    graded = (roughness * (1 - opacity) + .48 * opacity) * 255
+    channels = np.stack((np.full_like(graded, 255), graded, np.zeros_like(graded)), axis=-1)
+    return Image.fromarray(np.rint(channels).astype(np.uint8))
+
+
 def surface_finish(inputs, directory, materials):
     source = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))['coat_on']['materials']
     weave = weave_texture(directory)
@@ -64,11 +72,7 @@ def surface_finish(inputs, directory, materials):
         mix = 'T_BaiQiMix_' + stem
         if materials[name]['type'] == 'skin_face':
             mask = next(row for row in source[name]['images'] if row['label'] == 'Keep original facial artwork')
-            with Image.open(inputs / mask['path']) as protected:
-                opacity = np.asarray(protected.convert('L').resize(texture_size(protected), Image.Resampling.LANCZOS)) / 255
-            graded = (roughness * (1 - opacity) + .48 * opacity) * 255
-            channels = np.stack((np.full_like(graded, 255), graded, np.zeros_like(graded)), axis=-1)
-            image = Image.fromarray(np.rint(channels).astype(np.uint8))
+            image = face_mix_texture(inputs / mask['path'], roughness)
         else:
             image = Image.new('RGB', (64, 64), (255, round(255 * roughness), round(255 * metallic)))
         image.save(directory / f'{mix}.png')

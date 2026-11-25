@@ -8,7 +8,8 @@ import zipfile
 
 
 FORMS = ('coat_on', 'coat_off')
-INPUT_FILES = {'form_inputs.json', 'engine_materials.json', 'surface_finish.json', 'surface_finish_readback.json'}
+INPUT_FILES = {'form_inputs.json', 'engine_materials.json', 'surface_finish.json', 'surface_finish_readback.json',
+               'eye_palette.json'}
 TEXTURE_DIRS = ('textures', 'baked', 'native_textures')
 
 
