@@ -1,0 +1,65 @@
+{
+  "rest_frame_count": 40,
+  "neutral_preview_reproduced": 8,
+  "band_sampling": {
+    "box_xyxy": [
+      564,
+      1050,
+      714,
+      1101
+    ],
+    "channels": [
+      "luma_range",
+      "largest_four_row_luma_step"
+    ],
+    "values": {
+      "coat_on_front_left": {
+        "render": [
+          13.511,
+          3.753
+        ],
+        "final_render": [
+          6.9,
+          2.43
+        ]
+      },
+      "coat_on_front_right": {
+        "render": [
+          13.154,
+          3.751
+        ],
+        "final_render": [
+          7.367,
+          2.217
+        ]
+      },
+      "coat_off_front_left": {
+        "render": [
+          13.439,
+          3.86
+        ],
+        "final_render": [
+          7.294,
+          2.288
+        ]
+      },
+      "coat_off_front_right": {
+        "render": [
+          13.081,
+          3.715
+        ],
+        "final_render": [
+          7.045,
+          1.86
+        ]
+      }
+    }
+  },
+  "game_material_readback": {
+    "material": "/HuaShira/Mods/BaiQi084/Native/Materials/MI_BaiQi_600ffca10dcd32.MI_BaiQi_600ffca10dcd32",
+    "mix": "T_BaiQiMix_600ffca10dcd32",
+    "normal": "T_BaiQiNative_NeckBridge",
+    "normal_strength": 0.7,
+    "specular": 0.16
+  }
+}

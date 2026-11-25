@@ -34,3 +34,4 @@
 | 081 | 分组后发束并整理后颈覆盖 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-081) |
 | 082 | 延伸镜框轮廓外的颜色取样区 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-082) |
 | 083 | 去除下颌重复描线，让三维下颌受光成形 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-083) |
+| 084 | 平顺补颈受光并烘焙到 Unreal | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-084) |

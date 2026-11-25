@@ -16,6 +16,7 @@ from refine_baiqi_face_lighting import HEAD, fingerprint
 
 NECK = 'BaiQi neck junction shading'
 NECK_MARKER = 'baiqi_native_neck_pigment'
+NECK_NORMAL_MAP_MARKER = 'baiqi_baked_neck_bridge_normals'
 LOW_Z, HIGH_Z = 1.315, 1.365
 
 

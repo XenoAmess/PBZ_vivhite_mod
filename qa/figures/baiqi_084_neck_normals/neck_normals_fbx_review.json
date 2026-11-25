@@ -1,0 +1,12 @@
+{
+  "coat_on": {
+    "unchanged_positions_and_uvs": true,
+    "normal_changes": {},
+    "sections": 43
+  },
+  "coat_off": {
+    "unchanged_positions_and_uvs": true,
+    "normal_changes": {},
+    "sections": 39
+  }
+}

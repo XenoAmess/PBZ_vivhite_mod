@@ -17,7 +17,7 @@ sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tools/blender_libs'),
                 str(ROOT / 'vendor/UEFormat/plugins/blender')]
 
 from baiqi_mesh_clip import clip_mesh
-from apply_baiqi_neck_pigment import HIGH_Z, LOW_Z, NECK, NECK_MARKER
+from apply_baiqi_neck_pigment import HIGH_Z, LOW_Z, NECK, NECK_MARKER, NECK_NORMAL_MAP_MARKER
 from finish_baiqi_surfaces import EXPORT_THICKNESS
 from fit_baiqi_cc0_wardrobe import rest_signature, smoothstep
 from io_scene_ueformat.importer.import_context import UEFormatImport
@@ -81,6 +81,10 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
     if obj.name == 'BaiQi restored authored head and face':
         if duplicate.data.materials[NECK].get(NECK_MARKER):
             neck_pigment_uv(duplicate.data)
+        if duplicate.data.get(NECK_NORMAL_MAP_MARKER):
+            # The editor uses the baked tangent map and the original mesh normals.
+            bpy.context.view_layer.objects.active = duplicate
+            assert bpy.ops.mesh.customdata_custom_splitnormals_clear() == {'FINISHED'}, duplicate.name
         junction_color(duplicate.data)
     duplicate.data.transform(Matrix.Rotation(math.pi, 4, 'Z') @ Matrix.Scale(100., 4), shape_keys=True)
     for group in list(duplicate.vertex_groups):
