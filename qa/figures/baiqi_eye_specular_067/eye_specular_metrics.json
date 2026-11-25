@@ -1,0 +1,92 @@
+{
+  "blender_level": {
+    "current": 0.5,
+    "native_sim": 0.19,
+    "diagnostic_zero": 0
+  },
+  "iris_ellipses": [
+    [
+      205,
+      296,
+      18,
+      20
+    ],
+    [
+      369,
+      296,
+      18,
+      20
+    ]
+  ],
+  "views": {
+    "left": {
+      "current": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 594,
+        "brightness_above_218": 339,
+        "p95_brightness": 232.0,
+        "mean_brightness": 159.44
+      },
+      "native_sim": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 589,
+        "brightness_above_218": 288,
+        "p95_brightness": 229.99,
+        "mean_brightness": 159.24
+      },
+      "diagnostic_zero": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 570,
+        "brightness_above_218": 239,
+        "p95_brightness": 228.62,
+        "mean_brightness": 158.96
+      }
+    },
+    "right": {
+      "current": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 788,
+        "brightness_above_218": 495,
+        "p95_brightness": 234.71,
+        "mean_brightness": 179.74
+      },
+      "native_sim": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 792,
+        "brightness_above_218": 385,
+        "p95_brightness": 233.14,
+        "mean_brightness": 179.08
+      },
+      "diagnostic_zero": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 771,
+        "brightness_above_218": 297,
+        "p95_brightness": 231.58,
+        "mean_brightness": 178.45
+      }
+    },
+    "rim": {
+      "current": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 0,
+        "brightness_above_218": 0,
+        "p95_brightness": 173.73,
+        "mean_brightness": 114.75
+      },
+      "native_sim": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 0,
+        "brightness_above_218": 0,
+        "p95_brightness": 174.48,
+        "mean_brightness": 114.84
+      },
+      "diagnostic_zero": {
+        "eye_patches_pixels": 2234,
+        "brightness_above_205": 0,
+        "brightness_above_218": 0,
+        "p95_brightness": 174.87,
+        "mean_brightness": 114.86
+      }
+    }
+  }
+}

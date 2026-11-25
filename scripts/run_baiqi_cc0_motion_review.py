@@ -24,6 +24,8 @@ from render_baiqi_cc0_fitting import setup_studio
 
 NATIVE_CLIPS = ('Hun_Unarmed_Idle_Loop', 'Hun_Unarmed_Run_Fwd_Loop', 'Hun_BaiShanDual_Attack_A')
 NECK_ZONES = {'neck': (.0, .052, 1.320, 1.369)}
+NECK_MATERIAL = 'BaiQi neck junction shading'
+NECKLINE_PARTS = ('BaiQi fitted sleeveless blouse', 'BaiQi fitted sleeveless binding')
 ARM_ZONES = {'shoulder': (.125, .238, 1.190, 1.325), 'elbow': (.292, .363, 1.196, 1.319)}
 VIEWS = {'front': (0, 1, 0), 'back': (0, -1, 0), 'side': (-1, 0, 0), 'oblique': (-.57, .82, 0)}
 GAME_NON_SHADOW_SECTIONS = {'BaiQi bob front appearance', 'BaiQi side hair source color',
@@ -114,12 +116,15 @@ class Stretch:
         return result
 
 
-def surface_tree(obj, graph, skin=False):
+def surface_tree(obj, graph, skin=False, *, material=None):
     mesh = obj.evaluated_get(graph).data
     coords = [v.co for v in mesh.vertices]
     mesh.calc_loop_triangles()
+    slot = mesh.materials.find(material) if material is not None else None
+    assert slot != -1, (obj.name, material)
     triangles = [tuple(triangle.vertices) for triangle in mesh.loop_triangles
-                 if not skin or max(coords[i].z for i in triangle.vertices) < 1.305]
+                 if (slot is None or triangle.material_index == slot)
+                 and (not skin or max(coords[i].z for i in triangle.vertices) < 1.305)]
     return BVHTree.FromPolygons(coords, triangles, all_triangles=True)
 
 
@@ -199,6 +204,8 @@ def main():
                         help='Match the game mesh shadow settings for hair, headdress and glasses.')
     parser.add_argument('--wardrobe-layer-contacts', action='store_true',
                         help='Record coat contact with the skirt and blouse during motion.')
+    parser.add_argument('--neckline-contacts', action='store_true',
+                        help='Record neck bridge contact with the blouse and its binding during motion.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -228,6 +235,8 @@ def main():
     layered = {obj.name: obj for obj in wardrobe}
     outer = layered.get('BaiQi open coat body') if args.wardrobe_layer_contacts else None
     under = [layered[name] for name in ('BaiQi pleated skirt', 'BaiQi fitted sleeveless blouse')] if outer else []
+    if args.neckline_contacts:
+        assert all(layered[name].matrix_world == head.matrix_world for name in NECKLINE_PARTS)
     checks = [Stretch(body, ARM_ZONES), Stretch(head, NECK_ZONES)]
     control_path = ROOT / args.cc0_control
     control = load_cc0_control(control_path, body, cc0)
@@ -270,6 +279,10 @@ def main():
                 coat = surfaces[outer.name]
                 row['samples'][-1]['intersecting_coat_underlayer_triangle_pairs'] = {
                     obj.name: len(coat.overlap(surfaces[obj.name])) for obj in under}
+            if args.neckline_contacts:
+                neck = surface_tree(head, graph, material=NECK_MATERIAL)
+                row['samples'][-1]['intersecting_neckline_triangle_pairs'] = {
+                    name: len(neck.overlap(surfaces[name])) for name in NECKLINE_PARTS}
             if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]
