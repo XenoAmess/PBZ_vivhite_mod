@@ -1,0 +1,42 @@
+{
+  "oblique": {
+    "pixels_delta_gt6": 91,
+    "pixels_delta_gt20": 1,
+    "difference_crop": [
+      225,
+      450,
+      1107,
+      851
+    ]
+  },
+  "other_oblique": {
+    "pixels_delta_gt6": 46,
+    "pixels_delta_gt20": 0,
+    "difference_crop": [
+      325,
+      437,
+      1120,
+      857
+    ]
+  },
+  "rear_high": {
+    "pixels_delta_gt6": 19,
+    "pixels_delta_gt20": 1,
+    "difference_crop": [
+      200,
+      430,
+      1080,
+      534
+    ]
+  },
+  "profile": {
+    "pixels_delta_gt6": 12,
+    "pixels_delta_gt20": 2,
+    "difference_crop": [
+      625,
+      411,
+      765,
+      796
+    ]
+  }
+}
