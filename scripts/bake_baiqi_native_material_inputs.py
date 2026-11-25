@@ -10,10 +10,11 @@ from PIL import Image
 
 
 # Roughness, specular and metallic values for the adult game's cloth layer.
+FRAME_MATERIAL = 'BaiQi round gold glasses appearance'
 FINISH = {
     'BaiQi original face appearance': (.70, .19, 0.),
     'BaiQi neck junction shading': (.75, .16, 0.),
-    'BaiQi round gold glasses appearance': (.34, .27, .62),
+    FRAME_MATERIAL: (.34, .27, .62),
     'BaiQi gold': (.37, .27, .62),
     'BaiQi gold_001': (.37, .27, .62),
     'BaiQi bob front appearance': (.64, .19, 0.),
@@ -60,7 +61,7 @@ def face_mix_texture(mask_path, roughness):
     return Image.fromarray(np.rint(channels).astype(np.uint8))
 
 
-def surface_finish(inputs, directory, materials):
+def surface_finish(inputs, directory, materials, *, frame_roughness=None):
     source = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))['coat_on']['materials']
     weave = weave_texture(directory)
     profiles = {}
@@ -68,6 +69,8 @@ def surface_finish(inputs, directory, materials):
         if name not in materials:
             continue
         assert materials[name]['type'] not in {'hidden', 'masked', 'skin_body'}, name
+        if name == FRAME_MATERIAL and frame_roughness is not None:
+            roughness = frame_roughness
         stem = hashlib.sha256(name.encode()).hexdigest()[:14]
         mix = 'T_BaiQiMix_' + stem
         if materials[name]['type'] == 'skin_face':
@@ -87,7 +90,10 @@ def main():
     parser.add_argument('inputs', type=Path)
     parser.add_argument('skin_report', type=Path)
     parser.add_argument('--surface-finish', action='store_true', help='Bake separate roughness and normal profiles.')
+    parser.add_argument('--frame-roughness', type=float, help='Roughness of the gold eyewear frame only.')
     args = parser.parse_args()
+    if args.frame_roughness is not None:
+        assert args.surface_finish and .36 <= args.frame_roughness <= .58
     directory = args.inputs / 'native_textures'
     directory.mkdir(exist_ok=True)
     materials = json.loads((args.inputs / 'engine_materials.json').read_text(encoding='utf-8'))
@@ -109,7 +115,7 @@ def main():
                        ('NeutralBlack', (0, 0, 0)), ('NeutralWhite', (255, 255, 255))]:
         Image.new('RGB', (64, 64), flat).save(directory / f'T_BaiQiNative_{name}.png')
     if args.surface_finish:
-        surface_finish(args.inputs, directory, materials)
+        surface_finish(args.inputs, directory, materials, frame_roughness=args.frame_roughness)
 
 
 if __name__ == '__main__':
