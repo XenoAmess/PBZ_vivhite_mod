@@ -1,0 +1,106 @@
+{
+  "0.0": {
+    "BaiQi rear hair clump 1": {
+      "fringe_pairs": 248,
+      "head_pairs": 0,
+      "vertices_moved": 0,
+      "peak_mm": 0.0
+    },
+    "BaiQi rear hair clump 2": {
+      "fringe_pairs": 252,
+      "head_pairs": 0,
+      "vertices_moved": 0,
+      "peak_mm": 0.0
+    },
+    "BaiQi rear hair clump 20": {
+      "fringe_pairs": 25,
+      "head_pairs": 0,
+      "vertices_moved": 0,
+      "peak_mm": 0.0
+    },
+    "BaiQi rear hair clump 21": {
+      "fringe_pairs": 27,
+      "head_pairs": 0,
+      "vertices_moved": 0,
+      "peak_mm": 0.0
+    }
+  },
+  "3.0": {
+    "BaiQi rear hair clump 1": {
+      "fringe_pairs": 25,
+      "head_pairs": 0,
+      "vertices_moved": 326,
+      "peak_mm": 3.0
+    },
+    "BaiQi rear hair clump 2": {
+      "fringe_pairs": 45,
+      "head_pairs": 0,
+      "vertices_moved": 187,
+      "peak_mm": 2.7052461848258966
+    },
+    "BaiQi rear hair clump 20": {
+      "fringe_pairs": 19,
+      "head_pairs": 0,
+      "vertices_moved": 25,
+      "peak_mm": 1.7115227115054927
+    },
+    "BaiQi rear hair clump 21": {
+      "fringe_pairs": 16,
+      "head_pairs": 0,
+      "vertices_moved": 46,
+      "peak_mm": 2.286732282638549
+    }
+  },
+  "6.0": {
+    "BaiQi rear hair clump 1": {
+      "fringe_pairs": 25,
+      "head_pairs": 0,
+      "vertices_moved": 326,
+      "peak_mm": 3.006243921567996
+    },
+    "BaiQi rear hair clump 2": {
+      "fringe_pairs": 45,
+      "head_pairs": 0,
+      "vertices_moved": 187,
+      "peak_mm": 2.7052461848258966
+    },
+    "BaiQi rear hair clump 20": {
+      "fringe_pairs": 19,
+      "head_pairs": 0,
+      "vertices_moved": 25,
+      "peak_mm": 1.7115227115054927
+    },
+    "BaiQi rear hair clump 21": {
+      "fringe_pairs": 16,
+      "head_pairs": 0,
+      "vertices_moved": 46,
+      "peak_mm": 2.286732282638549
+    }
+  },
+  "9.0": {
+    "BaiQi rear hair clump 1": {
+      "fringe_pairs": 25,
+      "head_pairs": 0,
+      "vertices_moved": 326,
+      "peak_mm": 3.006243921567996
+    },
+    "BaiQi rear hair clump 2": {
+      "fringe_pairs": 45,
+      "head_pairs": 0,
+      "vertices_moved": 187,
+      "peak_mm": 2.7052461848258966
+    },
+    "BaiQi rear hair clump 20": {
+      "fringe_pairs": 19,
+      "head_pairs": 0,
+      "vertices_moved": 25,
+      "peak_mm": 1.7115227115054927
+    },
+    "BaiQi rear hair clump 21": {
+      "fringe_pairs": 16,
+      "head_pairs": 0,
+      "vertices_moved": 46,
+      "peak_mm": 2.286732282638549
+    }
+  }
+}
