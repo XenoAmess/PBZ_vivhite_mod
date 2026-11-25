@@ -1,4 +1,4 @@
-"""Add the original fringe's light response to the two BaiQi fitting forms."""
+"""Pack the authored fringe or metal rim normal into the two BaiQi fitting forms."""
 import argparse
 import json
 from pathlib import Path
@@ -14,7 +14,10 @@ from lock_baiqi_cc0_body import mesh_fingerprint
 from refine_baiqi_face_lighting import HEAD, fingerprint
 
 
-FRINGE = 'BaiQi bob front appearance'
+TARGETS = {
+    'fringe': ('BaiQi bob front appearance', 'Original fringe clump relief', 'Original fringe light response'),
+    'frame': ('BaiQi round gold glasses appearance', 'Original gold rim curvature', 'Rounded rim light response'),
+}
 
 
 def main():
@@ -23,12 +26,14 @@ def main():
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--maps', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--target', choices=TARGETS, default='fringe')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, maps, output = ((ROOT / path).resolve() for path in (args.source, args.source_inputs, args.maps, args.out))
     assert output != source and output.is_relative_to(ROOT)
     manifest = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))
-    design = json.loads((maps / 'fringe_relief_inputs.json').read_text(encoding='utf-8'))
-    normal = maps / 'fringe_relief_blender.png'
+    material, image_label, tangent_label = TARGETS[args.target]
+    design = json.loads((maps / f'{args.target}_relief_inputs.json').read_text(encoding='utf-8'))
+    normal = maps / f'{args.target}_relief_blender.png'
     assert fingerprint(normal) == design['blender_sha256']
     output.mkdir(parents=True, exist_ok=True)
     records = {}
@@ -41,20 +46,20 @@ def main():
         meshes = {obj: mesh_fingerprint(obj) for obj in bpy.context.scene.objects if obj.type == 'MESH'}
         assert meshes[body] == manifest[form]['body_sha256']
         skeleton = rest_signature(rig)
-        tree = bpy.data.materials[FRINGE].node_tree
+        tree = bpy.data.materials[material].node_tree
         albedo = tree.nodes['Image Texture']
         surface = tree.nodes['Principled BSDF'].inputs['Normal']
         assert not surface.is_linked
-        assert design['source_sha256'] == manifest[form]['materials'][FRINGE]['images'][0]['sha256']
+        assert design['source_sha256'] == manifest[form]['materials'][material]['images'][0]['sha256']
         texture = tree.nodes.new('ShaderNodeTexImage')
-        texture.label = 'Original fringe clump relief'
+        texture.label = image_label
         texture.image = bpy.data.images.load(str(normal))
         texture.image.colorspace_settings.name = 'Non-Color'
         texture.image.pack()
         texture.extension = albedo.extension
         tree.links.new(albedo.inputs['Vector'].links[0].from_socket, texture.inputs['Vector'])
         tangent = tree.nodes.new('ShaderNodeNormalMap')
-        tangent.label = 'Original fringe light response'
+        tangent.label = tangent_label
         tangent.uv_map = 'BaiQiCanvas'
         tangent.inputs['Strength'].default_value = design['normal_strength']
         tree.links.new(texture.outputs['Color'], tangent.inputs['Color'])
@@ -65,7 +70,7 @@ def main():
         bpy.ops.wm.save_as_mainfile(filepath=str(destination))
         records[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(destination),
                          'cc0_body_sha256': meshes[body], 'original_head_sha256': meshes[head]}
-    (output / 'fringe_relief.json').write_text(json.dumps(records, indent=2) + '\n', encoding='utf-8')
+    (output / f'{args.target}_relief.json').write_text(json.dumps(records, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

@@ -30,3 +30,4 @@
 | 077 | 展平外套后下摆翻折 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-077) |
 | 078 | 收敛虹膜下缘底色泛白 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-078) |
 | 079 | 平顺耳下前发边缘 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-079) |
+| 080 | 增加金色镜框的圆弧受光 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-080) |
