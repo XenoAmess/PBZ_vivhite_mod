@@ -44,13 +44,46 @@ def encode(nx, ny):
     return Image.fromarray(np.rint((normals * .5 + .5) * 255).astype(np.uint8))
 
 
-def attach_native(inputs, directx, strength):
+def lift_nose_response(image, basis, amount, *, directx=False):
+    x0, y0, x1, y1 = basis['box']
+    normal_z, tangent_z, bitangent_z = basis['vertical'].transpose((2, 0, 1))
+    rows, columns = np.mgrid[y0:y1, x0:x1]
+    core = gaussian(columns, rows, (429., 506.5), (12.5, 11.))
+    weight = core * ramp((-.18 - normal_z) / .34)
+    weight *= (ramp((columns - 402.) / 10.) * ramp((458. - columns) / 12.)
+               * ramp((rows - 490.) / 10.) * ramp((529. - rows) / 10.))
+
+    def sample(field):
+        full = np.zeros((800, 880), dtype=np.float32)
+        full[y0:y1, x0:x1] = field
+        return np.asarray(Image.fromarray(full).resize(image.size, Image.Resampling.BILINEAR))
+
+    affected = sample(weight) > .003
+    directions = (tangent_z, -bitangent_z if directx else bitangent_z, normal_z)
+    upward = np.column_stack([sample(weight * axis)[affected] for axis in directions]).astype(np.float64)
+    pixels = np.array(image.convert('RGB'))
+    base = pixels[affected].astype(np.float64) / 127.5 - 1.
+    base /= np.linalg.norm(base, axis=1, keepdims=True)
+    upward -= np.sum(base * upward, axis=1, keepdims=True) * base
+    desired = base + amount * upward
+    desired /= np.linalg.norm(desired, axis=1, keepdims=True)
+    changed = np.rint((desired * .5 + .5) * 255).astype(np.uint8)
+    count = np.any(pixels[affected] != changed, axis=1).sum()
+    pixels[affected] = changed
+    angles = np.degrees(np.arccos(np.clip(np.sum(base * desired, axis=1), -1., 1.)))
+    return Image.fromarray(pixels), {'changed_texels': int(count), 'max_tilt_degrees': float(angles.max())}
+
+
+def attach_native(inputs, directx, strength, nose_basis=None, nose_lift=0.):
     finish_path = inputs / 'surface_finish.json'
     finishes = load(finish_path)
     palettes = load(inputs / 'eye_palette.json')
     materials = [FACE_SLOT, *(row['material'] for row in palettes['states'].values())]
     native = inputs / 'native_textures' / f'{NORMAL}.png'
-    directx.resize((1024, 1024), Image.Resampling.BILINEAR).save(native)
+    converted = directx.resize((1024, 1024), Image.Resampling.BILINEAR)
+    if nose_basis is not None:
+        converted, _ = lift_nose_response(converted, nose_basis, nose_lift, directx=True)
+    converted.save(native)
     for name in materials:
         finishes[name].update(normal=NORMAL, normal_strength=strength)
     save(finish_path, finishes)
@@ -65,18 +98,31 @@ def main():
     parser.add_argument('--strength', default=.75, type=float)
     parser.add_argument('--nasal-strength', default=1., type=float,
                         help='Scale the nose and nostril relief while retaining the authored cheek relief.')
+    parser.add_argument('--nose-basis', type=Path, help='Sampled nose tangent basis for the authored head.')
+    parser.add_argument('--nose-lift', default=.40, type=float,
+                        help='Tilt the downward-facing nose normals toward overhead light.')
     args = parser.parse_args()
     assert .35 <= args.amount <= 1.5 and 0 < args.strength <= 1.
     assert .45 <= args.nasal_strength <= 1.
     args.out.mkdir(parents=True, exist_ok=True)
     nx, ny = skin_relief(args.amount, args.nasal_strength)
     blender = encode(nx, ny)
+    nose_basis = None
+    nose_report = None
+    if args.nose_basis:
+        assert 0. < args.nose_lift <= .60
+        with np.load(args.nose_basis) as source:
+            nose_basis = dict(source)
+        blender, nose_report = lift_nose_response(blender, nose_basis, args.nose_lift)
     blender.save(args.out / 'face_relief_blender.png')
     report = {'amount': args.amount, 'normal_strength': args.strength, 'nasal_strength': args.nasal_strength,
               'max_tangent_tilt_degrees': float(np.degrees(np.arctan(np.hypot(nx, ny).max()))),
               'blender_normal_sha256': hashlib.sha256((args.out / 'face_relief_blender.png').read_bytes()).hexdigest()}
+    if nose_report:
+        report['nose_lift'] = {'amount': args.nose_lift, 'basis_sha256': hashlib.sha256(args.nose_basis.read_bytes()).hexdigest(),
+                               'head_sha256': str(nose_basis['head_sha256']), **nose_report}
     if args.game_inputs:
-        report['native_normal_sha256'] = attach_native(args.game_inputs, encode(nx, -ny), args.strength)
+        report['native_normal_sha256'] = attach_native(args.game_inputs, encode(nx, -ny), args.strength, nose_basis, args.nose_lift)
     save(args.out / 'face_relief_inputs.json', report)
     print('BAIQI_FACE_RELIEF', report, flush=True)
 

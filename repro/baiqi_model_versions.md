@@ -43,3 +43,4 @@
 | 090 | 给原鼻托独立的粗糙度和金属度 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-090) |
 | 091 | 减轻圆镜框反光旁的深边 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-091) |
 | 092 | 顺平耳侧前发的深度突变 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-092) |
+| 093 | 减轻原鼻尖下方的暗团 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-093) |

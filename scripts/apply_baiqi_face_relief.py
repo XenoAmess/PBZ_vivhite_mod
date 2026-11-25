@@ -68,6 +68,8 @@ def main():
         body, head, rig = (bpy.data.objects[name] for name in ('Body', HEAD, 'Armature'))
         meshes = {obj: mesh_fingerprint(obj) for obj in bpy.context.scene.objects if obj.type == 'MESH'}
         assert meshes[body] == expected[form]['body_sha256']
+        if 'nose_lift' in design:
+            assert meshes[head] == design['nose_lift']['head_sha256']
         skeleton = rest_signature(rig)
         face, neck = (head.data.materials[name] for name in (FACE, NECK))
         artwork = {node.image: bytes(node.image.packed_file.data) for node in face.node_tree.nodes

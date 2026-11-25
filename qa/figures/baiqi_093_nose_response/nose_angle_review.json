@@ -1,0 +1,226 @@
+{
+  "-56_coat_on_neutral_front_left.png": {
+    "base": {
+      "low_lt100": 127,
+      "median": 120.01
+    },
+    ".23": {
+      "low_lt100": 16,
+      "median": 140.65
+    },
+    ".40": {
+      "low_lt100": 16,
+      "median": 157.37
+    }
+  },
+  "-56_coat_on_neutral_front_right.png": {
+    "base": {
+      "low_lt100": 267,
+      "median": 114.72
+    },
+    ".23": {
+      "low_lt100": 133,
+      "median": 136.79
+    },
+    ".40": {
+      "low_lt100": 89,
+      "median": 151.3
+    }
+  },
+  "-56_coat_on_neutral_oblique.png": {
+    "base": {
+      "low_lt100": 127,
+      "median": 125.72
+    },
+    ".23": {
+      "low_lt100": 16,
+      "median": 147.37
+    },
+    ".40": {
+      "low_lt100": 16,
+      "median": 163.02
+    }
+  },
+  "-56_coat_on_neutral_other_oblique.png": {
+    "base": {
+      "low_lt100": 114,
+      "median": 130.72
+    },
+    ".23": {
+      "low_lt100": 48,
+      "median": 157.37
+    },
+    ".40": {
+      "low_lt100": 43,
+      "median": 171.09
+    }
+  },
+  "-56_coat_off_neutral_front_left.png": {
+    "base": {
+      "low_lt100": 118,
+      "median": 121.44
+    },
+    ".23": {
+      "low_lt100": 17,
+      "median": 141.58
+    },
+    ".40": {
+      "low_lt100": 17,
+      "median": 158.37
+    }
+  },
+  "-56_coat_off_neutral_front_right.png": {
+    "base": {
+      "low_lt100": 220,
+      "median": 118.58
+    },
+    ".23": {
+      "low_lt100": 88,
+      "median": 140.58
+    },
+    ".40": {
+      "low_lt100": 50,
+      "median": 159.37
+    }
+  },
+  "-56_coat_off_neutral_oblique.png": {
+    "base": {
+      "low_lt100": 107,
+      "median": 126.72
+    },
+    ".23": {
+      "low_lt100": 7,
+      "median": 148.37
+    },
+    ".40": {
+      "low_lt100": 8,
+      "median": 163.94
+    }
+  },
+  "-56_coat_off_neutral_other_oblique.png": {
+    "base": {
+      "low_lt100": 65,
+      "median": 134.93
+    },
+    ".23": {
+      "low_lt100": 5,
+      "median": 160.23
+    },
+    ".40": {
+      "low_lt100": 2,
+      "median": 172.8
+    }
+  },
+  "14_coat_on_neutral_front_left.png": {
+    "base": {
+      "low_lt100": 10,
+      "median": 206.54
+    },
+    ".23": {
+      "low_lt100": 10,
+      "median": 209.47
+    },
+    ".40": {
+      "low_lt100": 10,
+      "median": 211.47
+    }
+  },
+  "14_coat_on_neutral_front_right.png": {
+    "base": {
+      "low_lt100": 16,
+      "median": 202.75
+    },
+    ".23": {
+      "low_lt100": 17,
+      "median": 206.54
+    },
+    ".40": {
+      "low_lt100": 17,
+      "median": 207.61
+    }
+  },
+  "14_coat_on_neutral_oblique.png": {
+    "base": {
+      "low_lt100": 1,
+      "median": 209.57
+    },
+    ".23": {
+      "low_lt100": 1,
+      "median": 213.36
+    },
+    ".40": {
+      "low_lt100": 1,
+      "median": 215.25
+    }
+  },
+  "14_coat_on_neutral_other_oblique.png": {
+    "base": {
+      "low_lt100": 3,
+      "median": 213.25
+    },
+    ".23": {
+      "low_lt100": 3,
+      "median": 216.33
+    },
+    ".40": {
+      "low_lt100": 3,
+      "median": 218.11
+    }
+  },
+  "14_coat_off_neutral_front_left.png": {
+    "base": {
+      "low_lt100": 0,
+      "median": 206.61
+    },
+    ".23": {
+      "low_lt100": 0,
+      "median": 210.39
+    },
+    ".40": {
+      "low_lt100": 0,
+      "median": 211.47
+    }
+  },
+  "14_coat_off_neutral_front_right.png": {
+    "base": {
+      "low_lt100": 18,
+      "median": 203.25
+    },
+    ".23": {
+      "low_lt100": 18,
+      "median": 206.57
+    },
+    ".40": {
+      "low_lt100": 18,
+      "median": 208.39
+    }
+  },
+  "14_coat_off_neutral_oblique.png": {
+    "base": {
+      "low_lt100": 0,
+      "median": 209.43
+    },
+    ".23": {
+      "low_lt100": 0,
+      "median": 212.86
+    },
+    ".40": {
+      "low_lt100": 0,
+      "median": 215.25
+    }
+  },
+  "14_coat_off_neutral_other_oblique.png": {
+    "base": {
+      "low_lt100": 0,
+      "median": 213.47
+    },
+    ".23": {
+      "low_lt100": 0,
+      "median": 216.33
+    },
+    ".40": {
+      "low_lt100": 0,
+      "median": 218.11
+    }
+  }
+}
