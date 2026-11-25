@@ -134,12 +134,14 @@ def trim_texture_mask(obj, image):
 
 def merge_skirt_material(mesh):
     # A single closed section lets Chaos solve across the rear/front joins.
-    # Bottom-left texels sit outside the artwork and use the white fallback.
+    # Earlier fittings sample the white fallback in the bottom-left texels.
+    has_rear_atlas = mesh.materials[0].get('baiqi_skirt_rear_atlas', False)
     layer = mesh.uv_layers[0]
     for face in mesh.polygons:
         if face.material_index > 0:
-            for index in face.loop_indices:
-                layer.uv[index].vector = (.012, .012)
+            if not has_rear_atlas:
+                for index in face.loop_indices:
+                    layer.uv[index].vector = (.012, .012)
             face.material_index = 0
     for index in range(len(mesh.materials) - 1, 0, -1):
         mesh.materials.pop(index=index)
