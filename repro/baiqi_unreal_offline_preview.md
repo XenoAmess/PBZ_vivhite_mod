@@ -15,4 +15,6 @@ $script = (Resolve-Path 'scripts/ue_render_baiqi_offline_preview.py').Path
 
 默认 `neutral` 输出两形态各四张。上面的五状态命令输出 40 张。这个预览检查静止形态和材质切换，动作范围继续用 Git 库里的白绮动作套组复验。
 
+预览回读材质实例的纹理与标量参数。082 的强对照把整张脸的 Mix 改成 `255, 18, 255`，中性状态的八张彩色图仍逐像素一致。现有彩色图可判断颜色图变化和眼部切换，Mix 的实际光泽需要另做可见响应测试。
+
 ![081 两种形态和眼部切换示例](../qa/figures/baiqi_unreal_preview_081/contact_sheet.jpg)

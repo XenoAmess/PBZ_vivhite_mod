@@ -118,9 +118,12 @@ def apply_maps(inputs, instance, name, spec, finish):
     if spec['type'] in ('masked', 'hidden'):
         maps.append(('Opacity', f'T_BaiQiAlpha_{stem(name)}', 'masks'))
     for parameter, image, kind in maps:
-        instance.set_texture_parameter_value(parameter, texture(inputs, image, kind))
+        expected = texture(inputs, image, kind)
+        instance.set_texture_parameter_value(parameter, expected)
+        assert instance.get_texture_parameter_value(parameter) == expected, (name, parameter)
     for parameter, value in [('Specular', finish.get('specular', .15)), ('NormalStrength', finish.get('normal_strength', 0.))]:
         instance.set_scalar_parameter_value(parameter, value)
+        assert abs(instance.get_scalar_parameter_value(parameter) - value) < 1e-6, (name, parameter)
 
 
 def confirm_color(world, target, form):
