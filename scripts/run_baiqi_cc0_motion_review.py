@@ -215,6 +215,8 @@ def main():
                         help='Record fringe intersections with the head, glasses and rear locks.')
     parser.add_argument('--rear-lock-contacts', action='store_true',
                         help='Record intersections between the rear locks and the head.')
+    parser.add_argument('--temple-contacts', action='store_true',
+                        help='Record contact between each glasses temple and the head surface.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -256,6 +258,9 @@ def main():
         rear_locks = [obj for obj in meshes if obj.name.startswith('BaiQi rear hair clump ')]
         assert len(rear_locks) == 23
         assert all(obj.matrix_world == head.matrix_world for obj in rear_locks)
+    if args.temple_contacts:
+        temples = [obj for obj in meshes if obj.name.startswith('BaiQi glasses temple ')]
+        assert len(temples) == 2 and all(obj.matrix_world == head.matrix_world for obj in temples)
     checks = [Stretch(body, ARM_ZONES), Stretch(head, NECK_ZONES)]
     control_path = ROOT / args.cc0_control
     control = load_cc0_control(control_path, body, cc0)
@@ -305,8 +310,9 @@ def main():
             if args.waist_seam_contacts:
                 band, skirt = (surfaces[name] for name in WAIST_PARTS)
                 row['samples'][-1]['intersecting_waist_seam_triangle_pairs'] = len(band.overlap(skirt))
-            if args.fringe_contacts or args.rear_lock_contacts:
+            if args.fringe_contacts or args.rear_lock_contacts or args.temple_contacts:
                 head_surface = surface_tree(head, graph)
+            if args.fringe_contacts or args.rear_lock_contacts:
                 lock_surfaces = {lock.name: surface_tree(lock, graph) for lock in rear_locks}
             if args.fringe_contacts:
                 front = surface_tree(fringe, graph)
@@ -318,6 +324,9 @@ def main():
             if args.rear_lock_contacts:
                 row['samples'][-1]['intersecting_rear_lock_head_triangle_pairs'] = {
                     name: len(head_surface.overlap(lock)) for name, lock in lock_surfaces.items()}
+            if args.temple_contacts:
+                row['samples'][-1]['intersecting_glasses_temple_head_triangle_pairs'] = {
+                    temple.name: len(head_surface.overlap(surface_tree(temple, graph))) for temple in temples}
             if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]

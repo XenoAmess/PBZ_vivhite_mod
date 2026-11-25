@@ -1,0 +1,29 @@
+{
+  "oblique": {
+    "pixels_gt5": 591,
+    "bounds_gt5": [
+      816,
+      511,
+      1075,
+      910
+    ]
+  },
+  "other_oblique": {
+    "pixels_gt5": 893,
+    "bounds_gt5": [
+      297,
+      640,
+      1025,
+      805
+    ]
+  },
+  "front_left": {
+    "pixels_gt5": 111,
+    "bounds_gt5": [
+      1000,
+      773,
+      1015,
+      811
+    ]
+  }
+}
