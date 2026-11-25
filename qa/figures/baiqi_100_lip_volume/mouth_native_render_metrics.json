@@ -1,0 +1,76 @@
+{
+  "coat_on": {
+    "front_left": {
+      "local_level": 195.9014,
+      "old_dark_pixels": 65,
+      "new_dark_pixels": 123,
+      "median_lower_lip_luma_old": 209.39479999999998,
+      "median_lower_lip_luma_new": 208.3948
+    },
+    "front_under_left": {
+      "local_level": 197.9014,
+      "old_dark_pixels": 5,
+      "new_dark_pixels": 68,
+      "median_lower_lip_luma_old": 217.3266,
+      "median_lower_lip_luma_new": 217.114
+    },
+    "front_under_right": {
+      "local_level": 176.8882,
+      "old_dark_pixels": 0,
+      "new_dark_pixels": 0,
+      "median_lower_lip_luma_old": 211.46699999999998,
+      "median_lower_lip_luma_new": 210.46699999999998
+    },
+    "oblique_under": {
+      "local_level": 197.1862,
+      "old_dark_pixels": 206,
+      "new_dark_pixels": 321,
+      "median_lower_lip_luma_old": 207.60739999999998,
+      "median_lower_lip_luma_new": 207.60739999999998
+    },
+    "higher_under": {
+      "local_level": 182.5352,
+      "old_dark_pixels": 2,
+      "new_dark_pixels": 2,
+      "median_lower_lip_luma_old": 219.9014,
+      "median_lower_lip_luma_new": 219.18619999999999
+    }
+  },
+  "coat_off": {
+    "front_left": {
+      "local_level": 195.9014,
+      "old_dark_pixels": 40,
+      "new_dark_pixels": 103,
+      "median_lower_lip_luma_old": 209.39479999999998,
+      "median_lower_lip_luma_new": 208.3948
+    },
+    "front_under_left": {
+      "local_level": 197.9014,
+      "old_dark_pixels": 1,
+      "new_dark_pixels": 59,
+      "median_lower_lip_luma_old": 217.39880000000002,
+      "median_lower_lip_luma_new": 217.114
+    },
+    "front_under_right": {
+      "local_level": 176.8882,
+      "old_dark_pixels": 0,
+      "new_dark_pixels": 0,
+      "median_lower_lip_luma_old": 211.46699999999998,
+      "median_lower_lip_luma_new": 210.46699999999998
+    },
+    "oblique_under": {
+      "local_level": 197.9014,
+      "old_dark_pixels": 212,
+      "new_dark_pixels": 326,
+      "median_lower_lip_luma_old": 207.60739999999998,
+      "median_lower_lip_luma_new": 207.60739999999998
+    },
+    "higher_under": {
+      "local_level": 182.6074,
+      "old_dark_pixels": 2,
+      "new_dark_pixels": 2,
+      "median_lower_lip_luma_old": 220.1862,
+      "median_lower_lip_luma_new": 219.18619999999999
+    }
+  }
+}

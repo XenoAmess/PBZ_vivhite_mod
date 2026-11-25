@@ -33,7 +33,9 @@
 
 两种形态都检查正视、斜视、侧视及约 20°、35° 的仰视，包含换灯、仰头和游戏攻击动作。闭口的唇缝与嘴角应连续，仰视时的下唇应有自然体积。只在唇周授权范围内评估几何或贴图变化，其外的原脸、肤色、CC0 身体和骨架继续按既有指纹验收。候选通过离线对照后单独提交代码、双工程、烘焙与验收记录。
 
-099 的首个闭口候选已通过离线回归。保留原画唇线，重做旧开口所在的局部曲面。侧面唇部体积仍偏轻，继续用同机位比较。[099 嘴部验收记录](observations/baiqi_099_closed_mouth.md)
+Unreal 离线预览使用 `scripts/ue_render_baiqi_offline_preview.py`，设 `PBZ_BAIQI_PREVIEW_SHOT_SET=mouth`、`PBZ_BAIQI_PREVIEW_STATES=neutral` 和 `PBZ_BAIQI_PREVIEW_SHADOWS=package`。分别设置 `PBZ_BAIQI_PREVIEW_PASS=lit` 与 `albedo`，输出到不同目录。此预设使用低位主光、两侧照明和八个机位，覆盖正面、侧面以及约 20°、29°、35° 和 42° 仰视。
+
+099 的首个闭口候选保留原画唇线，重做了旧开口所在的局部曲面。100 对照三档唇部起伏后采用中间档，补足侧面体积。两种形态在正面、侧面和仰视复核中均只出现一条闭口唇线。以上机位进入后续回归。[099 嘴部验收记录](observations/baiqi_099_closed_mouth.md) [100 唇部体积记录](observations/baiqi_100_lip_volume.md)
 
 ## 6000D 统一服务调用
 

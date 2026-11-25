@@ -1,0 +1,24 @@
+{
+  "coat_on": {
+    "old_mouth_faces": 1169,
+    "new_mouth_faces": 1169,
+    "source_atlas_uv_xyxy": [
+      408.19,
+      523.7375,
+      469.99,
+      552.4799
+    ],
+    "outside_mouth_polygons_and_materials_exact": true
+  },
+  "coat_off": {
+    "old_mouth_faces": 1169,
+    "new_mouth_faces": 1169,
+    "source_atlas_uv_xyxy": [
+      408.19,
+      523.7375,
+      469.99,
+      552.4799
+    ],
+    "outside_mouth_polygons_and_materials_exact": true
+  }
+}

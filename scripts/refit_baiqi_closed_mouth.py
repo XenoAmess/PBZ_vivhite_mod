@@ -1,6 +1,7 @@
 """Refit the neutral closed mouth to the original BaiQi lip artwork."""
 import argparse
 import json
+import math
 from pathlib import Path
 import sys
 
@@ -50,8 +51,9 @@ def surface_tree(faces):
                                 [[indices[vertex] for vertex in face.verts] for face in faces])
 
 
-def refit_mouth(head):
-    recess, volume = .72, .55
+def refit_mouth(head, volume_scale):
+    recess = .72
+    lower_volume, upper_volume = .55 * volume_scale, .31 * volume_scale
     mesh = head.data
     projected = mesh.copy()
     game_uv(projected)
@@ -171,8 +173,8 @@ def refit_mouth(head):
         lane=smooth((x-410.)/14.)*smooth((468.-x)/15.)
         # The original closed-mouth artwork spans x=412–466 at y=533–535.
         line=534.1-.56*((x-439.)/27.)**2
-        wanted+=lane*(volume*np.exp(-.5*((y-line-3.0)/2.65)**2)
-                      +.31*np.exp(-.5*((y-line+2.)/2.2)**2)
+        wanted+=lane*(lower_volume*np.exp(-.5*((y-line-3.0)/2.65)**2)
+                      +upper_volume*np.exp(-.5*((y-line+2.)/2.2)**2)
                       -recess*np.exp(-.5*((y-line)/1.45)**2))
         q=np.array((x,y))-boundary
         along=np.clip(np.sum(q*reverse,axis=1)/np.sum(reverse*reverse,axis=1),0.,1.)
@@ -229,7 +231,9 @@ def refit_mouth(head):
     bm.free()
     return {'old_faces':face_count,'old_interior_vertices':len(lose),'new_faces':len(triangles),
             'new_vertices':created,'boundary_edges':len(edge_set),'old_lip_edges':len(slit),
-            'mouth_depression_mm':recess,'mouth_interior_contact_pairs':interior_contacts}
+            'mouth_depression_mm':recess,'lip_volume_scale':volume_scale,
+            'lower_lip_profile_mm':lower_volume,'upper_lip_profile_mm':upper_volume,
+            'mouth_interior_contact_pairs':interior_contacts}
 
 
 def main():
@@ -237,7 +241,11 @@ def main():
     parser.add_argument('--source', type=Path, required=True)
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--lip-volume-scale', type=float, default=1.,
+                        help='Scale the rounded outer lip profiles while holding the crease fixed.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
+    if not math.isfinite(args.lip_volume_scale) or args.lip_volume_scale < 0.:
+        parser.error('--lip-volume-scale must be finite and nonnegative')
     source, inputs, output = ((ROOT / arg).resolve() for arg in (args.source, args.source_inputs, args.out))
     assert output != source and output.is_relative_to(ROOT)
     manifest = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))
@@ -254,7 +262,7 @@ def main():
                  if obj.type == 'MESH' and obj != head}
         assert fixed[body] == manifest[form]['body_sha256']
         rest = rest_signature(arm)
-        stats = refit_mouth(head)
+        stats = refit_mouth(head, args.lip_volume_scale)
         assert all(mesh_fingerprint(obj) == sig for obj, sig in fixed.items())
         assert rest_signature(arm) == rest
         target = output / file.name

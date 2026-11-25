@@ -1,0 +1,12 @@
+{
+  "lit": {
+    "preserved_shots": 12,
+    "added_shots": 4,
+    "max_pixel_error": 0
+  },
+  "albedo": {
+    "preserved_shots": 12,
+    "added_shots": 4,
+    "max_pixel_error": 0
+  }
+}

@@ -23,6 +23,17 @@ SHOTS = {
     'oblique': ((-.43, .903, .06), -44.),
     'rear_high': ((-.24, -.93, .28), 56.),
 }
+MOUTH_SHOTS = {
+    'front_left': ((0., 1., 0.), -54.),
+    'shallow_under': ((0., 1., -.36), -54.),
+    'front_under_left': ((0., 1., -.56), -54.),
+    'front_under_right': ((0., 1., -.56), -124.),
+    'oblique_under': ((-.43, .90, -.62), -54.),
+    'higher_under': ((.30, .88, -.83), -124.),
+    'front_other': ((.4, .9, .05), -108.),
+    'profile': ((1., 0., 0.), -54.),
+}
+SHOT_SETS = {'standard': (SHOTS, -36.), 'mouth': (MOUTH_SHOTS, 14.)}
 
 
 def read(path):
@@ -151,6 +162,7 @@ def main():
     preview_pass = os.environ.get('PBZ_BAIQI_PREVIEW_PASS', 'lit')
     profile = os.environ.get('PBZ_BAIQI_PREVIEW_PROFILE', 'close')
     size, distance_cm = PROFILES[profile]
+    shots, key_pitch = SHOT_SETS[os.environ.get('PBZ_BAIQI_PREVIEW_SHOT_SET', 'standard')]
     shadow_mode = os.environ.get('PBZ_BAIQI_PREVIEW_SHADOWS', 'off')
     assert shadow_mode in {'off', 'package'}, shadow_mode
     use_shadows = shadow_mode == 'package'
@@ -230,8 +242,8 @@ def main():
         for state in selected:
             name = FACE if state == 'neutral' else palette['states'][state]['material']
             apply_maps(inputs, face, name, materials[name], finishes[name])
-            for shot, (direction, yaw) in SHOTS.items():
-                key.set_actor_rotation(unreal.Rotator(pitch=-36., yaw=yaw), False)
+            for shot, (direction, yaw) in shots.items():
+                key.set_actor_rotation(unreal.Rotator(pitch=key_pitch, yaw=yaw), False)
                 eye = head + V(*direction) * distance_cm
                 camera.set_actor_location(eye, False, False)
                 camera.set_actor_rotation(unreal.MathLibrary.find_look_at_rotation(eye, head), False)
