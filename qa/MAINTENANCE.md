@@ -25,6 +25,14 @@
 
 状态只能是 `failed`、`pending_review`、`offline_accepted`。`failed` 或 `pending_review` 不允许启动实机验收。离线通过后，实机仍须另记结果，不能沿用旧包的截图或哈希。
 
+## 下一轮优先项 · 嘴部设计
+
+从 098 离线存档开始。复现正面及斜侧仰视时的异常嘴线，同机位渲染底色、灰模和受光图，核对原默认嘴的源图层、三维唇缝与嘴角位置。用原默认嘴的宽度、嘴角走势、唇线和闭口神态作为造型基准，在异常实际出现的贴图或曲面范围内比较修整方案。
+
+首轮分层已经复现两条线。原 Live2D 默认嘴的主唇线是 `Mouth2`，在原 880×800 图集的 y=533–535。098 灰模的口部凹槽在约 y=541–543。仰头 35° 时，两者在画面中明显错开。下一步分别比较唇线对齐和闭口曲面重塑，以一个自然贴合的闭口唇缝作为接受条件。[098 嘴部底色、灰模和受光对照](figures/baiqi_mouth_design/mouth_layers_and_pitch.jpg)
+
+两种形态都检查正视、斜视、侧视及约 20°、35° 的仰视，包含换灯、仰头和游戏攻击动作。闭口的唇缝与嘴角应连续，仰视时的下唇应有自然体积。只在唇周授权范围内评估几何或贴图变化，其外的原脸、肤色、CC0 身体和骨架继续按既有指纹验收。候选通过离线对照后单独提交代码、双工程、烘焙与验收记录。
+
 ## 6000D 统一服务调用
 
 `scripts/run_baiqi_remote_review.py` 默认采用 `auto`。它检查网关是否接单，打包两套模型、动作供体及报告、CC0 对照和本次选中的游戏动作，再通过 `/v1/render/assets` 和 `/v1/render/jobs` 提交。节点固定使用验收脚本 `fb7e7cf`、Blender 5.3.0 和 EEVEE。客户端按结果 ZIP 哈希、逐文件哈希、输入模型哈希、动作套组哈希和图数核对回包。[统一模型服务协议](https://github.com/XenoAmess/local-model-operations/blob/main/deployments/video-generation/docs/unified-model-service.md#blender-白绮动作验收)

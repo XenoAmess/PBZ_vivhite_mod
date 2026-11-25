@@ -1,0 +1,62 @@
+[
+  {
+    "drawable": "ArtMesh109",
+    "pixels": 8,
+    "box": [
+      419,
+      534,
+      461,
+      534
+    ]
+  },
+  {
+    "drawable": "ArtMesh111",
+    "pixels": 1,
+    "box": [
+      415,
+      534,
+      415,
+      534
+    ]
+  },
+  {
+    "drawable": "ArtMesh113",
+    "pixels": 2,
+    "box": [
+      428,
+      534,
+      463,
+      535
+    ]
+  },
+  {
+    "drawable": "Facecolor",
+    "pixels": 4921,
+    "box": [
+      372,
+      518,
+      492,
+      558
+    ]
+  },
+  {
+    "drawable": "Mouth2",
+    "pixels": 140,
+    "box": [
+      412,
+      533,
+      466,
+      535
+    ]
+  },
+  {
+    "drawable": "Tongue",
+    "pixels": 25,
+    "box": [
+      428,
+      534,
+      455,
+      535
+    ]
+  }
+]
