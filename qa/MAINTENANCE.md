@@ -29,6 +29,16 @@
 
 首期支持 `blender_review`，使用 Blender 5.3.0 的 EEVEE 跑白绮动作套组。模型文件打包贴图。动作供体 `Delta_SelfTest.blend` 及同目录 `sampling_report.json`、CC0 对照 `Base_Female.blend`、实际游戏动作与其 Blender 导入器都按版本固定。输入和输出的文件名均使用相对路径。
 
+输入 ZIP 根目录采用以下结构。节点可预装并按哈希缓存 `fixtures`，每次迭代只换 `models`。动作 JSON 和游戏动作路径跟随 `source_commit` 对应的仓库版本，节点预装该版本的导入器。
+
+```text
+models/BaiQi_CC0_coat_on.blend
+models/BaiQi_CC0_coat_off.blend
+fixtures/Delta_SelfTest.blend
+fixtures/sampling_report.json
+fixtures/Base_Female.blend
+```
+
 | 请求 | 响应 |
 |---|---|
 | `GET /v1/capabilities` | `200`。返回 `schema_version`、GPU 型号与显存、Blender 版本和后端、支持的任务、参数范围、队列和文件限制。 |
@@ -59,6 +69,8 @@
 ```
 
 `sample_indices` 从 0 起，逐个动作校验。机位可选 `front`、`back`、`side`、`oblique`。建议节点首期开放每边 128–4096 像素和每图 1–128 个采样，服务端按 `capabilities` 返回实际范围。结果清单应写出实际参数、输入包与模型哈希、套组和代码版本、GPU 和 Blender 版本、耗时、峰值显存及文件清单。客户端可依此配对来自同一动作、姿态、视角和渲染模式的两个版本。
+
+建议结果包用 `manifest.json`、`coat_on/motion_report.json`、`coat_off/motion_report.json` 和各形态目录下的 `samples/`。状态查询使用 `progress: {done, total}`，成功时给出 `result_sha256` 和 `result_size_bytes`，失败时给出 `error: {code, message}`。任务运行成功后，模型按动作报告和复查流程验收。
 
 调用由节点预装并锁定版本的 `scripts/run_baiqi_cc0_motion_review.py`。用 `--render triage` 和 `--case`、`--sample-index`、`--view`、`--resolution WIDTH HEIGHT`、`--samples` 映射上述参数，两套形态各运行一次。白绮预设固定 `--neck-head-share .35 --game-hair-shadows`，每个取样点输出灰模与贴图两张。动作诊断仍记录请求动作的所有采样姿态。建议用 Blender `--disable-autoexec`，HTTP 任务只接收上表的结构化参数。
 
