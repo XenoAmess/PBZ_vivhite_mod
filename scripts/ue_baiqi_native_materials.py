@@ -14,7 +14,7 @@ from ue_stage_baiqi_adult_form import INPUT, BODY_PACKAGES, assign_materials
 from ue_build_baiqi_forms import asset_library, assets, cached_asset, slug, tool
 
 
-PREFIX = '/HuaShira/Mods/BaiQi054/Shared/Native'
+PREFIX = os.environ.get('PBZ_BAIQI_NATIVE_PREFIX', '/HuaShira/Mods/BaiQi054/Shared/Native')
 STOCK = '/Game/PBZContent/Characters/Hero/Hun_New_V2b/Material/'
 CLOTH = STOCK + 'MI_ZeroHun_Cloth_02_b'
 HAIR = STOCK + 'Hun_Status/MI_ZeroHun_HairCard_Health'
@@ -48,7 +48,7 @@ def texture(name, *, normal=False, linear=False):
     return image
 
 
-def instance(name, kind, parents, neutral):
+def instance(name, kind, parents, neutral, finish):
     stem = hashlib.sha256(name.encode()).hexdigest()[:14]
     material = cached_asset(PREFIX + '/Materials', 'MI_BaiQi_' + stem, unreal.MaterialInstanceConstant,
                             unreal.MaterialInstanceConstantFactoryNew())
@@ -71,10 +71,14 @@ def instance(name, kind, parents, neutral):
         for parameter in ('RootColor', 'TipColor'):
             tool.set_material_vector_parameter(material, parameter, 0, -1, unreal.LinearColor(1., 1., 1., 1.))
     else:
-        for parameter, value in [('Albedo', albedo), ('Normal', neutral['normal']), ('Mix', neutral['mix'])]:
+        normal = texture(finish['normal'], normal=True) if 'normal' in finish else neutral['normal']
+        mix = texture(finish['mix'], linear=True) if 'mix' in finish else neutral['mix']
+        normal_strength = finish.get('normal_strength', 0.)
+        for parameter, value in [('Albedo', albedo), ('Normal', normal), ('Mix', mix)]:
             tool.set_material_texture_parameter(material, parameter, 1, 0, value)
-        for parameter, value in [('NormalIntensity', 0.), ('BaseColor Intensity', 1.), ('Normal Strength', 0.),
-                                 ('ClothFuzzIntensity', 0.), ('ClothIntensity', 0.), ('Specular', .15)]:
+        for parameter, value in [('NormalIntensity', normal_strength), ('BaseColor Intensity', 1.),
+                                 ('Normal Strength', normal_strength), ('ClothFuzzIntensity', 0.),
+                                 ('ClothIntensity', 0.), ('Specular', finish.get('specular', .15))]:
             tool.set_material_scalar_parameter(material, parameter, 1, 0, value)
         tool.set_material_scalar_parameter(material, 'NormalIntensity', 1, 1, 0.)
         tool.set_material_scalar_parameter(material, 'Roughness Overlay Intensity', 1, 1, 0.)
@@ -100,8 +104,12 @@ def build_native_palette():
                'white': texture('T_BaiQiNative_NeutralWhite', linear=True),
                'black': texture('T_BaiQiNative_NeutralBlack', linear=True)}
     model = json.loads((INPUT / 'engine_materials.json').read_text(encoding='utf-8'))
+    path = INPUT / 'surface_finish.json'
+    finishes = json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
+    assert set(finishes) <= model.keys(), set(finishes) - model.keys()
     parents = {'cloth': cloth, 'hair': parent}
-    return {slug(name): instance(name, row['type'], parents, neutral) for name, row in model.items()}
+    return {slug(name): instance(name, row['type'], parents, neutral, finishes.get(name, {}))
+            for name, row in model.items()}
 
 
 def main():

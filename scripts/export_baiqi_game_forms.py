@@ -17,6 +17,7 @@ sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tools/blender_libs'),
                 str(ROOT / 'vendor/UEFormat/plugins/blender')]
 
 from baiqi_mesh_clip import clip_mesh
+from finish_baiqi_surfaces import EXPORT_THICKNESS
 from fit_baiqi_cc0_wardrobe import rest_signature, smoothstep
 from io_scene_ueformat.importer.import_context import UEFormatImport
 from io_scene_ueformat.options import UEModelOptions
@@ -50,7 +51,9 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
     duplicate.parent = None
     duplicate.matrix_world.identity()
     duplicate.data.transform(world, shape_keys=True)
-    duplicate.modifiers.clear()
+    for modifier in list(duplicate.modifiers):
+        if modifier.name != EXPORT_THICKNESS:
+            duplicate.modifiers.remove(modifier)
     if obj.name == 'Body':
         isolate_skin(duplicate)
     if separate_coat and obj.name == 'BaiQi open coat body':
@@ -64,6 +67,9 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
         material = duplicate.data.materials[0]
         if material.name in mask_materials:
             trim_texture_mask(duplicate, first_texture(material).image)
+    if EXPORT_THICKNESS in duplicate.modifiers:
+        bpy.context.view_layer.objects.active = duplicate
+        assert bpy.ops.object.modifier_apply(modifier=EXPORT_THICKNESS) == {'FINISHED'}, duplicate.name
     if obj.name == 'BaiQi pleated skirt':
         merge_skirt_material(duplicate.data)
         if support_skirt:
