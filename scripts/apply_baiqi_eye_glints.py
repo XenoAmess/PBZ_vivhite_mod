@@ -25,7 +25,16 @@ def pixels(image):
     return data.reshape(image.size[1], image.size[0], 4)[::-1]
 
 
-def replace(poses, state, node, iris_only):
+def coverage(poses, state, kind):
+    image = bpy.data.images.load(str(poses / f'{state}_{kind}.png'))
+    image.colorspace_settings.name = 'Non-Color'
+    assert tuple(image.size) == (880, 800)
+    pixels_read = pixels(image)[..., 0]
+    bpy.data.images.remove(image)
+    return pixels_read
+
+
+def replace(poses, state, node, coverage_kind):
     original = node.image
     new = bpy.data.images.load(str(poses / f'{state}.png'))
     assert tuple(new.size) == tuple(original.size) == (880, 800)
@@ -33,17 +42,16 @@ def replace(poses, state, node, iris_only):
     source, result = pixels(original), pixels(new)
     changed = np.any(np.abs(source - result) > 1e-6, axis=2)
     y, x = np.nonzero(changed)
-    if iris_only:
-        coverage = bpy.data.images.load(str(poses / f'{state}_iris.png'))
-        assert tuple(coverage.size) == tuple(original.size)
-        mask = pixels(coverage)[..., 0] > 0.
-        bpy.data.images.remove(coverage)
+    if coverage_kind:
+        mask = coverage(poses, state, coverage_kind) > 0.
         assert np.array_equal(source[..., 3], result[..., 3]), state
         assert not (changed & ~mask).any() and bool(len(x)) == (state != 'closed'), state
+        if coverage_kind == 'sclera':
+            assert not (changed & (coverage(poses, state, 'iris') >= 249.5 / 255.)).any(), state
     if not len(x):
         bpy.data.images.remove(new)
         return {'changed_pixels': 0, 'bounds': None}
-    min_y = 375 if iris_only else 412
+    min_y = 375 if coverage_kind else 412
     assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= min_y and int(y.max()) <= 465, state
     new.pack()
     node.image = new
@@ -56,7 +64,9 @@ def main():
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--poses', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--iris-only', action='store_true', help='Require unchanged pixels outside original iris coverage.')
+    area = parser.add_mutually_exclusive_group()
+    area.add_argument('--iris-only', action='store_true', help='Require unchanged pixels outside original iris coverage.')
+    area.add_argument('--sclera-only', action='store_true', help='Require unchanged pixels outside original eye-white coverage.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, poses, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.poses, args.out))
     assert source != output and output.is_relative_to(ROOT)
@@ -64,10 +74,13 @@ def main():
     expected = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))
     glint = json.loads((poses / 'glint.json').read_text(encoding='utf-8'))
     assert set(glint['drawables']) == {'ArtMesh85', 'ArtMesh94'}
-    pigment = None
-    if args.iris_only:
-        pigment = json.loads((poses / 'iris_pigment.json').read_text(encoding='utf-8'))
-        assert set(pigment['drawables']) == {'ArtMesh88', 'ArtMesh103'}
+    coverage_kind, correction_name, correction = None, 'eye_glints', None
+    if args.iris_only or args.sclera_only:
+        coverage_kind = 'iris' if args.iris_only else 'sclera'
+        correction_name = 'iris_pigment' if args.iris_only else 'sclera_depth'
+        drawables = {'ArtMesh88', 'ArtMesh103'} if args.iris_only else {'ArtMesh90', 'ArtMesh93'}
+        correction = json.loads((poses / f'{correction_name}.json').read_text(encoding='utf-8'))
+        assert set(correction['drawables']) == drawables
     report = {}
     for form in ('coat_on', 'coat_off'):
         path = source / f'BaiQi_CC0_{form}.blend'
@@ -83,7 +96,7 @@ def main():
         states.update({node.label: node for node in tree.nodes
                        if node.type == 'TEX_IMAGE' and node.label in STATES[1:]})
         assert set(states) == set(STATES)
-        changed = {state: replace(poses, state, states[state], args.iris_only) for state in STATES}
+        changed = {state: replace(poses, state, states[state], coverage_kind) for state in STATES}
         assert changed['neutral']['changed_pixels'] > 0
         assert all(mesh_fingerprint(obj) == value for obj, value in geometry.items())
         assert rest_signature(rig) == skeleton
@@ -92,10 +105,9 @@ def main():
         report[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(destination),
                         'cc0_body_sha256': geometry[body], 'original_head_sha256': geometry[head],
                         'opacity_scale': glint['opacity_scale'], 'states': changed}
-        if pigment:
-            report[form]['iris_pigment'] = pigment
-    report_name = 'iris_pigment.json' if pigment else 'eye_glints.json'
-    (output / report_name).write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+        if correction:
+            report[form][correction_name] = correction
+    (output / f'{correction_name}.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

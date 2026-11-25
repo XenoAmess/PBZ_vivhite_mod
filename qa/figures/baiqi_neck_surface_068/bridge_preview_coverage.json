@@ -1,0 +1,72 @@
+{
+  "neutral_left": {
+    "0": {
+      "bridge_blue": 9865,
+      "warm_non_blue": 364
+    },
+    "650": {
+      "bridge_blue": 9996,
+      "warm_non_blue": 284
+    },
+    "1200": {
+      "bridge_blue": 10091,
+      "warm_non_blue": 240
+    }
+  },
+  "neutral_right": {
+    "0": {
+      "bridge_blue": 9949,
+      "warm_non_blue": 265
+    },
+    "650": {
+      "bridge_blue": 10077,
+      "warm_non_blue": 193
+    },
+    "1200": {
+      "bridge_blue": 10160,
+      "warm_non_blue": 156
+    }
+  },
+  "head_turn_left": {
+    "0": {
+      "bridge_blue": 9946,
+      "warm_non_blue": 340
+    },
+    "650": {
+      "bridge_blue": 10067,
+      "warm_non_blue": 274
+    },
+    "1200": {
+      "bridge_blue": 10160,
+      "warm_non_blue": 228
+    }
+  },
+  "head_turn_opposite_right": {
+    "0": {
+      "bridge_blue": 10092,
+      "warm_non_blue": 270
+    },
+    "650": {
+      "bridge_blue": 10215,
+      "warm_non_blue": 196
+    },
+    "1200": {
+      "bridge_blue": 10303,
+      "warm_non_blue": 158
+    }
+  },
+  "look_up_left": {
+    "0": {
+      "bridge_blue": 10143,
+      "warm_non_blue": 352
+    },
+    "650": {
+      "bridge_blue": 10273,
+      "warm_non_blue": 278
+    },
+    "1200": {
+      "bridge_blue": 10366,
+      "warm_non_blue": 232
+    }
+  }
+}

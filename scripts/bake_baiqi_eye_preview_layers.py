@@ -19,10 +19,17 @@ parser.add_argument('--lower-glint-opacity', default=1., type=float,
                     help='Scale the original paired lower iris glint layers.')
 parser.add_argument('--iris-pigment', default=1., type=float,
                     help='Scale the RGB multiply colour of the two original pink iris layers.')
+parser.add_argument('--sclera-tone', default=1., type=float,
+                    help='Scale the original eye whites near the upper lids, using their Cubism coverage.')
+parser.add_argument('--previous-poses', type=Path,
+                    help='Apply the eye-white adjustment to the approved five pose images.')
 parser.add_argument('--iris-masks', action='store_true', help='Export the original clipped iris coverage for each pose.')
 args = parser.parse_args()
 assert .35 <= args.lower_glint_opacity <= 1.
 assert .75 <= args.iris_pigment <= 1.
+assert .82 <= args.sclera_tone <= 1.
+if args.sclera_tone != 1. and args.previous_poses is None:
+    parser.error('--sclera-tone requires --previous-poses')
 
 
 class V2(c.Structure):
@@ -77,9 +84,25 @@ orders = array('RenderOrders', c.c_int)
 crop = (960, 600, 1840, 1400)
 lower_glints = {'ArtMesh85', 'ArtMesh94'}
 irises = {'ArtMesh88', 'ArtMesh103'}
+sclera = {'ArtMesh90', 'ArtMesh93'}
 
 
-def face_at(parameters_override, glint=1., pigment=1.):
+def crop_raster(picture):
+    return Image.fromarray(picture).crop(crop)
+
+
+def lid_shading(original, shaded, whites, iris):
+    opaque = np.asarray(whites) >= 64
+    top = opaque.argmax(axis=0)
+    y = np.arange(opaque.shape[0])[:, None]
+    weight = (.27 + .73 * np.exp(-.5 * ((y - top) / 5.4) ** 2)) * opaque.any(axis=0)
+    weight[np.asarray(iris) >= 250] = 0.
+    base, toned = (np.asarray(image, dtype=np.float32) for image in (original, shaded))
+    assert np.array_equal(base[..., 3], toned[..., 3])
+    return np.rint(base + weight[..., None] * (toned - base)).astype(np.uint8)
+
+
+def face_at(parameters_override, glint=1., pigment=1., *, sclera_tone=1.):
     for i in parameters.values():
         values[i] = defaults[i]
     for key, value in parameters_override.items():
@@ -90,11 +113,11 @@ def face_at(parameters_override, glint=1., pigment=1.):
                  for i, row in enumerate(source.source['drawables'])]
     source.set_state({'draw_overrides': overrides})
     eyes = source.render(descendants('Eyes'), exclude_drawables={'ArtMesh53'})
-    mask = Image.fromarray(eyes).crop(crop).getchannel('A').filter(ImageFilter.GaussianBlur(.45))
+    mask = crop_raster(eyes).getchannel('A').filter(ImageFilter.GaussianBlur(.45))
     iris = None
-    if args.iris_masks:
+    if args.iris_masks or args.sclera_tone != 1.:
         coverage = source.render(set(), include_drawables=irises)
-        iris = Image.fromarray(coverage).crop(crop).getchannel('A').filter(ImageFilter.GaussianBlur(.60))
+        iris = crop_raster(coverage).getchannel('A').filter(ImageFilter.GaussianBlur(.60))
     if glint != 1. or pigment != 1.:
         for row in overrides:
             if row['id'] in lower_glints:
@@ -103,8 +126,18 @@ def face_at(parameters_override, glint=1., pigment=1.):
                 red, green, blue, alpha = source.by_id[row['id']]['multiply_color']
                 row['multiply_color'] = [red * pigment, green * pigment, blue * pigment, alpha]
         source.set_state({'draw_overrides': overrides})
-    picture = source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'})
-    return np.array(Image.fromarray(picture).crop(crop)), mask, iris
+    picture = np.array(crop_raster(source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'})))
+    whites = None
+    if sclera_tone != 1.:
+        whites = crop_raster(source.render(set(), include_drawables=sclera)).getchannel('A')
+        for row in overrides:
+            if row['id'] in sclera:
+                red, green, blue, alpha = source.by_id[row['id']]['multiply_color']
+                row['multiply_color'] = [red * sclera_tone, green * sclera_tone, blue * sclera_tone, alpha]
+        source.set_state({'draw_overrides': overrides})
+        shaded = crop_raster(source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'}))
+        return lid_shading(picture, shaded, whites, iris), mask, iris, whites, picture
+    return picture, mask, iris, whites, picture
 
 
 def transfer(original, neutral, posed, name):
@@ -120,12 +153,25 @@ def transfer(original, neutral, posed, name):
                     'rect': [int(x.min()), int(y.min()), int(x.max()), int(y.max())]}
 
 
+def sclera_delta(state, posed, unshaded):
+    with Image.open(root / args.previous_poses / f'{state}.png') as previous:
+        approved = np.array(previous.convert('RGBA'))
+    assert approved.shape == posed.shape == unshaded.shape
+    if state == 'neutral':
+        assert np.array_equal(approved, original)
+    delta = posed.astype(np.int16) - unshaded
+    assert not delta[..., 3].any()
+    adjusted = np.clip(approved.astype(np.int16) + delta, 0, 255).astype(np.uint8)
+    return transfer(approved, approved, adjusted, state) if state != 'closed' else (
+        approved, {'changed_pixels': 0, 'rect': None})
+
+
 inputs = root / args.inputs
 form = json.loads((inputs / 'form_inputs.json').read_text())['coat_off']
 entry = form['materials']['BaiQi original face appearance']['images'][0]['path']
 with Image.open(inputs / entry) as image:
     original = np.array(image.convert('RGBA'))
-neutral, _, neutral_iris = face_at({})
+neutral, _, neutral_iris, _, _ = face_at({})
 assert original.shape == neutral.shape == (800, 880, 4)
 states = {'half_blink': {'ParamEyeLOpen': .5, 'ParamEyeROpen': .5},
           'closed': {'ParamEyeLOpen': 0., 'ParamEyeROpen': 0.},
@@ -134,23 +180,36 @@ out = root / args.out
 out.mkdir(parents=True, exist_ok=True)
 if neutral_iris is not None:
     neutral_iris.save(out / 'neutral_iris.png')
-if args.lower_glint_opacity == args.iris_pigment == 1.:
+if args.lower_glint_opacity == args.iris_pigment == args.sclera_tone == 1.:
     Image.fromarray(original).save(out / 'neutral.png')
 else:
-    softer, _, _ = face_at({}, args.lower_glint_opacity, args.iris_pigment)
-    result, measured = transfer(original, neutral, softer, 'neutral')
+    softer, _, _, neutral_whites, unshaded = face_at({}, args.lower_glint_opacity, args.iris_pigment,
+                                                       sclera_tone=args.sclera_tone)
+    if neutral_whites is not None:
+        result, measured = sclera_delta('neutral', softer, unshaded)
+    else:
+        result, measured = transfer(original, neutral, softer, 'neutral')
     assert measured['changed_pixels'] > 0
     Image.fromarray(result).save(out / 'neutral.png')
     (out / 'glint.json').write_text(json.dumps({'opacity_scale': args.lower_glint_opacity,
                                                 'drawables': sorted(lower_glints), **measured}, indent=2) + '\n')
+    if neutral_whites is not None:
+        neutral_whites.save(out / 'neutral_sclera.png')
 if args.iris_pigment != 1.:
     (out / 'iris_pigment.json').write_text(json.dumps({'rgb_scale': args.iris_pigment,
                                                        'drawables': sorted(irises)}, indent=2) + '\n')
+if args.sclera_tone != 1.:
+    (out / 'sclera_depth.json').write_text(json.dumps({'rgb_scale': args.sclera_tone,
+                                                       'drawables': sorted(sclera)}, indent=2) + '\n')
 report = {}
 for name, override in states.items():
     pigment = 1. if name == 'closed' else args.iris_pigment
-    posed, mask, iris = face_at(override, args.lower_glint_opacity, pigment)
-    result, measured = transfer(original, neutral, posed, name)
+    sclera_tone = 1. if name == 'closed' else args.sclera_tone
+    posed, mask, iris, whites, unshaded = face_at(override, args.lower_glint_opacity, pigment, sclera_tone=sclera_tone)
+    if args.sclera_tone != 1.:
+        result, measured = sclera_delta(name, posed, unshaded)
+    else:
+        result, measured = transfer(original, neutral, posed, name)
     Image.fromarray(result).save(out / (name + '.png'))
     mask.save(out / (name + '_mask.png'))
     if iris is not None:
@@ -159,6 +218,8 @@ for name, override in states.items():
             # Their material coverage is hidden by the closed eyelids.
             iris = Image.new('L', iris.size, 0)
         iris.save(out / (name + '_iris.png'))
+    if args.sclera_tone != 1.:
+        (whites if whites is not None else Image.new('L', mask.size, 0)).save(out / f'{name}_sclera.png')
     report[name] = {'parameters': override, **measured}
 (out / 'probe.json').write_text(json.dumps(report, indent=2))
 source.close()
