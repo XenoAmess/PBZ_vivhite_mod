@@ -1,0 +1,21 @@
+{
+  "engine": "5.7.4",
+  "model": "081",
+  "images_per_run": 40,
+  "independent_runs": 2,
+  "largest_mean_rgb_difference_between_runs": 0.0,
+  "eye_roi_pixels_changed_by_state": {
+    "coat_on": {
+      "half_blink": 4551,
+      "closed": 5715,
+      "look_left": 2624,
+      "look_right": 2775
+    },
+    "coat_off": {
+      "half_blink": 4543,
+      "closed": 5706,
+      "look_left": 2622,
+      "look_right": 2785
+    }
+  }
+}
