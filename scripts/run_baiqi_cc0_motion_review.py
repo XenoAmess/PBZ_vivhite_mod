@@ -197,6 +197,8 @@ def main():
     parser.add_argument('--face-closeup', action='store_true', help='Frame the face and throat for head finish review.')
     parser.add_argument('--game-hair-shadows', action='store_true',
                         help='Match the game mesh shadow settings for hair, headdress and glasses.')
+    parser.add_argument('--wardrobe-layer-contacts', action='store_true',
+                        help='Record coat contact with the skirt and blouse during motion.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -223,6 +225,9 @@ def main():
     wardrobe = [obj for obj in meshes if obj.name.startswith(('BaiQi fitted sleeveless',
                                                                'BaiQi fitted navy', 'BaiQi pleated',
                                                                'BaiQi open coat'))]
+    layered = {obj.name: obj for obj in wardrobe}
+    outer = layered.get('BaiQi open coat body') if args.wardrobe_layer_contacts else None
+    under = [layered[name] for name in ('BaiQi pleated skirt', 'BaiQi fitted sleeveless blouse')] if outer else []
     checks = [Stretch(body, ARM_ZONES), Stretch(head, NECK_ZONES)]
     control_path = ROOT / args.cc0_control
     control = load_cc0_control(control_path, body, cc0)
@@ -255,11 +260,16 @@ def main():
                 metrics.update(check.sample(graph))
             baseline_metrics = control_check.sample(graph)
             skin = surface_tree(body, graph, skin=True)
-            intersections = {obj.name: len(skin.overlap(surface_tree(obj, graph))) for obj in wardrobe}
+            surfaces = {obj.name: surface_tree(obj, graph) for obj in wardrobe}
+            intersections = {name: len(skin.overlap(surface)) for name, surface in surfaces.items()}
             alignment = max(math.degrees(error) for error in transfer.angle_errors().values())
             row['samples'].append({**sample, 'metrics': metrics, 'original_cc0_metrics': baseline_metrics,
                                    'max_mapped_segment_error_degrees': alignment,
                                    'intersecting_skin_apparel_triangle_pairs': intersections})
+            if outer:
+                coat = surfaces[outer.name]
+                row['samples'][-1]['intersecting_coat_underlayer_triangle_pairs'] = {
+                    obj.name: len(coat.overlap(surfaces[obj.name])) for obj in under}
             if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]

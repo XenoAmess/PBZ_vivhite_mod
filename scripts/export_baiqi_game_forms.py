@@ -59,8 +59,10 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
     if separate_coat and obj.name == 'BaiQi open coat body':
         slot = duplicate.data.materials.find('BaiQi charcoal coat back')
         assert slot >= 0
-        material = duplicate.data.materials[slot].copy()
-        material.name = 'BaiQi removable coat back'
+        material = bpy.data.materials.get('BaiQi removable coat back')
+        if material is None:
+            material = duplicate.data.materials[slot].copy()
+            material.name = 'BaiQi removable coat back'
         duplicate.data.materials[slot] = material
     game_uv(duplicate.data)
     if len(duplicate.data.materials) == 1:
