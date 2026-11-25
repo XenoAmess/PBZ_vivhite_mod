@@ -17,6 +17,7 @@ from apply_baiqi_eye_glints import pixels
 
 
 FRAME_MATERIAL = 'BaiQi round gold glasses appearance'
+PAD_FINISH_LABEL = 'Gold frame and silicone pads'
 
 
 def main():
@@ -59,10 +60,13 @@ def main():
         tree = bpy.data.materials[FRAME_MATERIAL].node_tree
         nodes = tree.nodes
         frame = nodes['Principled BSDF']
-        assert not frame.inputs['Roughness'].is_linked and not frame.inputs['Metallic'].is_linked
+        mix = next((node for node in nodes if node.type == 'TEX_IMAGE' and node.label == PAD_FINISH_LABEL), None)
+        if not (pad_finish and mix):
+            assert not frame.inputs['Roughness'].is_linked and not frame.inputs['Metallic'].is_linked
         previous = frame.inputs['Roughness'].default_value
         metal = frame.inputs['Metallic'].default_value
-        assert abs(metal - .62) < 1e-6
+        if not pad_finish:
+            assert abs(metal - .62) < 1e-6
         if pad_data:
             node = nodes['Image Texture']
             assert pad_data['source_sha256'] == expected[form]['materials'][FRAME_MATERIAL]['images'][0]['sha256']
@@ -77,20 +81,25 @@ def main():
             node.image = replacement
         elif pad_finish:
             assert abs(previous - pad_finish['frame_roughness']) < 1e-6
-            assert abs(metal - pad_finish['frame_metallic']) < 1e-6
             assert pad_finish['source_sha256'] == expected[form]['materials'][FRAME_MATERIAL]['images'][0]['sha256']
             albedo = nodes['Image Texture']
-            mix = nodes.new('ShaderNodeTexImage')
-            mix.label = 'Gold frame and silicone pads'
+            if mix is None:
+                mix = nodes.new('ShaderNodeTexImage')
+                mix.label = PAD_FINISH_LABEL
+                mix.extension = albedo.extension
+                tree.links.new(albedo.inputs['Vector'].links[0].from_socket, mix.inputs['Vector'])
+                channels = nodes.new('ShaderNodeSeparateColor')
+                tree.links.new(mix.outputs['Color'], channels.inputs['Color'])
+                tree.links.new(channels.outputs['Green'], frame.inputs['Roughness'])
+                tree.links.new(channels.outputs['Blue'], frame.inputs['Metallic'])
+            else:
+                channels = frame.inputs['Roughness'].links[0].from_node
+                assert channels.type == 'SEPARATE_COLOR' and channels.inputs['Color'].links[0].from_node == mix
+                assert frame.inputs['Metallic'].links[0].from_socket == channels.outputs['Blue']
             mix.image = bpy.data.images.load(str(mix_path))
             mix.image.colorspace_settings.name = 'Non-Color'
             mix.image.pack()
-            mix.extension = albedo.extension
-            tree.links.new(albedo.inputs['Vector'].links[0].from_socket, mix.inputs['Vector'])
-            channels = nodes.new('ShaderNodeSeparateColor')
-            tree.links.new(mix.outputs['Color'], channels.inputs['Color'])
-            tree.links.new(channels.outputs['Green'], frame.inputs['Roughness'])
-            tree.links.new(channels.outputs['Blue'], frame.inputs['Metallic'])
+            frame.inputs['Metallic'].default_value = pad_finish['frame_metallic']
         else:
             assert abs(previous - .36) < 1e-6
             frame.inputs['Roughness'].default_value = args.roughness
@@ -100,7 +109,8 @@ def main():
         bpy.ops.wm.save_as_mainfile(filepath=str(destination))
         report[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(destination),
                         'cc0_body_sha256': geometry[body], 'original_head_sha256': geometry[head],
-                        'frame_roughness': frame.inputs['Roughness'].default_value, 'frame_metallic': metal}
+                        'frame_roughness': frame.inputs['Roughness'].default_value,
+                        'frame_metallic': frame.inputs['Metallic'].default_value}
         if pad_data:
             report[form]['pad_color'] = pad_data
         if pad_finish:

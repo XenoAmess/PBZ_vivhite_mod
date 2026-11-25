@@ -1,0 +1,418 @@
+[
+  {
+    "profile": "close",
+    "form": "coat_off",
+    "view": "front_left",
+    "metric_pixels": 14895,
+    "finish": {
+      "base": {
+        "dark_lt_100": 6417,
+        "bright_gt_225": 301,
+        "difference_gt_7": 0,
+        "median": 109.43
+      },
+      "metal_45": {
+        "dark_lt_100": 4660,
+        "bright_gt_225": 185,
+        "difference_gt_7": 13474,
+        "median": 129.35
+      },
+      "metal_38": {
+        "dark_lt_100": 4133,
+        "bright_gt_225": 124,
+        "difference_gt_7": 14895,
+        "median": 135.89
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_off",
+    "view": "front_right",
+    "metric_pixels": 14898,
+    "finish": {
+      "base": {
+        "dark_lt_100": 6542,
+        "bright_gt_225": 108,
+        "difference_gt_7": 0,
+        "median": 108.76
+      },
+      "metal_45": {
+        "dark_lt_100": 4841,
+        "bright_gt_225": 71,
+        "difference_gt_7": 13832,
+        "median": 128.08
+      },
+      "metal_38": {
+        "dark_lt_100": 4241,
+        "bright_gt_225": 53,
+        "difference_gt_7": 14898,
+        "median": 134.93
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_off",
+    "view": "oblique",
+    "metric_pixels": 9161,
+    "finish": {
+      "base": {
+        "dark_lt_100": 3623,
+        "bright_gt_225": 78,
+        "difference_gt_7": 0,
+        "median": 112.67
+      },
+      "metal_45": {
+        "dark_lt_100": 2358,
+        "bright_gt_225": 47,
+        "difference_gt_7": 8400,
+        "median": 132.16
+      },
+      "metal_38": {
+        "dark_lt_100": 2021,
+        "bright_gt_225": 34,
+        "difference_gt_7": 9161,
+        "median": 138.84
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_off",
+    "view": "other_oblique",
+    "metric_pixels": 8863,
+    "finish": {
+      "base": {
+        "dark_lt_100": 3752,
+        "bright_gt_225": 218,
+        "difference_gt_7": 0,
+        "median": 109.11
+      },
+      "metal_45": {
+        "dark_lt_100": 2538,
+        "bright_gt_225": 133,
+        "difference_gt_7": 8033,
+        "median": 130.47
+      },
+      "metal_38": {
+        "dark_lt_100": 2157,
+        "bright_gt_225": 86,
+        "difference_gt_7": 8863,
+        "median": 137.65
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_on",
+    "view": "front_left",
+    "metric_pixels": 14895,
+    "finish": {
+      "base": {
+        "dark_lt_100": 6434,
+        "bright_gt_225": 300,
+        "difference_gt_7": 0,
+        "median": 109.3
+      },
+      "metal_45": {
+        "dark_lt_100": 4671,
+        "bright_gt_225": 185,
+        "difference_gt_7": 13488,
+        "median": 129.2
+      },
+      "metal_38": {
+        "dark_lt_100": 4162,
+        "bright_gt_225": 124,
+        "difference_gt_7": 14895,
+        "median": 135.74
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_on",
+    "view": "front_right",
+    "metric_pixels": 14947,
+    "finish": {
+      "base": {
+        "dark_lt_100": 6621,
+        "bright_gt_225": 108,
+        "difference_gt_7": 0,
+        "median": 108.19
+      },
+      "metal_45": {
+        "dark_lt_100": 4913,
+        "bright_gt_225": 70,
+        "difference_gt_7": 13879,
+        "median": 127.58
+      },
+      "metal_38": {
+        "dark_lt_100": 4318,
+        "bright_gt_225": 53,
+        "difference_gt_7": 14947,
+        "median": 134.39
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_on",
+    "view": "oblique",
+    "metric_pixels": 9205,
+    "finish": {
+      "base": {
+        "dark_lt_100": 3675,
+        "bright_gt_225": 79,
+        "difference_gt_7": 0,
+        "median": 112.35
+      },
+      "metal_45": {
+        "dark_lt_100": 2409,
+        "bright_gt_225": 48,
+        "difference_gt_7": 8408,
+        "median": 131.89
+      },
+      "metal_38": {
+        "dark_lt_100": 2075,
+        "bright_gt_225": 34,
+        "difference_gt_7": 9205,
+        "median": 138.49
+      }
+    }
+  },
+  {
+    "profile": "close",
+    "form": "coat_on",
+    "view": "other_oblique",
+    "metric_pixels": 8869,
+    "finish": {
+      "base": {
+        "dark_lt_100": 3778,
+        "bright_gt_225": 220,
+        "difference_gt_7": 0,
+        "median": 108.8
+      },
+      "metal_45": {
+        "dark_lt_100": 2558,
+        "bright_gt_225": 133,
+        "difference_gt_7": 8026,
+        "median": 130.22
+      },
+      "metal_38": {
+        "dark_lt_100": 2180,
+        "bright_gt_225": 86,
+        "difference_gt_7": 8869,
+        "median": 137.39
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_off",
+    "view": "front_left",
+    "metric_pixels": 219,
+    "finish": {
+      "base": {
+        "dark_lt_100": 33,
+        "bright_gt_225": 3,
+        "difference_gt_7": 0,
+        "median": 143.49
+      },
+      "metal_45": {
+        "dark_lt_100": 18,
+        "bright_gt_225": 0,
+        "difference_gt_7": 200,
+        "median": 155.49
+      },
+      "metal_38": {
+        "dark_lt_100": 18,
+        "bright_gt_225": 0,
+        "difference_gt_7": 219,
+        "median": 160.45
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_off",
+    "view": "front_right",
+    "metric_pixels": 218,
+    "finish": {
+      "base": {
+        "dark_lt_100": 36,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 136.02
+      },
+      "metal_45": {
+        "dark_lt_100": 20,
+        "bright_gt_225": 0,
+        "difference_gt_7": 194,
+        "median": 149.64
+      },
+      "metal_38": {
+        "dark_lt_100": 15,
+        "bright_gt_225": 0,
+        "difference_gt_7": 218,
+        "median": 154.96
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_off",
+    "view": "oblique",
+    "metric_pixels": 160,
+    "finish": {
+      "base": {
+        "dark_lt_100": 37,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 143.44
+      },
+      "metal_45": {
+        "dark_lt_100": 23,
+        "bright_gt_225": 1,
+        "difference_gt_7": 131,
+        "median": 155.67
+      },
+      "metal_38": {
+        "dark_lt_100": 17,
+        "bright_gt_225": 0,
+        "difference_gt_7": 160,
+        "median": 158.66
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_off",
+    "view": "other_oblique",
+    "metric_pixels": 147,
+    "finish": {
+      "base": {
+        "dark_lt_100": 22,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 136.75
+      },
+      "metal_45": {
+        "dark_lt_100": 13,
+        "bright_gt_225": 0,
+        "difference_gt_7": 123,
+        "median": 150.06
+      },
+      "metal_38": {
+        "dark_lt_100": 9,
+        "bright_gt_225": 0,
+        "difference_gt_7": 147,
+        "median": 153.59
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_on",
+    "view": "front_left",
+    "metric_pixels": 220,
+    "finish": {
+      "base": {
+        "dark_lt_100": 38,
+        "bright_gt_225": 3,
+        "difference_gt_7": 0,
+        "median": 141.21
+      },
+      "metal_45": {
+        "dark_lt_100": 21,
+        "bright_gt_225": 0,
+        "difference_gt_7": 202,
+        "median": 154.26
+      },
+      "metal_38": {
+        "dark_lt_100": 19,
+        "bright_gt_225": 0,
+        "difference_gt_7": 220,
+        "median": 159.61
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_on",
+    "view": "front_right",
+    "metric_pixels": 222,
+    "finish": {
+      "base": {
+        "dark_lt_100": 37,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 135.6
+      },
+      "metal_45": {
+        "dark_lt_100": 22,
+        "bright_gt_225": 0,
+        "difference_gt_7": 200,
+        "median": 149.01
+      },
+      "metal_38": {
+        "dark_lt_100": 16,
+        "bright_gt_225": 0,
+        "difference_gt_7": 222,
+        "median": 154.55
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_on",
+    "view": "oblique",
+    "metric_pixels": 160,
+    "finish": {
+      "base": {
+        "dark_lt_100": 41,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 140.19
+      },
+      "metal_45": {
+        "dark_lt_100": 26,
+        "bright_gt_225": 1,
+        "difference_gt_7": 136,
+        "median": 153.95
+      },
+      "metal_38": {
+        "dark_lt_100": 22,
+        "bright_gt_225": 0,
+        "difference_gt_7": 160,
+        "median": 157.74
+      }
+    }
+  },
+  {
+    "profile": "portrait",
+    "form": "coat_on",
+    "view": "other_oblique",
+    "metric_pixels": 139,
+    "finish": {
+      "base": {
+        "dark_lt_100": 23,
+        "bright_gt_225": 0,
+        "difference_gt_7": 0,
+        "median": 132.88
+      },
+      "metal_45": {
+        "dark_lt_100": 15,
+        "bright_gt_225": 0,
+        "difference_gt_7": 126,
+        "median": 148.07
+      },
+      "metal_38": {
+        "dark_lt_100": 10,
+        "bright_gt_225": 0,
+        "difference_gt_7": 139,
+        "median": 152.43
+      }
+    }
+  }
+]

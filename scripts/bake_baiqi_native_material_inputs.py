@@ -66,7 +66,8 @@ def face_mix_texture(mask_path, roughness):
     return Image.fromarray(np.rint(channels).astype(np.uint8))
 
 
-def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_pad_finish=False, neck_normal=None):
+def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_metallic=None,
+                   frame_pad_finish=False, neck_normal=None):
     source = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))['coat_on']['materials']
     weave = weave_texture(directory)
     profiles = {}
@@ -74,8 +75,11 @@ def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_
         if name not in materials:
             continue
         assert materials[name]['type'] not in {'hidden', 'masked', 'skin_body'}, name
-        if name == FRAME_MATERIAL and frame_roughness is not None:
-            roughness = frame_roughness
+        if name == FRAME_MATERIAL:
+            if frame_roughness is not None:
+                roughness = frame_roughness
+            if frame_metallic is not None:
+                metallic = frame_metallic
         stem = hashlib.sha256(name.encode()).hexdigest()[:14]
         mix = 'T_BaiQiMix_' + stem
         if materials[name]['type'] == 'skin_face':
@@ -105,11 +109,14 @@ def main():
     parser.add_argument('skin_report', type=Path)
     parser.add_argument('--surface-finish', action='store_true', help='Bake separate roughness and normal profiles.')
     parser.add_argument('--frame-roughness', type=float, help='Roughness of the gold eyewear frame only.')
+    parser.add_argument('--frame-metallic', type=float, help='Metallic response of the gold eyewear frame.')
     parser.add_argument('--frame-pad-finish', action='store_true', help='Bake the existing nose pads as a separate material response.')
     parser.add_argument('--neck-normal', type=Path, help='Bake the approved bridge map into its native material only.')
     args = parser.parse_args()
     if args.frame_roughness is not None:
         assert args.surface_finish and .36 <= args.frame_roughness <= .58
+    if args.frame_metallic is not None and not (args.surface_finish and 0 <= args.frame_metallic <= 1):
+        parser.error('--frame-metallic requires --surface-finish and a value between 0 and 1')
     if args.neck_normal and not args.surface_finish:
         parser.error('--neck-normal requires --surface-finish')
     if args.frame_pad_finish and not args.surface_finish:
@@ -136,7 +143,8 @@ def main():
         Image.new('RGB', (64, 64), flat).save(directory / f'T_BaiQiNative_{name}.png')
     if args.surface_finish:
         surface_finish(args.inputs, directory, materials, frame_roughness=args.frame_roughness,
-                       frame_pad_finish=args.frame_pad_finish, neck_normal=args.neck_normal)
+                       frame_metallic=args.frame_metallic, frame_pad_finish=args.frame_pad_finish,
+                       neck_normal=args.neck_normal)
 
 
 if __name__ == '__main__':
