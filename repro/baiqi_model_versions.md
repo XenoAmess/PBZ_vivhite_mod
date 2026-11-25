@@ -9,3 +9,4 @@
 | 056 | 后发与发饰 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-056) |
 | 057 | 上衣、材质与表情试验 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-057) |
 | 058 | 领口、袖窿与外套下摆 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-058) |
+| 059 | 发根与刘海接缝 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-059) |
