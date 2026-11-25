@@ -26,6 +26,8 @@ NATIVE_CLIPS = ('Hun_Unarmed_Idle_Loop', 'Hun_Unarmed_Run_Fwd_Loop', 'Hun_BaiSha
 NECK_ZONES = {'neck': (.0, .052, 1.320, 1.369)}
 ARM_ZONES = {'shoulder': (.125, .238, 1.190, 1.325), 'elbow': (.292, .363, 1.196, 1.319)}
 VIEWS = {'front': (0, 1, 0), 'back': (0, -1, 0), 'side': (-1, 0, 0), 'oblique': (-.57, .82, 0)}
+GAME_NON_SHADOW_SECTIONS = {'BaiQi bob front appearance', 'BaiQi side hair source color',
+                            'BaiQi black gold headdress appearance', 'BaiQi round gold glasses appearance'}
 
 
 def file_hash(path):
@@ -169,6 +171,17 @@ def prepare_studio(meshes, body, *, face_closeup=False):
     return apply
 
 
+def match_game_hair_shadows(scene, meshes):
+    blockers = bpy.data.collections.new('BaiQi game character shadow casters')
+    for obj in meshes:
+        materials = {mat.name for mat in obj.data.materials if mat}
+        if not materials or not materials.issubset(GAME_NON_SHADOW_SECTIONS):
+            blockers.objects.link(obj)
+    for obj in scene.objects:
+        if obj.type == 'LIGHT':
+            obj.light_linking.blocker_collection = blockers
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--candidate', required=True, type=Path)
@@ -182,6 +195,8 @@ def main():
     parser.add_argument('--neck-head-share', type=float, default=0.)
     parser.add_argument('--native-neck-closeup', action='store_true')
     parser.add_argument('--face-closeup', action='store_true', help='Frame the face and throat for head finish review.')
+    parser.add_argument('--game-hair-shadows', action='store_true',
+                        help='Match the game mesh shadow settings for hair, headdress and glasses.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -217,6 +232,8 @@ def main():
     assert 0 <= args.forearm_roll_share <= 1 and 0 <= args.neck_head_share <= 1
     transfer = Cc0Motion(soul, cc0, args.forearm_roll_share, args.neck_head_share)
     camera = setup_studio(scene)
+    if args.game_hair_shadows:
+        match_game_hair_shadows(scene, meshes)
     lights = {obj.name: obj.location.copy() for obj in scene.objects if obj.type == 'LIGHT'}
     scene.render.resolution_x = scene.render.resolution_y = 512
     scene.eevee.taa_render_samples = 24
@@ -309,6 +326,7 @@ def main():
               'forearm_roll_share': args.forearm_roll_share, 'neck_head_share': args.neck_head_share,
               'native_neck_closeup': args.native_neck_closeup,
               'face_closeup': args.face_closeup,
+              'game_hair_shadows': args.game_hair_shadows,
               'full_render_coverage': coverage, 'flags': flags, 'inherited_cc0_flags': inherited_flags,
               'original_cc0_sha256': file_hash(control_path), 'clips': rows,
               'limits': ['Adult Soul motion samples exclude runtime AnimBP, IK and physics.',
