@@ -24,6 +24,7 @@ parser.add_argument('--sclera-tone', default=1., type=float,
 parser.add_argument('--previous-poses', type=Path,
                     help='Apply the eye-white adjustment to the approved five pose images.')
 parser.add_argument('--iris-masks', action='store_true', help='Export the original clipped iris coverage for each pose.')
+parser.add_argument('--reflection-layers', type=Path, help='Export the isolated iris and reflection layers for the open poses.')
 args = parser.parse_args()
 assert .35 <= args.lower_glint_opacity <= 1.
 assert .75 <= args.iris_pigment <= 1.
@@ -85,10 +86,21 @@ crop = (960, 600, 1840, 1400)
 lower_glints = {'ArtMesh85', 'ArtMesh94'}
 irises = {'ArtMesh88', 'ArtMesh103'}
 sclera = {'ArtMesh90', 'ArtMesh93'}
+upper_eye_details = {'Pupil2', 'Pupil5', 'ArtMesh83', 'ArtMesh84', 'ArtMesh101', 'ArtMesh102'}
 
 
 def crop_raster(picture):
     return Image.fromarray(picture).crop(crop)
+
+
+def save_reflection_layers(state):
+    if args.reflection_layers is None or state is None or state == 'closed':
+        return
+    output = root / args.reflection_layers
+    output.mkdir(parents=True, exist_ok=True)
+    layers = {'pigment': irises, 'lower': lower_glints, 'overlay': lower_glints | upper_eye_details}
+    for label, drawables in layers.items():
+        crop_raster(source.render(set(), include_drawables=drawables)).save(output / f'{state}_{label}.png')
 
 
 def lid_shading(original, shaded, whites, iris):
@@ -102,7 +114,7 @@ def lid_shading(original, shaded, whites, iris):
     return np.rint(base + weight[..., None] * (toned - base)).astype(np.uint8)
 
 
-def face_at(parameters_override, glint=1., pigment=1., *, sclera_tone=1.):
+def face_at(parameters_override, glint=1., pigment=1., *, sclera_tone=1., reflection_state=None):
     for i in parameters.values():
         values[i] = defaults[i]
     for key, value in parameters_override.items():
@@ -127,6 +139,7 @@ def face_at(parameters_override, glint=1., pigment=1., *, sclera_tone=1.):
                 row['multiply_color'] = [red * pigment, green * pigment, blue * pigment, alpha]
         source.set_state({'draw_overrides': overrides})
     picture = np.array(crop_raster(source.render(face, include_drawables=shadow, exclude_drawables={'ArtMesh53'})))
+    save_reflection_layers(reflection_state)
     whites = None
     if sclera_tone != 1.:
         whites = crop_raster(source.render(set(), include_drawables=sclera)).getchannel('A')
@@ -171,7 +184,7 @@ form = json.loads((inputs / 'form_inputs.json').read_text())['coat_off']
 entry = form['materials']['BaiQi original face appearance']['images'][0]['path']
 with Image.open(inputs / entry) as image:
     original = np.array(image.convert('RGBA'))
-neutral, _, neutral_iris, _, _ = face_at({})
+neutral, _, neutral_iris, _, _ = face_at({}, reflection_state='neutral')
 assert original.shape == neutral.shape == (800, 880, 4)
 states = {'half_blink': {'ParamEyeLOpen': .5, 'ParamEyeROpen': .5},
           'closed': {'ParamEyeLOpen': 0., 'ParamEyeROpen': 0.},
@@ -184,7 +197,7 @@ if args.lower_glint_opacity == args.iris_pigment == args.sclera_tone == 1.:
     Image.fromarray(original).save(out / 'neutral.png')
 else:
     softer, _, _, neutral_whites, unshaded = face_at({}, args.lower_glint_opacity, args.iris_pigment,
-                                                       sclera_tone=args.sclera_tone)
+                                                       sclera_tone=args.sclera_tone, reflection_state='neutral')
     if neutral_whites is not None:
         result, measured = sclera_delta('neutral', softer, unshaded)
     else:
@@ -205,7 +218,8 @@ report = {}
 for name, override in states.items():
     pigment = 1. if name == 'closed' else args.iris_pigment
     sclera_tone = 1. if name == 'closed' else args.sclera_tone
-    posed, mask, iris, whites, unshaded = face_at(override, args.lower_glint_opacity, pigment, sclera_tone=sclera_tone)
+    posed, mask, iris, whites, unshaded = face_at(override, args.lower_glint_opacity, pigment,
+                                                 sclera_tone=sclera_tone, reflection_state=name)
     if args.sclera_tone != 1.:
         result, measured = sclera_delta(name, posed, unshaded)
     else:

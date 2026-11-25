@@ -42,7 +42,7 @@ def replace(poses, state, node, correction_name):
     source, result = pixels(original), pixels(new)
     changed = np.any(np.abs(source - result) > 1e-6, axis=2)
     y, x = np.nonzero(changed)
-    coverage_kind = {'iris_pigment': 'iris', 'sclera_depth': 'sclera'}.get(correction_name)
+    coverage_kind = {'iris_pigment': 'iris', 'lower_iris_tone': 'iris', 'sclera_depth': 'sclera'}.get(correction_name)
     if coverage_kind:
         mask = coverage(poses, state, coverage_kind) > 0.
         assert np.array_equal(source[..., 3], result[..., 3]), state
@@ -73,6 +73,7 @@ def main():
     area.add_argument('--iris-only', action='store_true', help='Require unchanged pixels outside original iris coverage.')
     area.add_argument('--sclera-only', action='store_true', help='Require unchanged pixels outside original eye-white coverage.')
     area.add_argument('--nose-registration', action='store_true', help='Verify a local nose paint correction.')
+    area.add_argument('--lower-iris-tone', action='store_true', help='Verify the limited lower iris pigment correction.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, poses, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.poses, args.out))
     assert source != output and output.is_relative_to(ROOT)
@@ -84,6 +85,7 @@ def main():
         glint = json.loads(glint_path.read_text(encoding='utf-8'))
         assert set(glint['drawables']) == {'ArtMesh85', 'ArtMesh94'}
     selected = ((args.iris_only, 'iris_pigment', {'ArtMesh88', 'ArtMesh103'}),
+                (args.lower_iris_tone, 'lower_iris_tone', {'ArtMesh88', 'ArtMesh103'}),
                 (args.sclera_only, 'sclera_depth', {'ArtMesh90', 'ArtMesh93'}),
                 (args.nose_registration, 'nose_registration', {'Nose2', 'ArtMesh106'}))
     correction_name, drawables = next(((name, drawables) for active, name, drawables in selected if active),
