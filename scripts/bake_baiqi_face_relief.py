@@ -21,7 +21,7 @@ def ramp(value):
     return t * t * (3. - 2. * t)
 
 
-def skin_relief(amount):
+def skin_relief(amount, nasal_strength=1.):
     # Coordinates come from the original 880 x 800 face atlas. Keep the
     # original eyelids, hair-shadow line, and mouth outside the active relief.
     y, x = np.mgrid[0:800, 0:880]
@@ -31,7 +31,7 @@ def skin_relief(amount):
     lower_eye = 460. - 25. * np.exp(-.5 * ((x - 439) / 30.) ** 2)
     skin = ramp((y - lower_eye) / 14.) * ramp((523 - y) / 17.)
     skin *= ramp((x - 304.) / 23.) * ramp((574. - x) / 23.)
-    height = (nose + cheeks - nasal_crease) * skin * amount
+    height = (nasal_strength * nose + cheeks - nasal_strength * nasal_crease) * skin * amount
     dy, dx = np.gradient(height)
     slope = np.hypot(dx, dy)
     bound = np.maximum(1., slope / .165)
@@ -63,13 +63,16 @@ def main():
     parser.add_argument('--game-inputs', type=Path)
     parser.add_argument('--amount', default=1., type=float)
     parser.add_argument('--strength', default=.75, type=float)
+    parser.add_argument('--nasal-strength', default=1., type=float,
+                        help='Scale the nose and nostril relief while retaining the authored cheek relief.')
     args = parser.parse_args()
     assert .35 <= args.amount <= 1.5 and 0 < args.strength <= 1.
+    assert .45 <= args.nasal_strength <= 1.
     args.out.mkdir(parents=True, exist_ok=True)
-    nx, ny = skin_relief(args.amount)
+    nx, ny = skin_relief(args.amount, args.nasal_strength)
     blender = encode(nx, ny)
     blender.save(args.out / 'face_relief_blender.png')
-    report = {'amount': args.amount, 'normal_strength': args.strength,
+    report = {'amount': args.amount, 'normal_strength': args.strength, 'nasal_strength': args.nasal_strength,
               'max_tangent_tilt_degrees': float(np.degrees(np.arctan(np.hypot(nx, ny).max()))),
               'blender_normal_sha256': hashlib.sha256((args.out / 'face_relief_blender.png').read_bytes()).hexdigest()}
     if args.game_inputs:

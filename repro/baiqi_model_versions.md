@@ -21,3 +21,4 @@
 | 068 | 修复颈桥和领口包边穿插 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-068) |
 | 069 | 上眼睑和眼白的局部层次 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-069) |
 | 070 | 原鼻纹和三维鼻梁对齐 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-070) |
+| 071 | 收敛鼻翼法线过渡 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-071) |

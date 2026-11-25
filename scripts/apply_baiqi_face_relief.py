@@ -1,4 +1,4 @@
-"""Apply a skin-lighting preview to copies of the published 060 models."""
+"""Apply a skin-lighting preview or update the existing relief texture."""
 import argparse
 import json
 from pathlib import Path
@@ -49,6 +49,7 @@ def main():
     parser.add_argument('--source-inputs', type=Path, required=True)
     parser.add_argument('--maps', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--replace-existing', action='store_true', help='Keep the existing material and update only its normal map.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, maps, output = ((ROOT / value).resolve()
                                    for value in (args.source, args.source_inputs, args.maps, args.out))
@@ -71,9 +72,20 @@ def main():
         face, neck = (head.data.materials[name] for name in (FACE, NECK))
         artwork = {node.image: bytes(node.image.packed_file.data) for node in face.node_tree.nodes
                    if node.type == 'TEX_IMAGE' and node.image and node.image.packed_file}
-        lit_mix(face).inputs[0].default_value = .65
-        lit_mix(neck).inputs[0].default_value = .60
-        attach_normal(face, normal, design['normal_strength'])
+        if args.replace_existing:
+            tree = face.node_tree
+            texture = next(node for node in tree.nodes if node.label == 'Local skin relief')
+            strength = next(node for node in tree.nodes if node.label == 'Local skin relief response').inputs['Strength']
+            assert abs(strength.default_value - design['normal_strength']) < 1e-6
+            replacement = bpy.data.images.load(str(normal))
+            replacement.colorspace_settings.name = texture.image.colorspace_settings.name
+            assert tuple(replacement.size) == tuple(texture.image.size)
+            replacement.pack()
+            texture.image = replacement
+        else:
+            lit_mix(face).inputs[0].default_value = .65
+            lit_mix(neck).inputs[0].default_value = .60
+            attach_normal(face, normal, design['normal_strength'])
         assert all(mesh_fingerprint(obj) == value for obj, value in meshes.items())
         assert all(bytes(image.packed_file.data) == payload for image, payload in artwork.items())
         assert rest_signature(rig) == skeleton
@@ -81,7 +93,9 @@ def main():
         bpy.ops.wm.save_as_mainfile(filepath=str(target))
         records[form] = {'source_sha256': source_hash, 'candidate_sha256': fingerprint(target),
                          'cc0_body_sha256': meshes[body], 'original_head_sha256': meshes[head],
-                         'blender_face_diffuse_fraction': .65, 'blender_neck_diffuse_fraction': .60}
+                         'blender_face_diffuse_fraction': round(lit_mix(face).inputs[0].default_value, 4),
+                         'blender_neck_diffuse_fraction': round(lit_mix(neck).inputs[0].default_value, 4),
+                         'nasal_strength': design.get('nasal_strength', 1.)}
     (output / 'face_relief.json').write_text(json.dumps(records, indent=2) + '\n', encoding='utf-8')
 
 
