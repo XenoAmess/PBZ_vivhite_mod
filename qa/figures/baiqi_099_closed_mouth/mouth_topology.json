@@ -1,0 +1,352 @@
+{
+  "hits": {
+    "429.5,533.5": [
+      {
+        "depth_mm": 81.59,
+        "component": 7,
+        "poly": 9172,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 74.39,
+        "component": 2,
+        "poly": 1453,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 71.57,
+        "component": 1,
+        "poly": 927,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 70.05,
+        "component": 2,
+        "poly": 1482,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 56.51,
+        "component": 0,
+        "poly": 289,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 46.56,
+        "component": 1,
+        "poly": 668,
+        "source_attributes": {
+          "material_index": 1
+        }
+      }
+    ],
+    "429.5,540.5": [
+      {
+        "depth_mm": 76.19,
+        "component": 7,
+        "poly": 9167,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 74.52,
+        "component": 1,
+        "poly": 925,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 71.35,
+        "component": 2,
+        "poly": 1473,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 71.0,
+        "component": 2,
+        "poly": 1478,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 70.48,
+        "component": 3,
+        "poly": 1868,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 69.47,
+        "component": 3,
+        "poly": 1649,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 64.81,
+        "component": 0,
+        "poly": 270,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 50.7,
+        "component": 4,
+        "poly": 2674,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 46.5,
+        "component": 1,
+        "poly": 670,
+        "source_attributes": {
+          "material_index": 1
+        }
+      }
+    ],
+    "429.5,542.5": [
+      {
+        "depth_mm": 74.07,
+        "component": 7,
+        "poly": 9821,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 72.83,
+        "component": 1,
+        "poly": 580,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 70.82,
+        "component": 3,
+        "poly": 1871,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 68.48,
+        "component": 3,
+        "poly": 1646,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 66.51,
+        "component": 0,
+        "poly": 273,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 54.1,
+        "component": 4,
+        "poly": 2688,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 46.97,
+        "component": 1,
+        "poly": 660,
+        "source_attributes": {
+          "material_index": 1
+        }
+      }
+    ],
+    "439.5,542.5": [
+      {
+        "depth_mm": 73.47,
+        "component": 7,
+        "poly": 9935,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 71.65,
+        "component": 1,
+        "poly": 594,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 70.03,
+        "component": 3,
+        "poly": 1854,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 66.77,
+        "component": 3,
+        "poly": 1652,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 65.48,
+        "component": 0,
+        "poly": 179,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 54.15,
+        "component": 4,
+        "poly": 2562,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 47.18,
+        "component": 1,
+        "poly": 689,
+        "source_attributes": {
+          "material_index": 1
+        }
+      }
+    ],
+    "417.5,541.5": [
+      {
+        "depth_mm": 72.74,
+        "component": 7,
+        "poly": 9752,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 72.58,
+        "component": 1,
+        "poly": 1221,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 69.77,
+        "component": 3,
+        "poly": 2370,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 67.01,
+        "component": 3,
+        "poly": 2189,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 64.91,
+        "component": 0,
+        "poly": 401,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 52.63,
+        "component": 4,
+        "poly": 2879,
+        "source_attributes": {
+          "material_index": 1
+        }
+      },
+      {
+        "depth_mm": 46.86,
+        "component": 1,
+        "poly": 1301,
+        "source_attributes": {
+          "material_index": 1
+        }
+      }
+    ]
+  },
+  "groups": [
+    [
+      [
+        0,
+        1,
+        1
+      ],
+      576
+    ],
+    [
+      [
+        1,
+        1,
+        1
+      ],
+      750
+    ],
+    [
+      [
+        2,
+        1,
+        1
+      ],
+      510
+    ],
+    [
+      [
+        3,
+        1,
+        1
+      ],
+      528
+    ],
+    [
+      [
+        4,
+        1,
+        1
+      ],
+      576
+    ],
+    [
+      [
+        7,
+        1,
+        1
+      ],
+      1205
+    ]
+  ]
+}

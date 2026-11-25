@@ -1,0 +1,16 @@
+{
+  "drawables": [
+    "ArtMesh109",
+    "ArtMesh110",
+    "ArtMesh111",
+    "ArtMesh113",
+    "ArtMesh118",
+    "Mouth2",
+    "Tongue"
+  ],
+  "source_pixels": 143,
+  "offset_xy_px": [
+    -9,
+    7
+  ]
+}

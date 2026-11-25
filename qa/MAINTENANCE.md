@@ -33,6 +33,8 @@
 
 两种形态都检查正视、斜视、侧视及约 20°、35° 的仰视，包含换灯、仰头和游戏攻击动作。闭口的唇缝与嘴角应连续，仰视时的下唇应有自然体积。只在唇周授权范围内评估几何或贴图变化，其外的原脸、肤色、CC0 身体和骨架继续按既有指纹验收。候选通过离线对照后单独提交代码、双工程、烘焙与验收记录。
 
+099 的首个闭口候选已通过离线回归。保留原画唇线，重做旧开口所在的局部曲面。侧面唇部体积仍偏轻，继续用同机位比较。[099 嘴部验收记录](observations/baiqi_099_closed_mouth.md)
+
 ## 6000D 统一服务调用
 
 `scripts/run_baiqi_remote_review.py` 默认采用 `auto`。它检查网关是否接单，打包两套模型、动作供体及报告、CC0 对照和本次选中的游戏动作，再通过 `/v1/render/assets` 和 `/v1/render/jobs` 提交。节点固定使用验收脚本 `fb7e7cf`、Blender 5.3.0 和 EEVEE。客户端按结果 ZIP 哈希、逐文件哈希、输入模型哈希、动作套组哈希和图数核对回包。[统一模型服务协议](https://github.com/XenoAmess/local-model-operations/blob/main/deployments/video-generation/docs/unified-model-service.md#blender-白绮动作验收)

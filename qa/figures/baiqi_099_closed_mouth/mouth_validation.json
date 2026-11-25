@@ -1,0 +1,64 @@
+{
+  "native_textures_exact": 103,
+  "remote": {
+    "backend": "remote",
+    "job_id": "render_91c5c26270d44ea4a4ebad497d12fcd4",
+    "result_sha256": "06a1d997ca9691e298042adf8804f677f95accaa42053b92cd3a02c5cdfdd4bf",
+    "input_sha256": "868695d63f707dd8bbe78b56442e8e49e7850cd234c31fdfa5aec954acaf693c",
+    "queue_seconds": 0.16639184951782227,
+    "run_seconds": 23.72299289703369,
+    "gpu": "NVIDIA RTX 6000D",
+    "render_seconds": 22.39,
+    "images": 32,
+    "params": {
+      "forms": [
+        "coat_on",
+        "coat_off"
+      ],
+      "cases": [
+        "neck_pitch",
+        "Hun_BaiShanDual_Attack_A"
+      ],
+      "views": [
+        "front",
+        "oblique"
+      ],
+      "sample_indices": [
+        2,
+        4
+      ],
+      "resolution": [
+        1280,
+        1280
+      ],
+      "samples": 32,
+      "engine": "EEVEE",
+      "timeout_seconds": 1800
+    },
+    "fallback_reason": null
+  },
+  "forms": {
+    "coat_on": {
+      "cases": 33,
+      "poses": 197,
+      "inherited_cc0": 20,
+      "new_flags": 0,
+      "identical_motion_results": true,
+      "unreal_eyes": 4,
+      "unreal_bones": 348,
+      "normal_preview_count": 25,
+      "low_angles_count": 12
+    },
+    "coat_off": {
+      "cases": 33,
+      "poses": 197,
+      "inherited_cc0": 20,
+      "new_flags": 0,
+      "identical_motion_results": true,
+      "unreal_eyes": 4,
+      "unreal_bones": 348,
+      "normal_preview_count": 25,
+      "low_angles_count": 12
+    }
+  }
+}

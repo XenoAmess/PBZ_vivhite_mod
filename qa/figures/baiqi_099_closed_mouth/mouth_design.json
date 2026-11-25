@@ -1,0 +1,32 @@
+{
+  "coat_on": {
+    "source_sha256": "ecd77a59a7dc687fee9211f1b517ea0279a1604754f2c9bd365b7cd4da6748a1",
+    "candidate_sha256": "ca67eafd4b09b9ef821492678b32293b0ba042e30a284f1de409a53b86446f12",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "candidate_head_sha256": "755e4f99c6b688c0a802a90d09cee45e6e44895891ff2f93dc6cb924261746e7",
+    "old_faces": 1043,
+    "old_interior_vertices": 531,
+    "new_faces": 2053,
+    "new_vertices": 1005,
+    "boundary_edges": 45,
+    "old_lip_edges": 64,
+    "mouth_depression_mm": 0.72,
+    "mouth_interior_contact_pairs": 0
+  },
+  "coat_off": {
+    "source_sha256": "486e6db2481fc9461eb861e3ef00033eebdeca8ed2d52fffeb540b906e7188e0",
+    "candidate_sha256": "97d4978c2747695c1404b347f9fecf10599427440d3455012529ebadb9bbca4c",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "original_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "candidate_head_sha256": "755e4f99c6b688c0a802a90d09cee45e6e44895891ff2f93dc6cb924261746e7",
+    "old_faces": 1043,
+    "old_interior_vertices": 531,
+    "new_faces": 2053,
+    "new_vertices": 1005,
+    "boundary_edges": 45,
+    "old_lip_edges": 64,
+    "mouth_depression_mm": 0.72,
+    "mouth_interior_contact_pairs": 0
+  }
+}
