@@ -220,6 +220,8 @@ def main():
                         help='Record fringe intersections with the head, glasses and rear locks.')
     parser.add_argument('--rear-lock-contacts', action='store_true',
                         help='Record intersections between the rear locks and the head.')
+    parser.add_argument('--crown-contacts', action='store_true',
+                        help='Record crown overlap with the head, fringe and glasses during motion.')
     parser.add_argument('--temple-contacts', action='store_true',
                         help='Record contact between each glasses temple and the head surface.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
@@ -259,10 +261,13 @@ def main():
         assert all(layered[name].matrix_world == head.matrix_world for name in NECKLINE_PARTS)
     if args.waist_seam_contacts:
         assert layered[WAIST_PARTS[0]].matrix_world == layered[WAIST_PARTS[1]].matrix_world
-    if args.fringe_contacts:
+    if args.fringe_contacts or args.crown_contacts:
         fringe = bpy.data.objects[FRINGE_PART]
         frames = bpy.data.objects[FRAME_PART]
         assert head.matrix_world == fringe.matrix_world == frames.matrix_world
+    if args.crown_contacts:
+        crown = bpy.data.objects['BaiQi crown under hair']
+        assert crown.matrix_world == head.matrix_world
     if args.fringe_contacts or args.rear_lock_contacts:
         rear_locks = [obj for obj in meshes if obj.name.startswith('BaiQi rear hair clump ')]
         assert len(rear_locks) == 23
@@ -330,16 +335,25 @@ def main():
             if args.waist_seam_contacts:
                 band, skirt = (surfaces[name] for name in WAIST_PARTS)
                 row['samples'][-1]['intersecting_waist_seam_triangle_pairs'] = len(band.overlap(skirt))
-            if args.fringe_contacts or args.rear_lock_contacts or args.temple_contacts:
+            if args.fringe_contacts or args.rear_lock_contacts or args.temple_contacts or args.crown_contacts:
                 head_surface = surface_tree(head, graph)
             if args.fringe_contacts or args.rear_lock_contacts:
                 lock_surfaces = {lock.name: surface_tree(lock, graph) for lock in rear_locks}
-            if args.fringe_contacts:
+            if args.fringe_contacts or args.crown_contacts:
                 front = surface_tree(fringe, graph)
+                glasses = surface_tree(frames, graph)
+            if args.fringe_contacts:
                 row['samples'][-1]['intersecting_fringe_triangle_pairs'] = {
                     'head': len(front.overlap(head_surface)),
-                    'glasses': len(front.overlap(surface_tree(frames, graph))),
+                    'glasses': len(front.overlap(glasses)),
                     'rear_locks': sum(len(front.overlap(lock)) for lock in lock_surfaces.values()),
+                }
+            if args.crown_contacts:
+                crown_surface = surface_tree(crown, graph)
+                row['samples'][-1]['intersecting_crown_triangle_pairs'] = {
+                    'head': len(crown_surface.overlap(head_surface)),
+                    'fringe': len(crown_surface.overlap(front)),
+                    'glasses': len(crown_surface.overlap(glasses)),
                 }
             if args.rear_lock_contacts:
                 row['samples'][-1]['intersecting_rear_lock_head_triangle_pairs'] = {

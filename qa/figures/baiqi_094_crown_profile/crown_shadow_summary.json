@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "fringe_mask": 14571,
+    "below_80": 7380,
+    "luma_p05_p50_p95": [
+      0.0,
+      76.35,
+      193.44
+    ]
+  },
+  "head cast off": {
+    "fringe_mask": 14571,
+    "below_80": 7380,
+    "luma_p05_p50_p95": [
+      0.0,
+      76.35,
+      193.44
+    ]
+  },
+  "model cast off": {
+    "fringe_mask": 14571,
+    "below_80": 7379,
+    "luma_p05_p50_p95": [
+      0.0,
+      76.57,
+      193.44
+    ]
+  },
+  "added back fill": {
+    "fringe_mask": 14571,
+    "below_80": 6267,
+    "luma_p05_p50_p95": [
+      0.0,
+      106.44,
+      207.29
+    ]
+  },
+  "base color": {
+    "fringe_mask": 14571,
+    "below_80": 0,
+    "luma_p05_p50_p95": [
+      128.85,
+      232.66,
+      233.07
+    ]
+  }
+}

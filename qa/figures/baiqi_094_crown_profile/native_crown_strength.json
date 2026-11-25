@@ -1,0 +1,122 @@
+{
+  "rear_left": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 3957,
+      "dark120": 4309,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 9631,
+      "dark80": 1370,
+      "dark120": 1776,
+      "new_dark120": 28
+    },
+    "0.68": {
+      "changed": 12514,
+      "dark80": 193,
+      "dark120": 364,
+      "new_dark120": 28
+    }
+  },
+  "rear_right": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 4309,
+      "dark120": 4571,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 9341,
+      "dark80": 1818,
+      "dark120": 2113,
+      "new_dark120": 65
+    },
+    "0.68": {
+      "changed": 14350,
+      "dark80": 254,
+      "dark120": 481,
+      "new_dark120": 88
+    }
+  },
+  "rear": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 3581,
+      "dark120": 3856,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 6391,
+      "dark80": 1281,
+      "dark120": 1435,
+      "new_dark120": 2
+    },
+    "0.68": {
+      "changed": 8783,
+      "dark80": 143,
+      "dark120": 236,
+      "new_dark120": 1
+    }
+  },
+  "rear_top": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 287,
+      "dark120": 578,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 24338,
+      "dark80": 252,
+      "dark120": 1935,
+      "new_dark120": 1659
+    },
+    "0.68": {
+      "changed": 29429,
+      "dark80": 561,
+      "dark120": 1671,
+      "new_dark120": 1595
+    }
+  },
+  "front_left": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 13,
+      "dark120": 15,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 20,
+      "dark80": 11,
+      "dark120": 14,
+      "new_dark120": 0
+    },
+    "0.68": {
+      "changed": 480,
+      "dark80": 10,
+      "dark120": 12,
+      "new_dark120": 0
+    }
+  },
+  "front_other": {
+    "0.0": {
+      "changed": 0,
+      "dark80": 1,
+      "dark120": 1,
+      "new_dark120": 0
+    },
+    "0.52": {
+      "changed": 323,
+      "dark80": 1,
+      "dark120": 1,
+      "new_dark120": 0
+    },
+    "0.68": {
+      "changed": 1306,
+      "dark80": 1,
+      "dark120": 1,
+      "new_dark120": 0
+    }
+  }
+}

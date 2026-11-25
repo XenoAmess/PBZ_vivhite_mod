@@ -1,0 +1,122 @@
+{
+  "coat_on": {
+    "cases": 33,
+    "samples": 197,
+    "new_flags": 0,
+    "inherited_cc0_flags": 20,
+    "all_other_pose_values_exact": true,
+    "crown_contacts": {
+      "head": {
+        "min": [
+          27,
+          27
+        ],
+        "max": [
+          28,
+          28
+        ],
+        "total": [
+          5506,
+          5506
+        ],
+        "samples_increased": 0,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      },
+      "fringe": {
+        "min": [
+          210,
+          416
+        ],
+        "max": [
+          210,
+          416
+        ],
+        "total": [
+          41370,
+          81952
+        ],
+        "samples_increased": 197,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      },
+      "glasses": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          0,
+          0
+        ],
+        "total": [
+          0,
+          0
+        ],
+        "samples_increased": 0,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      }
+    }
+  },
+  "coat_off": {
+    "cases": 33,
+    "samples": 197,
+    "new_flags": 0,
+    "inherited_cc0_flags": 20,
+    "all_other_pose_values_exact": true,
+    "crown_contacts": {
+      "head": {
+        "min": [
+          27,
+          27
+        ],
+        "max": [
+          28,
+          28
+        ],
+        "total": [
+          5506,
+          5506
+        ],
+        "samples_increased": 0,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      },
+      "fringe": {
+        "min": [
+          210,
+          416
+        ],
+        "max": [
+          210,
+          416
+        ],
+        "total": [
+          41370,
+          81952
+        ],
+        "samples_increased": 197,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      },
+      "glasses": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          0,
+          0
+        ],
+        "total": [
+          0,
+          0
+        ],
+        "samples_increased": 0,
+        "peak_candidate_case": "neck_pitch",
+        "peak_candidate_index": 0
+      }
+    }
+  }
+}

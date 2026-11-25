@@ -1,0 +1,34 @@
+{
+  "source_commit": "fb7e7cf55f4753d8f81242b7afc62d9ae8338f6e",
+  "input_sha256": "5c7c6d5c2ab2968f98d843d791e3ceb7ea8722793a379429029ae9094ed5b6e3",
+  "result_sha256": "6df30734d732a0a33141b172179c615e6fb975f670c7c2ecc63a191f7d76af27",
+  "gpu": "NVIDIA RTX 6000D",
+  "vram_total_mib": 85651,
+  "peak_device_memory_mib": 1652,
+  "remote_render_seconds": 28.52,
+  "local_render_seconds": 29.256,
+  "resolution": [
+    1280,
+    1280
+  ],
+  "forms": {
+    "coat_on": {
+      "images": 36,
+      "cases": 3,
+      "samples": 15,
+      "motion_status": "pending_review",
+      "motion_values_exact": true,
+      "image_mae_median": 0.04827,
+      "image_mae_max": 0.09943
+    },
+    "coat_off": {
+      "images": 36,
+      "cases": 3,
+      "samples": 15,
+      "motion_status": "pending_review",
+      "motion_values_exact": true,
+      "image_mae_median": 0.054150000000000004,
+      "image_mae_max": 0.10414
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "coat_on": {
+    "rear_left": {
+      "head_region_changed": 12518,
+      "dark80_in_changed_region": [
+        3953,
+        190
+      ],
+      "dark120_in_changed_region": [
+        4303,
+        359
+      ],
+      "below_crown_diff_gt4": 120
+    },
+    "rear_right": {
+      "head_region_changed": 14349,
+      "dark80_in_changed_region": [
+        4305,
+        250
+      ],
+      "dark120_in_changed_region": [
+        4567,
+        477
+      ],
+      "below_crown_diff_gt4": 84
+    },
+    "rear": {
+      "head_region_changed": 8782,
+      "dark80_in_changed_region": [
+        3581,
+        143
+      ],
+      "dark120_in_changed_region": [
+        3853,
+        235
+      ],
+      "below_crown_diff_gt4": 137
+    },
+    "rear_top": {
+      "head_region_changed": 29423,
+      "dark80_in_changed_region": [
+        282,
+        554
+      ],
+      "dark120_in_changed_region": [
+        571,
+        1661
+      ],
+      "below_crown_diff_gt4": 128
+    },
+    "front_left": {
+      "head_region_changed": 481,
+      "dark80_in_changed_region": [
+        12,
+        9
+      ],
+      "dark120_in_changed_region": [
+        14,
+        12
+      ],
+      "below_crown_diff_gt4": 10
+    },
+    "front_other": {
+      "head_region_changed": 1306,
+      "dark80_in_changed_region": [
+        1,
+        1
+      ],
+      "dark120_in_changed_region": [
+        1,
+        1
+      ],
+      "below_crown_diff_gt4": 3
+    }
+  },
+  "coat_off": {
+    "rear_left": {
+      "head_region_changed": 12514,
+      "dark80_in_changed_region": [
+        3951,
+        188
+      ],
+      "dark120_in_changed_region": [
+        4300,
+        356
+      ],
+      "below_crown_diff_gt4": 71
+    },
+    "rear_right": {
+      "head_region_changed": 14350,
+      "dark80_in_changed_region": [
+        4306,
+        251
+      ],
+      "dark120_in_changed_region": [
+        4568,
+        478
+      ],
+      "below_crown_diff_gt4": 80
+    },
+    "rear": {
+      "head_region_changed": 8783,
+      "dark80_in_changed_region": [
+        3581,
+        143
+      ],
+      "dark120_in_changed_region": [
+        3853,
+        233
+      ],
+      "below_crown_diff_gt4": 156
+    },
+    "rear_top": {
+      "head_region_changed": 29429,
+      "dark80_in_changed_region": [
+        287,
+        561
+      ],
+      "dark120_in_changed_region": [
+        575,
+        1668
+      ],
+      "below_crown_diff_gt4": 70
+    },
+    "front_left": {
+      "head_region_changed": 480,
+      "dark80_in_changed_region": [
+        13,
+        10
+      ],
+      "dark120_in_changed_region": [
+        15,
+        12
+      ],
+      "below_crown_diff_gt4": 11
+    },
+    "front_other": {
+      "head_region_changed": 1306,
+      "dark80_in_changed_region": [
+        1,
+        1
+      ],
+      "dark120_in_changed_region": [
+        1,
+        1
+      ],
+      "below_crown_diff_gt4": 0
+    }
+  }
+}
