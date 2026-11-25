@@ -1,0 +1,18 @@
+{
+  "coat_on": {
+    "only_changed_position_corners": {
+      "BaiQi blouse and collar artwork": 68,
+      "BaiQi off-white blouse back": 908,
+      "BaiQi blouse edge binding": 624
+    },
+    "polygon_order_indices_and_uvs_exact": true
+  },
+  "coat_off": {
+    "only_changed_position_corners": {
+      "BaiQi blouse and collar artwork": 68,
+      "BaiQi off-white blouse back": 908,
+      "BaiQi blouse edge binding": 624
+    },
+    "polygon_order_indices_and_uvs_exact": true
+  }
+}

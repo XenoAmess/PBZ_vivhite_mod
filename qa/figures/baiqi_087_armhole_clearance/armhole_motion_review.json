@@ -1,0 +1,35 @@
+{
+  "texture_count_exact": 100,
+  "motion": {
+    "coat_off": {
+      "intersecting_skin_apparel_triangle_pairs": {
+        "BaiQi fitted sleeveless binding": [
+          17571,
+          16072
+        ],
+        "BaiQi fitted sleeveless blouse": [
+          44070,
+          42503
+        ]
+      }
+    },
+    "coat_on": {
+      "intersecting_skin_apparel_triangle_pairs": {
+        "BaiQi fitted sleeveless binding": [
+          17571,
+          16072
+        ],
+        "BaiQi fitted sleeveless blouse": [
+          44070,
+          42503
+        ]
+      },
+      "intersecting_coat_underlayer_triangle_pairs": {
+        "BaiQi fitted sleeveless blouse": [
+          103767,
+          97734
+        ]
+      }
+    }
+  }
+}
