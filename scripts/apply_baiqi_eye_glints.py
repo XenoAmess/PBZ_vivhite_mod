@@ -52,11 +52,18 @@ def replace(poses, state, node, correction_name):
     if correction_name == 'nose_registration':
         assert len(x) and np.array_equal(source[..., 3], result[..., 3]), state
         assert 398 <= x.min() <= x.max() <= 467 and 440 <= y.min() <= y.max() <= 511, state
+    if correction_name == 'jaw_outline':
+        guide = bpy.data.images.load(str(poses / 'jaw_outline_mask.png'))
+        guide.colorspace_settings.name = 'Non-Color'
+        region = pixels(guide)[..., 0] > 0.
+        bpy.data.images.remove(guide)
+        assert len(x) and not (changed & ~region).any(), state
+        assert 280 <= x.min() <= x.max() <= 600 and 492 <= y.min() <= y.max() <= 612, state
     if not len(x):
         bpy.data.images.remove(new)
         return {'changed_pixels': 0, 'bounds': None}
     min_y = 375 if coverage_kind else 412
-    if correction_name != 'nose_registration':
+    if correction_name not in {'nose_registration', 'jaw_outline'}:
         assert int(x.min()) >= 280 and int(x.max()) <= 600 and int(y.min()) >= min_y and int(y.max()) <= 465, state
     new.pack()
     node.image = new
@@ -74,6 +81,7 @@ def main():
     area.add_argument('--sclera-only', action='store_true', help='Require unchanged pixels outside original eye-white coverage.')
     area.add_argument('--nose-registration', action='store_true', help='Verify a local nose paint correction.')
     area.add_argument('--lower-iris-tone', action='store_true', help='Verify the limited lower iris pigment correction.')
+    area.add_argument('--jaw-outline', action='store_true', help='Verify the original lower jaw contour adjustment.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     source, inputs, poses, output = ((ROOT / p).resolve() for p in (args.source, args.source_inputs, args.poses, args.out))
     assert source != output and output.is_relative_to(ROOT)
@@ -87,7 +95,8 @@ def main():
     selected = ((args.iris_only, 'iris_pigment', {'ArtMesh88', 'ArtMesh103'}),
                 (args.lower_iris_tone, 'lower_iris_tone', {'ArtMesh88', 'ArtMesh103'}),
                 (args.sclera_only, 'sclera_depth', {'ArtMesh90', 'ArtMesh93'}),
-                (args.nose_registration, 'nose_registration', {'Nose2', 'ArtMesh106'}))
+                (args.nose_registration, 'nose_registration', {'Nose2', 'ArtMesh106'}),
+                (args.jaw_outline, 'jaw_outline', {'ArtMesh116'}))
     correction_name, drawables = next(((name, drawables) for active, name, drawables in selected if active),
                                       ('eye_glints', None))
     correction = None

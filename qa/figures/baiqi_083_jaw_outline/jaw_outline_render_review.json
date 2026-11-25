@@ -1,0 +1,172 @@
+{
+  "changed_textures": [
+    "T_BaiQiNative_13a44793c5fe2d.png",
+    "T_BaiQiNative_2bffa2808efe42.png",
+    "T_BaiQiNative_7da61f06e87f15.png",
+    "T_BaiQiNative_9c49704ebbe9ab.png",
+    "T_BaiQiNative_9dc4d93519838e.png"
+  ],
+  "frames": {
+    "coat_off_closed_front_left.png": {
+      "above5": 1241,
+      "maximum": 159
+    },
+    "coat_off_closed_front_right.png": {
+      "above5": 1035,
+      "maximum": 85
+    },
+    "coat_off_closed_oblique.png": {
+      "above5": 1918,
+      "maximum": 175
+    },
+    "coat_off_closed_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_off_half_blink_front_left.png": {
+      "above5": 1250,
+      "maximum": 159
+    },
+    "coat_off_half_blink_front_right.png": {
+      "above5": 1034,
+      "maximum": 85
+    },
+    "coat_off_half_blink_oblique.png": {
+      "above5": 1916,
+      "maximum": 175
+    },
+    "coat_off_half_blink_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_off_look_left_front_left.png": {
+      "above5": 1240,
+      "maximum": 159
+    },
+    "coat_off_look_left_front_right.png": {
+      "above5": 1032,
+      "maximum": 85
+    },
+    "coat_off_look_left_oblique.png": {
+      "above5": 1925,
+      "maximum": 175
+    },
+    "coat_off_look_left_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_off_look_right_front_left.png": {
+      "above5": 1244,
+      "maximum": 159
+    },
+    "coat_off_look_right_front_right.png": {
+      "above5": 1031,
+      "maximum": 85
+    },
+    "coat_off_look_right_oblique.png": {
+      "above5": 1914,
+      "maximum": 175
+    },
+    "coat_off_look_right_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_off_neutral_front_left.png": {
+      "above5": 1246,
+      "maximum": 159
+    },
+    "coat_off_neutral_front_right.png": {
+      "above5": 1032,
+      "maximum": 85
+    },
+    "coat_off_neutral_oblique.png": {
+      "above5": 1923,
+      "maximum": 175
+    },
+    "coat_off_neutral_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_on_closed_front_left.png": {
+      "above5": 1297,
+      "maximum": 159
+    },
+    "coat_on_closed_front_right.png": {
+      "above5": 1027,
+      "maximum": 85
+    },
+    "coat_on_closed_oblique.png": {
+      "above5": 2050,
+      "maximum": 175
+    },
+    "coat_on_closed_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_on_half_blink_front_left.png": {
+      "above5": 1250,
+      "maximum": 159
+    },
+    "coat_on_half_blink_front_right.png": {
+      "above5": 1031,
+      "maximum": 85
+    },
+    "coat_on_half_blink_oblique.png": {
+      "above5": 2010,
+      "maximum": 175
+    },
+    "coat_on_half_blink_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_on_look_left_front_left.png": {
+      "above5": 1231,
+      "maximum": 159
+    },
+    "coat_on_look_left_front_right.png": {
+      "above5": 1036,
+      "maximum": 85
+    },
+    "coat_on_look_left_oblique.png": {
+      "above5": 2011,
+      "maximum": 175
+    },
+    "coat_on_look_left_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_on_look_right_front_left.png": {
+      "above5": 1241,
+      "maximum": 159
+    },
+    "coat_on_look_right_front_right.png": {
+      "above5": 1036,
+      "maximum": 85
+    },
+    "coat_on_look_right_oblique.png": {
+      "above5": 1997,
+      "maximum": 175
+    },
+    "coat_on_look_right_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    },
+    "coat_on_neutral_front_left.png": {
+      "above5": 1240,
+      "maximum": 159
+    },
+    "coat_on_neutral_front_right.png": {
+      "above5": 1036,
+      "maximum": 85
+    },
+    "coat_on_neutral_oblique.png": {
+      "above5": 1983,
+      "maximum": 175
+    },
+    "coat_on_neutral_rear_high.png": {
+      "above5": 0,
+      "maximum": 0
+    }
+  },
+  "pure_coat_rear_exact": 10
+}

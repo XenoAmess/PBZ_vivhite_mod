@@ -1,0 +1,12 @@
+{
+  "coat_on": {
+    "sections": 43,
+    "triangles": 103545,
+    "all_triangle_positions_and_uvs_exact": true
+  },
+  "coat_off": {
+    "sections": 39,
+    "triangles": 96221,
+    "all_triangle_positions_and_uvs_exact": true
+  }
+}

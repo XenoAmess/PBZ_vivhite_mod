@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = '/Game/BaiQiBridgeProbe/OfflinePreview'
 FORMS = ('coat_on', 'coat_off')
 FACE = 'BaiQi original face appearance'
+PREVIEW_SIZE = 1280
 SHOTS = {
     'front_left': ((0., 1., 0.), -54.),
     'front_right': ((0., 1., 0.), -126.),
@@ -53,20 +54,25 @@ def texture(inputs, name, kind):
     task.destination_name = asset_name
     task.automated = True
     task.save = False
-    task.factory = unreal.TextureFactory()
+    factory = unreal.TextureFactory()
+    settings = unreal.TextureCompressionSettings
+    compression = {'masks': settings.TC_MASKS, 'normal': settings.TC_NORMALMAP}.get(kind)
+    if compression is not None:
+        factory.set_editor_property('compression_settings', compression)
+    factory.set_editor_property('defer_compression', False)
+    task.factory = factory
     ASSETS.import_asset_tasks([task])
     result = unreal.load_asset(path)
     assert isinstance(result, unreal.Texture2D), path
     result.set_editor_property('srgb', kind == 'color')
     result.set_editor_property('virtual_texture_streaming', False)
     result.set_editor_property('never_stream', True)
-    if kind != 'color':
-        settings = unreal.TextureCompressionSettings
-        result.set_editor_property('compression_settings', settings.TC_NORMALMAP if kind == 'normal' else settings.TC_MASKS)
+    if compression is not None:
+        result.set_editor_property('compression_settings', compression)
     return result
 
 
-def preview_parent(inputs, masked):
+def preview_parent(inputs, masked, show_mix):
     name = 'M_BaiQiOfflineMasked' if masked else 'M_BaiQiOfflineOpaque'
     folder = CONTENT + '/Session'
     _, name = ASSETS.create_unique_asset_name(f'{folder}/{name}', '')
@@ -87,7 +93,7 @@ def preview_parent(inputs, masked):
     albedo = sample('Albedo', f'T_BaiQiNative_{stem(FACE)}', 'color', (-450, 0))
     mix = sample('Mix', 'T_BaiQiNative_Mix', 'masks', (-450, 150))
     normals = sample('Normals', 'T_BaiQiNative_FlatNormal', 'normal', (-620, 340))
-    assert EDIT.connect_material_property(albedo, 'RGB', properties.MP_BASE_COLOR)
+    assert EDIT.connect_material_property(mix if show_mix else albedo, 'RGB', properties.MP_BASE_COLOR)
     for channel, prop in [('R', properties.MP_AMBIENT_OCCLUSION), ('G', properties.MP_ROUGHNESS), ('B', properties.MP_METALLIC)]:
         assert EDIT.connect_material_property(mix, channel, prop)
     specular = EDIT.create_material_expression(material, unreal.MaterialExpressionScalarParameter, -190, 180)
@@ -130,12 +136,20 @@ def confirm_color(world, target, form):
     regions = {'face': ((220, 350), (250, 380), (390, 370), (422, 345), (320, 500), (260, 480)),
                'head ornament': ((94, 255), (94, 275), (94, 315), (94, 375), (112, 295), (148, 355))}
     for name, points in regions.items():
-        readings = [RENDER.read_render_target_raw_pixel(world, target, x, y) for x, y in points]
+        readings = [RENDER.read_render_target_raw_pixel(world, target, x * 2, y * 2) for x, y in points]
         assert any(max(pixel.r, pixel.g, pixel.b) - min(pixel.r, pixel.g, pixel.b) > 10.
                    for pixel in readings), (form, name)
 
 
 def main():
+    # Offscreen commandlet captures must wait for linear texture data after PNG import.
+    for command in ('Editor.AsyncAssetCompilation 0', 'Editor.AsyncTextureCompilation 0', 'r.VT.EnableAutoImport 0'):
+        unreal.SystemLibrary.execute_console_command(None, command)
+    preview_pass = os.environ.get('PBZ_BAIQI_PREVIEW_PASS', 'lit')
+    source = unreal.SceneCaptureSource
+    capture_sources = {'lit': source.SCS_FINAL_COLOR_LDR, 'albedo': source.SCS_BASE_COLOR,
+                       'mix': source.SCS_BASE_COLOR, 'normal': source.SCS_NORMAL}
+    assert preview_pass in capture_sources, preview_pass
     inputs = ROOT / os.environ['PBZ_BAIQI_EDITOR_INPUTS']
     output = ROOT / os.environ['PBZ_BAIQI_PREVIEW_OUT']
     output.mkdir(parents=True, exist_ok=True)
@@ -147,29 +161,30 @@ def main():
     selected = os.environ.get('PBZ_BAIQI_PREVIEW_STATES', 'neutral').split(',')
     assert selected and set(selected) <= set(states)
     names = {compact(name): name for name in materials}
-    parents = {masked: preview_parent(inputs, masked) for masked in (False, True)}
+    parents = {masked: preview_parent(inputs, masked, preview_pass == 'mix') for masked in (False, True)}
     levels = unreal.get_editor_subsystem(unreal.LevelEditorSubsystem)
     assert levels.load_level('/Game/BaiQiBridgeProbe/BridgeAuditMap')
     world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
     actors = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-    for command in ('r.Nanite 0', 'r.EyeAdaptationQuality 0', 'r.Tonemapper.GrainQuantization 0'):
+    for command in ('r.Nanite 0', 'r.EyeAdaptationQuality 0', 'r.Tonemapper.GrainQuantization 0',
+                    'r.Tonemapper.Sharpen 0', 'r.AntiAliasingMethod 1', 'r.ScreenPercentage 100'):
         unreal.SystemLibrary.execute_console_command(world, command)
     origin, zero = V(0., 0., 0.), unreal.Rotator()
     camera = actors.spawn_actor_from_class(unreal.SceneCapture2D, origin, zero, transient=True)
     capture = camera.get_component_by_class(unreal.SceneCaptureComponent2D)
     capture.set_editor_property('capture_every_frame', False)
     capture.set_editor_property('capture_on_movement', False)
-    capture.set_editor_property('capture_source', unreal.SceneCaptureSource.SCS_FINAL_COLOR_LDR)
+    capture.set_editor_property('capture_source', capture_sources[preview_pass])
     capture.set_editor_property('post_process_blend_weight', 0.)
     capture.set_editor_property('fov_angle', 24.)
-    target = RENDER.create_render_target2d(world, 640, 640, unreal.TextureRenderTargetFormat.RTF_RGBA8_SRGB)
+    target = RENDER.create_render_target2d(world, PREVIEW_SIZE, PREVIEW_SIZE, unreal.TextureRenderTargetFormat.RTF_RGBA8_SRGB)
     capture.set_editor_property('texture_target', target)
     key = actors.spawn_actor_from_class(unreal.DirectionalLight, origin, unreal.Rotator(pitch=-36., yaw=-54.), transient=True)
     key_light = key.get_component_by_class(unreal.DirectionalLightComponent)
     key_light.set_editor_property('mobility', unreal.ComponentMobility.MOVABLE)
-    key_light.set_editor_property('intensity', 7.)
+    key_light.set_editor_property('intensity', 3.5)
     fill = actors.spawn_actor_from_class(unreal.DirectionalLight, origin, unreal.Rotator(pitch=-24., yaw=-94.), transient=True)
-    fill.get_component_by_class(unreal.DirectionalLightComponent).set_editor_property('intensity', 3.)
+    fill.get_component_by_class(unreal.DirectionalLightComponent).set_editor_property('intensity', 1.75)
     manifest = []
     for form in FORMS:
         model = unreal.load_asset(readback['forms'][form]['mesh'])
@@ -201,7 +216,7 @@ def main():
                 camera.set_actor_location(eye, False, False)
                 camera.set_actor_rotation(unreal.MathLibrary.find_look_at_rotation(eye, head), False)
                 capture.capture_scene()
-                if state == selected[0] and shot == 'front_left':
+                if preview_pass == 'lit' and state == selected[0] and shot == 'front_left':
                     confirm_color(world, target, form)
                 file = f'{form}_{state}_{shot}.png'
                 RENDER.export_render_target(world, target, str(output), file)

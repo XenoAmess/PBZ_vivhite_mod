@@ -5,16 +5,18 @@
 复用已有的 `build/UE/ProjectPBZ` 编辑器工程。先按版本的验收流程生成 `surface_finish_readback.json`，准备 `native_textures`、`engine_materials.json`、`surface_finish.json` 和 `eye_palette.json`。在仓库根目录运行以下命令。每次从原 PNG 导入会话纹理，避免渲染复跑丢失色图。程序在首张正视图检查脸与发饰颜色，随后按形态、状态和机位写 PNG 和 `preview_manifest.json`。
 
 ```powershell
-$env:PBZ_BAIQI_EDITOR_INPUTS = 'build/baiqi_081_game_inputs'
-$env:PBZ_BAIQI_PREVIEW_OUT = 'artifacts/baiqi_081_unreal_preview'
+$env:PBZ_BAIQI_EDITOR_INPUTS = 'build/baiqi_083_game_inputs'
+$env:PBZ_BAIQI_PREVIEW_OUT = 'artifacts/baiqi_083_unreal_preview'
 $env:PBZ_BAIQI_PREVIEW_STATES = 'neutral,half_blink,closed,look_left,look_right'
 $project = (Resolve-Path 'build/UE/ProjectPBZ/ProjectPBZ.uproject').Path
 $script = (Resolve-Path 'scripts/ue_render_baiqi_offline_preview.py').Path
-& 'E:/UE_5.7/Engine/Binaries/Win64/UnrealEditor-Cmd.exe' $project -unattended -nop4 -stdout -FullStdOutLogOutput -RenderOffscreen -AllowCommandletRendering -d3d12 -run=pythonscript "-script=$script"
+& 'E:/UE_5.7/Engine/Binaries/Win64/UnrealEditor-Cmd.exe' $project -unattended -nop4 -stdout -FullStdOutLogOutput -RenderOffscreen -AllowCommandletRendering -d3d12 -NoAsyncAssetCompilation -run=pythonscript "-script=$script"
 ```
 
 默认 `neutral` 输出两形态各四张。上面的五状态命令输出 40 张。这个预览检查静止形态和材质切换，动作范围继续用 Git 库里的白绮动作套组复验。
 
-预览回读材质实例的纹理与标量参数。082 的强对照把整张脸的 Mix 改成 `255, 18, 255`，中性状态的八张彩色图仍逐像素一致。现有彩色图可判断颜色图变化和眼部切换，Mix 的实际光泽需要另做可见响应测试。
+083 起，PNG 使用同步纹理导入，在线性遮罩和法线完成编译后出图。最初的 Mix 对照中，材质实例回读返回正确的纹理对象，但诊断图上的面部采样为黑色。同步后原图与整脸强对照在正视图中已有约 10.6 万像素的通道差大于 4。1280 像素图也使用了较低光强，为亮部留出余量。对比版本时请用同一份渲染脚本分别重出旧版和新版。
+
+`PBZ_BAIQI_PREVIEW_PASS` 默认 `lit`。可设为 `albedo` 看基本色，`normal` 看世界空间法线，或 `mix` 看 AO、粗糙度、金属度图。诊断图是按 sRGB 导出的，读单个纹素的线性值时须考虑转换。材质光泽比较需要看同灯位的 `lit` 图。
 
 ![081 两种形态和眼部切换示例](../qa/figures/baiqi_unreal_preview_081/contact_sheet.jpg)
