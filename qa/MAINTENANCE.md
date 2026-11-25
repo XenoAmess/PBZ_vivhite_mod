@@ -45,10 +45,36 @@ fixtures/Base_Female.blend
 | `PUT /v1/assets/{sha256}` | 上传 `application/zip` 原始字节。服务端计算并校验 SHA-256，格式为 64 个小写十六进制字符。首次上传返回 `201`，同内容已缓存返回 `200`。 |
 | `POST /v1/jobs` | 提交 JSON。带 `Idempotency-Key`，重复请求返回同一个 `job_id`。返回 `202` 和 `job_id`。 |
 | `GET /v1/jobs/{job_id}` | `200`。返回 `status`、已完成图数、计划图数、排队和运行时间、结构化错误以及成功时的结果哈希。 |
-| `GET /v1/jobs/{job_id}/result` | 完成后返回 `200` 和 `application/zip`。结果含 PNG、各形态的 `motion_report.json`、总清单和运行日志，支持用 `Range` 续传。 |
+| `GET /v1/jobs/{job_id}/result` | 完成后返回 `200` 和 `application/zip`。结果含 PNG、各形态的 `motion_report.json`、总清单和运行日志，`Range` 续传返回 `206`。 |
 | `DELETE /v1/jobs/{job_id}` | 取消排队或运行中的任务，返回 `202`。查询状态可确认取消是否结束。 |
 
 `status` 取 `queued`、`running`、`succeeded`、`failed` 或 `cancelled`。建议私网 HTTPS 与 `Authorization: Bearer …`、单 GPU 重任务并发 1、上传上限 2 GiB、结果留存 7 天。用 `429` 和 `Retry-After` 报告队列已满，用 `422` 报告参数或哈希错误，用 `409` 报告结果未就绪或幂等键对应另一份请求。
+
+首期 `capabilities` 可按以下结构实现。`gpu` 和 `backend` 填节点实际探测值，文件大小和显存都以字节计。`timeout_seconds` 从任务进入 `running` 开始计时。
+
+```json
+{
+  "schema_version": "1",
+  "gpu": {"name": "NVIDIA RTX PRO 6000D", "vram_bytes": 90194313216},
+  "runtime": {"blender_version": "5.3.0", "backend": "Vulkan"},
+  "kinds": ["blender_review"],
+  "limits": {
+    "max_upload_bytes": 2147483648,
+    "max_concurrent_jobs": 1,
+    "retention_seconds": 604800
+  },
+  "blender_review": {
+    "engines": ["EEVEE"],
+    "forms": ["coat_on", "coat_off"],
+    "views": ["front", "back", "side", "oblique"],
+    "resolution_edge_px": {"min": 128, "max": 4096},
+    "samples": {"min": 1, "max": 128},
+    "timeout_seconds": {"min": 30, "max": 1800}
+  }
+}
+```
+
+节点按 `source_commit` 使用已部署的仓库版本。同一身份的 `Idempotency-Key` 与任务 JSON 绑定，重试时返回原任务。初次受理返回 `{"job_id":"<id>","status":"queued"}`。状态响应提供 `queue_seconds`、`run_seconds` 和 `progress`，成功后补充结果大小和哈希。上传经完整校验后供任务读取，结果 ZIP 完成后才将状态标为 `succeeded`。
 
 ```json
 {
