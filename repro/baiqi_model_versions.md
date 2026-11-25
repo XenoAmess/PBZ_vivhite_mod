@@ -38,3 +38,4 @@
 | 085 | 使上衣领口包边连续贴合 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-085) |
 | 086 | 整理缩小后前发轮廓的颜色取样 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-086) |
 | 087 | 修整前伸与抬臂时的上衣袖窿 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-087) |
+| 088 | 缓解外套腋下的内衬穿出 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-088) |

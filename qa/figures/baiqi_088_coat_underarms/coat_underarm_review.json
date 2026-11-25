@@ -1,0 +1,26 @@
+{
+  "textures_exact": 100,
+  "coat_off_close_frames_exact": 20,
+  "motion": {
+    "coat_on": {
+      "intersecting_skin_apparel_triangle_pairs": [
+        44777,
+        44688
+      ],
+      "intersecting_coat_underlayer_triangle_pairs": [
+        97734,
+        92310
+      ]
+    },
+    "coat_off": {
+      "intersecting_skin_apparel_triangle_pairs": [
+        0,
+        0
+      ],
+      "intersecting_coat_underlayer_triangle_pairs": [
+        0,
+        0
+      ]
+    }
+  }
+}

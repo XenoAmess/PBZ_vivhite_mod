@@ -1,0 +1,44 @@
+{
+  "table35": {
+    "edited_vertices": 32,
+    "max_move_mm": 3.5,
+    "spot_counts": {
+      "near_left": {
+        "BaiQi open coat body": 4325,
+        "BaiQi fitted sleeveless blouse": 20
+      },
+      "near_right": {
+        "BaiQi open coat body": 4333,
+        "BaiQi fitted sleeveless blouse": 12
+      }
+    }
+  },
+  "table46": {
+    "edited_vertices": 32,
+    "max_move_mm": 4.6,
+    "spot_counts": {
+      "near_left": {
+        "BaiQi open coat body": 4334,
+        "BaiQi fitted sleeveless blouse": 11
+      },
+      "near_right": {
+        "BaiQi open coat body": 4339,
+        "BaiQi fitted sleeveless blouse": 6
+      }
+    }
+  },
+  "table46_x": {
+    "edited_vertices": 32,
+    "max_move_mm": 4.6,
+    "spot_counts": {
+      "near_left": {
+        "BaiQi open coat body": 4334,
+        "BaiQi fitted sleeveless blouse": 11
+      },
+      "near_right": {
+        "BaiQi open coat body": 4338,
+        "BaiQi fitted sleeveless blouse": 7
+      }
+    }
+  }
+}

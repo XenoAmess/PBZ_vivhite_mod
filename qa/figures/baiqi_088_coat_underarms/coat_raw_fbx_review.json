@@ -1,0 +1,13 @@
+{
+  "coat_on": {
+    "only_changed_position_corners": {
+      "BaiQi gold-trimmed lapels": 612,
+      "BaiQi removable coat back": 340
+    },
+    "polygon_order_indices_and_uvs_exact": true
+  },
+  "coat_off": {
+    "only_changed_position_corners": {},
+    "polygon_order_indices_and_uvs_exact": true
+  }
+}
