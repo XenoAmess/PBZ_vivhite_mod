@@ -1,0 +1,82 @@
+{
+  "neutral_front_left": {
+    "1.65 (086)": {
+      "channels_gt4": 0,
+      "luma_darker3": 0,
+      "luma_lighter3": 0,
+      "max_channel_diff": 0
+    },
+    "0.80": {
+      "channels_gt4": 882,
+      "luma_darker3": 409,
+      "luma_lighter3": 96,
+      "max_channel_diff": 33
+    },
+    "2.08": {
+      "channels_gt4": 356,
+      "luma_darker3": 48,
+      "luma_lighter3": 168,
+      "max_channel_diff": 50
+    }
+  },
+  "neutral_front_right": {
+    "1.65 (086)": {
+      "channels_gt4": 0,
+      "luma_darker3": 0,
+      "luma_lighter3": 0,
+      "max_channel_diff": 0
+    },
+    "0.80": {
+      "channels_gt4": 1125,
+      "luma_darker3": 668,
+      "luma_lighter3": 209,
+      "max_channel_diff": 37
+    },
+    "2.08": {
+      "channels_gt4": 330,
+      "luma_darker3": 85,
+      "luma_lighter3": 184,
+      "max_channel_diff": 63
+    }
+  },
+  "neutral_oblique": {
+    "1.65 (086)": {
+      "channels_gt4": 0,
+      "luma_darker3": 0,
+      "luma_lighter3": 0,
+      "max_channel_diff": 0
+    },
+    "0.80": {
+      "channels_gt4": 199,
+      "luma_darker3": 234,
+      "luma_lighter3": 33,
+      "max_channel_diff": 63
+    },
+    "2.08": {
+      "channels_gt4": 77,
+      "luma_darker3": 12,
+      "luma_lighter3": 82,
+      "max_channel_diff": 28
+    }
+  },
+  "half_blink_oblique": {
+    "1.65 (086)": {
+      "channels_gt4": 0,
+      "luma_darker3": 0,
+      "luma_lighter3": 0,
+      "max_channel_diff": 0
+    },
+    "0.80": {
+      "channels_gt4": 245,
+      "luma_darker3": 309,
+      "luma_lighter3": 75,
+      "max_channel_diff": 25
+    },
+    "2.08": {
+      "channels_gt4": 74,
+      "luma_darker3": 17,
+      "luma_lighter3": 79,
+      "max_channel_diff": 24
+    }
+  }
+}

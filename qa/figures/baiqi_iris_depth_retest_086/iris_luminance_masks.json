@@ -1,0 +1,140 @@
+{
+  "coat_off_half_blink_front_left": {
+    "mask_pixels": 7747,
+    "scores": {
+      "existing": {
+        "bright207": 1780,
+        "bright220": 848,
+        "p90": 220.63,
+        "median": 175.42
+      },
+      "0.8": {
+        "bright207": 1779,
+        "bright220": 814,
+        "p90": 220.28,
+        "median": 175.7
+      },
+      "2.08": {
+        "bright207": 1791,
+        "bright220": 853,
+        "p90": 220.74,
+        "median": 175.2
+      }
+    }
+  },
+  "coat_off_half_blink_front_right": {
+    "mask_pixels": 7747,
+    "scores": {
+      "existing": {
+        "bright207": 1542,
+        "bright220": 631,
+        "p90": 216.42,
+        "median": 163.63
+      },
+      "0.8": {
+        "bright207": 1531,
+        "bright220": 616,
+        "p90": 216.17,
+        "median": 163.4
+      },
+      "2.08": {
+        "bright207": 1553,
+        "bright220": 634,
+        "p90": 216.67,
+        "median": 163.69
+      }
+    }
+  },
+  "coat_off_half_blink_oblique": {
+    "mask_pixels": 6395,
+    "scores": {
+      "existing": {
+        "bright207": 1562,
+        "bright220": 774,
+        "p90": 222.07,
+        "median": 180.13
+      },
+      "0.8": {
+        "bright207": 1562,
+        "bright220": 775,
+        "p90": 222.21,
+        "median": 180.42
+      },
+      "2.08": {
+        "bright207": 1554,
+        "bright220": 775,
+        "p90": 222.0,
+        "median": 179.93
+      }
+    }
+  },
+  "coat_off_neutral_front_left": {
+    "mask_pixels": 12846,
+    "scores": {
+      "existing": {
+        "bright207": 1742,
+        "bright220": 810,
+        "p90": 213.28,
+        "median": 138.32
+      },
+      "0.8": {
+        "bright207": 1746,
+        "bright220": 823,
+        "p90": 213.28,
+        "median": 138.21
+      },
+      "2.08": {
+        "bright207": 1740,
+        "bright220": 808,
+        "p90": 213.2,
+        "median": 138.62
+      }
+    }
+  },
+  "coat_off_neutral_front_right": {
+    "mask_pixels": 12846,
+    "scores": {
+      "existing": {
+        "bright207": 1558,
+        "bright220": 538,
+        "p90": 209.83,
+        "median": 120.4
+      },
+      "0.8": {
+        "bright207": 1563,
+        "bright220": 535,
+        "p90": 209.93,
+        "median": 120.0
+      },
+      "2.08": {
+        "bright207": 1542,
+        "bright220": 539,
+        "p90": 209.93,
+        "median": 120.48
+      }
+    }
+  },
+  "coat_off_neutral_oblique": {
+    "mask_pixels": 9443,
+    "scores": {
+      "existing": {
+        "bright207": 1559,
+        "bright220": 758,
+        "p90": 216.71,
+        "median": 153.76
+      },
+      "0.8": {
+        "bright207": 1573,
+        "bright220": 757,
+        "p90": 216.78,
+        "median": 153.26
+      },
+      "2.08": {
+        "bright207": 1558,
+        "bright220": 763,
+        "p90": 216.71,
+        "median": 153.79
+      }
+    }
+  }
+}
