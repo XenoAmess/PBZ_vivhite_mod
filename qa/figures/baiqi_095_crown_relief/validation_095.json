@@ -1,0 +1,76 @@
+{
+  "baked_textures": {
+    "before_native_count": 100,
+    "after_native_count": 103,
+    "added_crown_textures": [
+      "T_BaiQiMix_8d9df55519717b.png",
+      "T_BaiQiNative_8d9df55519717b.png",
+      "T_BaiQiNative_CrownRelief.png"
+    ]
+  },
+  "forms": {
+    "coat_on": {
+      "full_cases": 33,
+      "full_poses": 197,
+      "inherited_cc0_flags": 20,
+      "new_flags": 0,
+      "pose_records_exact": true,
+      "unreal_bones": 348,
+      "eye_switches": 4,
+      "unreal_frames_match_trial": 6,
+      "remote_poses": 15,
+      "remote_pose_records_exact": true
+    },
+    "coat_off": {
+      "full_cases": 33,
+      "full_poses": 197,
+      "inherited_cc0_flags": 20,
+      "new_flags": 0,
+      "pose_records_exact": true,
+      "unreal_bones": 348,
+      "eye_switches": 4,
+      "unreal_frames_match_trial": 6,
+      "remote_poses": 15,
+      "remote_pose_records_exact": true
+    }
+  },
+  "remote_job": {
+    "backend": "remote",
+    "job_id": "render_7a516fdb31ae4704a05ccbec47ca55f9",
+    "result_sha256": "dc0abc4954bd2cca3908da1d4e6e4423d45dc8c2e924bd1cfafbf7087a168036",
+    "input_sha256": "0eade0e5862042ab65a04a5303d946dc8bf18fa6e7184714f9ef7d65fbda5475",
+    "queue_seconds": 0.19269657135009766,
+    "run_seconds": 30.957296133041382,
+    "gpu": "NVIDIA RTX 6000D",
+    "render_seconds": 29.551,
+    "images": 72,
+    "params": {
+      "forms": [
+        "coat_on",
+        "coat_off"
+      ],
+      "cases": [
+        "neck_yaw",
+        "neck_pitch",
+        "Hun_BaiShanDual_Attack_A"
+      ],
+      "views": [
+        "back",
+        "side"
+      ],
+      "sample_indices": [
+        0,
+        2,
+        4
+      ],
+      "resolution": [
+        1280,
+        1280
+      ],
+      "samples": 32,
+      "engine": "EEVEE",
+      "timeout_seconds": 1800
+    },
+    "fallback_reason": null
+  }
+}

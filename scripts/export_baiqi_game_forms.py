@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'scripts'), str(ROOT / 'tools/blender_libs'),
                 str(ROOT / 'vendor/UEFormat/plugins/blender')]
 
+from baiqi_artwork_shadow import CROWN_RELIEF_MATERIAL, CROWN_RELIEF_PROPERTY
 from baiqi_mesh_clip import clip_mesh
 from apply_baiqi_neck_pigment import HIGH_Z, LOW_Z, NECK, NECK_MARKER, NECK_NORMAL_MAP_MARKER
 from finish_baiqi_surfaces import EXPORT_THICKNESS
@@ -57,6 +58,13 @@ def export_mesh(obj, native, names, mask_materials, support_skirt, separate_coat
             duplicate.modifiers.remove(modifier)
     if obj.name == 'Body':
         isolate_skin(duplicate)
+    if CROWN_RELIEF_PROPERTY in obj:
+        assert len(duplicate.data.materials) == 1 and obj.name == 'BaiQi crown under hair', obj.name
+        material = bpy.data.materials.get(CROWN_RELIEF_MATERIAL)
+        if material is None:
+            material = duplicate.data.materials[0].copy()
+            material.name = CROWN_RELIEF_MATERIAL
+        duplicate.data.materials[0] = material
     if separate_coat and obj.name == 'BaiQi open coat body':
         slot = duplicate.data.materials.find('BaiQi charcoal coat back')
         assert slot >= 0

@@ -91,12 +91,13 @@ def blend_bridge(head, body):
 
 
 def raster_triangle(texture, exterior, uv, radii, normals):
-    points = uv * MAP_SIZE - .5
+    size = np.array((texture.shape[1], texture.shape[0]))
+    points = uv * size - .5
     a, b, c = points
     leg1, leg2 = b - a, c - a
     determinant = leg1[0] * leg2[1] - leg1[1] * leg2[0]
     low = np.maximum(0, np.ceil(points.min(axis=0)).astype(int))
-    high = np.minimum(MAP_SIZE - 1, np.floor(points.max(axis=0)).astype(int))
+    high = np.minimum(size - 1, np.floor(points.max(axis=0)).astype(int))
     if abs(determinant) < 1e-6 or np.any(high < low):
         return
     rows, columns = np.mgrid[low[1]:high[1] + 1, low[0]:high[0] + 1]
@@ -150,7 +151,7 @@ def bake_bridge_normals(source, target):
 
 
 def save_bridge_map(path, rgb):
-    image = bpy.data.images.new(path.stem, MAP_SIZE, MAP_SIZE, alpha=False)
+    image = bpy.data.images.new(path.stem, rgb.shape[1], rgb.shape[0], alpha=False)
     image.colorspace_settings.name = 'Non-Color'
     rgba = np.ones((*rgb.shape[:2], 4), dtype=np.float32)
     rgba[..., :3] = rgb / 255.

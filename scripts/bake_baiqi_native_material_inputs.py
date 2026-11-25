@@ -9,6 +9,7 @@ from shutil import copyfile
 import numpy as np
 from PIL import Image
 
+from baiqi_artwork_shadow import CROWN_RELIEF_MATERIAL, CROWN_RELIEF_STRENGTH
 from bake_baiqi_frame_pad_materials import frame_albedo, pad_mix
 
 
@@ -16,6 +17,7 @@ from bake_baiqi_frame_pad_materials import frame_albedo, pad_mix
 FRAME_MATERIAL = 'BaiQi round gold glasses appearance'
 NECK_MATERIAL = 'BaiQi neck junction shading'
 NECK_NORMAL = 'T_BaiQiNative_NeckBridge'
+CROWN_NORMAL = 'T_BaiQiNative_CrownRelief'
 FINISH = {
     'BaiQi original face appearance': (.70, .19, 0.),
     NECK_MATERIAL: (.75, .16, 0.),
@@ -24,6 +26,7 @@ FINISH = {
     'BaiQi gold_001': (.37, .27, .62),
     'BaiQi bob front appearance': (.64, .19, 0.),
     'BaiQi side hair source color': (.66, .19, 0.),
+    CROWN_RELIEF_MATERIAL: (.66, .19, 0.),
     'BaiQi black gold headdress appearance': (.71, .15, 0.),
     'BaiQi blouse and collar artwork': (.77, .14, 0.),
     'BaiQi off-white blouse back': (.77, .14, 0.),
@@ -67,7 +70,7 @@ def face_mix_texture(mask_path, roughness):
 
 
 def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_metallic=None,
-                   frame_pad_finish=False, neck_normal=None):
+                   frame_pad_finish=False, neck_normal=None, crown_normal=None):
     source = json.loads((inputs / 'form_inputs.json').read_text(encoding='utf-8'))['coat_on']['materials']
     weave = weave_texture(directory)
     profiles = {}
@@ -100,6 +103,11 @@ def surface_finish(inputs, directory, materials, *, frame_roughness=None, frame_
             assert normal.mode == 'RGB' and normal.size == (512, 512), neck_normal
         copyfile(neck_normal, directory / f'{NECK_NORMAL}.png')
         profiles[NECK_MATERIAL].update(normal=NECK_NORMAL, normal_strength=.70)
+    if crown_normal:
+        with Image.open(crown_normal) as normal:
+            assert normal.mode == 'RGB' and normal.size == (1024, 1024), crown_normal
+        copyfile(crown_normal, directory / f'{CROWN_NORMAL}.png')
+        profiles[CROWN_RELIEF_MATERIAL].update(normal=CROWN_NORMAL, normal_strength=CROWN_RELIEF_STRENGTH)
     (inputs / 'surface_finish.json').write_text(json.dumps(profiles, indent=2) + '\n', encoding='utf-8')
 
 
@@ -112,6 +120,7 @@ def main():
     parser.add_argument('--frame-metallic', type=float, help='Metallic response of the gold eyewear frame.')
     parser.add_argument('--frame-pad-finish', action='store_true', help='Bake the existing nose pads as a separate material response.')
     parser.add_argument('--neck-normal', type=Path, help='Bake the approved bridge map into its native material only.')
+    parser.add_argument('--crown-normal', type=Path, help='Apply the crown normal map to the dedicated cap section.')
     args = parser.parse_args()
     if args.frame_roughness is not None:
         assert args.surface_finish and .36 <= args.frame_roughness <= .58
@@ -119,6 +128,8 @@ def main():
         parser.error('--frame-metallic requires --surface-finish and a value between 0 and 1')
     if args.neck_normal and not args.surface_finish:
         parser.error('--neck-normal requires --surface-finish')
+    if args.crown_normal and not args.surface_finish:
+        parser.error('--crown-normal requires --surface-finish')
     if args.frame_pad_finish and not args.surface_finish:
         parser.error('--frame-pad-finish requires --surface-finish')
     directory = args.inputs / 'native_textures'
@@ -144,7 +155,7 @@ def main():
     if args.surface_finish:
         surface_finish(args.inputs, directory, materials, frame_roughness=args.frame_roughness,
                        frame_metallic=args.frame_metallic, frame_pad_finish=args.frame_pad_finish,
-                       neck_normal=args.neck_normal)
+                       neck_normal=args.neck_normal, crown_normal=args.crown_normal)
 
 
 if __name__ == '__main__':

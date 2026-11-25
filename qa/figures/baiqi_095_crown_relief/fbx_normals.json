@@ -1,0 +1,30 @@
+{
+  "coat_on": {
+    "0.48": {
+      "changed_normal_corner_slots": {
+        "34": 1304
+      },
+      "vertices_topology_uv_exact": true
+    },
+    "0.74": {
+      "changed_normal_corner_slots": {
+        "34": 1312
+      },
+      "vertices_topology_uv_exact": true
+    }
+  },
+  "coat_off": {
+    "0.48": {
+      "changed_normal_corner_slots": {
+        "34": 1304
+      },
+      "vertices_topology_uv_exact": true
+    },
+    "0.74": {
+      "changed_normal_corner_slots": {
+        "34": 1312
+      },
+      "vertices_topology_uv_exact": true
+    }
+  }
+}

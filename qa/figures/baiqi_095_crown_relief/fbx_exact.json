@@ -1,0 +1,10 @@
+{
+  "coat_on": {
+    "crown_polygons": 1088,
+    "points_uvs_topology_preserved": true
+  },
+  "coat_off": {
+    "crown_polygons": 1088,
+    "points_uvs_topology_preserved": true
+  }
+}

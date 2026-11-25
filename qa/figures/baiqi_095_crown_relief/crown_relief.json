@@ -1,0 +1,22 @@
+{
+  "coat_on": {
+    "shape_reference_sha256": "c2d0c402517797d90932a828db3210e079a61ec869d16e8861f87a92536aea8c",
+    "source_sha256": "98c65965633e4f1ff69c488fc477113a078a6d06877278b25f5fdf83baf5b9f2",
+    "candidate_sha256": "446322a26b18b7db1cc2eefde4d4135bccc08bac57736d39efc231cac9e306fb",
+    "authored_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "normal_strength": 0.65,
+    "projected_texels": 1909,
+    "tilted_texels": 441
+  },
+  "coat_off": {
+    "shape_reference_sha256": "302eaf98975b59e8d26cfefc6dc029479d596372e7ff7069b55acb514472bf62",
+    "source_sha256": "db783f97abacff544d477affd21e1f7bc52671215add374c881a5126abdcf78f",
+    "candidate_sha256": "b4d84c8c472806b3da239b90b9cfc75971a1f7e98245fc80e9281201976b01b5",
+    "authored_head_sha256": "137a504e8c4554e5781e28e6d77ee0e72f8375e54587b16710aa43f784c007d6",
+    "cc0_body_sha256": "8e9f43aae2f1a3c4ad73687232a1b321e4ea7f0dd1b60ac040352fddfcd04dea",
+    "normal_strength": 0.65,
+    "projected_texels": 1909,
+    "tilted_texels": 441
+  }
+}
