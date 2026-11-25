@@ -1,0 +1,34 @@
+{
+  "profile": {
+    "pixels_gt8": 787,
+    "pixels_gt20": 694,
+    "baseline": {
+      "dark_lt20": 89,
+      "mean_luma": 88.07105172413793
+    },
+    "trial": {
+      "dark_lt20": 46,
+      "mean_luma": 120.37108862068966
+    }
+  },
+  "far_side": {
+    "pixels_gt8": 710,
+    "pixels_gt20": 560
+  },
+  "profile_back": {
+    "pixels_gt8": 1081,
+    "pixels_gt20": 962,
+    "baseline": {
+      "dark_lt20": 2592,
+      "mean_luma": 20.49804193877551
+    },
+    "trial": {
+      "dark_lt20": 2592,
+      "mean_luma": 20.520145612244896
+    }
+  },
+  "front": {
+    "pixels_gt8": 3522,
+    "pixels_gt20": 2380
+  }
+}

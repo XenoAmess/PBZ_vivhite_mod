@@ -1,0 +1,20 @@
+{
+  "profile": {
+    "pixels_gt8": 193,
+    "pixels_gt20": 106,
+    "old_dark_lt20": 89,
+    "new_dark_lt20": 69
+  },
+  "front_left": {
+    "pixels_gt8": 1822,
+    "pixels_gt20": 1737
+  },
+  "rear_high": {
+    "pixels_gt8": 2333,
+    "pixels_gt20": 2067
+  },
+  "other_oblique": {
+    "pixels_gt8": 1458,
+    "pixels_gt20": 1340
+  }
+}
