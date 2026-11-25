@@ -26,3 +26,4 @@
 | 073 | 收敛镜框鼻托亮度 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-073) |
 | 074 | 延续裙摆侧后方金边 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-074) |
 | 075 | 平顺后裙中段垂坠 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-075) |
+| 076 | 整理后腰封与裙片交界 | [模型存档](https://github.com/XenoAmess/PBZ_vivhite_mod/releases/tag/baiqi-model-076) |

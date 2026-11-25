@@ -26,6 +26,7 @@ NATIVE_CLIPS = ('Hun_Unarmed_Idle_Loop', 'Hun_Unarmed_Run_Fwd_Loop', 'Hun_BaiSha
 NECK_ZONES = {'neck': (.0, .052, 1.320, 1.369)}
 NECK_MATERIAL = 'BaiQi neck junction shading'
 NECKLINE_PARTS = ('BaiQi fitted sleeveless blouse', 'BaiQi fitted sleeveless binding')
+WAIST_PARTS = ('BaiQi fitted navy waist wrap', 'BaiQi pleated skirt')
 ARM_ZONES = {'shoulder': (.125, .238, 1.190, 1.325), 'elbow': (.292, .363, 1.196, 1.319)}
 VIEWS = {'front': (0, 1, 0), 'back': (0, -1, 0), 'side': (-1, 0, 0), 'oblique': (-.57, .82, 0)}
 GAME_NON_SHADOW_SECTIONS = {'BaiQi bob front appearance', 'BaiQi side hair source color',
@@ -206,6 +207,8 @@ def main():
                         help='Record coat contact with the skirt and blouse during motion.')
     parser.add_argument('--neckline-contacts', action='store_true',
                         help='Record neck bridge contact with the blouse and its binding during motion.')
+    parser.add_argument('--waist-seam-contacts', action='store_true',
+                        help='Record intersections between the fitted waistband and the skirt.')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
     output = ROOT / args.out
     output.mkdir(parents=True, exist_ok=True)
@@ -237,6 +240,8 @@ def main():
     under = [layered[name] for name in ('BaiQi pleated skirt', 'BaiQi fitted sleeveless blouse')] if outer else []
     if args.neckline_contacts:
         assert all(layered[name].matrix_world == head.matrix_world for name in NECKLINE_PARTS)
+    if args.waist_seam_contacts:
+        assert layered[WAIST_PARTS[0]].matrix_world == layered[WAIST_PARTS[1]].matrix_world
     checks = [Stretch(body, ARM_ZONES), Stretch(head, NECK_ZONES)]
     control_path = ROOT / args.cc0_control
     control = load_cc0_control(control_path, body, cc0)
@@ -283,6 +288,9 @@ def main():
                 neck = surface_tree(head, graph, material=NECK_MATERIAL)
                 row['samples'][-1]['intersecting_neckline_triangle_pairs'] = {
                     name: len(neck.overlap(surfaces[name])) for name in NECKLINE_PARTS}
+            if args.waist_seam_contacts:
+                band, skirt = (surfaces[name] for name in WAIST_PARTS)
+                row['samples'][-1]['intersecting_waist_seam_triangle_pairs'] = len(band.overlap(skirt))
             if args.render == 'none' or (args.render == 'triage' and index not in {0, len(samples) // 2, len(samples) - 1}):
                 continue
             camera_height, size = {'neck': (1.39, .57), 'arms': (1.13, 1.60), 'body': (.82, 1.95)}[group]
